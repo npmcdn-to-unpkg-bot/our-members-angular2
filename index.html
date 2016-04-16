@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--bootstrap-->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+
+    <!--custom styles-->
+    <link href="src/styles/styles.css" rel="stylesheet" />
+
+    <!--angular 2-->
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
+    <script src="node_modules/angular2/bundles/http.dev.js"></script>
+
+    <script>
+        SystemJS.config({ packages: { src: { format: 'register', defaultExtension: 'js' } } });
+        SystemJS.import('src/boot')
+          .then(null, console.error.bind(console));
+    </script>
+    <title>iBlong2</title>
+    <base href="/">
+</head>
+
+<body>
+    <ib2-app>Loading...</ib2-app>
+</body>
+
+</html>

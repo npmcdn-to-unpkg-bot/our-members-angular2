@@ -1,0 +1,9 @@
+﻿.fullScreenDiv {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #787878;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+

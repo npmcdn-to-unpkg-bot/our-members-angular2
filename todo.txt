@@ -1,0 +1,11 @@
+﻿template has header, footer
+header:
+	Home
+	contact us
+	Subscribe to iBlong2
+	Login / Return to My iB2
+footer
+	Help Resources
+	contact us
+	terms and conditions
+	privacy policy

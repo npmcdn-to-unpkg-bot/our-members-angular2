@@ -1,0 +1,136 @@
+﻿.mainheading {
+    color: White;
+    font-size: 22pt;
+    background: #bdba00;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 98%;
+}
+
+
+.home-page {
+    background-color: #d4e7b2;
+}
+
+.black-left-action-button {
+    width: 4%;
+    background-color: black;
+    height: 40px;
+    float: left;
+}
+
+.black-above-action-button {
+    width: 50%;
+    background-color: black;
+    height: 10px;
+}
+
+.action-button {
+    width: 94%;
+    height: 40px;
+    font-size: 16pt;
+    font-weight: bold;
+    color: white;
+    /*margin-right: 2%;*/
+    float: left;
+}
+
+.trial-button {
+    border: #7da31a outset;
+    background-color: #7da31a;
+}
+
+    .trial-button:hover {
+        background-color: #51800C;
+    }
+
+.test-drive-button {
+    border: #dc9000 outset;
+    background-color: #dc9000;
+}
+
+    .test-drive-button:hover {
+        background-color: #B85903;
+    }
+
+.action-buttons-container {
+    background-color: gray;
+    padding: 5px 0 5px 0;
+    margin: 0 1%;
+}
+
+.logo {
+    width: 50%;
+    margin: 5%;
+}
+
+.info-buttons-container {
+    background-color: #393939;
+    margin: 10px 0 0 0;
+    padding: 10px 4% 10px 4%;
+}
+
+.top-action-buttons-container {
+    padding: 10px 0 0 2%;
+}
+
+.bottom-action-buttons-container {
+    padding: 0 0 10px 2%;
+}
+
+
+.info-button {
+    border: none;
+    background-color: #7DB31B;
+    width: 100%;
+    height: 40px;
+    font-size: 14pt;
+    /*font-weight: bold;*/
+    color: white;
+    margin-right: 2%;
+    float: left;
+    margin: 0 0 5px 0;
+}
+
+    .info-button:hover {
+        background-color: #4A810B;
+    }
+
+
+.spacer {
+    height: 50px;
+    width: 100%;
+}
+
+.extra-top-margin {
+    margin-top: 10px;
+}
+
+.sms-button {
+    background-color: #1E3265;
+    font-weight: bold;
+    font-size: 16pt;
+    border: none;
+    width: 100%;
+    color: white;
+}
+
+.sms-buttons-container {
+    margin: 10px 0 0 0;
+    padding: 10px 4% 10px 4%;
+}
+
+.Heading-3-C {
+    font-family: "Verdana", sans-serif;
+    color: #f1a629;
+    font-size: 19.0px;
+    line-height: 1.22em;
+    font-weight: bold;
+}
+
+.casual-meeting-image {
+    width: 30%;
+    float: right;
+    margin : 5%;
+}

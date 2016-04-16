@@ -1,0 +1,28 @@
+﻿.header-and-footer-container {
+    background-color: black;
+}
+
+
+
+.header-button, .header-login-button {
+    width: 90%;
+    margin-left: 5%;
+    color: white;
+    background-color: #7DA31A;
+    border: none;
+    font-size: large;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+    .header-button:hover {
+        background-color: #B0DE00;
+    }
+
+.header-login-button {
+    background-color: #DC9000;
+}
+
+    .header-login-button:hover {
+        background-color: #FF6600
+    }
