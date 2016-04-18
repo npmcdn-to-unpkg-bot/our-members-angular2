@@ -2,13 +2,13 @@
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({
-    selector: 'home-page-content',
+    selector: 'about-trial-period-content',
 
-    templateUrl: 'src/app/home-pages/home-page-content/home-page-content.html',
+    templateUrl: 'src/app/home-pages/about-trial-period-content/about-trial-period-content.html',
     styleUrls: ['src/app/home-pages/styles/home-pages.css'],
     directives: [ROUTER_DIRECTIVES]
 })
 
-export class HomePageContent {
+export class AboutTrialPeriodContent {
 
 }

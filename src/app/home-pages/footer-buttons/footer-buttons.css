@@ -1,0 +1,9 @@
+﻿.footer-button {
+    color: white;
+    background-color: black;
+    -moz-text-decoration-style: underline;
+    text-decoration-style: underline;
+    border: none;
+    font-size: large;
+    margin: 20px 0 50px 0;
+}

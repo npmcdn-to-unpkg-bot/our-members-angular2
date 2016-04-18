@@ -1,11 +1,3 @@
-﻿template has header, footer
-header:
-	Home
-	contact us
-	Subscribe to iBlong2
-	Login / Return to My iB2
-footer
-	Help Resources
-	contact us
-	terms and conditions
-	privacy policy
+﻿top links:
+	finish putting in a component
+	2 components: one at top for large screens, one under hamburger button for small screens. this one dispayed, hidden by hb button

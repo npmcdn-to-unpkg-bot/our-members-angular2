@@ -5,35 +5,22 @@
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
-    width: 98%;
+    width: 100%;
+    margin-top: 5px;
 }
 
 
-.home-page {
+.home-pages-background {
     background-color: #d4e7b2;
-}
-
-.black-left-action-button {
-    width: 4%;
-    background-color: black;
-    height: 40px;
-    float: left;
-}
-
-.black-above-action-button {
-    width: 50%;
-    background-color: black;
-    height: 10px;
+    margin-bottom: 10px;
 }
 
 .action-button {
     width: 94%;
-    height: 40px;
+    height: 70px;
     font-size: 16pt;
     font-weight: bold;
     color: white;
-    /*margin-right: 2%;*/
-    float: left;
 }
 
 .trial-button {
@@ -55,14 +42,8 @@
     }
 
 .action-buttons-container {
-    background-color: gray;
-    padding: 5px 0 5px 0;
-    margin: 0 1%;
-}
-
-.logo {
-    width: 50%;
-    margin: 5%;
+    background-color: #d4e7b2;
+    padding: 5px 0 5px 6%;
 }
 
 .info-buttons-container {
@@ -71,20 +52,11 @@
     padding: 10px 4% 10px 4%;
 }
 
-.top-action-buttons-container {
-    padding: 10px 0 0 2%;
-}
-
-.bottom-action-buttons-container {
-    padding: 0 0 10px 2%;
-}
-
-
 .info-button {
     border: none;
     background-color: #7DB31B;
     width: 100%;
-    height: 40px;
+    min-height: 40px;
     font-size: 14pt;
     /*font-weight: bold;*/
     color: white;
@@ -132,5 +104,60 @@
 .casual-meeting-image {
     width: 30%;
     float: right;
-    margin : 5%;
+    margin: 5%;
+}
+
+.three-months-heading {
+    background-color: #7da31a;
+    color: White;
+    font-weight: bold;
+    font-size: 18pt;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.three-months-background {
+    background-color: #bbdb88;
+    width: 100%;
+    color: #003399;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.easy-to-use-image {
+    width: 20%;
+    float: right;
+    margin: 5%;
+}
+
+
+.left-home-pages-links {
+    display: block;
+}
+
+.bottom-home-pages-links {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .left-home-pages-links {
+        display: none;
+    }
+
+    .bottom-home-pages-links {
+        display: block;
+    }
+
+    .info-button {
+        width: 80%;
+        margin-left: 10%
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .action-button {
+        height: 100px;
+    }
 }

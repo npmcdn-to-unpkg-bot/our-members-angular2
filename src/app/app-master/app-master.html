@@ -1,33 +1,20 @@
 ﻿<div class="container fullScreenDiv">
     <div class="container header-and-footer-container">
-        <div class="row header-container">
-            <div class="col-sm-3">
-                <button type="button" class="header-button">Home</button>
-            </div>
-            <div class="col-sm-3">
-                <button type="button" class="header-button">Contact Us</button>
-            </div>
-            <div class="col-sm-3">
-                <button type="button" class="header-button">Subscribe to iBlong2</button>
-            </div>
-            <div class="col-sm-3">
-                <button type="button" class="header-login-button">Login to iBlong2</button>
-            </div>
+        <div class="row three-line-button-row">
+            <img class="app-master-logo" src="../../../../images/logo.png" />
+            <button class="three-line-button" type="button" (click)="showHideThreeLineButton()">
+                <div class="three-line-button-line"></div>
+                <div class="three-line-button-line-not-top"></div>
+                <div class="three-line-button-line-not-top"></div>
+            </button>
         </div>
+        <header-buttons class="header-button-top-container" [style.display]="threeLineButtonDisplay"></header-buttons>
+        <header-buttons class="header-button-container" ></header-buttons>
+
+        <!--content-->
         <router-outlet></router-outlet>
-        <div class="row header-container">
-            <div class="col-sm-3">
-                <button type="button" class="header-button">Help Resources</button>
-            </div>
-            <div class="col-sm-3">
-                <button type="button" class="header-button">Contact Us</button>
-            </div>
-            <div class="col-sm-3">
-                <button type="button" class="header-button">Terms and Conditions</button>
-            </div>
-            <div class="col-sm-3">
-                <button type="button" class="header-login-button">Privacy Policy</button>
-            </div>
-        </div>
+
+        <!--footer-->
+        <footer-buttons ></footer-buttons>
     </div>
 </div>

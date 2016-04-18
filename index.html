@@ -19,6 +19,14 @@
     <script src="node_modules/angular2/bundles/http.dev.js"></script>
 
     <script>
+        //for debugging styles in chrome dev
+        //var onresize = function () {
+        //    var width = window.innerWidth
+        //    || document.documentElement.clientWidth
+        //    || document.body.clientWidth;
+        //    console.log(width);
+        //}
+
         SystemJS.config({ packages: { src: { format: 'register', defaultExtension: 'js' } } });
         SystemJS.import('src/boot')
           .then(null, console.error.bind(console));

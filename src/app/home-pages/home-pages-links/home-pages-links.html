@@ -1,28 +1,18 @@
 ﻿<div class="row">
-    <img class="logo" src="../../../../images/logo.png" />
+    <img class="home-pages-links-logo" src="../../../../images/logo.png" />
 </div>
-<div class="row action-buttons-container top-action-buttons-container">
-    <div class="black-above-action-button"></div>
-    <div class="clearfix" >
-        <div class="black-left-action-button" ></div>
-        <button type="button" class="action-button trial-button">
-            FREE 3-month trial
-        </button>
-    </div>
-    <!--<div class="black-above-action-button"></div>-->
+<div class="row action-buttons-container ">
+    <button type="button" class="action-button trial-button">
+        FREE 3-month trial
+    </button>
 </div>
-<div class="row action-buttons-container bottom-action-buttons-container">
-    <div class="black-above-action-button"></div>
-    <div class="clearfix">
-        <div class="black-left-action-button"></div>
-        <button type="button" class="action-button test-drive-button">
-            TEST-DRIVE NOW!
-        </button>
-    </div>
-    <div class="black-above-action-button"></div>
+<div class="row action-buttons-container ">
+    <button type="button" class="action-button test-drive-button">
+        TEST-DRIVE NOW!
+    </button>
 </div>
 <div class="row info-buttons-container">
-    <button type="button" class="info-button extra-top-margin">
+    <button type="button" class="info-button extra-top-margin" [routerLink]="['HomePage']">
         iBlong2 Home
     </button>
     <button type="button" class="info-button">
@@ -43,13 +33,13 @@
     <button type="button" class="info-button">
         iBlong2 Subscription Costs
     </button>
-    <button type="button" class="info-button">
+    <button type="button" class="info-button" [routerLink]="['AboutTrialPeriod']">
         About the FREE 3-month trial
     </button>
     <button type="button" class="info-button">
         Help and Information Resources
     </button>
-    
+
     <button type="button" class="info-button extra-top-margin">
         About Us
     </button>
