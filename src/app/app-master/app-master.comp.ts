@@ -3,8 +3,9 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {HelperService} from '../helper/helper.serv';
 import {HomePageMasterComponent} from '../home-pages/home-page-master/home-page-master.comp';
 import {AboutTrialPeriodComponent} from '../home-pages/about-trial-period/about-trial-period.comp';
-import {HeaderButtons} from  '../home-pages/header-buttons/header-buttons.comp';
+import {HeaderButtons} from  '../header-buttons/header-buttons.comp';
 import {FooterButtons} from  '../home-pages/footer-buttons/footer-buttons.comp';
+import {OrganisationAdminPageComponent} from  '../organisation-admin-pages/organisation-admin/organisation-admin.comp';
 
 
 @Component({
@@ -16,7 +17,8 @@ import {FooterButtons} from  '../home-pages/footer-buttons/footer-buttons.comp';
 })
 @RouteConfig([
     { path: '/', redirectTo: ['HomePageMaster'] },
-    { path: '/home-page-master/...', name: 'HomePageMaster', component: HomePageMasterComponent}//,
+    { path: '/home-page-master/...', name: 'HomePageMaster', component: HomePageMasterComponent },
+    { path: '/organisation-admin-pages', name: 'OrganisationAdminPage', component: OrganisationAdminPageComponent },
     //{ path: '/about-trial-period', name: 'AboutTrialPeriod', component: AboutTrialPeriodComponent }
 ])
 

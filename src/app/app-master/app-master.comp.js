@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../helper/helper.serv', '../home-pages/home-page-master/home-page-master.comp', '../home-pages/header-buttons/header-buttons.comp', '../home-pages/footer-buttons/footer-buttons.comp'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', '../helper/helper.serv', '../home-pages/home-page-master/home-page-master.comp', '../header-buttons/header-buttons.comp', '../home-pages/footer-buttons/footer-buttons.comp', '../organisation-admin-pages/organisation-admin/organisation-admin.comp'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', '../helper/helper.serv', '.
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, helper_serv_1, home_page_master_comp_1, header_buttons_comp_1, footer_buttons_comp_1;
+    var core_1, router_1, helper_serv_1, home_page_master_comp_1, header_buttons_comp_1, footer_buttons_comp_1, organisation_admin_comp_1;
     var AppComponent;
     return {
         setters:[
@@ -31,6 +31,9 @@ System.register(['angular2/core', 'angular2/router', '../helper/helper.serv', '.
             },
             function (footer_buttons_comp_1_1) {
                 footer_buttons_comp_1 = footer_buttons_comp_1_1;
+            },
+            function (organisation_admin_comp_1_1) {
+                organisation_admin_comp_1 = organisation_admin_comp_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -57,7 +60,8 @@ System.register(['angular2/core', 'angular2/router', '../helper/helper.serv', '.
                     }),
                     router_1.RouteConfig([
                         { path: '/', redirectTo: ['HomePageMaster'] },
-                        { path: '/home-page-master/...', name: 'HomePageMaster', component: home_page_master_comp_1.HomePageMasterComponent } //,
+                        { path: '/home-page-master/...', name: 'HomePageMaster', component: home_page_master_comp_1.HomePageMasterComponent },
+                        { path: '/organisation-admin-pages', name: 'OrganisationAdminPage', component: organisation_admin_comp_1.OrganisationAdminPageComponent },
                     ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
