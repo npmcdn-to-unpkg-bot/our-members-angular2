@@ -1,11 +1,7 @@
-﻿/// <reference path="../home-pages/home-page/home-page.comp.ts" />
-/// <reference path="../helper/helper.serv.ts" />
-/// <reference path="../home-pages/header-buttons/header-buttons.comp.ts" />
-/// <reference path="../../../node_modules/angular2/typings/browser.d.ts" />
-import {Component} from 'angular2/core';
+﻿import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {HelperService} from '../helper/helper.serv';
-import {HomePageComponent} from '../home-pages/home-page/home-page.comp';
+import {HomePageMasterComponent} from '../home-pages/home-page-master/home-page-master.comp';
 import {AboutTrialPeriodComponent} from '../home-pages/about-trial-period/about-trial-period.comp';
 import {HeaderButtons} from  '../home-pages/header-buttons/header-buttons.comp';
 import {FooterButtons} from  '../home-pages/footer-buttons/footer-buttons.comp';
@@ -19,23 +15,19 @@ import {FooterButtons} from  '../home-pages/footer-buttons/footer-buttons.comp';
 
 })
 @RouteConfig([
-    { path: '/', redirectTo: ['HomePage'] },
-    { path: '/home', name: 'HomePage', component: HomePageComponent },
-    { path: '/about-trial-period', name: 'AboutTrialPeriod', component: AboutTrialPeriodComponent }
+    { path: '/', redirectTo: ['HomePageMaster'] },
+    { path: '/home-page-master/...', name: 'HomePageMaster', component: HomePageMasterComponent}//,
+    //{ path: '/about-trial-period', name: 'AboutTrialPeriod', component: AboutTrialPeriodComponent }
 ])
+
 export class AppComponent {
+
+    constructor() {
+        console.log('constructor AppComponent');
+    }
+
     public title = 'iB2';
     tokenValid: boolean = HelperService.tokenIsValid();
-
-    testBool: boolean = true;
-
-    //static deviceCutoffWidth: number = 768;
-
-    ngOnInit() {
-        //this.tokenValid = HelperService.tokenIsValid();
-
-        //this.navbarWithoutJquery()
-    }
 
     threeLineButtonDisplay: string = '';
 
@@ -46,4 +38,6 @@ export class AppComponent {
             this.threeLineButtonDisplay = 'none';
         }
     }
+
+
 }

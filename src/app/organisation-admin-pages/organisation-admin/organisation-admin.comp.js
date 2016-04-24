@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router'], function(exports_1, context_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,33 +10,28 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1;
-    var HomePageContent;
+    var core_1;
+    var OrganisationAdminPageComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (router_1_1) {
-                router_1 = router_1_1;
             }],
         execute: function() {
-            HomePageContent = (function () {
-                function HomePageContent() {
+            OrganisationAdminPageComponent = (function () {
+                function OrganisationAdminPageComponent() {
                 }
-                HomePageContent = __decorate([
+                OrganisationAdminPageComponent = __decorate([
                     core_1.Component({
-                        selector: 'home-page-content',
-                        templateUrl: 'src/app/home-pages/home-page-content/home-page-content.html',
-                        styleUrls: ['src/app/home-pages/styles/home-pages.css'],
-                        directives: [router_1.ROUTER_DIRECTIVES]
+                        //styleUrls: ['src/app/organisation-admin-pages/???????????.css'],
+                        templateUrl: 'src/app/organisation-admin-pages/organisation-admin/organisation-admin.html',
                     }), 
                     __metadata('design:paramtypes', [])
-                ], HomePageContent);
-                return HomePageContent;
+                ], OrganisationAdminPageComponent);
+                return OrganisationAdminPageComponent;
             }());
-            exports_1("HomePageContent", HomePageContent);
+            exports_1("OrganisationAdminPageComponent", OrganisationAdminPageComponent);
         }
     }
 });
-//# sourceMappingURL=home-page-content.comp.js.map
+//# sourceMappingURL=organisation-admin.comp.js.map

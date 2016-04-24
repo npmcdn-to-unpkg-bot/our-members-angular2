@@ -1,7 +1,7 @@
 ﻿<div class="container fullScreenDiv">
     <div class="container header-and-footer-container">
         <div class="row three-line-button-row">
-            <img class="app-master-logo" src="../../../../images/logo.png" />
+            <img class="app-master-logo" src="../../../../images/logo.png"  [style.display]="promoMenu"/>
             <button class="three-line-button" type="button" (click)="showHideThreeLineButton()">
                 <div class="three-line-button-line"></div>
                 <div class="three-line-button-line-not-top"></div>
@@ -9,12 +9,12 @@
             </button>
         </div>
         <header-buttons class="header-button-top-container" [style.display]="threeLineButtonDisplay"></header-buttons>
-        <header-buttons class="header-button-container" ></header-buttons>
+        <header-buttons class="header-button-container"></header-buttons>
 
         <!--content-->
         <router-outlet></router-outlet>
 
         <!--footer-->
-        <footer-buttons ></footer-buttons>
+        <footer-buttons></footer-buttons>
     </div>
 </div>

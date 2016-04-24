@@ -1,4 +1,4 @@
-System.register(['angular2/core', '../home-pages-links/home-pages-links.comp', '../home-pages-bottom-buttons/home-pages-bottom-buttons.comp', '../home-page-content/home-page-content.comp'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,38 +10,32 @@ System.register(['angular2/core', '../home-pages-links/home-pages-links.comp', '
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, home_pages_links_comp_1, home_pages_bottom_buttons_comp_1, home_page_content_comp_1;
-    var HomePageComponent;
+    var core_1, router_1;
+    var HomePage;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (home_pages_links_comp_1_1) {
-                home_pages_links_comp_1 = home_pages_links_comp_1_1;
-            },
-            function (home_pages_bottom_buttons_comp_1_1) {
-                home_pages_bottom_buttons_comp_1 = home_pages_bottom_buttons_comp_1_1;
-            },
-            function (home_page_content_comp_1_1) {
-                home_page_content_comp_1 = home_page_content_comp_1_1;
+            function (router_1_1) {
+                router_1 = router_1_1;
             }],
         execute: function() {
-            HomePageComponent = (function () {
-                function HomePageComponent() {
+            HomePage = (function () {
+                function HomePage() {
                 }
-                HomePageComponent = __decorate([
+                HomePage = __decorate([
                     core_1.Component({
-                        selector: 'home-page',
-                        styleUrls: ['src/app/home-pages/styles/home-pages.css'],
+                        selector: 'home-page-content',
                         templateUrl: 'src/app/home-pages/home-page/home-page.html',
-                        directives: [home_pages_links_comp_1.HomePagesLinks, home_pages_bottom_buttons_comp_1.HomePagesBottomButtons, home_page_content_comp_1.HomePageContent]
+                        styleUrls: ['src/app/home-pages/styles/home-pages.css'],
+                        directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [])
-                ], HomePageComponent);
-                return HomePageComponent;
+                ], HomePage);
+                return HomePage;
             }());
-            exports_1("HomePageComponent", HomePageComponent);
+            exports_1("HomePage", HomePage);
         }
     }
 });

@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../helper/helper.serv', '../home-pages/home-page/home-page.comp', '../home-pages/about-trial-period/about-trial-period.comp', '../home-pages/header-buttons/header-buttons.comp', '../home-pages/footer-buttons/footer-buttons.comp'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', '../helper/helper.serv', '../home-pages/home-page-master/home-page-master.comp', '../home-pages/header-buttons/header-buttons.comp', '../home-pages/footer-buttons/footer-buttons.comp'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', '../helper/helper.serv', '.
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, helper_serv_1, home_page_comp_1, about_trial_period_comp_1, header_buttons_comp_1, footer_buttons_comp_1;
+    var core_1, router_1, helper_serv_1, home_page_master_comp_1, header_buttons_comp_1, footer_buttons_comp_1;
     var AppComponent;
     return {
         setters:[
@@ -23,11 +23,8 @@ System.register(['angular2/core', 'angular2/router', '../helper/helper.serv', '.
             function (helper_serv_1_1) {
                 helper_serv_1 = helper_serv_1_1;
             },
-            function (home_page_comp_1_1) {
-                home_page_comp_1 = home_page_comp_1_1;
-            },
-            function (about_trial_period_comp_1_1) {
-                about_trial_period_comp_1 = about_trial_period_comp_1_1;
+            function (home_page_master_comp_1_1) {
+                home_page_master_comp_1 = home_page_master_comp_1_1;
             },
             function (header_buttons_comp_1_1) {
                 header_buttons_comp_1 = header_buttons_comp_1_1;
@@ -40,14 +37,9 @@ System.register(['angular2/core', 'angular2/router', '../helper/helper.serv', '.
                 function AppComponent() {
                     this.title = 'iB2';
                     this.tokenValid = helper_serv_1.HelperService.tokenIsValid();
-                    this.testBool = true;
                     this.threeLineButtonDisplay = '';
+                    console.log('constructor AppComponent');
                 }
-                //static deviceCutoffWidth: number = 768;
-                AppComponent.prototype.ngOnInit = function () {
-                    //this.tokenValid = HelperService.tokenIsValid();
-                    //this.navbarWithoutJquery()
-                };
                 AppComponent.prototype.showHideThreeLineButton = function () {
                     if (this.threeLineButtonDisplay === 'none') {
                         this.threeLineButtonDisplay = '';
@@ -64,9 +56,8 @@ System.register(['angular2/core', 'angular2/router', '../helper/helper.serv', '.
                         directives: [router_1.ROUTER_DIRECTIVES, header_buttons_comp_1.HeaderButtons, footer_buttons_comp_1.FooterButtons]
                     }),
                     router_1.RouteConfig([
-                        { path: '/', redirectTo: ['HomePage'] },
-                        { path: '/home', name: 'HomePage', component: home_page_comp_1.HomePageComponent },
-                        { path: '/about-trial-period', name: 'AboutTrialPeriod', component: about_trial_period_comp_1.AboutTrialPeriodComponent }
+                        { path: '/', redirectTo: ['HomePageMaster'] },
+                        { path: '/home-page-master/...', name: 'HomePageMaster', component: home_page_master_comp_1.HomePageMasterComponent } //,
                     ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

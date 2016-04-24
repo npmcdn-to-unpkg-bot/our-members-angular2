@@ -1,3 +1,19 @@
-﻿top links:
-	finish putting in a component
-	2 components: one at top for large screens, one under hamburger button for small screens. this one dispayed, hidden by hb button
+﻿
+
+
+pages to convert:
+contact-us
+subscribe
+register
+about-member-list
+about-reminders
+about-finances
+about-communicate
+about-events
+subscription
+about-help
+about-us
+terms
+privacy
+
+check for .comp suffix

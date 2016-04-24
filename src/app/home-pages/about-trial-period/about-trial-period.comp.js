@@ -1,4 +1,4 @@
-System.register(['angular2/core', '../home-pages-links/home-pages-links.comp', '../home-pages-bottom-buttons/home-pages-bottom-buttons.comp', '../about-trial-period-content/about-trial-period-content.comp'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,21 +10,15 @@ System.register(['angular2/core', '../home-pages-links/home-pages-links.comp', '
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, home_pages_links_comp_1, home_pages_bottom_buttons_comp_1, about_trial_period_content_comp_1;
+    var core_1, router_1;
     var AboutTrialPeriodComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (home_pages_links_comp_1_1) {
-                home_pages_links_comp_1 = home_pages_links_comp_1_1;
-            },
-            function (home_pages_bottom_buttons_comp_1_1) {
-                home_pages_bottom_buttons_comp_1 = home_pages_bottom_buttons_comp_1_1;
-            },
-            function (about_trial_period_content_comp_1_1) {
-                about_trial_period_content_comp_1 = about_trial_period_content_comp_1_1;
+            function (router_1_1) {
+                router_1 = router_1_1;
             }],
         execute: function() {
             AboutTrialPeriodComponent = (function () {
@@ -32,10 +26,10 @@ System.register(['angular2/core', '../home-pages-links/home-pages-links.comp', '
                 }
                 AboutTrialPeriodComponent = __decorate([
                     core_1.Component({
-                        selector: 'about-trial-period',
-                        styleUrls: ['src/app/home-pages/styles/home-pages.css'],
+                        selector: 'about-trial-period-content',
                         templateUrl: 'src/app/home-pages/about-trial-period/about-trial-period.html',
-                        directives: [home_pages_links_comp_1.HomePagesLinks, home_pages_bottom_buttons_comp_1.HomePagesBottomButtons, about_trial_period_content_comp_1.AboutTrialPeriodContent]
+                        styleUrls: ['src/app/home-pages/styles/home-pages.css'],
+                        directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AboutTrialPeriodComponent);

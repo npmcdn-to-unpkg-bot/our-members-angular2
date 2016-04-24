@@ -1,19 +1,14 @@
-﻿/// <reference path="../home-pages-links/home-pages-links.comp.ts" />
-import {Router} from 'angular2/router';
-import {Component, Directive} from 'angular2/core';
-import {HomePagesLinks}  from '../home-pages-links/home-pages-links.comp';
-import {HomePagesBottomButtons}  from '../home-pages-bottom-buttons/home-pages-bottom-buttons.comp';
-import {HomePageContent}  from '../home-page-content/home-page-content.comp';
-
-
+﻿import {Component} from 'angular2/core';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({
-    selector: 'home-page',
-    styleUrls: ['src/app/home-pages/styles/home-pages.css'],
+    selector: 'home-page-content',
+
     templateUrl: 'src/app/home-pages/home-page/home-page.html',
-    directives: [HomePagesLinks, HomePagesBottomButtons, HomePageContent]
+    styleUrls: ['src/app/home-pages/styles/home-pages.css'],
+    directives: [ROUTER_DIRECTIVES]
 })
 
-export class HomePageComponent {
+export class HomePage {
 
 }
