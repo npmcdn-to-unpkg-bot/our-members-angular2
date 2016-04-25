@@ -124,9 +124,12 @@
 
 .Body-C {
     font-weight: 700;
+    font-size: 12pt;
+    line-height: 1.21em;
 }
 
 .Body-text {
     font-size: 14.0px;
     line-height: 1.71em;
 }
+

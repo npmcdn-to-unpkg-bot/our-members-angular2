@@ -5,7 +5,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
     selector: 'about-trial-period-content',
 
     templateUrl: 'src/app/home-pages/about-trial-period/about-trial-period.html',
-    styleUrls: ['src/app/home-pages/styles/home-pages.css'],
+    styleUrls: ['src/app/home-pages/styles/home-pages.css', 'src/app/home-pages/about-trial-period/about-trial-period.css'],
     directives: [ROUTER_DIRECTIVES]
 })
 

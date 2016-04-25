@@ -28,7 +28,7 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                     core_1.Component({
                         selector: 'about-trial-period-content',
                         templateUrl: 'src/app/home-pages/about-trial-period/about-trial-period.html',
-                        styleUrls: ['src/app/home-pages/styles/home-pages.css'],
+                        styleUrls: ['src/app/home-pages/styles/home-pages.css', 'src/app/home-pages/about-trial-period/about-trial-period.css'],
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [])

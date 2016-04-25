@@ -28,7 +28,7 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                     core_1.Component({
                         selector: 'about-communicate',
                         templateUrl: 'src/app/home-pages/about-communicate/about-communicate.html',
-                        styleUrls: ['src/app/home-pages/styles/home-pages.css'],
+                        styleUrls: ['src/app/home-pages/styles/home-pages.css', 'src/app/home-pages/about-communicate/about-communicate.css'],
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [])

@@ -26,20 +26,13 @@
             <p>
                 <span class="Body-text">
                     At the end of the 3-month trial you will receive an email asking
-                    you to confirm your subscription. Read our
-
-                    XXXXXXXXXXXXXXXXXXXX link to Terms and Conditions XXXXXXXXXXXXXXXXXXXXXXXXXX  Font-Size="12pt" ForeColor="#FF6600">
-
-                    for further details.
+                    you to confirm your subscription. Read our <a class="link" [routerLink]="['TermsComponent']">Terms and Conditions</a> for further details.
                 </span>
             </p>
             <p>
                 <span class="Body-text">
-                    Find out more about our
-                    <a href="../../../../index.html">../../../../index.html</a>
-                    XXXXXXXXXXXXXXXXXXXX link to Subscription Costs XXXXXXXXXXXXXXXXXXXXXXXXXX  Font-Size="12pt" ForeColor="#FF6600">
-                    then why not give iBlong2 an Obligation Free 3-month trial by
-                    XXXXXXXXXXXXXXXXXXXX link to Creating your iBlong2 account XXXXXXXXXXXXXXXXXXXXXXXXXX  Font-Size="12pt" ForeColor="#FF6600">
+                    Find out more about our <a class="link" [routerLink]="['SubscriptionComponent']">Subscription Costs</a>
+                    then why not give iBlong2 an Obligation Free 3-month trial by <a class="link" [routerLink]="['SubscribeComponent']">Creating your iBlong2 account</a>
                 </span>
             </p>
             <p>
@@ -52,22 +45,24 @@
             </p>
         </div>
     </div>
-    <div class="row" style="border: 7px solid #DC9000; background-color: #fde2b8; margin-top: 50px; padding: 10px;">
-        <div style="background-color: #DC9000; padding-left: 20px; color: White; font-size: 16pt;">
+    <div class="test-drive-border">
+        <div class="test-drive-header">
             Take a Test Drive!
         </div>
-        <img src="../../../../images/test-drive.jpg" style="width: 20%; float:right; margin: 10px;" />
-        <div style="padding: 10px;">
+        <img class="test-drive-image" src="../../../../images/test-drive.jpg" />
+        <div class="test-drive-text">
             <p>
                 <span>
                     Get a first hand look at how iBlong2 works - take a Test Drive.
                     Feel free to check out all the features.
                 </span>
             </p>
-            <div class="col-sm-6">
-                <button type="button" class="action-button test-drive-button">
-                    TEST-DRIVE NOW!
-                </button>
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="button" class="action-button test-drive-button" [routerLink]="['RegisterComponent']">
+                        TEST-DRIVE NOW!
+                    </button>
+                </div>
             </div>
         </div>
     </div>

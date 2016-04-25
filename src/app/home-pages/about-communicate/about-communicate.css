@@ -1,2 +1,44 @@
-﻿body {
+﻿.sms-header {
+    background-color: #1e3265;
+    color: White;
+    width: 100%;
+    font-size: 16pt;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+}
+
+.sms-text {
+    padding: 8px;
+    background-color: #ebf5fc;
+    color: #393939;
+    font-size: 11pt;
+}
+
+.sms-image {
+    width: 50%;
+    margin: 7px;
+    float: right;
+}
+
+.sms-footer {
+    background-color: #1e3265;
+    color: White;
+    font-size: 16pt;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+
+.subhead {
+    color: White;
+    font-size: 13.5pt;
+    background: #bdba00;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
 }

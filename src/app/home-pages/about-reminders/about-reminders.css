@@ -1,1 +1,24 @@
-﻿
+﻿.reminders-image {
+    float: right;
+    margin: 6px;
+}
+
+.test-drive {
+    border: 5px solid #dc9000;
+    background-color: #facd8a;
+}
+
+
+.test-drive-image {
+    float: right;
+    width: 30%;
+    margin: 2%;
+}
+
+.Body-C-C1 {
+    font-weight: 700;
+    color: #393939;
+    background: #dc9000;
+    font-size: 21.0px;
+    line-height: 1.19em;
+}
