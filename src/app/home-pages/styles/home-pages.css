@@ -93,46 +93,6 @@
     padding: 10px 4% 10px 4%;
 }
 
-.Heading-3-C {
-    font-family: "Verdana", sans-serif;
-    color: #f1a629;
-    font-size: 19.0px;
-    line-height: 1.22em;
-    font-weight: bold;
-}
-
-.casual-meeting-image {
-    width: 30%;
-    float: right;
-    margin: 5%;
-}
-
-.three-months-heading {
-    background-color: #7da31a;
-    color: White;
-    font-weight: bold;
-    font-size: 18pt;
-    width: 100%;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.three-months-background {
-    background-color: #bbdb88;
-    width: 100%;
-    color: #003399;
-    padding-left: 10px;
-    padding-top: 10px;
-}
-
-.easy-to-use-image {
-    width: 20%;
-    float: right;
-    margin: 5%;
-}
-
-
 .left-home-pages-links {
     display: block;
 }
@@ -152,7 +112,7 @@
 
     .info-button {
         width: 80%;
-        margin-left: 10%
+        margin-left: 10%;
     }
 }
 
@@ -160,4 +120,13 @@
     .action-button {
         height: 100px;
     }
+}
+
+.Body-C {
+    font-weight: 700;
+}
+
+.Body-text {
+    font-size: 14.0px;
+    line-height: 1.71em;
 }

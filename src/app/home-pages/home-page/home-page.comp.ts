@@ -5,7 +5,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
     selector: 'home-page-content',
 
     templateUrl: 'src/app/home-pages/home-page/home-page.html',
-    styleUrls: ['src/app/home-pages/styles/home-pages.css'],
+    styleUrls: ['src/app/home-pages/styles/home-pages.css', 'src/app/home-pages/home-page/home-page.css'],
     directives: [ROUTER_DIRECTIVES]
 })
 

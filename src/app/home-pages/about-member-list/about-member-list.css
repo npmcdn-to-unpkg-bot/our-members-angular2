@@ -1,1 +1,43 @@
-﻿
+﻿.limited-offer {
+    border: 7px solid #ff8000;
+    background-color: #facd8a;
+    /*z-index: 1;*/
+}
+
+.limited-offer-heading {
+    padding-left: 2%;
+    background: #ff8000;
+    font-size: 18pt;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.limited-offer-text {
+    margin: 2%;
+}
+
+.easy-to-use-image {
+    width: 30%;
+    float: right;
+    margin-top: 5px;
+    ;
+}
+
+.contact-us {
+    height: 40px;
+    width: 120px;
+    background-color: #393939;
+    font-size: 12pt;
+    color: Orange;
+    border: none;
+}
+
+    .contact-us:hover {
+        background-color: gray;
+    }
+
+.MembershipListsImage {
+    width: 30%;
+    float: right;
+    margin-top: 10px;;
+}

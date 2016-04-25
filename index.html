@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--bootstrap-->
@@ -11,10 +12,15 @@
     <link href="src/styles/styles.css" rel="stylesheet" />
 
     <!--angular 2-->
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+
     <script src="node_modules/angular2/bundles/router.dev.js"></script>
     <script src="node_modules/angular2/bundles/http.dev.js"></script>
 
@@ -32,7 +38,6 @@
           .then(null, console.error.bind(console));
     </script>
     <title>iBlong2</title>
-    <base href="/">
 </head>
 
 <body>

@@ -1,1 +1,1436 @@
-﻿
+﻿<div style="background-color: #e0edc5; width: 630px; height: auto; font-family: Arial;
+    font-size: 10pt; color: #393939; margin-top: 20px;">
+    <div style="width: 630px; background-color: #bdba00; text-align: center; height: 30px;
+        font-size: 20pt; color: White; margin-top: 20px; margin-bottom: 20px;">
+        Help Resources - Contents List
+    </div>
+    <div style="width: 100%; height: 420px;">
+        <div style="width: 90%; float: left; padding-top: 10px; height: 200px; padding-left: 30px;">
+            <dx:ASPxButton ID="ASPxButton1" runat="server" Text="iBlong2 User Guide" Cursor="pointer"
+                           CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                           Font-Names="Arial" Font-Size="12pt" ForeColor="#393939" Font-Underline="True"
+                           ImageSpacing="30px" Width="300px">
+                <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('iB2 User Guide.pdf')}" />
+                <Image Url="~/Images/Home Page/userguide.PNG" Width="80px">
+                </Image>
+                <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                <HoverStyle ForeColor="#003399">
+                </HoverStyle>
+            </dx:ASPxButton>
+            <br />
+            <div style="background-color: #bbdb88; padding: 5px; padding-bottom: 10px;">
+                <strong>Description:</strong> A comprehensive downloadable booklet covering all
+                aspects of the application. To print, click the User Guide link to download and
+                open the document then hold down the Ctrl key and tap P to access the printer dialogue
+                screen.
+            </div>
+        </div>
+        <div style="width: 90%; float: left; padding-top: 10px; height: 200px; padding-left: 30px;">
+            <dx:ASPxButton ID="ASPxButton69" runat="server" Text="iBlong2 Information Handout"
+                           Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                           Font-Names="Arial" Font-Size="12pt" ForeColor="#393939" Font-Underline="True"
+                           ImageSpacing="30px" Width="343px">
+                <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('iB2 promo doc.pdf')}" />
+                <Image Url="../image folder/iB2 promo doc.PNG" Width="80px">
+                </Image>
+                <HoverStyle ForeColor="#003399">
+                </HoverStyle>
+                <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+            </dx:ASPxButton>
+            <br />
+            <div style="background-color: #bbdb88; padding: 5px; padding-bottom: 10px;">
+                <strong>Description:</strong> Need something to help convince your fellow committee
+                members? Download and print our 2 page promotional document which comprehensively
+                outlines the features and benefits of iBlong2.
+            </div>
+        </div>
+    </div>
+    <div style="width: 98%; height: 20px;">
+    </div>
+    <div style="width: 98%; text-align: left; height: 30px; padding-left: 10px; margin-bottom: 10px;">
+        <dx:ASPxButton ID="ASPxButton16" runat="server" ClientIDMode="AutoID" Text="Setting up and Managing your Organisation in iB2"
+                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" Font-Names="Arial"
+                       Font-Size="14pt" ForeColor="#393939" Width="500px" HorizontalAlign="Left" AutoPostBack="False"
+                       Font-Underline="True">
+            <ClientSideEvents Click="function(s, e) {helpObj.ShowPanel(0);}" />
+            <PressedStyle ForeColor="#393939">
+            </PressedStyle>
+            <HoverStyle ForeColor="#003399">
+            </HoverStyle>
+            <FocusRectBorder BorderStyle="None" />
+        </dx:ASPxButton>
+    </div>
+    <dx:ASPxPanel ID="HELP_pnlSettingUpYourOrganisation" runat="server" Width="630px"
+                  Height="650px" ClientInstanceName="HELP_pnlSettingUpYourOrganisation" ClientVisible="false">
+        <PanelCollection>
+            <dx:PanelContent runat="server">
+                <div style="width: 100%; height: auto; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton11" runat="server" Text="Creating iB2 Account" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowVideo('Register')}" />
+                            <Image Url="~/image folder/video.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; float: left; padding-top: 10px; padding-left: 5px; padding-right: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A video showing you how to create your iBlong2 account so that you can login and
+                        start using iBlong2.
+                    </div>
+                </div>
+                <div style="width: 100%; height: auto; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton50" runat="server" Text="Password - Changing" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowVideo('ChangePassword')}" />
+                            <Image Url="~/image folder/video.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A video showing you how to change your password in iBlong2.
+                    </div>
+                </div>
+                <div style="width: 100%; height: auto; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton18" runat="server" Text="Organisation - Setup" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowVideo('Organisation')}" />
+                            <Image Url="~/image folder/video.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; float: left; padding-top: 10px; padding-left: 5px; padding-right: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A video showing you how to enter your Organisation's details into iBlong2.
+                    </div>
+                </div>
+                <div style="width: 100%; height: auto; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton20" runat="server" Text="Organisation - Setup" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Entering your Organisation details.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF showing you how to set up your Organisation's details in iBlong2.
+                    </div>
+                </div>
+                <div style="width: 100%; height: auto; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton25" runat="server" Text="Logo - Uploading" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowVideo('UploadLogo')}" />
+                            <Image Url="~/image folder/video.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; float: left; padding-right: 5px; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A video showing you how to upload your logo into iBlong2 to be used in reports and
+                        member correspondence.
+                    </div>
+                </div>
+                <div style="width: 100%; height: auto; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton26" runat="server" Text="Logo - Uploading" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Upload your logo.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to upload your logo into iBlong2 to be used in reports
+                        and member correspondence.
+                    </div>
+                </div>
+                <div style="width: 100%; height: auto; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton15" runat="server" Text="Member Types - Creating" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Creating Membership Types.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF how to create the various types of members within your organisation.
+                        Before creating members you should firstly create membership types unless you are
+                        importing your members.
+                    </div>
+                </div>
+                <div style="width: 100%; height: auto; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton23" runat="server" Text="Bank Account - Creating" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowVideo('BankAccount')}" />
+                            <Image Url="~/image folder/video.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A video showing you how to create Bank Accounts in iBlong2 so you can manage your
+                        organisation's finances.
+                    </div>
+                </div>
+                <div style="width: 100%; height: auto; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton24" runat="server" Text="Bank Account - Creating" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Setting up Bank Account details.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to create Bank Accounts in iBlong2 so you can manage
+                        your organisation's finances.
+                    </div>
+                </div>
+                <div style="width: 100%; height: auto; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton27" runat="server" Text="Finance Categories - Creating"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="230px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Setting up Account Categories.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to set up Income and Expense account categories to
+                        track your financial activities in iBlong2.
+                    </div>
+                </div>
+                <div style="width: 100%; height: auto; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton14" runat="server" Text="Roles - Access Control" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('All about Roles and Access Control.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF showing how iBlong2 allows you to manage who has access to your
+                        data and how much access they are granted.
+                    </div>
+                </div>
+                <div style="width: 100%; height: auto; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton21" runat="server" Text="Roles - Creating" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('CreatingRole.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF showing you how to create a new role for a user in iBlong2.
+                    </div>
+                </div>
+                <div style="width: 100%; height: auto; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton22" runat="server" Text="User - Creating" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('CreateUser.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF showing you how to add a new user to your iBlong2 site.
+                    </div>
+                </div>
+            </dx:PanelContent>
+        </PanelCollection>
+    </dx:ASPxPanel>
+    <div style="width: 98%; text-align: left; height: 30px; padding-left: 10px; margin-bottom: 10px;">
+        <dx:ASPxButton ID="ASPxButton17" runat="server" ClientIDMode="AutoID" Text="Setting up and Managing your Members in iB2"
+                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" Font-Names="Arial"
+                       Font-Size="14pt" ForeColor="#393939" Width="500px" HorizontalAlign="Left" AutoPostBack="false"
+                       Font-Underline="True">
+            <ClientSideEvents Click="function(s, e) {helpObj.ShowPanel(1);}" />
+            <PressedStyle ForeColor="#393939">
+            </PressedStyle>
+            <HoverStyle ForeColor="#003399">
+            </HoverStyle>
+            <FocusRectBorder BorderStyle="None" />
+        </dx:ASPxButton>
+    </div>
+    <dx:ASPxPanel ID="HELP_pnlWorkingWithMembers" runat="server" Width="630px" Height="660px"
+                  ClientInstanceName="HELP_pnlWorkingWithMembers" ClientVisible="false">
+        <PanelCollection>
+            <dx:PanelContent ID="PanelContent1" runat="server">
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton2" runat="server" Text="Members - Manually Adding" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False"
+                                       Wrap="True">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Creating a new member.pdf')}" />
+                            <Image Url="~/image folder/pdf.PNG" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF on how to manually add a new member.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton19" runat="server" Text="Membership Types - Creating"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Creating Membership Types.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF how to create the various types of members within your organisation.
+                        Before creating members you should firstly create membership types unless you are
+                        importing your members in which case the system can create them for you.
+                    </div>
+                </div>
+                <%--                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton9" runat="server" Text="Membership List Importing - An Intro"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="230px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Importing your membership list - intro.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF on how to prepare your member spreadhsheet to import directly into
+                        iBlong2. <strong>Read this first.</strong>
+                    </div>
+                </div>--%>
+                <%--                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton10" runat="server" Text="Membership List - Importing"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Importing your spread sheet.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF how to import your membership spreadsheet. Make sure you read the
+                        Introduction instructions above before starting the import process.
+                    </div>
+                </div>--%>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton6" runat="server" Text="Teams or Groups - Creating"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowVideo('ManageGroups')}" />
+                            <Image Url="~/image folder/video.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A video on how to create, edit and print team or group lists.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton7" runat="server" Text="Teams or Groups - Creating"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Creating Membership Groups Or Teams.pdf')}" />
+                            <Image Url="~/image folder/pdf.PNG" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF on how to create and manage teams and groups.
+                    </div>
+                </div>
+                <div style="width: 100%; height: auto; clear: left;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton3" runat="server" Text="Member Lists - Printing" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowVideo('PrintMemberList')}" />
+                            <Image Url="~/image folder/video.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A video on how to print lists of members, teams or groups
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton72" runat="server" Text="Member Lists - Printing" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Printing membership or Team Lists.pdf')}" />
+                            <Image Url="~/image folder/pdf.PNG" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF on how to print out lists of your members or teams.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton4" runat="server" Text="Member Statements - an intro"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="230px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowVideo('MemberStatements')}" />
+                            <Image Url="~/image folder/video.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A video which explains the iBlong2 concept of Membership Statements. How and why
+                        are they created? How do you use them to manage part-payments? What does a membership
+                        statement show you? It is <strong>strongly advised</strong> that you watch this
+                        video before receipting membership payments.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton5" runat="server" Text="Member Statements - Emailing"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Emailing Member Statements.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF on how to email out your membership statements.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton8" runat="server" Text="Member Statements - Printing"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Printing Membership Statements.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF on how to print out your membership statements.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton12" runat="server" Text="Membership Fees - Part-payments"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="230px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Managing part payments.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF on how to handle membership fee part-payments.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton13" runat="server" Text="Membership Fees - Reports"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Membership Fees Owing Report.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF on how to produce lists of members, teams or groups showing the
+                        payment status of each member.
+                    </div>
+                </div>
+            </dx:PanelContent>
+        </PanelCollection>
+    </dx:ASPxPanel>
+    <div style="width: 98%; text-align: left; height: 30px; padding-left: 10px; margin-bottom: 10px;">
+        <dx:ASPxButton ID="ASPxButton28" runat="server" ClientIDMode="AutoID" Text="Setting up and Managing Finances in iB2"
+                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" Font-Names="Arial"
+                       Font-Size="14pt" ForeColor="#393939" Width="400px" HorizontalAlign="Left" AutoPostBack="false"
+                       Font-Underline="True">
+            <ClientSideEvents Click="function(s, e) {helpObj.ShowPanel(2);}" />
+            <PressedStyle ForeColor="#393939">
+            </PressedStyle>
+            <HoverStyle ForeColor="#003399">
+            </HoverStyle>
+            <FocusRectBorder BorderStyle="None" />
+        </dx:ASPxButton>
+    </div>
+    <dx:ASPxPanel ID="HELP_pnlWorkingWithMoney" runat="server" Width="630px" ClientInstanceName="HELP_pnlWorkingWithMoney"
+                  Height="1100px" ClientVisible="false">
+        <Paddings PaddingBottom="10px" />
+        <PanelCollection>
+            <dx:PanelContent ID="PanelContent2" runat="server">
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton41" runat="server" Text="Financial Recording - an Overview"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('PART 2 Overview of Financial Recording.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A comprehensive overview of how iBlong2 manages financial transactions. <strong>
+                            Please
+                            read this first
+                        </strong>
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton29" runat="server" Text="Bank Account - Creating" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowVideo('BankAccount')}" />
+                            <Image Url="~/image folder/video.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A video showing you how to create Bank Accounts in iBlong2 so you can manage your
+                        organisation's finances.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton30" runat="server" Text="Bank Account - Creating" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Setting up Bank Account details.pdf')}" />
+                            <Image Url="~/image folder/pdf.PNG" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to create Bank Accounts in iBlong2 so you can manage
+                        your organisation's finances.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton31" runat="server" Text="Bank Transfers - Manual" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="361px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowVideo('BankTransfer')}" />
+                            <Image Url="~/image folder/video.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A video showing you how to record transfers between your various Bank Accounts.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton32" runat="server" Text="Bank Transfers - Manual" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Creating a Manual Bank Transfer.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to record transfers between your various Bank Accounts.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton45" runat="server" Text="Bank Transfers - Importing"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Importing bank transfers.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to record transfers between your various Bank Accounts
+                        through downloading a Bank Statement.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton46" runat="server" Text="Bank Deposit Summaries - Creating"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Using Bank Deposit Summaries.pdf')}" />
+                            <Image Url="~/image folder/pdf.PNG" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining what bank deposit summaries are and how to create a deposit
+                        summary of receipts to enable bank reconciliation.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton47" runat="server" Text="Bank Deposit Summaries - Creating"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowVideo('Deposit')}" />
+                            <Image Url="~/image folder/video.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A video showing how to create deposit summaries of receipts to enable bank reconciliation.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton48" runat="server" Text="Bank Transactions - Importing"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Importing bank transactions.pdf')}" />
+                            <Image Url="~/image folder/pdf.PNG" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to import your bank statements into iBlong2 to streamline
+                        receipt and expense recording.
+                    </div>
+                </div>
+                <div style="width: 100%; height: 40px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton49" runat="server" Text="Bank Statements - Reconciling"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Banking Reconciliations.pdf')}" />
+                            <Image Url="~/image folder/pdf.PNG" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to reconcile your bank statements.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton33" runat="server" Text="Petty Cash Handling" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Handling Petty Cash Recording.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to record and manage Petty Cash.
+                    </div>
+                </div>
+                <div style="width: 100%; height: 40px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton34" runat="server" Text="Receipts - Creating" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Creating Receipts.pdf')}" />
+                            <Image Url="~/image folder/pdf.PNG" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to create and manage receipts.
+                    </div>
+                </div>
+                <div style="width: 100%; height: 40px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton35" runat="server" Text="Receipts - Creating" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowVideo('Receipt')}" />
+                            <Image Url="~/image folder/video.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A video showing how to create and manage receipts.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton43" runat="server" Text="Expenses - Recording" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Creating Expenses.pdf')}" />
+                            <Image Url="~/image folder/pdf.PNG" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to create and manage expense items.
+                    </div>
+                </div>
+                <div style="width: 100%; height: 40px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton42" runat="server" Text="Expenses - Recording" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowVideo('Expense')}" />
+                            <Image Url="~/image folder/video.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A video showing how to create and manage expense items.
+                    </div>
+                </div>
+                <div style="width: 100%; height: 110px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton36" runat="server" Text="Member Statements - An intro"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowVideo('MemberStatements')}" />
+                            <Image Url="~/image folder/video.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A video which explains the iBlong2 concept of Membership Statements. How and why
+                        are they created? How do you use them to manage part-payments? What does a membership
+                        statement show you? It is <strong>strongly advised</strong> that you watch this
+                        video before receipting membership payments.
+                    </div>
+                </div>
+                <div style="width: 100%; height: 40px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton37" runat="server" Text="Member Statements - Emailing"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Emailing Member Statements.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF on how to email out your membership statements.
+                    </div>
+                </div>
+                <div style="width: 100%; height: 40px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton38" runat="server" Text="Member Statements - Printing"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Printing Membership Statements.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF on how to print out your membership statements.
+                    </div>
+                </div>
+                <div style="width: 100%; height: 40px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton39" runat="server" Text="Membership Fees - Part-payments"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="330px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Managing part payments.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF on how to handle membership fee part-payments.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton51" runat="server" Text="Invoicing - Tracking unpaid memberships"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False"
+                                       Wrap="True">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Using Invoicing to track unpaid memberships.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to use Invoices to track unpaid or part-paid memberships.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton40" runat="server" Text="Membership Fees - Reports"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Membership Fees Owing Report.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF on how to produce lists of members, teams or groups showing the
+                        payment status of each member.
+                    </div>
+                </div>
+            </dx:PanelContent>
+        </PanelCollection>
+    </dx:ASPxPanel>
+    <div style="width: 98%; text-align: left; height: 30px; padding-left: 10px; margin-bottom: 10px;">
+        <dx:ASPxButton ID="ASPxButton52" runat="server" ClientIDMode="AutoID" Text="Managing Member Communications"
+                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" Font-Names="Arial"
+                       Font-Size="14pt" ForeColor="#393939" Width="400px" HorizontalAlign="Left" AutoPostBack="false"
+                       Font-Underline="True">
+            <ClientSideEvents Click="function(s, e) {helpObj.ShowPanel(3);}" />
+            <PressedStyle ForeColor="#393939">
+            </PressedStyle>
+            <HoverStyle ForeColor="#003399">
+            </HoverStyle>
+            <FocusRectBorder BorderStyle="None" />
+        </dx:ASPxButton>
+    </div>
+    <dx:ASPxPanel ID="HELP_pnlManagingMemberCommunications" runat="server" Width="630px"
+                  Height="430px" ClientInstanceName="HELP_pnlManagingMemberCommunications" ClientVisible="false">
+        <PanelCollection>
+            <dx:PanelContent ID="PanelContent3" runat="server">
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton53" runat="server" Text="Emails - Sending" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Sending General emails.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to send emails to members or groups of members in
+                        iB2.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton65" runat="server" Text="Emails - Sending" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowVideo('EmailMembers')}" />
+                            <Image Url="~/image folder/video.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A video showing how to send out and manage member emails.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton58" runat="server" Text="Postal labels - printing" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Printing postal labels.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to print out member postal labels.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton54" runat="server" Text="Reminder Notices - Emailing"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Sending Renewal or reminder Notices by email.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to send out reminder notices to members through email.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton55" runat="server" Text="Reminder Notices - Printing"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Printing reminders.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to print out reminder notices.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton56" runat="server" Text="Reminder Notices - Printing labels"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Printing labels for reminders.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to print out postal labels for member reminder notices.
+                    </div>
+                    <div style="width: 100%; clear: left; margin-top: 5px;">
+                        <div style="width: 40%; float: left; padding-top: 10px;">
+                            <dx:ASPxButton ID="ASPxButton57" runat="server" Text="SMS messages - Sending" Cursor="pointer"
+                                           CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                           Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                           ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                                <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Sending SMS messages.pdf')}" />
+                                <Image Url="~/image folder/pdf.png" Width="20px">
+                                </Image>
+                                <Paddings PaddingLeft="5px" />
+                                <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                            </dx:ASPxButton>
+                        </div>
+                        <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                            background-color: #bbdb88; padding-bottom: 5px;">
+                            A printable PDF explaining how to send and view sent SMS messages through iB2.
+                        </div>
+                    </div>
+                    <div style="width: 100%; clear: left; margin-top: 5px;">
+                        <div style="width: 40%; float: left; padding-top: 10px;">
+                            <dx:ASPxButton ID="ASPxButton70" runat="server" Text="SMS messages - Sending" Cursor="pointer"
+                                           CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                           Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                           ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                                <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowVideo('SmsMembers');}" />
+                                <Image Url="~/image folder/video.png" Width="20px">
+                                </Image>
+                                <Paddings PaddingLeft="5px" />
+                                <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                            </dx:ASPxButton>
+                        </div>
+                        <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                            background-color: #bbdb88; padding-bottom: 5px;">
+                            A video showing how to send SMS messages through iB2.
+                        </div>
+                    </div>
+                    <div style="width: 100%; clear: left; margin-top: 5px;">
+                        <div style="width: 40%; float: left; padding-top: 10px;">
+                            <dx:ASPxButton ID="ASPxButton71" runat="server" Text="SMS units - Purchasing" Cursor="pointer"
+                                           CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                           Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                           ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                                <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Purchasing SMS unit credits.pdf')}" />
+                                <Image Url="~/image folder/pdf.png" Width="20px">
+                                </Image>
+                                <Paddings PaddingLeft="5px" />
+                                <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                            </dx:ASPxButton>
+                        </div>
+                        <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                            background-color: #bbdb88; padding-bottom: 5px;">
+                            A printable PDF explaining how to purchase more SMS units.
+                            <br />
+                        </div>
+                    </div>
+                    <div style="width: 100%; clear: left; margin-top: 5px;">
+                        <div style="width: 40%; float: left; padding-top: 10px;">
+                            <dx:ASPxButton ID="ASPxButton59" runat="server" Text="Communications Sent" Cursor="pointer"
+                                           CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                           Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                           ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                                <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Communications Sent.pdf')}" />
+                                <Image Url="~/image folder/pdf.png" Width="20px">
+                                </Image>
+                                <Paddings PaddingLeft="5px" />
+                                <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                            </dx:ASPxButton>
+                        </div>
+                        <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                            background-color: #bbdb88; padding-bottom: 5px;">
+                            A printable PDF showing you how iB2 tracks the communications of all types that
+                            you send to members.
+                        </div>
+                    </div>
+                </div>
+            </dx:PanelContent>
+        </PanelCollection>
+    </dx:ASPxPanel>
+    <div style="width: 98%; text-align: left; height: 30px; padding-left: 10px; margin-bottom: 10px;">
+        <dx:ASPxButton ID="ASPxButton60" runat="server" ClientIDMode="AutoID" Text="Managing Events in iB2"
+                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" Font-Names="Arial"
+                       Font-Size="14pt" ForeColor="#393939" Width="400px" HorizontalAlign="Left" AutoPostBack="false"
+                       Font-Underline="True">
+            <ClientSideEvents Click="function(s, e) {helpObj.ShowPanel(4);}" />
+            <PressedStyle ForeColor="#393939">
+            </PressedStyle>
+            <HoverStyle ForeColor="#003399">
+            </HoverStyle>
+            <FocusRectBorder BorderStyle="None" />
+        </dx:ASPxButton>
+    </div>
+    <dx:ASPxPanel ID="HELP_pnlManagingEvents" runat="server" Width="630px" Height="250px"
+                  ClientInstanceName="HELP_pnlManagingEvents" ClientVisible="false">
+        <PanelCollection>
+            <dx:PanelContent ID="PanelContent4" runat="server">
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton61" runat="server" Text="Events - Creating and Managing"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Viewing and creating an event.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to set up and manage an event through iB2.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton66" runat="server" Text="Events - Creating and Managing"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowVideo('ManageEvents')}" />
+                            <Image Url="~/image folder/video.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px; height: 30px;">
+                        A video showing how to set up and manage events through iB2.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton62" runat="server" Text="Events - Emailing to members"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Emailing Event Details to Members.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to send out event notices to members.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton63" runat="server" Text="Events - Emailing to non-members"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Emailing Event Details to Non.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to send out event notices to non-members.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton64" runat="server" Text="Events - Viewing and Managing Registrations"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Viewing an Event Registration List.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to view, edit and print out lists of event registrants.
+                    </div>
+                </div>
+            </dx:PanelContent>
+        </PanelCollection>
+    </dx:ASPxPanel>
+    <div style="width: 98%; text-align: left; height: 30px; padding-left: 10px; margin-bottom: 10px;">
+        <dx:ASPxButton ID="ASPxButton67" runat="server" ClientIDMode="AutoID" Text="Reporting with iB2"
+                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" Font-Names="Arial"
+                       Font-Size="14pt" ForeColor="#393939" Width="400px" HorizontalAlign="Left" AutoPostBack="false"
+                       Font-Underline="True">
+            <ClientSideEvents Click="function(s, e) {helpObj.ShowPanel(5);}" />
+            <PressedStyle ForeColor="#393939">
+            </PressedStyle>
+            <HoverStyle ForeColor="#003399">
+            </HoverStyle>
+            <FocusRectBorder BorderStyle="None" />
+        </dx:ASPxButton>
+    </div>
+    <dx:ASPxPanel ID="HELP_pnlReporting" runat="server" Width="630px" Height="150px"
+                  ClientInstanceName="HELP_pnlReporting" ClientVisible="false">
+        <PanelCollection>
+            <dx:PanelContent ID="PanelContent5" runat="server">
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton68" runat="server" Text="Profit and Loss Report" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Profit and Loss Reporting.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to produce a Profit and Loss Report from in iB2.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton44" runat="server" Text="Membership Owing Report" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Membership Fees Owing Report.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        A printable PDF explaining how to produce a report showing your organisation's outstanding
+                        membership fees including part-payments.
+                    </div>
+                </div>
+            </dx:PanelContent>
+        </PanelCollection>
+    </dx:ASPxPanel>
+    <div style="width: 98%; text-align: left; height: 30px; padding-left: 10px; margin-bottom: 10px;">
+        <dx:ASPxButton ID="ASPxButton73" runat="server" ClientIDMode="AutoID" Text="FAQ's"
+                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" Font-Names="Arial"
+                       Font-Size="14pt" ForeColor="#393939" Width="400px" HorizontalAlign="Left" AutoPostBack="false"
+                       Font-Underline="True">
+            <ClientSideEvents Click="function(s, e) {helpObj.ShowPanel(6);}" />
+            <PressedStyle ForeColor="#393939">
+            </PressedStyle>
+            <HoverStyle ForeColor="#003399">
+            </HoverStyle>
+            <FocusRectBorder BorderStyle="None" />
+        </dx:ASPxButton>
+    </div>
+    <dx:ASPxPanel ID="HELP_pnlFAQ" runat="server" Width="630px" ClientInstanceName="HELP_pnlFAQ"
+                  ClientVisible="false" Paddings-PaddingBottom="20px">
+        <PanelCollection>
+            <dx:PanelContent ID="PanelContent6" runat="server">
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton75" runat="server" Text="Financial recording - end to end"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('PART 2 Overview of Financial Recording.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        Want an overview of how iBlong2 handles the financial recording process from start
+                        to finish? Here is an easy to understand downloadable PDF explaining it all.
+                    </div>
+                </div>
+                <div style="width: 100%; clear: left; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton74" runat="server" Text="How to print in iBlong2" Cursor="pointer"
+                                       CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('Printing with iBlong2.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        Having problems getting your reports, receipts or lists to print? Perhaps this FAQ
+                        will help.
+                    </div>
+                </div>
+                <div style="width: 100%; height: auto; margin-top: 5px;">
+                    <div style="width: 40%; float: left; padding-top: 10px;">
+                        <dx:ASPxButton ID="ASPxButton76" runat="server" Text="Controlling access to your data"
+                                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                                       Font-Names="Arial" Font-Size="10pt" ForeColor="#003399" Font-Underline="True"
+                                       ImageSpacing="10px" Width="200px" HorizontalAlign="Left" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('All about Roles and Access Control.pdf')}" />
+                            <Image Url="~/image folder/pdf.png" Width="20px">
+                            </Image>
+                            <Paddings PaddingLeft="5px" />
+                            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+                        </dx:ASPxButton>
+                    </div>
+                    <div style="width: 58%; padding-right: 5px; float: left; padding-top: 10px; padding-left: 5px;
+                        background-color: #bbdb88; padding-bottom: 5px;">
+                        Want to understand how to manage access to your organisation's data with user roles?
+                        This easy to understand downloadable PDF will explain how to grant secure access
+                        to your data to your various users.
+                    </div>
+                </div>
+            </dx:PanelContent>
+        </PanelCollection>
+    </dx:ASPxPanel>
+</div>
