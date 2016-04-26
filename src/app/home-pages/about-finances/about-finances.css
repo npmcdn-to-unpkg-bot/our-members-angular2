@@ -1,2 +1,37 @@
-﻿body {
+﻿.finances-image {
+    float: right;
+    margin: 2%;
+    width: 30%;
+}
+
+.subhead {
+    color: White;
+    font-size: 13.5pt;
+    background: #bdba00;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.handovers-border {
+    border: 7px solid #7da31a;
+}
+
+.handovers-image {
+    float: right;
+    margin: 10px 0 0 2%;
+    width: 30%;
+}
+
+.handover-heading {
+    padding-left: 4%;
+    color: #7da31a;
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.handovers-text {
+    padding-left: 10px;
+    padding-top: 10px;
 }
