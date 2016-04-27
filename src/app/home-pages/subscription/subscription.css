@@ -1,2 +1,18 @@
-﻿body {
+﻿.subscription-image {
+    float: right;
+    width: 30%;
+}
+
+.subscription-intro {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.subhead {
+    color: White;
+    font-size: 13.5pt;
+    background: #bdba00;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }

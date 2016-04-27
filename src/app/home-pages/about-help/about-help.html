@@ -1,48 +1,39 @@
-﻿<div style="background-color: #e0edc5; width: 630px; height: auto; font-family: Arial;
-    font-size: 10pt; color: #393939; margin-top: 20px;">
-    <div style="width: 630px; background-color: #bdba00; text-align: center; height: 30px;
-        font-size: 20pt; color: White; margin-top: 20px; margin-bottom: 20px;">
+﻿<div class="about-help-background">
+    <div class="about-help-header">
         Help Resources - Contents List
     </div>
-    <div style="width: 100%; height: 420px;">
-        <div style="width: 90%; float: left; padding-top: 10px; height: 200px; padding-left: 30px;">
-            <dx:ASPxButton ID="ASPxButton1" runat="server" Text="iBlong2 User Guide" Cursor="pointer"
-                           CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
-                           Font-Names="Arial" Font-Size="12pt" ForeColor="#393939" Font-Underline="True"
-                           ImageSpacing="30px" Width="300px">
-                <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('iB2 User Guide.pdf')}" />
-                <Image Url="~/Images/Home Page/userguide.PNG" Width="80px">
-                </Image>
-                <FocusRectBorder BorderStyle="None"></FocusRectBorder>
-                <HoverStyle ForeColor="#003399">
-                </HoverStyle>
-            </dx:ASPxButton>
-            <br />
-            <div style="background-color: #bbdb88; padding: 5px; padding-bottom: 10px;">
-                <strong>Description:</strong> A comprehensive downloadable booklet covering all
-                aspects of the application. To print, click the User Guide link to download and
-                open the document then hold down the Ctrl key and tap P to access the printer dialogue
-                screen.
-            </div>
-        </div>
-        <div style="width: 90%; float: left; padding-top: 10px; height: 200px; padding-left: 30px;">
-            <dx:ASPxButton ID="ASPxButton69" runat="server" Text="iBlong2 Information Handout"
-                           Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
-                           Font-Names="Arial" Font-Size="12pt" ForeColor="#393939" Font-Underline="True"
-                           ImageSpacing="30px" Width="343px">
-                <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('iB2 promo doc.pdf')}" />
-                <Image Url="../image folder/iB2 promo doc.PNG" Width="80px">
-                </Image>
-                <HoverStyle ForeColor="#003399">
-                </HoverStyle>
-                <FocusRectBorder BorderStyle="None"></FocusRectBorder>
-            </dx:ASPxButton>
-            <br />
-            <div style="background-color: #bbdb88; padding: 5px; padding-bottom: 10px;">
-                <strong>Description:</strong> Need something to help convince your fellow committee
-                members? Download and print our 2 page promotional document which comprehensively
-                outlines the features and benefits of iBlong2.
-            </div>
+    <div class="clearfix">
+        <img class="about-help-user-guide" src="../../../../images/userguide.PNG" (click)="ShowHelpFile('iB2 User Guide.pdf')" />
+        <a class="about-help-link" (click)="ShowHelpFile('iB2 User Guide.pdf')">iBlong2 User Guide</a>
+    </div>
+    <div class="user-guide-description">
+        <strong>Description:</strong> A comprehensive downloadable booklet covering all
+        aspects of the application. To print, click the User Guide link to download and
+        open the document then hold down the Ctrl key and tap P to access the printer dialogue
+        screen.
+    </div>
+    <div class="clearfix">
+        <img class="about-help-user-guide" src="../../../../images/userguide.PNG" (click)="ShowHelpFile('iB2 User Guide.pdf')" />
+        <a class="about-help-link" (click)="ShowHelpFile('iB2 User Guide.pdf')">iBlong2 User Guide</a>
+    </div>
+
+    <div style="width: 90%; float: left; padding-top: 10px; height: 200px; padding-left: 30px;">
+        <dx:ASPxButton ID="ASPxButton69" runat="server" Text="iBlong2 Information Handout"
+                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False" FocusRectBorder-BorderStyle="none"
+                       Font-Names="Arial" Font-Size="12pt" ForeColor="#393939" Font-Underline="True"
+                       ImageSpacing="30px" Width="343px">
+            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowHelpFile('iB2 promo doc.pdf')}" />
+            <Image Url="../image folder/iB2 promo doc.PNG" Width="80px">
+            </Image>
+            <HoverStyle ForeColor="#003399">
+            </HoverStyle>
+            <FocusRectBorder BorderStyle="None"></FocusRectBorder>
+        </dx:ASPxButton>
+        <br />
+        <div style="background-color: #bbdb88; padding: 5px; padding-bottom: 10px;">
+            <strong>Description:</strong> Need something to help convince your fellow committee
+            members? Download and print our 2 page promotional document which comprehensively
+            outlines the features and benefits of iBlong2.
         </div>
     </div>
     <div style="width: 98%; height: 20px;">
