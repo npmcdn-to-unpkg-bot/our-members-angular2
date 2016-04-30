@@ -23,7 +23,70 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
         execute: function() {
             AboutHelpComponent = (function () {
                 function AboutHelpComponent() {
+                    this.displaySettingManagingOrganisation = false;
+                    this.displaySettingManagingMembers = false;
+                    this.displaySettingManagingFinances = false;
+                    this.displayManagingMemberCommunications = false;
+                    this.displayManagingEvents = false;
+                    this.displayReporting = false;
+                    this.displayFAQs = false;
                 }
+                AboutHelpComponent.prototype.toggleSettingManagingOrganisation = function () {
+                    if (this.displaySettingManagingOrganisation) {
+                        this.displaySettingManagingOrganisation = false;
+                    }
+                    else {
+                        this.displaySettingManagingOrganisation = true;
+                    }
+                };
+                AboutHelpComponent.prototype.toggleSettingManagingMembers = function () {
+                    if (this.displaySettingManagingMembers) {
+                        this.displaySettingManagingMembers = false;
+                    }
+                    else {
+                        this.displaySettingManagingMembers = true;
+                    }
+                };
+                AboutHelpComponent.prototype.toggleSettingManagingFinances = function () {
+                    if (this.displaySettingManagingFinances) {
+                        this.displaySettingManagingFinances = false;
+                    }
+                    else {
+                        this.displaySettingManagingFinances = true;
+                    }
+                };
+                AboutHelpComponent.prototype.toggleManagingMemberCommunications = function () {
+                    if (this.displayManagingMemberCommunications) {
+                        this.displayManagingMemberCommunications = false;
+                    }
+                    else {
+                        this.displayManagingMemberCommunications = true;
+                    }
+                };
+                AboutHelpComponent.prototype.toggleManagingEvents = function () {
+                    if (this.displayManagingEvents) {
+                        this.displayManagingEvents = false;
+                    }
+                    else {
+                        this.displayManagingEvents = true;
+                    }
+                };
+                AboutHelpComponent.prototype.toggleReporting = function () {
+                    if (this.displayReporting) {
+                        this.displayReporting = false;
+                    }
+                    else {
+                        this.displayReporting = true;
+                    }
+                };
+                AboutHelpComponent.prototype.toggleFAQs = function () {
+                    if (this.displayFAQs) {
+                        this.displayFAQs = false;
+                    }
+                    else {
+                        this.displayFAQs = true;
+                    }
+                };
                 AboutHelpComponent = __decorate([
                     core_1.Component({
                         selector: 'about-help',

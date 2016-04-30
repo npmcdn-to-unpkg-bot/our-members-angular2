@@ -7,6 +7,9 @@
     position: absolute;
 }
 
+button:focus {
+    outline: 1px solid olive;
+}
 
 
 

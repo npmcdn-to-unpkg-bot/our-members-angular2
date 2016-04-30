@@ -1,5 +1,5 @@
-﻿import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+﻿    import {Component} from 'angular2/core';
+    import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({
     selector: 'about-help',
@@ -10,5 +10,63 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 })
 
 export class AboutHelpComponent {
+    displaySettingManagingOrganisation: boolean = false;
+    displaySettingManagingMembers: boolean = false;
+    displaySettingManagingFinances: boolean = false;
+    displayManagingMemberCommunications: boolean = false;
+    displayManagingEvents: boolean = false;
+    displayReporting: boolean = false;
+    displayFAQs: boolean = false;
+
+    toggleSettingManagingOrganisation() {
+        if (this.displaySettingManagingOrganisation) {
+            this.displaySettingManagingOrganisation = false;
+        } else {
+            this.displaySettingManagingOrganisation = true;
+        }
+    }
+    toggleSettingManagingMembers() {
+        if (this.displaySettingManagingMembers) {
+            this.displaySettingManagingMembers = false;
+        } else {
+            this.displaySettingManagingMembers = true;
+        }
+    }
+    toggleSettingManagingFinances() {
+        if (this.displaySettingManagingFinances) {
+            this.displaySettingManagingFinances = false;
+        } else {
+            this.displaySettingManagingFinances = true;
+        }
+    }
+    toggleManagingMemberCommunications() {
+        if (this.displayManagingMemberCommunications) {
+            this.displayManagingMemberCommunications = false;
+        } else {
+            this.displayManagingMemberCommunications = true;
+        }
+    }
+    toggleManagingEvents() {
+        if (this.displayManagingEvents) {
+            this.displayManagingEvents = false;
+        } else {
+            this.displayManagingEvents = true;
+        }
+    }
+    toggleReporting() {
+        if (this.displayReporting) {
+            this.displayReporting = false;
+        } else {
+            this.displayReporting = true;
+        }
+    }
+    toggleFAQs() {
+        if (this.displayFAQs) {
+            this.displayFAQs = false;
+        } else {
+            this.displayFAQs = true;
+        }
+    }
+
 
 }

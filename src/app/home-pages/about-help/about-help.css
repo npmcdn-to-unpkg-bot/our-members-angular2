@@ -10,26 +10,47 @@
     text-align: center;
     font-size: 20pt;
     color: White;
-    margin-top: 20px;
+    /*margin-top: 20px;*/
     margin-bottom: 20px;
 }
 
 .about-help-user-guide {
     cursor: pointer;
-    float: left;
-    margin-left: 5%;
+    width: 100%;
+    margin-top: 5px;
 }
 
-.about-help-link {
-    cursor: pointer;
+.about-help-toggle-button {
+    border: none;
     text-decoration: underline;
-    float: left;
-    margin-top: 30px;
-    margin-left: 30px;
+    font-size: 14pt;
+    color: #393939;
+    background-color: transparent;
 }
 
-.user-guide-description {
-    background-color: #bbdb88;
-    margin: 20px 0;
-    padding: 10px;
+.help-link-container {
+    margin-top: 5px;
+    border: 1px solid #7da31a;
 }
+
+.video-pdf-button {
+    margin-top: 5px;
+    width: 100%;
+    cursor: pointer;    
+}
+
+.text-video-link {
+    border: none;
+    text-decoration: underline;
+    font-size: 10pt;
+    color: #393939;
+    background-color: transparent;
+}
+
+.help-description {
+    background-color: #bbdb88;
+    min-height: 50px;
+}
+
+
+

@@ -1,3 +1,5 @@
 **/*.map
+**/*.pdf
 node_modules
 *.sln
+
