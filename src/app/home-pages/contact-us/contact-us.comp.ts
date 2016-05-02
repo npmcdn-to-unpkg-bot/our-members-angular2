@@ -5,7 +5,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
     selector: 'contact-us',
 
     templateUrl: 'src/app/home-pages/contact-us/contact-us.html',
-    styleUrls: ['src/app/home-pages/styles/home-pages.css'],
+    styleUrls: ['src/app/home-pages/styles/home-pages.css', 'src/app/home-pages/contact-us/contact-us.css'],
     directives: [ROUTER_DIRECTIVES]
 })
 

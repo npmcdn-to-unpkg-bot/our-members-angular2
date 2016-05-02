@@ -5,8 +5,7 @@
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
-    width: 100%;
-    margin-top: 5px;
+    margin: 10px 0;
 }
 
 
@@ -17,7 +16,6 @@
 
 .action-button {
     width: 94%;
-    height: 70px;
     font-size: 16pt;
     font-weight: bold;
     color: white;
@@ -88,6 +86,10 @@
     color: white;
 }
 
+.sms-button:hover {
+    background-color: #1A76D8;
+}
+
 .sms-buttons-container {
     margin: 10px 0 0 0;
     padding: 10px 4% 10px 4%;
@@ -116,12 +118,6 @@
     }
 }
 
-@media only screen and (max-width: 500px) {
-    .action-button {
-        height: 100px;
-    }
-}
-
 .Body-C {
     font-weight: 700;
     font-size: 12pt;
@@ -133,3 +129,26 @@
     line-height: 1.71em;
 }
 
+.text-video-link {
+    border: none;
+    text-decoration: underline;
+    font-size: 10pt;
+    color: #393939;
+    background-color: transparent;
+}
+
+.video-pdf-button {
+    margin-top: 5px;
+    width: 100%;
+    /*cursor: pointer;*/    
+}
+
+.footer-button {
+    color: white;
+    background-color: black;
+    text-decoration: underline;
+    border: none;
+    font-size: large;
+    margin: 10px 0 20px 0;
+    padding: 5px 0;
+}

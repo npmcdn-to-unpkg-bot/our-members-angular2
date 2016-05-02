@@ -33,20 +33,6 @@
     border: 1px solid #7da31a;
 }
 
-.video-pdf-button {
-    margin-top: 5px;
-    width: 100%;
-    cursor: pointer;    
-}
-
-.text-video-link {
-    border: none;
-    text-decoration: underline;
-    font-size: 10pt;
-    color: #393939;
-    background-color: transparent;
-}
-
 .help-description {
     background-color: #bbdb88;
     min-height: 50px;

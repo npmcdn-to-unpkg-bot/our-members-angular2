@@ -6,7 +6,6 @@ import {HelperService} from '../../helper/helper.serv';
 import {HomePage}  from '../home-page/home-page.comp';
 import {AboutTrialPeriodComponent}  from '../about-trial-period/about-trial-period.comp';
 import {ContactUsComponent}  from '../contact-us/contact-us.comp';
-import {SubscribeComponent}  from '../subscribe/subscribe.comp';
 import {RegisterComponent}  from '../register/register.comp';
 import {AboutMemberListComponent}  from '../about-member-list/about-member-list.comp';
 import {AboutRemindersComponent}  from '../about-reminders/about-reminders.comp';
@@ -19,6 +18,7 @@ import {AboutUsComponent}  from '../about-us/about-us.comp';
 import {TermsComponent}  from '../terms/terms.comp';
 import {PrivacyComponent}  from '../privacy/privacy.comp';
 
+
 @Component({
     //selector: 'home-page',
     styleUrls: ['src/app/home-pages/styles/home-pages.css'],
@@ -29,7 +29,6 @@ import {PrivacyComponent}  from '../privacy/privacy.comp';
     { path: '/home-page-content', name: 'HomePageContent', component: HomePage, useAsDefault: true },
     { path: '/about-trial-period-content', name: 'AboutTrialPeriodContent', component: AboutTrialPeriodComponent },
     { path: '/contact-us', name: 'ContactUsComponent', component: ContactUsComponent },
-    { path: '/subscribe', name: 'SubscribeComponent', component: SubscribeComponent },
     { path: '/register', name: 'RegisterComponent', component: RegisterComponent },
     { path: '/about-member-list', name: 'AboutMemberListComponent', component: AboutMemberListComponent },
     { path: '/about-reminders', name: 'AboutRemindersComponent', component: AboutRemindersComponent },

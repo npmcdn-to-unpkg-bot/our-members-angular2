@@ -45,38 +45,24 @@
         </li>
     </ul>
 </div>
-<div style="border: 7px solid #7da31a; width: 600px; height: 240px; background-color: #bbdb88;
-        z-index: 1; margin-top: 10px;">
-    <div style="width: 100%; background: #7da31a;">
-        <span style="display: block; padding-left: 70px; color: #ffffff; font-size: 14pt; font-weight: bold; font-family: Verdana;">
-            We want iBlong2
-            to work for you.
-        </span>
+<div class="clearfix work-for-you-container">
+    <div class="work-for-you">
+        We want iBlong2
+        to work for you.
     </div>
-    <dx:ASPxImage ID="ASPxImage1" runat="server" ImageUrl="~/image folder/Mobile_phone.gif"
-                  ImageAlign="Left" Style="z-index: -1">
-    </dx:ASPxImage>
-    <div style="padding-left: 80px; padding-top: 10px;">
+    <img class="mobile-image" src="../../../../images/Mobile_phone.gif" />
+    <p>
         <span class="Body-text">
             We want our software to work for you. We are always open
             to suggestions and requests and promise to respond to any contact that we receive
             from you in a timely manner.
         </span>
-        <p>
-            <span class="Body-text">
-                Please if you wish to talk to us about what iBlong2 can do for
-                your organisation, contact us and we’ll be happy to discuss it with you.
-            </span>
-        </p>
-        <div style="padding-left: 140px">
-            <dx:ASPxButton ID="ASPxButton1" runat="server" Text="Contact Us" CssClass="NoStyle"
-                           EnableTheming="False" Height="40px" Width="120px" BackColor="#393939" Font-Names="Verdana"
-                           Font-Size="12pt" ForeColor="Orange" Cursor="pointer" PostBackUrl="~/HomePages/contactusWM.aspx">
-                <PressedStyle BackColor="#393939">
-                </PressedStyle>
-                <HoverStyle BackColor="Gray">
-                </HoverStyle>
-            </dx:ASPxButton>
-        </div>
-    </div>
+    </p>
+    <p>
+        <span class="Body-text">
+            Please if you wish to talk to us about what iBlong2 can do for
+            your organisation, contact us and we’ll be happy to discuss it with you.
+        </span>
+    </p>
+    <button class="contact-us-button" type="button">Contact Us</button>
 </div>

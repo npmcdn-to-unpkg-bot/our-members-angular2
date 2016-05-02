@@ -8,11 +8,28 @@
     font-weight: bold;
 }
 
-.subhead {
+.three-months-container {
+    border: 7px solid #7da31a;
+    background-color: #bbdb88;
+    margin-bottom: 10px;
+}
+
+.three-months-header {
+    background-color: #7da31a;
+    padding-left: 20px;
     color: White;
-    font-size: 13.5pt;
-    background: #bdba00;
-    padding-left: 10px;
+    font-weight: 700;
+    font-size: 21.0px;
+    line-height: 1.19em;
+}
+
+.three-months-image {
+    width: 10%;
+    float: right;
+    margin: 10px 2% 0 2%;
+}
+
+.three-months-text {
+    padding-left: 20px;
     padding-top: 10px;
-    padding-bottom: 10px;
 }

@@ -40,7 +40,7 @@ System.register(['angular2/core', 'angular2/router', '../helper/helper.serv', '.
                 function AppComponent() {
                     this.title = 'iB2';
                     this.tokenValid = helper_serv_1.HelperService.tokenIsValid();
-                    this.threeLineButtonDisplay = '';
+                    this.threeLineButtonDisplay = 'none';
                     console.log('constructor AppComponent');
                 }
                 AppComponent.prototype.showHideThreeLineButton = function () {

@@ -1,6 +1,7 @@
 ﻿.reminders-image {
     float: right;
     margin: 6px;
+    width: 15%;
 }
 
 .test-drive {
@@ -9,16 +10,22 @@
 }
 
 
-.test-drive-image {
-    float: right;
-    width: 30%;
-    margin: 2%;
+
+.test-drive-text {
+    line-height: 1.19em;
+    font-weight: 700;
+    font-size: 21.0px;
+    padding: 10px 2%;
+    color: White;
+    padding-left: 10px;
+    background-color: #dc9000;
 }
 
-.Body-C-C1 {
-    font-weight: 700;
-    color: #393939;
-    background: #dc9000;
-    font-size: 21.0px;
-    line-height: 1.19em;
+.reminers-test-drive-button {
+    width: 40%;
+    margin-bottom: 10px;
+}
+
+.test-drive-text-content {
+padding: 10px 2%;
 }

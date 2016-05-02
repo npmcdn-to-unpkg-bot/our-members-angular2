@@ -5,7 +5,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
     selector: 'register',
 
     templateUrl: 'src/app/home-pages/register/register.html',
-    styleUrls: ['src/app/home-pages/styles/home-pages.css'],
+    styleUrls: ['src/app/home-pages/styles/home-pages.css', 'src/app/home-pages/register/register.css'],
     directives: [ROUTER_DIRECTIVES]
 })
 

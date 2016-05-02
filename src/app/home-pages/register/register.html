@@ -1,25 +1,13 @@
-﻿<div style="width: 900px; margin-top: 60px;">
-    <div style="float: left; width: 150px; margin-left: 50px; margin-right: 30px;">
-        <dx:ASPxButton ID="ASPxButton2" runat="server" AutoPostBack="False" ClientIDMode="AutoID"
-                       Width="100px" Height="100px" Image-ToolTip="Click to see help video" Image-Url="~/image folder/video.png"
-                       HorizontalAlign="Center" VerticalAlign="Middle" Image-Height="100px" Image-Width="100px"
-                       Cursor="pointer" CssClass="NoStyle" EnableTheming="False">
-            <ClientSideEvents Click="function(s, e) {globalFunctionsObj.ShowVideo('Register');}" />
-            <Paddings Padding="0px" />
-        </dx:ASPxButton>
-        <div style="padding-top: 50px;">
-            <asp:Image ID="Image1" runat="server" ImageUrl="~/image folder/rapidssl_ssl_certificate.gif" />
-        </div>
+﻿<div class="row">
+    <div class="col-sm-2">
+        <a class="text-video-link" href="https://www.youtube.com/embed/4gPBO6yUK18" target="_blank">
+            <img class="video-pdf-button" src="../../../../images/video.png" />
+        </a>
     </div>
-    <div style="width: 600px; font-family: Verdana; font-size: 11pt; color: #393939;
-            float: left;">
-        <div style="background-color: #BDBA00; font-size: 24pt; font-weight: normal; color: #FFFFFF;
-                font-family: Verdana;">
+    <div class="col-sm-10">
+        <div class="mainheading">
             Welcome to iBlong2
         </div>
-        <br />
-        <br />
-        <br />
         <span style="font-family: Verdana; font-size: 16pt">Creating your User Account and Login</span>
         <br />
         <br />
@@ -41,138 +29,71 @@
         <br />
     </div>
 </div>
-<div style="width: 570px; float: left; margin-left: 270px; margin-bottom: 50px; margin-right: 250px;
-        margin-top: 30px">
-    <div style="background-color: #bdba00; font-family: Verdana; color: White; font-size: 18pt; width: 400px; padding-left: 100px;">
+
+
+<div>
+    <div style="background-color: #bdba00; color: White; font-size: 18pt; text-align:center;">
         Create Organisation Account
     </div>
-    <div style="width: 400px; background-color: #393939; padding: 50px; color: white;">
-
-        <%--    <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: large">
-            Sorry<br />
-            iBlong2 will be closed for scheduled maintenance until 9am Sat 29th August 2015<br />
-            We apologise for any inconvenience<br />
-            <br />
-        </div>--%>
-
-        <div class="row" style="width: 400px;">
-            <div class="label">
-                <dx:ASPxLabel ID="AspxLabel15" runat="server" Text="Organisation Name" AssociatedControlID="REGISTER_txtOrganisationName">
-                </dx:ASPxLabel>
+    <div style="background-color: #393939; color: white; padding: 10px 2%">
+        <div class="row">
+            <div class="col-sm-6 form-label">
+                Organisation Name
             </div>
-            <div class="control">
-                <dx:ASPxTextBox ID="REGISTER_txtOrganisationName" runat="server" Width="170px" ClientInstanceName="REGISTER_txtOrganisationName">
-                </dx:ASPxTextBox>
+            <div class="col-sm-6 control">
+                <input type="text" />
             </div>
         </div>
-        <div class="row" style="width: 400px;">
-            <div class="label">
-                <dx:ASPxLabel ID="AspxLabel16" runat="server" Text="User Name" ClientIDMode="AutoID">
-                </dx:ASPxLabel>
+        <div class="row">
+            <div class="col-sm-6 form-label">
+                User Name
             </div>
-            <div class="control">
-                <dx:ASPxTextBox ID="REGISTER_txtRegisterUserName" runat="server" Width="170px" ClientInstanceName="REGISTER_txtRegisterUserName"
-                                ClientIDMode="AutoID">
-                    <ClientSideEvents LostFocus="function(s, e) {registerObj.TestUserNameUnique();}" />
-                </dx:ASPxTextBox>
-            </div>
-            <div class="row" style="width: 400px;">
-                <div class="control">
-                    <dx:ASPxLabel ID="REGISTER_lblAlreadyUsed" runat="server" Text="This name is already registered. Please choose another."
-                                  ClientInstanceName="REGISTER_lblAlreadyUsed" ClientVisible="False" ForeColor="Red"
-                                  Font-Bold="True" Font-Names="Tahoma,Arial,Helvetica">
-                    </dx:ASPxLabel>
+            <div class="col-sm-6 control">
+                <input type="text" />
+                <div style="color: red; font-weight: bold;">
+                    <!--<div style="color: red; font-weight: bold;" [hidden]="?????????????????">-->
+                    This User Name is already registered. Please choose another.
                 </div>
             </div>
         </div>
-        <div class="row" style="width: 400px;">
-            <div class="label">
-                <dx:ASPxLabel ID="AspxLabel18" runat="server" Text="Password" ClientIDMode="AutoID">
-                </dx:ASPxLabel>
+        <div class="row">
+            <div class="col-sm-6 form-label">
+                Password
             </div>
-            <div class="control">
-                <dx:ASPxTextBox ID="ASPxTextBox4" runat="server" Width="170px" ClientInstanceName="REGISTER_txtPassword"
-                                Password="True">
-                </dx:ASPxTextBox>
+            <div class="col-sm-6 control">
+                <input type="password" />
             </div>
         </div>
-        <div class="row" style="width: 400px;">
-            <div class="label">
-                <dx:ASPxLabel ID="AspxLabel19" runat="server" Text="Confirm Password" ClientIDMode="AutoID">
-                </dx:ASPxLabel>
+        <div class="row">
+            <div class="col-sm-6 form-label">
+                Email
             </div>
-            <div class="control">
-                <dx:ASPxTextBox ID="REGISTER_txtConfirmPassword" runat="server" Width="170px" ClientInstanceName="REGISTER_txtConfirmPassword"
-                                Password="True">
-                </dx:ASPxTextBox>
+            <div class="col-sm-6 control">
+                <input type="email" />
             </div>
         </div>
-        <div class="row" style="width: 400px;">
-            <div class="label">
-                <dx:ASPxLabel ID="AspxLabel20" runat="server" Text="Email" ClientIDMode="AutoID">
-                </dx:ASPxLabel>
+        <div class="row">
+            <div class="col-sm-6 form-label">
+                I have read and agree to iBlong2's Terms of Use
             </div>
-            <div class="control">
-                <dx:ASPxTextBox ID="REGISTER_txtEmail" runat="server" Width="170px" ClientInstanceName="REGISTER_txtEmail">
-                </dx:ASPxTextBox>
+            <div class="col-sm-6 control">
+                <input type="checkbox" />
             </div>
         </div>
-        <div class="row" style="width: 400px;">
-            <div class="label">
-                <dx:ASPxLabel ID="AspxLabel21" runat="server" Text="Please re-enter Email" ClientIDMode="AutoID">
-                </dx:ASPxLabel>
+        <div class="row">
+            <div class="col-sm-6 form-label">
             </div>
-            <div class="control">
-                <dx:ASPxTextBox ID="REGISTER_txtConfirmEmail" runat="server" Width="170px" ClientInstanceName="REGISTER_txtConfirmEmail">
-                </dx:ASPxTextBox>
+            <div class="col-sm-6 control">
+                <a class="terms" [routerLink]="['TermsComponent']">Read Terms of Use</a>
             </div>
         </div>
-        <div class="row" style="width: 400px;">
-            <div class="label">
-                <dx:ASPxLabel ID="AspxLabel1" runat="server" Text="Country" ClientIDMode="AutoID">
-                </dx:ASPxLabel>
+        <div class="row">
+            <div class="col-sm-6 form-label">
             </div>
-            <div class="control">
-                <dx:ASPxComboBox ID="REGISTER_cmbCountry" runat="server"
-                                 ClientInstanceName="REGISTER_cmbCountry" ValueField="CountryID" ValueType="System.Int32">
-                    <Columns>
-                        <dx:ListBoxColumn Caption="Name" FieldName="Name" Name="Name" />
-                    </Columns>
-                </dx:ASPxComboBox>
+            <div class="col-sm-6 control">
+                <button class="register-button" type="button">Create Account</button>
             </div>
         </div>
-        <div class="row" style="width: 400px;">
-            <div class="label" style="float: left; width: 290px;">
-                <dx:ASPxLabel ID="AspxLabel22" runat="server" Text="I have read and agree to iBlong2's Terms of Use"
-                              Font-Names="Tahoma" Font-Size="10pt">
-                </dx:ASPxLabel>
-            </div>
-            <div style="float: left; width: 100px;">
-                <dx:ASPxCheckBox ID="REGISTER_chkTermsOfUse" runat="server" ClientInstanceName="REGISTER_chkTermsOfUse">
-                </dx:ASPxCheckBox>
-            </div>
-            <div style="width: 300px; text-align: center;">
-                <dx:ASPxHyperLink ID="ASPxHyperLink1" runat="server" Text="Read Terms of Use" NavigateUrl="~/HomePages/termsWM.aspx"
-                                  Font-Size="11pt" Font-Underline="True" ForeColor="#7DA31A" Target="_blank">
-                </dx:ASPxHyperLink>
-            </div>
-        </div>
-        <dx:ASPxCallback ID="REGISTER_ASPxCallback" runat="server" ClientInstanceName="REGISTER_ASPxCallback">
-            <ClientSideEvents CallbackComplete="function(s, e) {registerObj.CallbackComplete(e);}" />
-        </dx:ASPxCallback>
-        <div class="row" style="width: 400px; padding-top: 20px;">
-            <div style="float: left; margin-left: 90px; width: 218px;">
-                <dx:ASPxButton ID="ASPxButton1" runat="server" Text="Create Account" ClientIDMode="AutoID"
-                               Font-Size="13pt" Width="200px" AutoPostBack="False" EnableTheming="False" CssClass="NoStyle"
-                               BackColor="#7DA31A" HoverStyle-BackColor="#B0DE00" PressedStyle-BackColor="#51800C"
-                               Cursor="pointer" Font-Names="Verdana" ForeColor="White" Height="30px">
-                    <ClientSideEvents Click="function(s, e) {registerObj.RegisterOrganisation();}" />
-                    <PressedStyle BackColor="#51800C">
-                    </PressedStyle>
-                    <HoverStyle BackColor="#B0DE00">
-                    </HoverStyle>
-                </dx:ASPxButton>
-            </div>
-        </div>
+       
     </div>
 </div>

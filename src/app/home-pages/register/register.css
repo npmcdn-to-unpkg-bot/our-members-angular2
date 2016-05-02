@@ -1,2 +1,19 @@
-﻿body {
+﻿.terms {
+    color: #7DA31A;
+    text-decoration: underline;
+    font-size: large;
 }
+
+.register-button {
+    margin-top: 20px;
+    padding: 10px 4%;
+    color: White;
+    background-color: #7DA31A;
+    font-size: larger;
+    border: none;
+}
+
+
+    .register-button:hover {
+        background-color: #B0DE00;
+    }

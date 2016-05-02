@@ -31,7 +31,7 @@ export class AppComponent {
     public title = 'iB2';
     tokenValid: boolean = HelperService.tokenIsValid();
 
-    threeLineButtonDisplay: string = '';
+    threeLineButtonDisplay: string = 'none';
 
     showHideThreeLineButton(): void {
         if (this.threeLineButtonDisplay === 'none') {

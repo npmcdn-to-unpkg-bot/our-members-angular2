@@ -1,12 +1,12 @@
 ﻿.header-button, .header-login-button {
-    width: 90%;
-    margin-left: 5%;
+    width: 94%;
+    margin-left: 3%;
     color: white;
     background-color: #7DA31A;
-    border: none;
     font-size: large;
     margin-top: 10px;
     margin-bottom: 10px;
+    border: none;
 }
 
     .header-button:hover {

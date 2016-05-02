@@ -1,2 +1,13 @@
-﻿body {
+﻿.about-us-image {
+    margin: 10px;
+    width: 30%;
+    float: left;
 }
+
+.about-us-help {
+    padding: 2%;
+    background-color: #e6e180;
+    font-size: 11pt;
+}
+
+

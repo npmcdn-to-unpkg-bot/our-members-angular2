@@ -25,11 +25,12 @@
 
 .contact-us {
     height: 40px;
-    width: 120px;
     background-color: #393939;
     font-size: 12pt;
     color: Orange;
     border: none;
+    padding: 10px 4%;
+    margin: 10px 4%;
 }
 
     .contact-us:hover {
@@ -39,5 +40,5 @@
 .MembershipListsImage {
     width: 30%;
     float: right;
-    margin-top: 10px;;
+    margin-top: 10px;
 }
