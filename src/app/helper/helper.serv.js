@@ -28,10 +28,10 @@ System.register([], function(exports_1, context_1) {
                     }
                     return false;
                 };
-                //static getServiceBase(): string {
-                //    return 'https://solsofoz.azurewebsites.net/';
-                //    //return 'http://localhost:10614/';
-                //}
+                HelperService.getServiceBase = function () {
+                    //return 'https://??????????.azurewebsites.net/';
+                    return 'http://localhost:8028/';
+                };
                 HelperService.getTokenName = function () {
                     return 'id_token';
                 };

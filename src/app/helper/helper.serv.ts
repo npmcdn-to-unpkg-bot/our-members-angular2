@@ -27,12 +27,10 @@ export class HelperService {
         return false;
     }
 
-    //static getServiceBase(): string {
-    //    return 'https://solsofoz.azurewebsites.net/';
-    //    //return 'http://localhost:10614/';
-
-
-    //}
+    static getServiceBase(): string {
+        //return 'https://??????????.azurewebsites.net/';
+        return 'http://localhost:8028/';
+    }
 
     static getTokenName(): string {
         return 'id_token';
