@@ -58,6 +58,16 @@
                 <label for="inputEmail">Email</label>
                 <input type="email" [(ngModel)]="register.Email" class="form-control" #inputEmail="ngForm" required ngControl="ngcEmail" />
             </div>
+
+            <div class="form-group">
+                <label for="cmbCountries">Country</label>
+                <select class="form-control" required #cmbCountries ngControl="ngcCountries" [(ngModel)]="register.CountryID">
+                    <option *ngFor="#country of countries" [value]="country.CountryID">
+                        {{ country.Name }}
+                    </option>
+                </select>
+            </div>
+
             <div class="form-group">
                 <label for="chkTermsOfUse">I have read and agree to iBlong2's Terms of Use</label>
                 <input type="checkbox" [(ngModel)]="register.TermsOfUse" class="form-control" #chkTermsOfUse="ngForm" required ngControl="ngcTermsOfUse" />
@@ -66,7 +76,7 @@
                 <a class="terms" [routerLink]="['TermsComponent']">Read Terms of Use</a>
             </div>
             <div class="form-group">
-                <button class="register-button" type="button">Create Account</button>
+                <button class="register-button" type="submit">Create Account</button>
             </div>
         </form>
     </div>

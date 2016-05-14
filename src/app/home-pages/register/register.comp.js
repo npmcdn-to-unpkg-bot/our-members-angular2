@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../../countries/countries.serv'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', '../../countries/countries.serv', './register.serv'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', '../../countries/countries.
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, countries_serv_1;
+    var core_1, router_1, countries_serv_1, register_serv_1;
     var RegisterComponent;
     return {
         setters:[
@@ -22,12 +22,16 @@ System.register(['angular2/core', 'angular2/router', '../../countries/countries.
             },
             function (countries_serv_1_1) {
                 countries_serv_1 = countries_serv_1_1;
+            },
+            function (register_serv_1_1) {
+                register_serv_1 = register_serv_1_1;
             }],
         execute: function() {
             RegisterComponent = (function () {
-                function RegisterComponent(countriesService) {
+                function RegisterComponent(countriesService, registerService) {
                     var _this = this;
                     this.countriesService = countriesService;
+                    this.registerService = registerService;
                     this.register = {
                         OrganisationName: '',
                         RegisterUserName: '',
@@ -37,6 +41,18 @@ System.register(['angular2/core', 'angular2/router', '../../countries/countries.
                         TermsOfUse: false
                     };
                     this.countries = [];
+                    this.okClicked = function () {
+                        _this.registerService.saveNewRegister(_this.register).subscribe(addRegistrationSuccess, logError, complete);
+                        function addRegistrationSuccess() {
+                            console.log('addRegistrationSuccess');
+                        }
+                        function logError() {
+                            console.log('logError');
+                        }
+                        function complete() {
+                            console.log('complete');
+                        }
+                    };
                     this.loadCountries = function () {
                         var loadCountriesThis = _this;
                         _this.countriesService.getCountries().subscribe(onGetCountriesSuccess, logCountriesError, complete);
@@ -63,9 +79,9 @@ System.register(['angular2/core', 'angular2/router', '../../countries/countries.
                         templateUrl: 'src/app/home-pages/register/register.html',
                         styleUrls: ['src/app/home-pages/styles/home-pages.css', 'src/app/home-pages/register/register.css'],
                         directives: [router_1.ROUTER_DIRECTIVES],
-                        providers: [countries_serv_1.CountriesService]
+                        providers: [countries_serv_1.CountriesService, register_serv_1.RegisterService]
                     }), 
-                    __metadata('design:paramtypes', [countries_serv_1.CountriesService])
+                    __metadata('design:paramtypes', [countries_serv_1.CountriesService, register_serv_1.RegisterService])
                 ], RegisterComponent);
                 return RegisterComponent;
             }());

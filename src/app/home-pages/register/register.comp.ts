@@ -1,6 +1,7 @@
 ﻿import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {CountriesService} from '../../countries/countries.serv';
+import {RegisterService} from './register.serv';
 
 @Component({
     selector: 'register',
@@ -8,11 +9,11 @@ import {CountriesService} from '../../countries/countries.serv';
     templateUrl: 'src/app/home-pages/register/register.html',
     styleUrls: ['src/app/home-pages/styles/home-pages.css', 'src/app/home-pages/register/register.css'],
     directives: [ROUTER_DIRECTIVES],
-    providers: [CountriesService]
+    providers: [CountriesService, RegisterService]
 })
 
 export class RegisterComponent {
-    constructor(private countriesService: CountriesService) {
+    constructor(private countriesService: CountriesService, private registerService: RegisterService) {
         console.log('constructor RegisterComponent ');
     }
 
@@ -24,11 +25,27 @@ export class RegisterComponent {
         CountryID: -1,
         TermsOfUse: false
     };
-    countries: structIdName[] = [];
+    countries: any[] = [];
+
+
     onGetCountriesSuccess: boolean
 
     ngOnInit() {
         this.loadCountries();
+    }
+
+
+    okClicked = () => {
+        this.registerService.saveNewRegister(this.register).subscribe(addRegistrationSuccess, logError, complete);
+        function addRegistrationSuccess() {
+            console.log('addRegistrationSuccess')
+        }
+        function logError() {
+            console.log('logError')
+        }
+        function complete() {
+            console.log('complete')
+        }
     }
 
     loadCountries = () => {
