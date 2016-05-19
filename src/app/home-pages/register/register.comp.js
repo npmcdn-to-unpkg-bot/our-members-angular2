@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../../countries/countries.serv', './register.serv'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', '../../countries/countries.serv', './register.serv', '../../services/user-name/user-name.serv'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', '../../countries/countries.
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, countries_serv_1, register_serv_1;
+    var core_1, router_1, countries_serv_1, register_serv_1, user_name_serv_1;
     var RegisterComponent;
     return {
         setters:[
@@ -25,13 +25,17 @@ System.register(['angular2/core', 'angular2/router', '../../countries/countries.
             },
             function (register_serv_1_1) {
                 register_serv_1 = register_serv_1_1;
+            },
+            function (user_name_serv_1_1) {
+                user_name_serv_1 = user_name_serv_1_1;
             }],
         execute: function() {
             RegisterComponent = (function () {
-                function RegisterComponent(countriesService, registerService) {
+                function RegisterComponent(countriesService, registerService, userNameService) {
                     var _this = this;
                     this.countriesService = countriesService;
                     this.registerService = registerService;
+                    this.userNameService = userNameService;
                     this.register = {
                         OrganisationName: '',
                         RegisterUserName: '',
@@ -65,13 +69,29 @@ System.register(['angular2/core', 'angular2/router', '../../countries/countries.
                             loadCountriesThis.countries = Countries;
                         }
                         function complete() {
-                            console.log('loadDebtors complete');
+                            console.log('getCountries complete');
+                        }
+                    };
+                    this.userNameBlur = function () {
+                        var userNameBlurThis = _this;
+                        _this.userNameService.checkUserName(userNameBlurThis.register.RegisterUserName).subscribe(onCheckUserNameSuccess, logCheckUserNameError, complete);
+                        function logCheckUserNameError(e) {
+                            console.log('userNameBlur Error');
+                            console.log(e);
+                            userNameBlurThis.UserNameDuplicate = false;
+                        }
+                        function onCheckUserNameSuccess(UserNameDuplicate) {
+                            userNameBlurThis.UserNameDuplicate = UserNameDuplicate;
+                        }
+                        function complete() {
+                            console.log('userNameBlur complete');
                         }
                     };
                     console.log('constructor RegisterComponent ');
                 }
                 RegisterComponent.prototype.ngOnInit = function () {
                     this.loadCountries();
+                    this.UserNameDuplicate = false;
                 };
                 RegisterComponent = __decorate([
                     core_1.Component({
@@ -79,9 +99,9 @@ System.register(['angular2/core', 'angular2/router', '../../countries/countries.
                         templateUrl: 'src/app/home-pages/register/register.html',
                         styleUrls: ['src/app/home-pages/styles/home-pages.css', 'src/app/home-pages/register/register.css'],
                         directives: [router_1.ROUTER_DIRECTIVES],
-                        providers: [countries_serv_1.CountriesService, register_serv_1.RegisterService]
+                        providers: [countries_serv_1.CountriesService, register_serv_1.RegisterService, user_name_serv_1.UserNameService]
                     }), 
-                    __metadata('design:paramtypes', [countries_serv_1.CountriesService, register_serv_1.RegisterService])
+                    __metadata('design:paramtypes', [countries_serv_1.CountriesService, register_serv_1.RegisterService, user_name_serv_1.UserNameService])
                 ], RegisterComponent);
                 return RegisterComponent;
             }());

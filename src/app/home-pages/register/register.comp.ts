@@ -2,6 +2,8 @@
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {CountriesService} from '../../countries/countries.serv';
 import {RegisterService} from './register.serv';
+import {UserNameService} from  '../../services/user-name/user-name.serv';
+
 
 @Component({
     selector: 'register',
@@ -9,11 +11,11 @@ import {RegisterService} from './register.serv';
     templateUrl: 'src/app/home-pages/register/register.html',
     styleUrls: ['src/app/home-pages/styles/home-pages.css', 'src/app/home-pages/register/register.css'],
     directives: [ROUTER_DIRECTIVES],
-    providers: [CountriesService, RegisterService]
+    providers: [CountriesService, RegisterService, UserNameService]
 })
 
 export class RegisterComponent {
-    constructor(private countriesService: CountriesService, private registerService: RegisterService) {
+    constructor(private countriesService: CountriesService, private registerService: RegisterService, private userNameService: UserNameService) {
         console.log('constructor RegisterComponent ');
     }
 
@@ -32,6 +34,7 @@ export class RegisterComponent {
 
     ngOnInit() {
         this.loadCountries();
+        this.UserNameDuplicate = false;
     }
 
 
@@ -61,7 +64,26 @@ export class RegisterComponent {
             loadCountriesThis.countries = Countries;
         }
         function complete() {
-            console.log('loadDebtors complete');
+            console.log('getCountries complete');
         }
     };
+
+    UserNameDuplicate: boolean;
+
+    userNameBlur = () => {
+        var userNameBlurThis = this;
+        this.userNameService.checkUserName(userNameBlurThis.register.RegisterUserName).subscribe(onCheckUserNameSuccess, logCheckUserNameError, complete);
+        function logCheckUserNameError(e: any) {
+            console.log('userNameBlur Error');
+            console.log(e);
+            userNameBlurThis.UserNameDuplicate = false;
+        }
+
+        function onCheckUserNameSuccess(UserNameDuplicate: boolean) {
+            userNameBlurThis.UserNameDuplicate = UserNameDuplicate;
+        }
+        function complete() {
+            console.log('userNameBlur complete');
+        }
+    }
 }

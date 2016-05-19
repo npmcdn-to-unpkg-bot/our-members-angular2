@@ -10,9 +10,9 @@ export class CountriesService {
         console.log('constructor CountriesService');
     }
 
-    parseResponse(res: Response) {
-        return res.json();
-    }
+    //parseResponse(res: Response) {
+    //    return res.json();
+    //}
 
     getCountries() {
 

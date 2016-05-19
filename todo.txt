@@ -1,19 +1,5 @@
-﻿
+﻿Hide and validate
+This User Name is already registered. Please choose another.
 
+api for api/username-unique
 
-pages to convert:
-contact-us
-subscribe
-register
-about-member-list
-about-reminders
-about-finances
-about-communicate
-about-events
-subscription
-about-help
-about-us
-terms
-privacy
-
-check for .comp suffix
