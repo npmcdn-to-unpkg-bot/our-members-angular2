@@ -80,9 +80,15 @@ System.register(['angular2/core', 'angular2/router', '../../countries/countries.
                             console.log(e);
                             userNameBlurThis.UserNameDuplicate = false;
                         }
+                        //var lUserNameDuplicate: boolean
                         function onCheckUserNameSuccess(UserNameDuplicate) {
                             userNameBlurThis.UserNameDuplicate = UserNameDuplicate;
+                            //lUserNameDuplicate = UserNameDuplicate;
+                            //setTimeout(asdff, 1000);
                         }
+                        //function asdff() {
+                        //    userNameBlurThis.UserNameDuplicate = lUserNameDuplicate;
+                        //}
                         function complete() {
                             console.log('userNameBlur complete');
                         }

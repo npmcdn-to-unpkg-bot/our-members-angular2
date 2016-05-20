@@ -78,10 +78,16 @@ export class RegisterComponent {
             console.log(e);
             userNameBlurThis.UserNameDuplicate = false;
         }
-
+        //var lUserNameDuplicate: boolean
         function onCheckUserNameSuccess(UserNameDuplicate: boolean) {
             userNameBlurThis.UserNameDuplicate = UserNameDuplicate;
+            //lUserNameDuplicate = UserNameDuplicate;
+            //setTimeout(asdff, 1000);
         }
+        //function asdff() {
+        //    userNameBlurThis.UserNameDuplicate = lUserNameDuplicate;
+        //}
+
         function complete() {
             console.log('userNameBlur complete');
         }

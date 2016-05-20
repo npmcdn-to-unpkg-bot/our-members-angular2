@@ -31,12 +31,12 @@ System.register(['angular2/core', '../http-handler/http-handler.serv', 'angular2
                 }
                 UserNameService.prototype.checkUserName = function (userName) {
                     var parameter = {
-                        name: userName,
+                        name: 'UserName',
                         value: userName
                     };
                     var parameters = [parameter];
                     var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http);
-                    return httpHandlerService.getObject(parameters, 'api/username-unique', false);
+                    return httpHandlerService.getObject(parameters, 'api/usernameunique', false);
                 };
                 UserNameService = __decorate([
                     core_1.Injectable(), 

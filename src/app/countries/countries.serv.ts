@@ -1,8 +1,6 @@
 ﻿import {Injectable} from 'angular2/core';
-import {Http, Response} from 'angular2/http';
-
 import {HttpHandlerService} from  '../services/http-handler/http-handler.serv';
-
+import {Http} from 'angular2/http';
 
 @Injectable()
 export class CountriesService {
@@ -10,16 +8,17 @@ export class CountriesService {
         console.log('constructor CountriesService');
     }
 
-    //parseResponse(res: Response) {
-    //    return res.json();
-    //}
-
     getCountries() {
+
+
+
+
+
 
         var parameters: modSharedTypes.IHttpParameter[] = [];
 
         var httpHandlerService = new HttpHandlerService(this.http);
-        return httpHandlerService.getObject(parameters, 'api/countries', false );
+        return httpHandlerService.getObject(parameters, 'api/countries', false);
     }
 }
 

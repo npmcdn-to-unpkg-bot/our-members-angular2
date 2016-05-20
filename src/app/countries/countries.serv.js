@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http', '../services/http-handler/http-handler.serv'], function(exports_1, context_1) {
+System.register(['angular2/core', '../services/http-handler/http-handler.serv', 'angular2/http'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,18 +10,18 @@ System.register(['angular2/core', 'angular2/http', '../services/http-handler/htt
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, http_handler_serv_1;
+    var core_1, http_handler_serv_1, http_1;
     var CountriesService;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (http_1_1) {
-                http_1 = http_1_1;
-            },
             function (http_handler_serv_1_1) {
                 http_handler_serv_1 = http_handler_serv_1_1;
+            },
+            function (http_1_1) {
+                http_1 = http_1_1;
             }],
         execute: function() {
             CountriesService = (function () {
@@ -29,9 +29,6 @@ System.register(['angular2/core', 'angular2/http', '../services/http-handler/htt
                     this.http = http;
                     console.log('constructor CountriesService');
                 }
-                //parseResponse(res: Response) {
-                //    return res.json();
-                //}
                 CountriesService.prototype.getCountries = function () {
                     var parameters = [];
                     var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http);
