@@ -339,6 +339,15 @@ export class HelperService {
             return hour.toString() + ":" + minute.toString();
         }
     }
+
+    static saveTokenToStorage(userName: string, t: ITokenresponse) {
+        localStorage.setItem(this.C_tokenName, t.access_token);
+        var expiryDate: Date = new Date();
+        expiryDate.setSeconds(expiryDate.getSeconds() + t.expires_in);
+        localStorage.setItem(this.C_tokenExpiryDate, HelperService.formatDateAndTimeForJSon(expiryDate));
+        localStorage.setItem(this.C_userName, userName);
+        console.log('token added to localStorage');
+    }
 }
 
 

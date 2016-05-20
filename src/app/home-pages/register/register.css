@@ -17,3 +17,21 @@
     .register-button:hover {
         background-color: #B0DE00;
     }
+
+.create-organisation-title {
+    background-color: #bdba00;
+    color: White;
+    font-size: 18pt;
+    text-align: center;
+}
+
+.create-organisation-form {
+    background-color: #393939;
+    color: white;
+    padding: 10px 2%;
+    margin-bottom: 20px;
+}
+
+.font-size-large {
+    font-size: 16pt;
+}

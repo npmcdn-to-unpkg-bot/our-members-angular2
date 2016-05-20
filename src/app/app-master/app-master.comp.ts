@@ -18,8 +18,7 @@ import {OrganisationAdminPageComponent} from  '../organisation-admin-pages/organ
 @RouteConfig([
     { path: '/', redirectTo: ['HomePageMaster'] },
     { path: '/home-page-master/...', name: 'HomePageMaster', component: HomePageMasterComponent },
-    { path: '/organisation-admin-pages', name: 'OrganisationAdminPage', component: OrganisationAdminPageComponent },
-    //{ path: '/about-trial-period', name: 'AboutTrialPeriod', component: AboutTrialPeriodComponent }
+    { path: '/organisation-admin-pages', name: 'OrganisationAdminPage', component: OrganisationAdminPageComponent }
 ])
 
 export class AppComponent {

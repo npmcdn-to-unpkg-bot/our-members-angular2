@@ -61,7 +61,7 @@ System.register(['angular2/core', 'angular2/router', '../helper/helper.serv', '.
                     router_1.RouteConfig([
                         { path: '/', redirectTo: ['HomePageMaster'] },
                         { path: '/home-page-master/...', name: 'HomePageMaster', component: home_page_master_comp_1.HomePageMasterComponent },
-                        { path: '/organisation-admin-pages', name: 'OrganisationAdminPage', component: organisation_admin_comp_1.OrganisationAdminPageComponent },
+                        { path: '/organisation-admin-pages', name: 'OrganisationAdminPage', component: organisation_admin_comp_1.OrganisationAdminPageComponent }
                     ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

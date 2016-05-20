@@ -305,6 +305,14 @@ System.register([], function(exports_1, context_1) {
                     return s;
                 };
                 ;
+                HelperService.saveTokenToStorage = function (userName, t) {
+                    localStorage.setItem(this.C_tokenName, t.access_token);
+                    var expiryDate = new Date();
+                    expiryDate.setSeconds(expiryDate.getSeconds() + t.expires_in);
+                    localStorage.setItem(this.C_tokenExpiryDate, HelperService.formatDateAndTimeForJSon(expiryDate));
+                    localStorage.setItem(this.C_userName, userName);
+                    console.log('token added to localStorage');
+                };
                 HelperService.sTrue = 'true';
                 HelperService.sFalse = 'false';
                 HelperService.C_tokenName = 'idToken';

@@ -1,4 +1,4 @@
-System.register(['angular2/router', 'angular2/core', '../home-pages-links/home-pages-links.comp', '../home-pages-bottom-buttons/home-pages-bottom-buttons.comp', '../home-page/home-page.comp', '../about-trial-period/about-trial-period.comp', '../contact-us/contact-us.comp', '../register/register.comp', '../about-member-list/about-member-list.comp', '../about-reminders/about-reminders.comp', '../about-finances/about-finances.comp', '../about-communicate/about-communicate.comp', '../about-events/about-events.comp', '../subscription/subscription.comp', '../about-help/about-help.comp', '../about-us/about-us.comp', '../terms/terms.comp', '../privacy/privacy.comp'], function(exports_1, context_1) {
+System.register(['angular2/router', 'angular2/core', '../home-pages-links/home-pages-links.comp', '../home-pages-bottom-buttons/home-pages-bottom-buttons.comp', '../home-page/home-page.comp', '../about-trial-period/about-trial-period.comp', '../contact-us/contact-us.comp', '../register/register.comp', '../about-member-list/about-member-list.comp', '../about-reminders/about-reminders.comp', '../about-finances/about-finances.comp', '../about-communicate/about-communicate.comp', '../about-events/about-events.comp', '../subscription/subscription.comp', '../about-help/about-help.comp', '../about-us/about-us.comp', '../terms/terms.comp', '../privacy/privacy.comp', '../login/login.comp'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/router', 'angular2/core', '../home-pages-links/home-p
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var router_1, core_1, home_pages_links_comp_1, home_pages_bottom_buttons_comp_1, home_page_comp_1, about_trial_period_comp_1, contact_us_comp_1, register_comp_1, about_member_list_comp_1, about_reminders_comp_1, about_finances_comp_1, about_communicate_comp_1, about_events_comp_1, subscription_comp_1, about_help_comp_1, about_us_comp_1, terms_comp_1, privacy_comp_1;
+    var router_1, core_1, home_pages_links_comp_1, home_pages_bottom_buttons_comp_1, home_page_comp_1, about_trial_period_comp_1, contact_us_comp_1, register_comp_1, about_member_list_comp_1, about_reminders_comp_1, about_finances_comp_1, about_communicate_comp_1, about_events_comp_1, subscription_comp_1, about_help_comp_1, about_us_comp_1, terms_comp_1, privacy_comp_1, login_comp_1;
     var HomePageMasterComponent;
     return {
         setters:[
@@ -67,6 +67,9 @@ System.register(['angular2/router', 'angular2/core', '../home-pages-links/home-p
             },
             function (privacy_comp_1_1) {
                 privacy_comp_1 = privacy_comp_1_1;
+            },
+            function (login_comp_1_1) {
+                login_comp_1 = login_comp_1_1;
             }],
         execute: function() {
             HomePageMasterComponent = (function () {
@@ -93,7 +96,8 @@ System.register(['angular2/router', 'angular2/core', '../home-pages-links/home-p
                         { path: '/about-help', name: 'AboutHelpComponent', component: about_help_comp_1.AboutHelpComponent },
                         { path: '/about-us', name: 'AboutUsComponent', component: about_us_comp_1.AboutUsComponent },
                         { path: '/terms', name: 'TermsComponent', component: terms_comp_1.TermsComponent },
-                        { path: '/privacy', name: 'PrivacyComponent', component: privacy_comp_1.PrivacyComponent }
+                        { path: '/privacy', name: 'PrivacyComponent', component: privacy_comp_1.PrivacyComponent },
+                        { path: '/login', name: 'LoginComponent', component: login_comp_1.LoginComponent }
                     ]), 
                     __metadata('design:paramtypes', [])
                 ], HomePageMasterComponent);

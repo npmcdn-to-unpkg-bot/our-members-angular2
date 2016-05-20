@@ -17,6 +17,7 @@ import {AboutHelpComponent}  from '../about-help/about-help.comp';
 import {AboutUsComponent}  from '../about-us/about-us.comp';
 import {TermsComponent}  from '../terms/terms.comp';
 import {PrivacyComponent}  from '../privacy/privacy.comp';
+import {LoginComponent}  from '../login/login.comp';
 
 
 @Component({
@@ -39,7 +40,8 @@ import {PrivacyComponent}  from '../privacy/privacy.comp';
     { path: '/about-help', name: 'AboutHelpComponent', component: AboutHelpComponent },
     { path: '/about-us', name: 'AboutUsComponent', component: AboutUsComponent },
     { path: '/terms', name: 'TermsComponent', component: TermsComponent },
-    { path: '/privacy', name: 'PrivacyComponent', component: PrivacyComponent }
+    { path: '/privacy', name: 'PrivacyComponent', component: PrivacyComponent },
+    { path: '/login', name: 'LoginComponent', component: LoginComponent }
 ])
 
 export class HomePageMasterComponent {

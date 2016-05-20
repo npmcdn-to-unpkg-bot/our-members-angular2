@@ -140,6 +140,7 @@
 .video-pdf-button {
     margin-top: 5px;
     width: 100%;
+    max-width: 100px;
     /*cursor: pointer;*/    
 }
 
