@@ -17,8 +17,8 @@ import {OrganisationAdminMasterComponent} from  '../organisation-admin-pages/org
 })
 @RouteConfig([
     //{ path: '/', redirectTo: ['HomePageMaster'] },
-    { path: '/home-page-master/...', name: 'HomePageMaster', component: HomePageMasterComponent},
-    { path: '/organisation-admin-master/...', name: 'OrganisationAdminMaster', component: OrganisationAdminMasterComponent, useAsDefault: true }
+        { path: '/home-page-master/...', name: 'HomePageMaster', component: HomePageMasterComponent, useAsDefault: true },
+    { path: '/organisation-admin-master/...', name: 'OrganisationAdminMaster', component: OrganisationAdminMasterComponent}
 ])
 
 export class AppComponent {
