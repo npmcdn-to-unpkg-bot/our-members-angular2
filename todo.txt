@@ -1,6 +1,5 @@
 ﻿organisation-admin-pages - send to login if no valid token
 
-add authentication to list members api
 publish api
 change getServiceBase to correct url
 

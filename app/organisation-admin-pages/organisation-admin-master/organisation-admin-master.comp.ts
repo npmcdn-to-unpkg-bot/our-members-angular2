@@ -18,7 +18,15 @@ import {SidebarMenuComponent} from '../sidebar-menu/sidebar-menu.comp';
 
 export class OrganisationAdminMasterComponent {
 
-    constructor() {
+    constructor(private router: Router) {
         console.log('constructor OrganisationAdminMasterComponent');
     }
+
+    ngOnInit() {
+        var tokenValid: boolean = HelperService.tokenIsValid();
+        if (tokenValid === false) {
+            this.router.parent.navigate(['HomePageMaster','LoginComponent']);
+        }
+    }
+
 }
