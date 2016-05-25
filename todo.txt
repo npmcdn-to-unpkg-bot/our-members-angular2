@@ -1,5 +1,6 @@
-﻿Hide and validate
-This User Name is already registered. Please choose another.
+﻿organisation-admin-pages - send to login if no valid token
 
-api for api/username-unique
+add authentication to list members api
+publish api
+change getServiceBase to correct url
 
