@@ -1,0 +1,58 @@
+﻿.organisation-admin-page-title {
+    color: #7DA31A;
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+.organisation-admin-page-menu-container {
+    background-color: #DEDDB3;
+    border: 1px solid #758D5E;
+    margin: 10px 0 0 0;
+}
+
+.organisation-admin-page-menu-header {
+    text-align: center;
+    background-color: #FFC076;
+}
+
+.organisation-admin-page-menu-item {
+    width: 100%;
+    background-color: inherit;
+    border: none;
+    text-align: left;
+}
+
+    .organisation-admin-page-menu-item:hover {
+        background-color: #FDD586;
+        outline: 1px dotted #758D5E;
+    }
+
+.radio-button-container {
+    /*padding: 5px 10% 5px 10%;*/
+}
+
+.radio-button {
+    margin: 0 2% 0;
+}
+
+.radio-button-element {
+    width: 100%;
+    padding: 2px 4%;
+}
+
+    .radio-button-element:hover {
+        background-color: #FDD586;
+        outline: 1px dotted #758D5E;
+    }
+
+.pdf-help {
+    max-height: 75px;
+    max-width: 90px;
+    margin: 10px 0;
+}
+
+.member-list-grid {
+    height: 800px;
+    width: 100%;
+}

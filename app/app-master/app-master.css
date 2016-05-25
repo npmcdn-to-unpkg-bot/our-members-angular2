@@ -1,0 +1,64 @@
+﻿.fullScreenDiv {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #999999;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+.header-and-footer-container {
+    background-color: black;
+}
+
+.three-line-button {
+    width: 100px;
+    height: 80px;
+    padding: 0 10px;
+    border: none;
+    background-color: #7DA31A;
+    float: right;
+    margin: 10px 4px 4px 4px;
+}
+
+.three-line-button-line, .three-line-button-line-not-top {
+    width: 100%;
+    background-color: black;
+    height: 6px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.three-line-button-line-not-top {
+    margin-top: 20px;
+}
+
+.app-master-logo {
+    height: 100px;
+}
+
+.header-button-container {
+    display: block;
+}
+
+.header-button-top-container {
+    display: none;
+}
+
+.three-line-button-row {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .header-button-container {
+        display: none;
+    }
+
+    .header-button-top-container {
+        display: block;
+    }
+
+    .three-line-button-row {
+        display: block;
+    }
+}

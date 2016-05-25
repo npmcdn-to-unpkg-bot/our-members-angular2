@@ -1,0 +1,38 @@
+﻿<h1 class="organisation-admin-page-title">Membership List</h1>
+<div class="row">
+    <div class="col-sm-3">
+        <div class="row organisation-admin-page-menu-container">
+            <div class="organisation-admin-page-menu-header">
+                Actions
+            </div>
+            <button type="button" class="organisation-admin-page-menu-item" (click)="xxx()">Add Member</button>
+            <button type="button" class="organisation-admin-page-menu-item" (click)="xxx()">Edit Member</button>
+            <button type="button" class="organisation-admin-page-menu-item" (click)="xxx()">Delete Member</button>
+            <button type="button" class="organisation-admin-page-menu-item" (click)="xxx()">Register Member</button>
+            <button type="button" class="organisation-admin-page-menu-item" (click)="xxx()">Receipt Member</button>
+            <button type="button" class="organisation-admin-page-menu-item" (click)="xxx()">Member Communication</button>
+            <button type="button" class="organisation-admin-page-menu-item" (click)="xxx()">Member Statement</button>
+            <button type="button" class="organisation-admin-page-menu-item" (click)="xxx()">Print Member List</button>
+        </div>
+        <div class="row organisation-admin-page-menu-container">
+            <div class="organisation-admin-page-menu-header">
+                Membership Status
+            </div>
+            <div class="radio-button-container">
+                <div class="radio-button-element">
+                    <input class="radio-button" type="radio" name="membership-status" value="Active" checked="checked">Active<br>
+                </div>
+                <div class="radio-button-element">
+                    <input class="radio-button" type="radio" name="membership-status" value="Inactive">Inactive<br>
+                </div>
+                <div class="radio-button-element">
+                    <input class="radio-button" type="radio" name="membership-status" value="All">All<br>
+                </div>
+            </div>
+        </div>
+        <img class="pdf-help" src="../../../../images/pdf-help.png" />
+    </div>
+    <div class="col-sm-9">
+        <ag-grid-ng2 class="ag-fresh member-list-grid" [gridOptions]="gridOptions"></ag-grid-ng2>
+    </div>
+</div>

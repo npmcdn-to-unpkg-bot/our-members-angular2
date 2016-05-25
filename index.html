@@ -1,43 +1,33 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-    <base href="/">
+    <base href="/app">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--bootstrap-->
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="node_modules/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
 
+    <!--ag-grid styles-->
+    <link href="node_modules/ag-grid/dist/styles/ag-grid.css" rel="stylesheet" />
+    <link href="node_modules/ag-grid/dist/styles/theme-fresh.css" rel="stylesheet" />
     <!--custom styles-->
-    <link href="src/styles/styles.css" rel="stylesheet" />
+    <link href="styles/styles.css" rel="stylesheet" />
 
-    <!--angular 2-->
+    <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/es6-shim/es6-shim.min.js"></script>
-    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
-    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
 
-    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script src="node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
 
-    <script src="node_modules/angular2/bundles/router.dev.js"></script>
-    <script src="node_modules/angular2/bundles/http.dev.js"></script>
 
+    <script src="systemjs.config.js"></script>
     <script>
-        //for debugging styles in chrome dev
-        //var onresize = function () {
-        //    var width = window.innerWidth
-        //    || document.documentElement.clientWidth
-        //    || document.body.clientWidth;
-        //    console.log(width);
-        //}
-
-        SystemJS.config({ packages: { src: { format: 'register', defaultExtension: 'js' } } });
-        SystemJS.import('src/boot')
-          .then(null, console.error.bind(console));
+        System.import('lib').catch(function(err){ console.error(err);  });
     </script>
-    <title>iBlong2</title>
+    <title>Our Members</title>
 </head>
 
 <body>

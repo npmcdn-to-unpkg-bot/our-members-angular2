@@ -1,0 +1,182 @@
+﻿        <div class="menu-container">
+            <div class="menu-group">
+                <div class="menu-group-header" (click)="membersClick()">
+                    <img src="../../../../images/Users.png" />
+                    Members
+                </div>
+                <div class="menu-group-content" [ngClass]="{'transition':membersContentDisplay}" [hidden]="!membersContentDisplay">
+                    <div class="menu-group-link">
+                        <!--<button type="button" class="menu-group-link" [routerLink]="['/member-list']">-->
+                            Manage Members
+                        </div   >
+                    <div class="menu-group-link">
+                        Manage Teams or Groups
+                    </div>
+                    <div class="menu-group-link">
+                        Print Member or Team Lists
+                    </div>
+                    <div class="menu-group-link">
+                        Email Management
+                    </div>
+                </div>
+            </div>
+            <div class="menu-group">
+                <div class="menu-group-header" (click)="moneyClick()">
+                    <img src="../../../../images/Receipt.png" />
+                    Money
+                </div>
+                <div class="menu-group-content" [hidden]="!moneyContentDisplay" [ngClass]="{'transition':membersContentDisplay}">
+                    <div class="menu-group-link">
+                        Bank Accounts
+                    </div>
+                    <div class="menu-group-link">
+                        Bank Transfer
+                    </div>
+                    <div class="menu-group-link">
+                        Bank Reconciliation
+                    </div>
+                    <div class="menu-group-link">
+                        Deposit
+                    </div>
+                    <div class="menu-group-link">
+                        Expense
+                    </div>
+                    <div class="menu-group-link">
+                        Financal Categories
+                    </div>
+                    <div class="menu-group-link">
+                        Import Bank Records
+                    </div>
+                    <div class="menu-group-link">
+                        Invoice
+                    </div>
+                    <div class="menu-group-link">
+                        Memberships Owing
+                    </div>
+                    <div class="menu-group-link">
+                        Receipt
+                    </div>
+                </div>
+            </div>
+            <div class="menu-group">
+                <div class="menu-group-header" (click)="communicationClick()">
+                    <img src="../../../../images/Mail.png" />
+                    Communication
+                </div>
+                <div class="menu-group-content" [hidden]="!communicationContentDisplay">
+                    <div class="menu-group-link">
+                        Communications Sent
+                    </div>
+                    <div class="menu-group-link">
+                        Email Members
+                    </div>
+                    <div class="menu-group-link">
+                        Email Management
+                    </div>
+                    <div class="menu-group-link">
+                        Member Statements - Email
+                    </div>
+                    <div class="menu-group-link">
+                        Member Statements - Print
+                    </div>
+                    <div class="menu-group-link">
+                        Print Labels
+                    </div>
+                    <div class="menu-group-link">
+                        Reminders - Email
+                    </div>
+                    <div class="menu-group-link">
+                        Reminders - Print
+                    </div>
+                    <div class="menu-group-link">
+                        SMS Members
+                    </div>
+                    <div class="menu-group-link">
+                        SMS - buy Units
+                    </div>
+                </div>
+            </div>
+            <div class="menu-group">
+                <div class="menu-group-header" (click)="reportsClick()">
+                    <img src="../../../../images/Folder.png" />
+                    Reports
+                </div>
+                <div class="menu-group-content" [hidden]="!reportsContentDisplay">
+                    <div class="menu-group-link">
+                        Audit
+                    </div>
+                    <div class="menu-group-link">
+                        Memberships Owing
+                    </div>
+                    <div class="menu-group-link">
+                        Registered Members
+                    </div>
+                    <div class="menu-group-link">
+                        Profit and Loss
+                    </div>
+                    <div class="menu-group-link">
+                        SMS Statement
+                    </div>
+                </div>
+            </div>
+            <div class="menu-group">
+                <div class="menu-group-header" (click)="settingsClick()">
+                    <img src="../../../../images/Gears.png" />
+                    Settings
+                </div>
+                <div class="menu-group-content" [hidden]="!settingsContentDisplay">
+                    <div class="menu-group-link">
+                        Account Categories
+                    </div>
+                    <div class="menu-group-link">
+                        Bank Accounts
+                    </div>
+                    <div class="menu-group-link">
+                        Change my Email Address"
+                    </div>
+                    <div class="menu-group-link">
+                        Change my Password
+                    </div>
+                    <div class="menu-group-link">
+                        Import Member Spreadsheet
+                    </div>
+                    <div class="menu-group-link">
+                        Membership Types
+                    </div>
+                    <div class="menu-group-link">
+                        Organisation Details
+                    </div>
+                    <div class="menu-group-link">
+                        Upload Logo
+                    </div>
+                </div>
+            </div>
+            <div class="menu-group">
+                <div class="menu-group-header" (click)="userManagementClick()">
+                    <img src="../../../../images/Man.png" />
+                    User Management
+                </div>
+                <div class="menu-group-content" [hidden]="!userManagementContentDisplay">
+                    <div class="menu-group-link">
+                        Roles
+                    </div>
+                    <div class="menu-group-link">
+                        Users
+                    </div>
+                </div>
+            </div>
+            <div class="menu-group">
+                <div class="menu-group-header" (click)="helpResourcesClick()">
+                    <img src="../../../../images/Info32.png" />
+                    Help Resources
+                </div>
+                <div class="menu-group-content" [hidden]="!helpResourcesContentDisplay">
+                    <div class="menu-group-link">
+                        iBlong2 User Guide
+                    </div>
+                    <div class="menu-group-link">
+                        Help Files and Videos
+                    </div>
+                </div>
+            </div>
+        </div>
