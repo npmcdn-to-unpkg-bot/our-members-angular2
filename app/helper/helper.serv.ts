@@ -29,9 +29,9 @@ export class HelperService {
 
     static getServiceBase(): string {
         //return 'https://??????????.azurewebsites.net/';
-        //return 'https://ourmembersapiweb.azurewebsites.net/'
+        return 'https://ourmembersapiweb.azurewebsites.net/'
         //return 'https://microsoft-apiappc5976b26a6ac40f2988bf2e315f7d032.azurewebsites.net/'
-        return 'http://localhost:4271/';
+        //return 'http://localhost:4271/';
     }
 
     static getTokenName(): string {
