@@ -27,6 +27,11 @@ export class LoginService {
 
         var headers = new Headers();
 
+
+        //headers.append('Accept', 'application/json');
+        //headers.append('Content-Type', 'application/json');
+
+
         var args: RequestOptionsArgs = {};
         args.headers = headers;
         var serviceBase = HelperService.getServiceBase();

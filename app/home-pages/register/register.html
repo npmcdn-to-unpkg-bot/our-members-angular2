@@ -80,7 +80,7 @@
             </div>
             <div class="col-sm-6">
                 <select class="form-control" required #cmbCountries ngControl="ngcCountries" [(ngModel)]="register.CountryID">
-                    <option *ngFor="#country of countries" [value]="country.CountryID">
+                    <option *ngFor="let country of countries" [value]="country.CountryID">
                         {{ country.Name }}
                     </option>
                 </select>
