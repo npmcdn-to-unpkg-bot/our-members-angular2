@@ -179,4 +179,15 @@
                     </div>
                 </div>
             </div>
+            <div class="menu-group">
+                <div class="menu-group-header" (click)="adminClick()" [hidden]="!adminLoggedIn">
+                    <img src="../../../../images/Info32.png" />
+                    Admin
+                </div>
+                <div class="menu-group-content" [hidden]="!adminContentDisplay" >
+                    <div class="menu-group-link" [routerLink]="['ChangeOrganisation']">
+                        Change Organisation
+                    </div>
+                </div>
+            </div>
         </div>

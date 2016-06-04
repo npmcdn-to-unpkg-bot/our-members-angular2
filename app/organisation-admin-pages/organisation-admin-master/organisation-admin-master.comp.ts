@@ -2,9 +2,8 @@
 import {Component, Directive, Output, EventEmitter} from '@angular/core';
 import {HelperService} from '../../helper/helper.serv';
 import {MembersListComponent} from '../members/member-list.comp';
+import {ChangeOrganisationComponent} from '../change-organisation/change-organisation.comp';
 import {SidebarMenuComponent} from '../sidebar-menu/sidebar-menu.comp';
-
-
 
 @Component({
     templateUrl: 'app/organisation-admin-pages/organisation-admin-master/organisation-admin-master.html',
@@ -13,7 +12,8 @@ import {SidebarMenuComponent} from '../sidebar-menu/sidebar-menu.comp';
 })
 
 @RouteConfig([
-        { path: '/member-list', name: 'MembersList', component: MembersListComponent, useAsDefault: true }
+        { path: '/member-list', name: 'MembersList', component: MembersListComponent, useAsDefault: true },
+        { path: '/change-organisation', name: 'ChangeOrganisation', component: ChangeOrganisationComponent }
 ])
 
 export class OrganisationAdminMasterComponent {

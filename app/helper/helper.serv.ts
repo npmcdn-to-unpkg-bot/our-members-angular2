@@ -28,8 +28,8 @@ export class HelperService {
     }
 
     static getServiceBase(): string {
-        return 'https://ourmembersapiweb.azurewebsites.net/'
-       // return 'http://localhost:26381/';
+       //return 'https://ourmembersapiweb.azurewebsites.net/'
+        return 'http://localhost:26381/';
     }
 
     static getTokenName(): string {
@@ -204,7 +204,7 @@ export class HelperService {
             rowGroupPanelShow: 'always',
             //groupKeys: 'undefined',
             groupHideGroupColumns: true,
-            groupSelectsChildren: true,
+            //groupSelectsChildren: true,
             groupColumnDef: 'groupColumn'
         }
         return gridOptions;
@@ -347,6 +347,10 @@ export class HelperService {
         localStorage.setItem(this.C_tokenExpiryDate, HelperService.formatDateAndTimeForJSon(expiryDate));
         localStorage.setItem(this.C_userName, userName);
         console.log('token added to localStorage');
+    }
+
+    static log(s: string) {
+        //console.log(s);
     }
 }
 

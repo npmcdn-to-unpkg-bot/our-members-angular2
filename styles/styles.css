@@ -44,3 +44,58 @@ button:focus {
     }
 }
 
+
+.modalOurMembersVisible {
+    display: block;
+}
+
+/* The Modal (background) */
+.modalSolsof {
+    /*opacity: 0;
+    transition: visibility 0s, opacity 0.2s linear;*/
+    display: none;
+    position: fixed; /*Stay in place*/
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    min-height: 100vh;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modalSolsof100 {
+    z-index: 100;
+}
+
+.modalSolsof200 {
+    z-index: 200;
+}
+
+.modalSolsof1000 {
+    z-index: 1000;
+}
+
+.modalSolsof-wide {
+    width: 60%;
+}
+
+.modalSolsof-very-narrow {
+    width: 20%;
+}
+
+.modalSolsof-narrow {
+    width: 40%;
+}
+
+/* Modal Content/Box */
+.modal-contentSolsof {
+    background-color: white;
+    margin: 100px auto 0 auto;
+    padding: 20px;
+    border: 1px solid darkgrey;
+    min-width: 300px;
+    box-shadow: 0 0 50px black;
+    overflow: auto;
+    max-height: 100vh;
+}

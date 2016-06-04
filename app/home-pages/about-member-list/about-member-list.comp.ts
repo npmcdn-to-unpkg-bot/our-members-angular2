@@ -12,3 +12,4 @@ import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 export class AboutMemberListComponent {
 
 }
+ 

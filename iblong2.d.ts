@@ -29,3 +29,7 @@ interface ITokenresponse {
     expires_in: number,
     token_type: string
 }
+
+interface structJustAnInt {
+    i: number;
+}

@@ -1,22 +1,46 @@
 ﻿import {Component} from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
 import {HelperService} from '../../helper/helper.serv';
+import {SidebarMenuService} from './sidebar-menu.serv';
 
 @Component({
     selector: 'sidebar-menu',
     templateUrl: 'app/organisation-admin-pages/sidebar-menu/sidebar-menu.html',
     styleUrls: ['styles/styles.css', 'app/organisation-admin-pages/styles/organisation-admin-styles.css', 'app/organisation-admin-pages/sidebar-menu/sidebar-menu.css'],
     directives: [ROUTER_DIRECTIVES],
-    providers: []
+    providers: [SidebarMenuService]
 })
 
 export class SidebarMenuComponent {
-    constructor(private router: Router) {
+    constructor(private router: Router, private sidebarMenuService: SidebarMenuService) {
         console.log('constructor SidebarMenuComponent ');
     }
 
     ngOnInit() {
+        this.getAdminLoggedIn();
     }
+
+    getAdminLoggedIn = () => {
+        var getAdminLoggedInThis = this;
+
+        if (HelperService.tokenIsValid()) {
+            this.sidebarMenuService.getAdminLoggedIn().subscribe(getAdminLoggedInSuccess, logError);
+        } else {
+            this.router.navigate(['Login']);
+        }
+        function logError(e: any) {
+            console.log('getMembers Error');
+            //loadMembersThis.getMembersSuccess = false;
+        }
+
+        function getAdminLoggedInSuccess(data: boolean) {
+            getAdminLoggedInThis.adminLoggedIn = data;
+        }
+    };
+
+
+    adminLoggedIn: boolean = false;
+
     membersContentDisplay: boolean = true;
     moneyContentDisplay: boolean = false;
     communicationContentDisplay: boolean = false;
@@ -24,6 +48,7 @@ export class SidebarMenuComponent {
     settingsContentDisplay: boolean = false;
     userManagementContentDisplay: boolean = false;
     helpResourcesContentDisplay: boolean = false;
+    adminContentDisplay: boolean = false;
 
     hideAll = () => {
         this.membersContentDisplay = false;
@@ -89,6 +114,18 @@ export class SidebarMenuComponent {
             this.helpResourcesContentDisplay = false;
         } else {
             this.helpResourcesContentDisplay = true;
+        }
+    }
+    adminClick = () => {
+        this.hideAll();
+        if (this.adminContentDisplay ) {
+            this.adminContentDisplay = false;
+        } else {
+            if (this.adminLoggedIn) {
+                this.adminContentDisplay = true;
+            } else {
+                this.adminContentDisplay = true;
+            }
         }
     }
 

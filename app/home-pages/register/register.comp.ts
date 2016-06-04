@@ -72,7 +72,9 @@ export class RegisterComponent {
 
     userNameBlur = () => {
         var userNameBlurThis = this;
-        this.userNameService.checkUserName(userNameBlurThis.register.RegisterUserName).subscribe(onCheckUserNameSuccess, logCheckUserNameError, complete);
+        if (userNameBlurThis.register.RegisterUserName !== '') { 
+            this.userNameService.checkUserName(userNameBlurThis.register.RegisterUserName).subscribe(onCheckUserNameSuccess, logCheckUserNameError, complete);
+        }
         function logCheckUserNameError(e: any) {
             console.log('userNameBlur Error');
             console.log(e);

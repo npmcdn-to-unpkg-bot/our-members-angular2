@@ -1,5 +1,5 @@
 ﻿import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
-import {Component, Directive, Output, EventEmitter} from '@angular/core';
+import {Component, Directive} from '@angular/core';
 import {HomePagesLinks}  from '../home-pages-links/home-pages-links.comp';
 import {HomePagesBottomButtons}  from '../home-pages-bottom-buttons/home-pages-bottom-buttons.comp';
 import {HelperService} from '../../helper/helper.serv';

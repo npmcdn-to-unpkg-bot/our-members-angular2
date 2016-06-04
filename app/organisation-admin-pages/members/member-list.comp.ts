@@ -19,8 +19,8 @@ import {AgGridNg2} from 'ag-grid-ng2/main';
 })
 
 export class MembersListComponent {
-    constructor(private router: Router, private MemberListService: MemberListService) {
-        console.log('constructor RegisterComponent ');
+    constructor(private router: Router, private memberListService: MemberListService) {
+        HelperService.log('constructor RegisterComponent ');
     }
 
     ngOnInit() {
@@ -35,7 +35,7 @@ export class MembersListComponent {
         var loadMembersThis = this;
 
         if (HelperService.tokenIsValid()) {
-            this.MemberListService.getMemberList().subscribe(onGetMembersSuccess, logError);
+            this.memberListService.getMemberList().subscribe(onGetMembersSuccess, logError);
         } else {
             this.router.navigate(['Login']);
         }

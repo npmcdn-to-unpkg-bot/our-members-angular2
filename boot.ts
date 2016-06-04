@@ -1,7 +1,4 @@
-﻿/// <reference path="iblong2.d.ts" />
-/// <reference path="node_modules/@angular/core/index.d.ts" />
-
-import {ROUTER_PROVIDERS} from '@angular/router-deprecated';
+﻿import {ROUTER_PROVIDERS} from '@angular/router-deprecated';
 import { HTTP_PROVIDERS } from '@angular/http';
 
 import { bootstrap }    from '@angular/platform-browser-dynamic';

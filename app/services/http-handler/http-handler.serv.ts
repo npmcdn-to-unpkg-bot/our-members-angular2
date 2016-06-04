@@ -16,9 +16,10 @@ export class HttpHandlerService {
 
     //use http get to retrieve an object of type T
     //parameters: an array of name / value pairs
-    getObject<T>(parameters: modSharedTypes.IHttpParameter[], url: string, includeToken: boolean ): Observable<T> {
+    getObject<T>(parameters: modSharedTypes.IHttpParameter[], url: string, includeToken: boolean): Observable<T> {
         var options: RequestOptionsArgs = this.getOptions(parameters, includeToken);
-        return this.http.get(this.serviceBase + url, options).map(res => res.json());
+        var obs = this.http.get(this.serviceBase + url, options).map(res => res.json());
+        return obs;
     }
 
     deleteObject(parameters: modSharedTypes.IHttpParameter[], url: string): Observable<Response> {

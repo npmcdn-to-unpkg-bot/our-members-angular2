@@ -1,0 +1,85 @@
+﻿/// <reference path="../../../iblong2.d.ts" />
+//import {Response} from '@angular/http';
+import {Component} from '@angular/core';
+import {ChangeOrganisationService} from './change-organisation.serv';
+import {HelperService} from '../../helper/helper.serv';
+import { Router, RouterLink } from '@angular/router-deprecated';
+import {AgGridNg2} from 'ag-grid-ng2/main';
+
+
+@Component({
+    selector: 'change-organisation',
+    templateUrl: 'app/organisation-admin-pages/change-organisation/change-organisation.html',
+    styleUrls: ['styles/styles.css', 'app/organisation-admin-pages/styles/organisation-admin-styles.css'],
+    providers: [ChangeOrganisationService],
+    directives: [AgGridNg2]
+})
+
+export class ChangeOrganisationComponent {
+    public organisations: structIdName[] = [];
+
+    constructor(public router: Router, private changeOrganisationService: ChangeOrganisationService) {
+        HelperService.log('constructor ChangeOrganisationComponent');
+    } 
+    //load Organisations when page loaded
+    ngOnInit() {
+        this.loadOrganisations();
+    }
+
+    //////////////////////////////////////////////
+    //get data
+
+
+    loadOrganisations = () => {
+        var loadOrganisationsThis = this;
+        if (HelperService.tokenIsValid()) {
+            this.changeOrganisationService.getOrganisations().subscribe(onGetOrganisationsSuccess, logError);
+        } else {
+            this.router.navigate(['Login']);
+        }
+        function logError(e: any) {
+            HelperService.log('getOrganisations Error');
+        }
+
+        function onGetOrganisationsSuccess(data: any) {
+            loadOrganisationsThis.organisations = data;
+            loadOrganisationsThis.gridOptions.api.setRowData(data);
+            loadOrganisationsThis.gridOptions.api.sizeColumnsToFit();
+            HelperService.log('getOrganisations success');
+        }
+    }
+
+    changeOrganisation = (Id: number) => {
+        var changeOrganisationThis = this, Id: number;
+        if (HelperService.tokenIsValid()) {
+            this.changeOrganisationService.changeOrganisation(Id).subscribe(onChangeOrganisationSuccess, logError);
+        } else {
+            changeOrganisationThis.router.parent.navigate(['Login']);
+        }
+        function logError(e: any) {
+            HelperService.log('changeOrganisation Error');
+        }
+
+        function onChangeOrganisationSuccess(data: any) {
+            changeOrganisationThis.router.navigate(['MembersList']);
+        }
+    }
+
+
+    //////////////////////////////////////////////
+    //grid
+    columnDefs: any[] = [
+        { headerName: "Id", field: "Id", hide: true },
+        { headerName: "Entity", field: "name" }
+    ];
+
+    onRowDoubleClicked = (params: any) => {
+        var selectedOrganisation: structIdName = <structIdName>params.data;
+        this.changeOrganisation(selectedOrganisation.Id);
+        //this.router.navigate(['LedgerAccounts']);
+    }
+
+    onRowClicked = () => { }
+
+    gridOptions: any = HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked);
+}
