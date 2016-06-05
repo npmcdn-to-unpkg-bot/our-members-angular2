@@ -1,0 +1,49 @@
+﻿<div id="divMemberContainer" class="modalOurMembers modalOurMembers100" [class.containerVisible]="memberVisible" (click)="clickOutside($event)">
+    <!-- Modal content -->
+    <div class="modal-contentOurMembers modalOurMembers-wide container-fluid" (click)="$event.cancelBubble = true;">
+        <!--contents-->
+        <div class="row">
+            <div style="clear: both;">
+                <div id="cmdContact" class="SalesAnalysisButton" style="margin-left: 1px;" (click)="Contact()">
+                    Contact
+                </div>
+                <div id="cmdPersonal" class="SalesAnalysisButton" (click)="Personal()">
+                    Personal
+                </div>
+                <div id="cmdOrganisation" class="SalesAnalysisButton" (click)="Organisation()">
+                    Organisation
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="divContact">
+            </div>
+            <div id="divPersonal" style="display: none;">
+
+            </div>
+            <div id="divOrganisation" style="display: none;">
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <button type="button" (click)="cancelMember()">cancel</button>
+    </div>
+</div>

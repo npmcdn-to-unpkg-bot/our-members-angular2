@@ -18,6 +18,11 @@
     height: 40px;
 }
 
+    .menu-group-header:hover {
+        background-color: #D4E7B2;
+    }
+
+
 .menu-group-content {
 }
 
@@ -29,4 +34,26 @@
 .content-container {
     /*border: 1px solid #758D5E;*/
     /*margin: 10px 1% 0 0;*/
+}
+
+.logout-button {
+    width: 100%;
+    font-size: 11pt;
+    background-color: #DC9000;
+    color: white;
+    border: none;
+    text-align: left;
+}
+
+    .logout-button:hover {
+        background-color: #FF6600;
+    }
+
+    .logout-button:focus {
+        background-color: #C98300;
+    }
+
+.logout-button-border {
+    border: 5px solid #393939;
+    background-color: #393939;
 }

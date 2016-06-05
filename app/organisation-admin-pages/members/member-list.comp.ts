@@ -1,27 +1,30 @@
 ﻿/// <reference path="member-list.serv.ts" />
 /// <reference path="../../helper/helper.serv.ts" />
 /// <reference path="../organisation-admin-master/organisation-admin-master.comp.ts" />
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
 import {HelperService} from '../../helper/helper.serv';
 import {MemberListService} from './member-list.serv';
+import {MemberComponent} from  './member.comp';
 
 import {AgGridNg2} from 'ag-grid-ng2/main';
-//import {GridOptions} from 'ag-grid/main';
 
 
 @Component({
     selector: 'member-list',
     templateUrl: 'app/organisation-admin-pages/members/member-list.html',
     styleUrls: ['styles/styles.css', 'app/organisation-admin-pages/styles/organisation-admin-styles.css'],
-    directives: [ROUTER_DIRECTIVES, AgGridNg2],
-    providers: [MemberListService]
+    providers: [MemberListService], 
+    directives: [AgGridNg2, MemberComponent]
 })
 
 export class MembersListComponent {
     constructor(private router: Router, private memberListService: MemberListService) {
         HelperService.log('constructor RegisterComponent ');
     }
+
+    @ViewChild(MemberComponent) memberComponent: MemberComponent;
+
 
     ngOnInit() {
         this.loadMembers();
@@ -37,7 +40,7 @@ export class MembersListComponent {
         if (HelperService.tokenIsValid()) {
             this.memberListService.getMemberList().subscribe(onGetMembersSuccess, logError);
         } else {
-            this.router.navigate(['Login']);
+            this.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
         }
         function logError(e: any) {
             console.log('getMembers Error');
@@ -67,6 +70,8 @@ export class MembersListComponent {
     }
 
     onRowDoubleClicked = (params: any) => {
+        var selectedMember: structOrganisationMember = <structOrganisationMember>params.data;
+        this.memberComponent.loadMember(selectedMember.OrganisationMemberID);
     }
 
     gridOptions: any = HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked);

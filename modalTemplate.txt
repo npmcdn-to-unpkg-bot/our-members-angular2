@@ -1,0 +1,42 @@
+﻿parent html:
+<memberModal></memberModal>
+
+child html:
+<div id="divMemberContainer" class="modalOurMembers modalOurMembers100" [class.containerVisible]="memberVisible" (click)="clickOutside($event)">
+    <!-- Modal content -->
+    <div class="modal-contentOurMembers modalOurMembers-wide container-fluid" (click)="$event.cancelBubble = true;">
+        <!--contents-->
+
+	</div>
+</div>
+
+
+child css:
+#divMemberContainer.containerVisible {
+    display: block;
+}
+
+
+child component:
+    clickOutside = (event: MouseEvent) => {
+        this.cancelMember();
+    }
+
+memberVisible: boolean = false;
+
+
+    //get data
+    loadMember = (OrganisationMemberID: number) => {
+        var loadMemberThis = this;
+		.................
+
+        function onGetMemberSuccess(Member: structOrganisationMember) {
+			...
+            loadMemberThis.memberVisible = true;
+        }
+    };
+
+    cancelMember = () => {
+        this.memberVisible = false;
+    }
+

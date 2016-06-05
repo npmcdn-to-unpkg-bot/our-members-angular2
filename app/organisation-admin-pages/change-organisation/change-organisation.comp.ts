@@ -35,7 +35,7 @@ export class ChangeOrganisationComponent {
         if (HelperService.tokenIsValid()) {
             this.changeOrganisationService.getOrganisations().subscribe(onGetOrganisationsSuccess, logError);
         } else {
-            this.router.navigate(['Login']);
+            this.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
         }
         function logError(e: any) {
             HelperService.log('getOrganisations Error');

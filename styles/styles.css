@@ -44,13 +44,8 @@ button:focus {
     }
 }
 
-
-.modalOurMembersVisible {
-    display: block;
-}
-
 /* The Modal (background) */
-.modalSolsof {
+.modalOurMembers {
     /*opacity: 0;
     transition: visibility 0s, opacity 0.2s linear;*/
     display: none;
@@ -64,32 +59,32 @@ button:focus {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-.modalSolsof100 {
+.modalOurMembers100 {
     z-index: 100;
 }
 
-.modalSolsof200 {
+.modalOurMembers200 {
     z-index: 200;
 }
 
-.modalSolsof1000 {
+.modalOurMembers1000 {
     z-index: 1000;
 }
 
-.modalSolsof-wide {
+.modalOurMembers-wide {
     width: 60%;
 }
 
-.modalSolsof-very-narrow {
+.modalOurMembers-very-narrow {
     width: 20%;
 }
 
-.modalSolsof-narrow {
+.modalOurMembers-narrow {
     width: 40%;
 }
 
 /* Modal Content/Box */
-.modal-contentSolsof {
+.modal-contentOurMembers {
     background-color: white;
     margin: 100px auto 0 auto;
     padding: 20px;

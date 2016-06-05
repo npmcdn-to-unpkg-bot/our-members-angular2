@@ -26,7 +26,7 @@ export class SidebarMenuComponent {
         if (HelperService.tokenIsValid()) {
             this.sidebarMenuService.getAdminLoggedIn().subscribe(getAdminLoggedInSuccess, logError);
         } else {
-            this.router.navigate(['Login']);
+            this.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
         }
         function logError(e: any) {
             console.log('getMembers Error');
@@ -118,7 +118,7 @@ export class SidebarMenuComponent {
     }
     adminClick = () => {
         this.hideAll();
-        if (this.adminContentDisplay ) {
+        if (this.adminContentDisplay) {
             this.adminContentDisplay = false;
         } else {
             if (this.adminLoggedIn) {
@@ -127,6 +127,10 @@ export class SidebarMenuComponent {
                 this.adminContentDisplay = true;
             }
         }
+    }
+    logout = () => {
+        HelperService.deleteTokenFromStorage();
+        this.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
     }
 
 }
