@@ -1,49 +1,156 @@
 ﻿<div id="divMemberContainer" class="modalOurMembers modalOurMembers100" [class.containerVisible]="memberVisible" (click)="clickOutside($event)">
     <!-- Modal content -->
-    <div class="modal-contentOurMembers modalOurMembers-wide container-fluid" (click)="$event.cancelBubble = true;">
+    <div class="modal-contentOurMembers modalOurMembers-narrow container-fluid" (click)="$event.cancelBubble = true;">
         <!--contents-->
-        <div class="row">
-            <div style="clear: both;">
-                <div id="cmdContact" class="SalesAnalysisButton" style="margin-left: 1px;" (click)="Contact()">
-                    Contact
-                </div>
-                <div id="cmdPersonal" class="SalesAnalysisButton" (click)="Personal()">
-                    Personal
-                </div>
-                <div id="cmdOrganisation" class="SalesAnalysisButton" (click)="Organisation()">
-                    Organisation
-                </div>
+        <div class="clearfix">
+            <div class="tab-control-button" [class.tab-control-button-selected]="ContactSelected" style="margin-left: 1px;" (click)="ContactClicked()">
+                Contact
+            </div>
+            <div class="tab-control-button" [class.tab-control-button-selected]="PersonalSelected" (click)="PersonalClicked()">
+                Personal
+            </div>
+            <div class="tab-control-button" [class.tab-control-button-selected]="OrganisationSelected" (click)="OrganisationClicked()">
+                Organisation
             </div>
         </div>
+        <form (ngSubmit)="okClicked()" #transactionForm="ngForm">
+            <div [hidden]="!ContactSelected" class="form-container" style="border: 1px black solid;">
 
-        <div class="row">
-            <div id="divContact">
+                <div class="form-group row">
+                    <div class="col-sm-5 form-label">
+                        <label for="inputFirstName">FirstName</label>
+                    </div>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="text" required #inputFirstName ngControl="ngcFirstName" [(ngModel)]="Member.FirstName" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-5 form-label">
+                        <label for="inputMiddleName">MiddleName</label>
+                    </div>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="text" required #inputMiddleName ngControl="ngcMiddleName" [(ngModel)]="Member.MiddleName" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-5 form-label">
+                        <label for="inputLastName">LastName</label>
+                    </div>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="text" required #inputLastName ngControl="ngcLastName" [(ngModel)]="Member.LastName" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-5 form-label">
+                        <label for="inputTitle">Title</label>
+                    </div>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="text" required #inputTitle ngControl="ngcTitle" [(ngModel)]="Member.Title" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-5 form-label">
+                        <label for="inputPhone1">Phone1</label>
+                    </div>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="text" required #inputPhone1 ngControl="ngcPhone1" [(ngModel)]="Member.Phone1" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-5 form-label">
+                        <label for="inputPhone2">Phone2</label>
+                    </div>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="text" required #inputPhone2 ngControl="ngcPhone2" [(ngModel)]="Member.Phone2" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-5 form-label">
+                        <label for="inputPhone3">Phone3</label>
+                    </div>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="text" required #inputPhone3 ngControl="ngcPhone3" [(ngModel)]="Member.Phone3" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-5 form-label">
+                        <label for="inputFax">Fax</label>
+                    </div>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="text" required #inputFax ngControl="ngcFax" [(ngModel)]="Member.Fax" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-5 form-label">
+                        <label for="inputStreetAddress1">StreetAddress1</label>
+                    </div>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="text" required #inputStreetAddress1 ngControl="ngcStreetAddress1" [(ngModel)]="Member.StreetAddress1" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-5 form-label">
+                        <label for="inputStreetAddress2">StreetAddress2</label>
+                    </div>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="text" required #inputStreetAddress2 ngControl="ngcStreetAddress2" [(ngModel)]="Member.StreetAddress2" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-5 form-label">
+                        <label for="inputSuburb">Suburb</label>
+                    </div>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="text" required #inputSuburb ngControl="ngcSuburb" [(ngModel)]="Member.Suburb" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-5 form-label">
+                        <label for="inputPostcode">Postcode</label>
+                    </div>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="text" required #inputPostcode ngControl="ngcPostcode" [(ngModel)]="Member.Postcode" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-5 form-label">
+                        <label for="inputState">State</label>
+                    </div>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="text" required #inputState ngControl="ngcState" [(ngModel)]="Member.State" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-5 form-label">
+                        <label for="inputCountryID">CountryID</label>
+                    </div>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="text" required #inputCountryID ngControl="ngcCountryID" [(ngModel)]="Member.CountryID" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-5 form-label">
+                        <label for="inputEmailAddress">EmailAddress</label>
+                    </div>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="text" required #inputEmailAddress ngControl="ngcEmailAddress" [(ngModel)]="Member.EmailAddress" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-5 form-label">
+                        <label for="inputContactPerson">ContactPerson</label>
+                    </div>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="text" required #inputContactPerson ngControl="ngcContactPerson" [(ngModel)]="Member.ContactPerson" />
+                    </div>
+                </div>
+
             </div>
-            <div id="divPersonal" style="display: none;">
-
+            <div [hidden]="!PersonalSelected" style="background-color: yellow; height: 100px; width: 200px;">
             </div>
-            <div id="divOrganisation" style="display: none;">
+            <div [hidden]="!OrganisationSelected" style="background-color: green; height: 100px; width: 200px;">
             </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </form>
         <button type="button" (click)="cancelMember()">cancel</button>
     </div>
 </div>

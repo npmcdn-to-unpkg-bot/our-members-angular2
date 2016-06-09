@@ -27,11 +27,36 @@ export class MemberComponent {
         this.cancelMember();
     }
 
-    Member: structOrganisationMember;
+    Member: any = {};
     titleMember: string;
     editMember: boolean = false;
     getMemberSuccess: boolean;
     memberVisible: boolean = false;
+
+    ContactSelected: boolean = true;
+    PersonalSelected: boolean = false;
+    OrganisationSelected: boolean = false;
+
+    unselectAll = () => {
+        this.ContactSelected = false;
+        this.PersonalSelected = false;
+        this.OrganisationSelected = false;
+    }
+
+    ContactClicked = () => {
+        this.unselectAll();
+        this.ContactSelected = true;
+    }
+
+    PersonalClicked = () => {
+        this.unselectAll();
+        this.PersonalSelected = true;
+    }
+
+    OrganisationClicked = () => {
+        this.unselectAll();
+        this.OrganisationSelected = true;
+    }
 
     //////////////////////////////////////////////////////////////
     //get data
