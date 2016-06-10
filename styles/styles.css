@@ -44,57 +44,6 @@ button:focus {
     }
 }
 
-/* The Modal (background) */
-.modalOurMembers {
-    /*opacity: 0;
-    transition: visibility 0s, opacity 0.2s linear;*/
-    display: none;
-    position: fixed; /*Stay in place*/
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    min-height: 100vh;
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-.modalOurMembers100 {
-    z-index: 100;
-}
-
-.modalOurMembers200 {
-    z-index: 200;
-}
-
-.modalOurMembers1000 {
-    z-index: 1000;
-}
-
-.modalOurMembers-wide {
-    width: 60%;
-}
-
-.modalOurMembers-very-narrow {
-    width: 20%;
-}
-
-.modalOurMembers-narrow {
-    width: 40%;
-}
-
-/* Modal Content/Box */
-.modal-contentOurMembers {
-    background-color: #D4E7B2;
-    margin: 100px auto 0 auto;
-    padding: 20px;
-    border: 1px solid darkgrey;
-    min-width: 300px;
-    box-shadow: 0 0 50px black;
-    overflow: auto;
-    max-height: 100vh;
-}
-
 div.tab-control-button:hover {
     background-color: #d3d3d3;
 }
@@ -122,12 +71,23 @@ div.tab-control-button-selected {
 
 
 div.form-container {
-    background-color: #393939;
-    color: white;
+    /*background-color: #393939;
+    color: white;*/
     padding: 10px 2%;
     margin-bottom: 20px;
 }
 
 .form-control {
     height: 25px;
+}
+
+.save-button {
+    background: none;
+    width: 160px;
+    background-color: #7da31a;
+    border: solid 7px #393939;
+    cursor: pointer;
+    height: 50px;
+    font-weight: bold;
+    color: White;
 }

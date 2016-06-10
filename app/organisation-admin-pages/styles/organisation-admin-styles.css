@@ -19,7 +19,7 @@
 .organisation-admin-page-menu-item {
     width: 100%;
     background-color: inherit;
-    border: none;
+    border: 1px dotted lightgray;
     text-align: left;
 }
 

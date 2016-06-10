@@ -1,4 +1,4 @@
-﻿import {Component} from '@angular/core';
+﻿import {Component, Output, EventEmitter} from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
 import {HelperService} from '../../helper/helper.serv';
 import {MemberService} from './member.serv';
@@ -27,11 +27,12 @@ export class MemberComponent {
         this.cancelMember();
     }
 
+    @Output() closed: EventEmitter<string> = new EventEmitter<string>();
+
     Member: any = {};
     titleMember: string;
     editMember: boolean = false;
     getMemberSuccess: boolean;
-    memberVisible: boolean = false;
 
     ContactSelected: boolean = true;
     PersonalSelected: boolean = false;
@@ -72,7 +73,6 @@ export class MemberComponent {
             loadMemberThis.editMember = true;
             loadMemberThis.Member = Member;
             loadMemberThis.getMemberSuccess = true;
-            loadMemberThis.memberVisible = true;
 
         }
         function logError() {
@@ -81,6 +81,6 @@ export class MemberComponent {
         }
     };
     cancelMember = () => {
-        this.memberVisible = false;
+        this.closed.emit('');
     }
 }

@@ -1,7 +1,4 @@
-﻿/// <reference path="member-list.serv.ts" />
-/// <reference path="../../helper/helper.serv.ts" />
-/// <reference path="../organisation-admin-master/organisation-admin-master.comp.ts" />
-import {Component, ViewChild} from '@angular/core';
+﻿import {Component, ViewChild} from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
 import {HelperService} from '../../helper/helper.serv';
 import {MemberListService} from './member-list.serv';
@@ -14,7 +11,7 @@ import {AgGridNg2} from 'ag-grid-ng2/main';
     selector: 'member-list',
     templateUrl: 'app/organisation-admin-pages/members/member-list.html',
     styleUrls: ['styles/styles.css', 'app/organisation-admin-pages/styles/organisation-admin-styles.css'],
-    providers: [MemberListService], 
+    providers: [MemberListService],
     directives: [AgGridNg2, MemberComponent]
 })
 
@@ -30,7 +27,15 @@ export class MembersListComponent {
         this.loadMembers();
     }
 
+    memberComponentClosed = () => {
+        this.showList = true;
+        this.showModal = false;
+        this.loadMembers();
+    }
+
     Members: any[];
+    showList: boolean = true;
+    showModal: boolean = false;
 
     //////////////////////////////////////////////////////////////
     //get data
@@ -72,6 +77,8 @@ export class MembersListComponent {
     onRowDoubleClicked = (params: any) => {
         var selectedMember: structOrganisationMember = <structOrganisationMember>params.data;
         this.memberComponent.loadMember(selectedMember.OrganisationMemberID);
+        this.showList = false;
+        this.showModal = true;
     }
 
     gridOptions: any = HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked);
