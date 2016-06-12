@@ -59,10 +59,16 @@ export class MemberComponent {
         this.OrganisationSelected = true;
     }
 
+    countries: any;
+    MembershipTypes: any;
+
     //////////////////////////////////////////////////////////////
     //get data
-    loadMember = (OrganisationMemberID: number) => {
+    loadMember = (OrganisationMemberID: number, countries: any, MembershipTypes: any) => {
         var loadMemberThis = this;
+        this.countries = countries;
+        this.MembershipTypes = MembershipTypes;
+        this.Member = {};
         if (HelperService.tokenIsValid()) {
             loadMemberThis.titleMember = 'Edit Invoice';
             loadMemberThis.memberService.getMember(OrganisationMemberID).subscribe(onGetMemberSuccess, logError);
@@ -80,6 +86,11 @@ export class MemberComponent {
             loadMemberThis.getMemberSuccess = false;
         }
     };
+
+    saveMember = () => {
+        this.closed.emit('');
+    }
+
     cancelMember = () => {
         this.closed.emit('');
     }

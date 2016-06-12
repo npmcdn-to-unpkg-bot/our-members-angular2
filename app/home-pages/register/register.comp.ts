@@ -1,6 +1,6 @@
 ﻿import {Component} from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
-import {CountriesService} from '../../countries/countries.serv';
+import {CountriesService} from '../../services/countries/countries.serv';
 import {RegisterService} from './register.serv';
 import {UserNameService} from  '../../services/user-name/user-name.serv';
 

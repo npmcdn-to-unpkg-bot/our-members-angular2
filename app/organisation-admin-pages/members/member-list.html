@@ -1,5 +1,8 @@
-﻿<div [hidden]="!showList">
-    <h1 class="organisation-admin-page-title">Membership List</h1>
+﻿<!--<div [hidden]="!showList">-->
+<div style="position: relative;">
+    <div class="row">
+        <h1 class="organisation-admin-page-title">Membership List</h1>
+    </div>  
     <div class="row">
         <div class="col-sm-3">
             <div class="row organisation-admin-page-menu-container">
@@ -19,7 +22,7 @@
                 <div class="organisation-admin-page-menu-header">
                     Membership Status
                 </div>
-                <div class="radio-button-container" >
+                <div class="radio-button-container">
                     <div class="radio-button-element">
                         <input class="radio-button" type="radio" name="membership-status" value="Active" checked="checked">Active<br>
                     </div>
@@ -37,5 +40,5 @@
             <ag-grid-ng2 class="ag-fresh standard-grid" [gridOptions]="gridOptions"></ag-grid-ng2>
         </div>
     </div>
+    <memberModal [hidden]="!showModal" (closed)="memberComponentClosed($event)"></memberModal>
 </div>
-<memberModal [hidden]="!showModal" (closed)="memberComponentClosed($event)"></memberModal>

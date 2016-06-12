@@ -66,28 +66,44 @@ div.tab-control-button, div.tab-control-button-selected {
 }
 
 div.tab-control-button-selected {
-    background-color: inherit;
+    background-color: darkgray;
 }
 
 
 div.form-container {
-    /*background-color: #393939;
-    color: white;*/
     padding: 10px 2%;
     margin-bottom: 20px;
+}
+
+input[type="checkbox"], select.form-control, textarea.form-control {
+    height: auto;
 }
 
 .form-control {
     height: 25px;
 }
 
-.save-button {
-    background: none;
-    width: 160px;
-    background-color: #7da31a;
-    border: solid 7px #393939;
-    cursor: pointer;
-    height: 50px;
-    font-weight: bold;
+.cancel-button, .save-button {
+    padding: 5px 1%;
     color: White;
+    margin: 5px;
+    border: solid 5px #393939;
+}
+
+.save-button {
+    min-width: 160px;
+    background-color: #7da31a;
+    font-weight: 800;
+    float: left;
+}
+
+.cancel-button {
+    min-width: 100px;
+    background-color: darkgray;
+    float: right;
+}
+
+
+.save-and-cancel-buttons-row {
+    margin: 20px 0 0 0;
 }

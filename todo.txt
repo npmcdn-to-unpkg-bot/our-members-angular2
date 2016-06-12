@@ -1,6 +1,8 @@
 ﻿member modal:
-in member list page, member list html in one div, member in another (or class on member tag?)?
-member list controls visibility of each
-advantage: all code in one component
-2 wrapping divs and a function
 maybe member has 20px 4% margin and box shadow and different background
+
+
+style member form
+form valid
+save add / edit
+open receipt on return?
