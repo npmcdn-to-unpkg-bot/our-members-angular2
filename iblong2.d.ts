@@ -60,7 +60,7 @@ interface structOrganisationMember {
     DateOfBirth: string; //date
     ContactPerson: string;
     Comments: string;
-    GroupIDArray: number; ()
+    GroupIDArray: number[]; 
     Active: boolean;
     Fax: string;
     Title: string;

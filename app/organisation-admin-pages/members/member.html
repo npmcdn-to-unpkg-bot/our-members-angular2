@@ -1,6 +1,6 @@
 ﻿<div class="container-fluid our-members-modal" style="">
     <div class="row">
-        <h1 class="organisation-admin-page-title">Edit Member</h1>
+        <h1 class="organisation-admin-page-title">{{titleMember}}</h1>
     </div>
     <div class="form-container">
         <div class="clearfix">
@@ -322,7 +322,7 @@
                         <label for="inputXXXX">Teams / Groups</label>
                     </div>
                     <div class="col-sm-7">
-                        <ag-grid-ng2 class="ag-fresh short-grid" [gridOptions]="gridOptions"></ag-grid-ng2>
+                        <ag-grid-ng2 class="ag-fresh short-grid" [gridOptions]="teamsGroupsGridOptions"></ag-grid-ng2>
                     </div>
                 </div>
                 <div class="form-group row">
