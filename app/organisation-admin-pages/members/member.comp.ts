@@ -167,8 +167,8 @@ export class MemberComponent {
                 node.setSelected(true);
             }
         }
-
-        console.log('');
+        //this.teamsGroupsGridOptions.api.refreshView();
+        //this.teamsGroupsGridOptions.api.softRefreshView();
     }
 
 
