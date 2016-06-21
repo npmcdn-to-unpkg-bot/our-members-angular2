@@ -1,8 +1,16 @@
-﻿member modal:
-maybe member has 20px 4% margin and box shadow and different background
+﻿modal message and confirm
+<div class="container-fluid our-members-modal" style="">  ??
+pass parameter in...
+modal message: 
+	pass parameter in: message
+	event on html tag triggered by OK button
+modal confirm: 
+	pass parameter in: message
+	event on html tag triggered by OK button or cancel button, event has true or false parameter
 
 
-style member form
+
 form valid
+click add member, check if need new member number
 save add / edit
 open receipt on return?

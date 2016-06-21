@@ -8,7 +8,9 @@
         '@angular': 'node_modules/@angular',
         'ag-grid-ng2': 'node_modules/ag-grid-ng2',
         'ag-grid-enterprise': 'node_modules/ag-grid-enterprise',
-        'ag-grid': 'node_modules/ag-grid'
+        'ag-grid': 'node_modules/ag-grid',
+        'angular2-modal': 'node_modules/angular2-modal',
+        'angular2-modal/platform-browser': 'node_modules/angular2-modal/platform-browser'
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
@@ -28,7 +30,12 @@
         },
         'ag-grid-enterprise': {
             defaultExtension: "js"
-        }
+        },
+        'angular2-modal': { main: 'index.js', defaultExtension: 'js' },
+        'angular2-modal/platform-browser': { main: 'index.js', defaultExtension: 'js' },
+        'angular2-modal/plugins/bootstrap': { main: 'index.js', defaultExtension: 'js' },
+        'angular2-modal/plugins/vex': { main: 'index.js', defaultExtension: 'js' },
+        'angular2-modal/plugins/js-native': { main: 'index.js', defaultExtension: 'js' }
     };
 
     var packageNames = [
@@ -60,3 +67,10 @@
     System.config(config);
 
 })(this);
+
+
+
+
+
+
+

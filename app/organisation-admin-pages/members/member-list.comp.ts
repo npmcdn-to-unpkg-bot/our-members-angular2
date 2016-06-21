@@ -32,10 +32,12 @@ export class MembersListComponent {
         this.loadGroups();
     }
 
-    memberComponentClosed = () => {
+    memberComponentClosed = (refreshList: boolean) => {
         this.showList = true;
         this.showModal = false;
-        this.loadMembers();
+        if (refreshList) {
+            this.loadMembers();
+        }
     }
 
     Members: any[];

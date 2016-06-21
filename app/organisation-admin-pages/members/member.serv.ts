@@ -29,5 +29,16 @@ export class MemberService {
         var httpHandlerService = new HttpHandlerService(this.http);
         return httpHandlerService.getObject<structOrganisationMember>(parameters, 'api/member', true);
     }
+
+    saveNewMember(Member: structOrganisationMember): Observable<Response>{
+        var httpHandlerService = new HttpHandlerService(this.http);
+        return httpHandlerService.putObject(Member, 'api/member');
+    }
+
+
+    updateMember(Member: structOrganisationMember) {
+        var httpHandlerService = new HttpHandlerService(this.http);
+        return httpHandlerService.putObject(Member, 'api/member');
+    }
 }
 

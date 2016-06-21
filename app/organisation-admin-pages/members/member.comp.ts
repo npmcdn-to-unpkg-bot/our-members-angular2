@@ -1,10 +1,9 @@
-﻿import {Component, Output, EventEmitter} from '@angular/core';
+﻿import {Component, Output, EventEmitter, ViewContainerRef} from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
 import {HelperService} from '../../helper/helper.serv';
 import {MemberService} from './member.serv';
-
 import {AgGridNg2} from 'ag-grid-ng2/main';
-
+import {Modal, BS_MODAL_PROVIDERS} from 'angular2-modal/plugins/bootstrap';
 
 @Component({
     selector: 'memberModal',
@@ -16,7 +15,10 @@ import {AgGridNg2} from 'ag-grid-ng2/main';
 })
 
 export class MemberComponent {
-    constructor(private router: Router, private memberService: MemberService) {
+    constructor(private router: Router, private memberService: MemberService,
+        public modal: Modal, viewContainer: ViewContainerRef
+    ) {
+        //modal.defaultViewContainer = viewContainer;
         HelperService.log('constructor RegisterComponent ');
     }
 
@@ -138,28 +140,28 @@ export class MemberComponent {
             loadMemberThis.Member = Member;
             loadMemberThis.getMemberSuccess = true;
             loadMemberThis.selectGroupsRows();
-
+            HelperService.log('loadMember success');
         }
 
         function logError() {
-            HelperService.log('getInvoice Error');
+            HelperService.log('loadMember Error');
             loadMemberThis.getMemberSuccess = false;
         }
     };
 
     selectGroupsRows = () => {
         //array of grid rows holding all groups
-        var allRows: any[] = this.teamsGroupsGridOptions.api.rowModel.allRows, i: number;
+        var rowsToDisplay: any[] = this.teamsGroupsGridOptions.api.rowModel.rowsToDisplay, i: number;
         //go through array getting groupID of each record
-        for (i = 0; i < allRows.length; i++) {
-            var allRowsGroupID = allRows[i].data.GroupID;
-            var node = allRows[i];
+        for (i = 0; i < rowsToDisplay.length; i++) {
+            var rowsToDisplayGroupID = rowsToDisplay[i].data.GroupID;
+            var node = rowsToDisplay[i];
             //filter the member GroupIDArray to see if this GroupID from the rows is present in it
             var Member = this.Member
             var memberGroupIDArray: number[] = Member.GroupIDArray;
 
             function checkPresence(pGroupID) {
-                return pGroupID === allRowsGroupID;
+                return pGroupID === rowsToDisplayGroupID;
             }
             var filtered: number[] = memberGroupIDArray.filter(checkPresence);
             //if found
@@ -167,17 +169,54 @@ export class MemberComponent {
                 node.setSelected(true);
             }
         }
-        //this.teamsGroupsGridOptions.api.refreshView();
+        this.teamsGroupsGridOptions.api.refreshView();
         //this.teamsGroupsGridOptions.api.softRefreshView();
     }
 
 
     saveMember = () => {
-        this.closed.emit('');
+        var okClickedThis = this;
+        if (okClickedThis.editMember) {
+            if (HelperService.tokenIsValid()) {
+                var i: number;
+                var rows: any[] = okClickedThis.teamsGroupsGridOptions.api.getSelectedRows();
+                okClickedThis.Member.GroupIDArray = [];
+                for (i = 0; i < rows.length; i++) {
+                    okClickedThis.Member.GroupIDArray[i] = rows[i].GroupID;
+                }
+
+                okClickedThis.memberService.updateMember(okClickedThis.Member).subscribe(updateMemberSuccess, logError);
+            } else {
+                okClickedThis.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
+            }
+        } else {
+            if (HelperService.tokenIsValid()) {
+                okClickedThis.memberService.saveNewMember(okClickedThis.Member).subscribe(updateMemberSuccess, logError);
+            } else {
+                okClickedThis.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
+            }
+        }
+
+        function logError(obj: any) {
+            HelperService.log(JSON.stringify(obj));
+            alert(JSON.stringify(obj));
+        }
+        function updateMemberSuccess() {
+            okClickedThis.closed.emit('true');
+        }
     }
 
     cancelMember = () => {
-        this.closed.emit('');
+        this.closed.emit('false');
+    }
+
+
+    showModalMessage() {
+        return this.modal.alert()
+            .size('lg')
+            .showClose(true)
+            .title('A simple Alert style modal window')
+            .open();
     }
 
 
@@ -195,4 +234,5 @@ export class MemberComponent {
     onRowDoubleClicked = (params: any) => {
     }
     teamsGroupsGridOptions: any = HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked);
+
 }
