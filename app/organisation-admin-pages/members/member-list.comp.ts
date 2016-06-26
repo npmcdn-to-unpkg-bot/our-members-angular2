@@ -5,24 +5,27 @@ import {MemberListService} from './member-list.serv';
 import {MemberComponent} from  './member.comp';
 import {CountriesService} from '../../services/countries/countries.serv';
 import {MembershipTypesService} from '../../services/membership-type/membership-type.serv';
+import {PopupComponent} from '../../utilities/popup/popup.comp';
 import {GroupsService} from '../groups/groups.serv';
 import {AgGridNg2} from 'ag-grid-ng2/main';
+
 
 
 @Component({
     selector: 'member-list',
     templateUrl: 'app/organisation-admin-pages/members/member-list.html',
     styleUrls: ['styles/styles.css', 'app/organisation-admin-pages/styles/organisation-admin-styles.css'],
-    providers: [MemberListService, CountriesService, MembershipTypesService, GroupsService],
-    directives: [AgGridNg2, MemberComponent]
+    providers: [MemberListService, CountriesService, MembershipTypesService, GroupsService, PopupComponent],
+    directives: [AgGridNg2, MemberComponent, PopupComponent]
 })
 
 export class MembersListComponent {
-    constructor(private router: Router, private memberListService: MemberListService, private countriesService: CountriesService, private membershipTypesService: MembershipTypesService, private groupsService: GroupsService) {
+    constructor(private router: Router, private memberListService: MemberListService, private countriesService: CountriesService, private membershipTypesService: MembershipTypesService, private groupsService: GroupsService, popupComponent: PopupComponent) {
         HelperService.log('constructor RegisterComponent ');
     }
 
     @ViewChild(MemberComponent) memberComponent: MemberComponent;
+    @ViewChild(PopupComponent) popupComponent: PopupComponent;
 
 
     ngOnInit() {
@@ -33,16 +36,14 @@ export class MembersListComponent {
     }
 
     memberComponentClosed = (refreshList: boolean) => {
-        this.showList = true;
-        this.showModal = false;
+        this.showMemberModal = false;
         if (refreshList) {
             this.loadMembers();
         }
     }
 
     Members: any[];
-    showList: boolean = true;
-    showModal: boolean = false;
+    showMemberModal: boolean = false;
 
     countries: any[] = [];
     MembershipTypes: any[] = [];
@@ -119,6 +120,28 @@ export class MembersListComponent {
         }
     };
 
+    getSelectedOrganisationMemberID = (): number => {
+        var selectedMembers: structOrganisationMember[] = this.gridOptions.api.getSelectedRows();
+        if (selectedMembers.length === 0) {
+            return -1;
+        } else {
+            return selectedMembers[0].OrganisationMemberID;
+        }
+    }
+
+    popupClosed = () => {
+        //do nothing
+    }
+
+    editMember = () => {
+        var OrganisationMemberID: number = this.getSelectedOrganisationMemberID();
+        if (OrganisationMemberID === -1) {
+            this.popupComponent.showPopup('Please select  a member to edit');
+        } else {
+            this.memberComponent.loadMember(OrganisationMemberID, this.countries, this.MembershipTypes, this.Groups);
+        }
+    }
+
     /////////////////////////////////////////////////////////////
     //grid
     columnDefs: any[] = [
@@ -136,8 +159,7 @@ export class MembersListComponent {
     onRowDoubleClicked = (params: any) => {
         var selectedMember: structOrganisationMember = <structOrganisationMember>params.data;
         this.memberComponent.loadMember(selectedMember.OrganisationMemberID, this.countries, this.MembershipTypes, this.Groups);
-        this.showList = false;
-        this.showModal = true;
+        this.showMemberModal = true;
     }
 
     gridOptions: any = HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked);

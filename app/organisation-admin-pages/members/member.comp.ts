@@ -1,9 +1,8 @@
-﻿import {Component, Output, EventEmitter, ViewContainerRef} from '@angular/core';
+﻿import {Component, Output, EventEmitter} from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
 import {HelperService} from '../../helper/helper.serv';
 import {MemberService} from './member.serv';
 import {AgGridNg2} from 'ag-grid-ng2/main';
-import {Modal, BS_MODAL_PROVIDERS} from 'angular2-modal/plugins/bootstrap';
 
 @Component({
     selector: 'memberModal',
@@ -15,19 +14,10 @@ import {Modal, BS_MODAL_PROVIDERS} from 'angular2-modal/plugins/bootstrap';
 })
 
 export class MemberComponent {
-    constructor(private router: Router, private memberService: MemberService,
-        public modal: Modal, viewContainer: ViewContainerRef
-    ) {
-        //modal.defaultViewContainer = viewContainer;
-        HelperService.log('constructor RegisterComponent ');
+    constructor(private router: Router, private memberService: MemberService) {
+        HelperService.log('constructor MemberComponent');
     }
 
-    ngOnInit() {
-    }
-
-    clickOutside = (event: MouseEvent) => {
-        this.cancelMember();
-    }
 
     getEmptyMember = () => {
         var member: structOrganisationMember = {
@@ -85,10 +75,30 @@ export class MemberComponent {
     titleMember: string;
     editMember: boolean = false;
     getMemberSuccess: boolean;
+    memberVisible: boolean = false;
 
     ContactSelected: boolean = true;
     PersonalSelected: boolean = false;
     OrganisationSelected: boolean = false;
+
+    newMember = () => {
+        this.memberVisible = true;
+        window.onkeyup = this.testEsc;
+        this.Member = this.getEmptyMember();
+    }
+
+    testEsc = (event: KeyboardEvent) => {
+        if (event.keyCode === 27) {
+            event.stopPropagation();
+            this.cancelMember();
+        }
+    }
+
+    cancelMember = () => {
+        window.onkeyup = null;
+        this.memberVisible = false;
+        this.closed.emit('false');
+    }
 
     unselectAll = () => {
         this.ContactSelected = false;
@@ -141,6 +151,8 @@ export class MemberComponent {
             loadMemberThis.getMemberSuccess = true;
             loadMemberThis.selectGroupsRows();
             HelperService.log('loadMember success');
+            loadMemberThis.memberVisible = true;
+            window.onkeyup = loadMemberThis.testEsc;
         }
 
         function logError() {
@@ -204,19 +216,6 @@ export class MemberComponent {
         function updateMemberSuccess() {
             okClickedThis.closed.emit('true');
         }
-    }
-
-    cancelMember = () => {
-        this.closed.emit('false');
-    }
-
-
-    showModalMessage() {
-        return this.modal.alert()
-            .size('lg')
-            .showClose(true)
-            .title('A simple Alert style modal window')
-            .open();
     }
 
 

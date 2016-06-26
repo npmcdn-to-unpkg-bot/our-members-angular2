@@ -28,9 +28,8 @@
     "bootstrap": "^3.3.6",
 
     "ag-grid": "4.2.x",
-    "ag-grid-ng2": "4.2.x",
+    "ag-grid-ng2": "4.2.x"
 
-    "angular2-modal": "1.0.6"
   },
   "devDependencies": {
     "concurrently": "^2.0.0",

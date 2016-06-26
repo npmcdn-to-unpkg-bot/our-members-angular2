@@ -1,6 +1,5 @@
 ﻿import {Router} from '@angular/router-deprecated';
 
-
 export class HelperService {
 
     private static sTrue = 'true';
@@ -28,8 +27,8 @@ export class HelperService {
     }
 
     static getServiceBase(): string {
-        return 'https://ourmembersapiweb.azurewebsites.net/'
-        // return 'http://localhost:26381/';
+        //return 'https://ourmembersapiweb.azurewebsites.net/'
+        return 'http://localhost:26381/';
     }
 
     static getTokenName(): string {
@@ -349,10 +348,12 @@ export class HelperService {
         console.log('token added to localStorage');
     }
 
-    static log(s: string) {
-        //console.log(s);
+    static log = (s: string) => {
+        console.log(s);
     }
 }
+
+
 
 
 
