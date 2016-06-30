@@ -45,16 +45,16 @@
                 <input class="form-control" type="text" required #inputOrganisationName ngControl="ngcOrganisationName" [(ngModel)]="register.OrganisationName" />
             </div>
         </div>
-
+         
         <div class="form-group row">
             <div class="col-sm-6 form-label">
                 <label for="inputUserName">User Name</label>
             </div>
             <div class="col-sm-6">
                 <input type="text" [(ngModel)]="register.RegisterUserName" class="form-control" #inputUserName="ngForm" required (blur)="userNameBlur()" ngControl="ngcUserName" />
-            </div>
-            <div style="color: red; font-weight: bold;" [hidden]="!UserNameDuplicate" class="col-sm-12">
-                This User Name is already registered. Please choose another.
+                <div style="color: red; font-weight: bold;" [hidden]="!UserNameDuplicate" class="col-sm-12">
+                    This User Name is already registered. Please choose another.
+                </div>
             </div>
         </div>
         <div class="form-group row">

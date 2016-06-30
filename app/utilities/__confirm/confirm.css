@@ -1,0 +1,16 @@
+﻿.confirm-message {
+    font-size: large;
+    padding: 20px 0;
+}
+
+.ok-button {
+    background-color: #7da31a;
+    font-size: larger;
+    padding: 10px 30%;
+}
+
+.cancel-button {
+    background-color: lightgray;
+    font-size: large;
+    padding: 10px 30%;
+}

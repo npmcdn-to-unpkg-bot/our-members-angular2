@@ -1,16 +1,27 @@
-﻿modal message and confirm
-<div class="container-fluid our-members-modal" style="">  ??
-pass parameter in...
-modal message: 
-	pass parameter in: message
-	event on html tag triggered by OK button
-modal confirm: 
-	pass parameter in: message
-	event on html tag triggered by OK button or cancel button, event has true or false parameter
-
-
-
+﻿-----------------------------
 form valid
 click add member, check if need new member number
 save add / edit
 open receipt on return?
+-----------------------------
+
+
+-----------------------------
+New Forms rc3
+bootstrap: 
+
+import { bootstrap }    from '@angular/platform-browser-dynamic';
+import { disableDeprecatedForms, provideForms } from '@angular/forms';
+import { AppComponent } from './app.component';
+bootstrap(AppComponent, [
+  disableDeprecatedForms(),
+  provideForms()
+ ])
+-----------------------------
+
+
+
+-----------------------------
+ restore styling
+ make member list buttons disabled and style
+-----------------------------

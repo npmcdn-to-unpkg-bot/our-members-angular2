@@ -1,0 +1,22 @@
+﻿<div class="modalSolsof modalSolsof200" [class.modalSolsofVisible]="confirmVisible" (click)="cancel()">
+    <div class="modal-contentSolsof modalSolsof-very-narrow" (click)="$event.stopPropagation()">
+        <div class="row">
+            <div class="col-sm-1 ">
+            </div>
+            <div class="col-sm-10 confirm-message">
+                {{message}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 ">
+            </div>
+
+            <div class="col-sm-4 ">
+                <button type="button" class="ok-button" (click)="ok()">OK</button>
+            </div>
+            <div class="col-sm-4 ">
+                <button type="button" class="cancel-button" (click)="cancel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
