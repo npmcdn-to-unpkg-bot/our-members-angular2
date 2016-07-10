@@ -2,14 +2,14 @@
 
 export class HelperService {
 
-    private static sTrue = 'true';
-    private static sFalse = 'false';
+    public static C_TRUE = 'true';
+    public static C_FALSE = 'false';
 
     static booleanToString(inp: boolean) {
         if (inp) {
-            return this.sTrue;
+            return this.C_TRUE;
         } else {
-            return this.sFalse;
+            return this.C_FALSE;
         }
     }
 
@@ -20,7 +20,7 @@ export class HelperService {
         if (inp === null) {
             return null;
         }
-        if (inp.toLowerCase() === this.sTrue) {
+        if (inp.toLowerCase() === this.C_TRUE) {
             return true;
         }
         return false;

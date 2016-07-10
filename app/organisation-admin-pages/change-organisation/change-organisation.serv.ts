@@ -10,7 +10,7 @@ import {HttpHandlerService} from  '../../services/http-handler/http-handler.serv
 @Injectable()
 export class ChangeOrganisationService {
     constructor(private http: Http, private router: Router) {
-        console.log('constructor MemberListService');
+        console.log('constructor ChangeOrganisationService');
     }
 
     parseResponse(res: Response) {

@@ -1,4 +1,6 @@
-﻿interface structRegistration {
+﻿declare var module: any;
+
+interface structRegistration {
     OrganisationName: string;
     RegisterUserName: string;
     Password: string;
@@ -60,7 +62,7 @@ interface structOrganisationMember {
     DateOfBirth: string; //date
     ContactPerson: string;
     Comments: string;
-    GroupIDArray: number[]; 
+    GroupIDArray: number[];
     Active: boolean;
     Fax: string;
     Title: string;
@@ -80,4 +82,23 @@ interface structOrganisationMember {
     ReceivesMail: boolean;
     //does this member have any membership invoices? Used to enable / disable PaidTo date edit 
     boolMmembershipInvoiceEntered: boolean;
+}
+
+interface structMemberListData {
+    Members: any[];
+    Countries: any[];
+    Groups: any[];
+    MembershipTypes: any[];
+    defaultCountryId: number;
+    IncrementMemberNumber: boolean;
+    NextMemberNumber: number;
+}
+
+interface structError {
+    ErrorID: number;
+    ErrorDate: Date;
+    Message: string;
+    Stack: string;
+    UserName: string;
+    OrganisationName: string;
 }

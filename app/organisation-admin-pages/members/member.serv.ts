@@ -32,7 +32,7 @@ export class MemberService {
 
     saveNewMember(Member: structOrganisationMember): Observable<Response>{
         var httpHandlerService = new HttpHandlerService(this.http);
-        return httpHandlerService.putObject(Member, 'api/member');
+        return httpHandlerService.postObject(Member, 'api/member');
     }
 
 

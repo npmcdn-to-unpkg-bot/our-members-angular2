@@ -21,7 +21,20 @@ bootstrap(AppComponent, [
 
 
 
------------------------------
- restore styling
- make member list buttons disabled and style
------------------------------
+admin pages:
+	errors
+		double click shows error in new page
+	logins
+
+valid token changes login button to return to my iblong2
+
+change member popup to tab page model
+add member does lookup to get next member number
+add member has "Save" and "Save and then Receipt" buttons
+validation of save member shows correct page
+
+add "Double-click to drill down" message to list
+
+then 
+	delete member
+	receipt member

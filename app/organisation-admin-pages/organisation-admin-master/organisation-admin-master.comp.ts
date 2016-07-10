@@ -3,6 +3,7 @@ import {Component, Directive, Output, EventEmitter} from '@angular/core';
 import {HelperService} from '../../helper/helper.serv';
 import {MembersListComponent} from '../members/member-list.comp';
 import {ChangeOrganisationComponent} from '../change-organisation/change-organisation.comp';
+import {ErrorListComponent} from '../error-list/error-list.comp';
 import {SidebarMenuComponent} from '../sidebar-menu/sidebar-menu.comp';
 
 @Component({
@@ -13,7 +14,8 @@ import {SidebarMenuComponent} from '../sidebar-menu/sidebar-menu.comp';
 
 @RouteConfig([
         { path: '/member-list', name: 'MembersList', component: MembersListComponent, useAsDefault: true },
-        { path: '/change-organisation', name: 'ChangeOrganisation', component: ChangeOrganisationComponent }
+        { path: '/change-organisation', name: 'ChangeOrganisation', component: ChangeOrganisationComponent },
+        { path: '/error-list', name: 'ErrorList', component: ErrorListComponent }
 ])
 
 export class OrganisationAdminMasterComponent {

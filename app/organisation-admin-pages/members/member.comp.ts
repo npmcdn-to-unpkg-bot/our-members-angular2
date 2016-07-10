@@ -18,8 +18,27 @@ export class MemberComponent {
         HelperService.log('constructor MemberComponent');
     }
 
+    //loadData = (countries: any[], Groups: any[], MembershipTypes: any[], defaultCountryId: number) => {
+    //    this.countries = countries;
+    //    this.Groups = Groups;
+    //    this.MembershipTypes = MembershipTypes;
+    //    this.defaultCountryId = defaultCountryId;
+    //}
+    ngOnInit() {
+        this.Member = this.getEmptyMember(0);
+    }
 
-    getEmptyMember = () => {
+    getEmptyMember = (defaultCountryId: number) => {
+        var defaultMembershipTypeId: number;
+        if (this.MembershipTypes === undefined) {
+            defaultMembershipTypeId = -1;
+        } else {
+            if (this.MembershipTypes.length > 0) {
+                defaultMembershipTypeId = this.MembershipTypes[0].MembershipTypeID;
+            } else {
+                defaultMembershipTypeId = -1;
+            }
+        }
         var member: structOrganisationMember = {
             OrganisationMemberID: 0,
             FirstName: '',
@@ -32,13 +51,13 @@ export class MemberComponent {
             Suburb: '',
             Postcode: '',
             State: '',
-            CountryID: 0,
+            CountryID: defaultCountryId,
             EmailAddress: '',
             MemberNumber: '',
             LicenseNumber: '',
             MedicalNotes: '',
             PlayerNumber: '',
-            MembershipTypeID: 0,
+            MembershipTypeID: defaultMembershipTypeId,
             MembershipPaidTo: '', //date
             InvoicedTo: '',
             BalanceOwing: '',
@@ -71,21 +90,20 @@ export class MemberComponent {
 
     @Output() closed: EventEmitter<string> = new EventEmitter<string>();
 
-    Member: structOrganisationMember = this.getEmptyMember();
+    Member: structOrganisationMember;
     titleMember: string;
     editMember: boolean = false;
-    getMemberSuccess: boolean;
     memberVisible: boolean = false;
 
     ContactSelected: boolean = true;
     PersonalSelected: boolean = false;
     OrganisationSelected: boolean = false;
 
-    newMember = () => {
-        this.memberVisible = true;
-        window.onkeyup = this.testEsc;
-        this.Member = this.getEmptyMember();
-    }
+    //newMember = () => {
+    //    this.memberVisible = true;
+    //    window.onkeyup = this.testEsc;
+    //    this.Member = this.getEmptyMember();
+    //}
 
     testEsc = (event: KeyboardEvent) => {
         if (event.keyCode === 27) {
@@ -97,7 +115,7 @@ export class MemberComponent {
     cancelMember = () => {
         window.onkeyup = null;
         this.memberVisible = false;
-        this.closed.emit('false');
+        this.closed.emit(HelperService.C_FALSE);
     }
 
     unselectAll = () => {
@@ -126,19 +144,32 @@ export class MemberComponent {
     countries: any[];
     MembershipTypes: any[];
     Groups: any[];
+    defaultCountryId: number;
+
+    loadObjects = (countries: any[], MembershipTypes: any[], Groups: any[], defaultCountryId: number) => {
+        this.countries = countries;
+        this.MembershipTypes = MembershipTypes;
+        this.Groups = Groups;
+        this.teamsGroupsGridOptions.api.setRowData(Groups);
+        this.teamsGroupsGridOptions.rowSelection = 'multiple';
+        this.teamsGroupsGridOptions.suppressRowClickSelection = true;
+        this.defaultCountryId = defaultCountryId;
+        window.onkeyup = this.testEsc;
+
+    }
+
+    addMember = () => {
+        this.editMember = false;
+        this.Member = this.getEmptyMember(this.defaultCountryId);
+        this.memberVisible = true;
+    }
+
 
     //////////////////////////////////////////////////////////////
     //get data
-    loadMember = (OrganisationMemberID: number, countries: any[], MembershipTypes: any[], Groups: any[]) => {
+    loadMember = (OrganisationMemberID: number) => {
         var loadMemberThis = this;
-        loadMemberThis.countries = countries;
-        loadMemberThis.MembershipTypes = MembershipTypes;
-        loadMemberThis.Groups = Groups;
-        loadMemberThis.teamsGroupsGridOptions.api.setRowData(Groups);
-        loadMemberThis.teamsGroupsGridOptions.rowSelection = 'multiple';
-        loadMemberThis.teamsGroupsGridOptions.suppressRowClickSelection = true;
-
-        loadMemberThis.Member = loadMemberThis.getEmptyMember();
+        //loadMemberThis.Member = loadMemberThis.getEmptyMember();
         if (HelperService.tokenIsValid()) {
             loadMemberThis.titleMember = 'Edit Member';
             loadMemberThis.memberService.getMember(OrganisationMemberID).subscribe(onGetMemberSuccess, logError);
@@ -148,7 +179,6 @@ export class MemberComponent {
         function onGetMemberSuccess(Member: structOrganisationMember) {
             loadMemberThis.editMember = true;
             loadMemberThis.Member = Member;
-            loadMemberThis.getMemberSuccess = true;
             loadMemberThis.selectGroupsRows();
             HelperService.log('loadMember success');
             loadMemberThis.memberVisible = true;
@@ -157,7 +187,6 @@ export class MemberComponent {
 
         function logError() {
             HelperService.log('loadMember Error');
-            loadMemberThis.getMemberSuccess = false;
         }
     };
 
@@ -214,7 +243,9 @@ export class MemberComponent {
             alert(JSON.stringify(obj));
         }
         function updateMemberSuccess() {
-            okClickedThis.closed.emit('true');
+            okClickedThis.memberVisible = false;
+            okClickedThis.closed.emit(HelperService.C_TRUE);
+            window.onkeyup = null;
         }
     }
 

@@ -8,28 +8,21 @@ import {HttpHandlerService} from  '../../services/http-handler/http-handler.serv
 
 
 @Injectable()
-export class MemberListService {
+export class ErrorListService {
     constructor(private http: Http, private router: Router) {
-        console.log('constructor MemberListService');
+        console.log('constructor ErrorListService');
     }
 
     parseResponse(res: Response) {
         return res.json();
     }
 
-    //getMemberList(): Observable<any[]> {
-
-    //    var parameters: modSharedTypes.IHttpParameter[] = [];
-
-    //    var httpHandlerService = new HttpHandlerService(this.http);
-    //    return httpHandlerService.getObject<any[]>(parameters, 'api/member-list', true);
-    //}
-
-    getMemberListData(): Observable<structMemberListData> {
+    getErrors(): Observable<any[]> {
 
         var parameters: modSharedTypes.IHttpParameter[] = [];
+
         var httpHandlerService = new HttpHandlerService(this.http);
-        return httpHandlerService.getObject<structMemberListData>(parameters, 'api/member-list', true);
+        return httpHandlerService.getObject<any[]>(parameters, 'api/error-list', true);
     }
 }
 
