@@ -4,6 +4,7 @@ import {HelperService} from '../../helper/helper.serv';
 import {MembersListComponent} from '../members/member-list.comp';
 import {ChangeOrganisationComponent} from '../change-organisation/change-organisation.comp';
 import {ErrorListComponent} from '../error-list/error-list.comp';
+import {RecentLoginsComponent} from '../recent-logins/recent-logins.comp';
 import {SidebarMenuComponent} from '../sidebar-menu/sidebar-menu.comp';
 
 @Component({
@@ -13,9 +14,10 @@ import {SidebarMenuComponent} from '../sidebar-menu/sidebar-menu.comp';
 })
 
 @RouteConfig([
-        { path: '/member-list', name: 'MembersList', component: MembersListComponent, useAsDefault: true },
-        { path: '/change-organisation', name: 'ChangeOrganisation', component: ChangeOrganisationComponent },
-        { path: '/error-list', name: 'ErrorList', component: ErrorListComponent }
+    { path: '/member-list', name: 'MembersList', component: MembersListComponent, useAsDefault: true },
+    { path: '/change-organisation', name: 'ChangeOrganisation', component: ChangeOrganisationComponent },
+    { path: '/recent-logins', name: 'RecentLogins', component: RecentLoginsComponent },
+    { path: '/error-list', name: 'ErrorList', component: ErrorListComponent }
 ])
 
 export class OrganisationAdminMasterComponent {
@@ -27,7 +29,7 @@ export class OrganisationAdminMasterComponent {
     ngOnInit() {
         var tokenValid: boolean = HelperService.tokenIsValid();
         if (tokenValid === false) {
-            this.router.parent.navigate(['HomePageMaster','LoginComponent']);
+            this.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
         }
     }
 

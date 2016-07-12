@@ -95,7 +95,7 @@ export class MembersListComponent {
         { headerName: "Last Name", field: "LastName" },
         { headerName: "First Name", field: "FirstName" },
         { headerName: "Membership Type", field: "MembershipType" },
-        { headerName: "M'ship To", field: "InvoicedTo" },
+        { headerName: "M'ship To", field: "sMembershipPaidTo", cellRenderer: HelperService.formatDateCell },
         { headerName: "Owing", field: "FeesOwing" }
     ];
 

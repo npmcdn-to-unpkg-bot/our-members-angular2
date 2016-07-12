@@ -351,6 +351,49 @@ export class HelperService {
     static log = (s: string) => {
         console.log(s);
     }
+
+    static formatDateCell = (params: any): string => {
+        var sDate: string = HelperService.noNullString(params.value);
+        return HelperService.formatDateForGrid(sDate, false);
+    }
+
+    static formatDateCellWithTime = (params: any): string => {
+        var sDate: string = HelperService.noNullString(params.value);
+        return HelperService.formatDateForGrid(sDate, true);
+    }
+
+    static formatDateForGrid = (sDate: string, withTime: boolean) => {
+        var d: Date
+        if (sDate === '') {
+            return '';
+        } else {
+            if (withTime) {
+                d = HelperService.translateJavascriptDateAndTime(sDate);
+            } else {
+                d = HelperService.translateJavascriptDate(sDate);
+            }
+            if (d === null) {
+                return '';
+            } else {
+                return HelperService.formatDateWith24HourTime(d, withTime);
+            }
+        }
+    }
+
+    static formatDateWith24HourTime = (d: Date, includeTime: boolean): string => {
+        var month = d.getMonth();
+        var day = d.getDate();
+        var year = d.getFullYear();
+        var hour = d.getHours();
+        var minute = d.getMinutes();
+        if (includeTime) {
+            return HelperService.Month_Names[month] + " " + HelperService.pad(day, 2) + " " + year.toString() + " " + HelperService.pad(hour, 2) + ":" + HelperService.pad(minute, 2);
+        } else {
+            return HelperService.Month_Names[month] + " " + day.toString() + " " + year.toString();
+        }
+    }
+
+    Month_Names: string[] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 }
 
 

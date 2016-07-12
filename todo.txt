@@ -22,8 +22,6 @@ bootstrap(AppComponent, [
 
 
 admin pages:
-	errors
-		double click shows error in new page
 	logins
 
 valid token changes login button to return to my iblong2

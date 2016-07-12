@@ -75,7 +75,7 @@ export class ErrorListComponent {
     //////////////////////////////////////////////
     //grid
     columnDefs: any[] = [
-        { headerName: "ErrorDate", field: "ErrorDate" },
+        { headerName: "ErrorDate", field: "sErrorDate", cellRenderer: HelperService.formatDateCellWithTime },
         { headerName: "Message", field: "Message" },
         { headerName: "Stack", field: "Stack" },
         { headerName: "UserName", field: "UserName" },
