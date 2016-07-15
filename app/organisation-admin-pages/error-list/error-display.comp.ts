@@ -4,11 +4,9 @@ import {HelperService} from '../../helper/helper.serv';
 import {ErrorDisplayService} from './error-display.serv';
 
 @Component({
-    //moduleId: module.id,
+    moduleId: module.id,
     selector: 'errorDisplayModal',
-    //templateUrl: 'error-display.html',
-    templateUrl: 'app/organisation-admin-pages/error-list/error-display.html',
-    styleUrls: ['styles/styles.css', 'app/organisation-admin-pages/styles/organisation-admin-styles.css'],
+    templateUrl: 'error-display.html',
     providers: [ErrorDisplayService]
 })
 

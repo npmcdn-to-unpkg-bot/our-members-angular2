@@ -2,10 +2,10 @@
 import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 
 @Component({
+    moduleId: module.id,
     selector: 'home-page-content',
-
-    templateUrl: 'app/home-pages/home-page/home-page.html',
-    styleUrls: ['app/home-pages/styles/home-pages.css', 'app/home-pages/home-page/home-page.css'],
+    templateUrl: 'home-page.html',
+    styleUrls: ['home-page.css'],
     directives: [ROUTER_DIRECTIVES]
 })
 

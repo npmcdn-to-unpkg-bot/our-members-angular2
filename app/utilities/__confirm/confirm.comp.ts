@@ -2,9 +2,10 @@
 //import {HelperService} from '../../helper/helper.serv';
 
 //@Component({
+//moduleId: module.id,
 //    selector: 'confirm',
-//    templateUrl: 'app/utilities/confirm/confirm.html',
-//    styleUrls: ['styles/styles.css', 'app/organisation-admin-pages/styles/organisation-admin-styles.css', 'app/utilities/confirm/confirm.css'],
+//    templateUrl: 'confirm.html',
+//    styleUrls: ['styles/styles.css', 'app/organisation-admin-pages/styles/organisation-admin-styles.css', 'confirm.css'],
 //})
 
 //export class ConfirmComponent {

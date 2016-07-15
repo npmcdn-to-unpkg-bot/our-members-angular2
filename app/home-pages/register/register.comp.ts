@@ -6,10 +6,10 @@ import {UserNameService} from  '../../services/user-name/user-name.serv';
 
 
 @Component({
+    moduleId: module.id,
     selector: 'register',
-
-    templateUrl: 'app/home-pages/register/register.html',
-    styleUrls: ['app/home-pages/styles/home-pages.css', 'app/home-pages/register/register.css'],
+    templateUrl: 'register.html',
+    styleUrls: ['register.css'],
     directives: [ROUTER_DIRECTIVES],
     providers: [CountriesService, RegisterService, UserNameService]
 })

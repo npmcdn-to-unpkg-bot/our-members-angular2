@@ -2,10 +2,10 @@
 import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 
 @Component({
+    moduleId: module.id,
     selector: 'privacy',
-
-    templateUrl: 'app/home-pages/privacy/privacy.html',
-    styleUrls: ['app/home-pages/styles/home-pages.css', 'app/home-pages/privacy/privacy.css'],
+    templateUrl: 'privacy.html',
+    styleUrls: ['privacy.css'],
     directives: [ROUTER_DIRECTIVES]
 })
 

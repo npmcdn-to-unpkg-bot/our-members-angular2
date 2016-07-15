@@ -1,4 +1,4 @@
-﻿import {Component} from '@angular/core';
+﻿import {Component, enableProdMode} from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import {HelperService} from '../helper/helper.serv';
 import {HomePageMasterComponent} from '../home-pages/home-page-master/home-page-master.comp';
@@ -7,11 +7,14 @@ import {HeaderButtons} from  '../header-buttons/header-buttons.comp';
 import {FooterButtons} from  '../home-pages/footer-buttons/footer-buttons.comp';
 import {OrganisationAdminMasterComponent} from  '../organisation-admin-pages/organisation-admin-master/organisation-admin-master.comp';
 
+enableProdMode();
+
 
 @Component({
+    moduleId: module.id,
     selector: 'ib2-app',
-    templateUrl: 'app/app-master/app-master.html',
-    styleUrls: ['app/app-master/app-master.css'],
+    templateUrl: 'app-master.html',
+    styleUrls: ['app-master.css'],
     directives: [ROUTER_DIRECTIVES, HeaderButtons, FooterButtons]
 
 })
@@ -25,7 +28,6 @@ export class AppComponent {
     constructor() {
         console.log('constructor AppComponent');
     }
-
     public title = 'iB2';
     tokenValid: boolean = HelperService.tokenIsValid();
 

@@ -6,10 +6,10 @@ import {MembersListComponent} from '../../organisation-admin-pages/members/membe
 
 
 @Component({
+    moduleId: module.id,
     selector: 'login',
-
-    templateUrl: 'app/home-pages/login/login.html',
-    styleUrls: ['app/home-pages/styles/home-pages.css', 'app/home-pages/login/login.css'],
+    templateUrl: 'login.html',
+    styleUrls: ['login.css'],
     directives: [ROUTER_DIRECTIVES],
     providers: [LoginService]
 })

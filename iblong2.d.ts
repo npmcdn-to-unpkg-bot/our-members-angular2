@@ -1,6 +1,4 @@
-﻿declare var module: any;
-
-interface structRegistration {
+﻿interface structRegistration {
     OrganisationName: string;
     RegisterUserName: string;
     Password: string;

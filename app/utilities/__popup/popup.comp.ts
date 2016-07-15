@@ -2,9 +2,10 @@
 //import {HelperService} from '../../helper/helper.serv';
 
 //@Component({
+//moduleId: module.id,
 //    selector: 'popup',
-//    templateUrl: 'app/utilities/popup/popup.html',
-//    styleUrls: ['styles/styles.css', 'app/organisation-admin-pages/styles/organisation-admin-styles.css','app/utilities/popup/popup.css'],
+//    templateUrl: 'popup.html',
+//    styleUrls: ['styles/styles.css', 'app/organisation-admin-pages/styles/organisation-admin-styles.css','popup.css'],
 //})
 
 //export class PopupComponent {

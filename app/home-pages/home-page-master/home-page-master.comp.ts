@@ -21,9 +21,8 @@ import {LoginComponent}  from '../login/login.comp';
 import {OrganisationAdminMasterComponent}  from '../../organisation-admin-pages/organisation-admin-master/organisation-admin-master.comp';
 
 @Component({
-    //selector: 'home-page',
-    styleUrls: ['app/home-pages/styles/home-pages.css'],
-    templateUrl: 'app/home-pages/home-page-master/home-page-master.html',
+    moduleId: module.id,
+    templateUrl: 'home-page-master.html',
     directives: [ROUTER_DIRECTIVES, HomePagesLinks, HomePagesBottomButtons]
 })
 @RouteConfig([

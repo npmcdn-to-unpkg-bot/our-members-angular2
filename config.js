@@ -1,16 +1,16 @@
-﻿SystemJS.config({
-    defaultJSExtensions: true
-    ,
-    paths: {
-        './*': './*',
+﻿//SystemJS.config({
+//    defaultJSExtensions: true
+//    ,
+//    paths: {
+//        './*': './*',
 
-        '../*': '../*',
-        'src/*': 'src/*',
+//        '../*': '../*',
+//        'src/*': 'src/*',
 
-        '*': './node_modules/*'
-    },
-    packageConfigPaths: ['./node_modules/*/package.json'],
-    map: {
-        'crypto': "@empty"
-    }
-});
+//        '*': './node_modules/*'
+//    },
+//    packageConfigPaths: ['./node_modules/*/package.json'],
+//    map: {
+//        'crypto': "@empty"
+//    }
+//});

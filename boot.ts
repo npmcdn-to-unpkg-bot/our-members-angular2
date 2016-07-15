@@ -1,4 +1,5 @@
-﻿import {ROUTER_PROVIDERS} from '@angular/router-deprecated';
+﻿/// <reference path="typings/globals/node/index.d.ts" />
+import {ROUTER_PROVIDERS} from '@angular/router-deprecated';
 import { HTTP_PROVIDERS } from '@angular/http';
 //import { disableDeprecatedForms, provideForms } from '@angular/forms';
 

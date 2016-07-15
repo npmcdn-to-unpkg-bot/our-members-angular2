@@ -2,10 +2,10 @@
 import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 
 @Component({
+    moduleId: module.id,
     selector: 'about-events',
-
-    templateUrl: 'app/home-pages/about-events/about-events.html',
-    styleUrls: ['app/home-pages/styles/home-pages.css', 'app/home-pages/about-events/about-events.css'],
+    templateUrl: 'about-events.html',
+    styleUrls: ['about-events.css'],
     directives: [ROUTER_DIRECTIVES]
 })
 

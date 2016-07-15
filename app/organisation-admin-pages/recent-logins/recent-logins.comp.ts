@@ -6,9 +6,9 @@ import {AgGridNg2} from 'ag-grid-ng2/main';
 
 
 @Component({
+    moduleId: module.id,
     selector: 'recent-logins',
-    templateUrl: 'app/organisation-admin-pages/recent-logins/recent-logins.html',
-    styleUrls: ['styles/styles.css', 'app/organisation-admin-pages/styles/organisation-admin-styles.css'],
+    templateUrl: 'recent-logins.html',
     providers: [RecentLoginsService],
     directives: [AgGridNg2]
 })

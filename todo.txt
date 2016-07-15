@@ -21,12 +21,10 @@ bootstrap(AppComponent, [
 
 
 
-admin pages:
-	logins
+valid token changes login button to return to my iblong2:
+	Parent and children communicate via a service
+	https://angular.io/docs/ts/latest/cookbook/component-communication.html#!#bidirectional-service
 
-valid token changes login button to return to my iblong2
-
-change member popup to tab page model
 add member does lookup to get next member number
 add member has "Save" and "Save and then Receipt" buttons
 validation of save member shows correct page

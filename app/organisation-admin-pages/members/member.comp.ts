@@ -5,10 +5,10 @@ import {MemberService} from './member.serv';
 import {AgGridNg2} from 'ag-grid-ng2/main';
 
 @Component({
+    moduleId: module.id,
     selector: 'memberModal',
-    templateUrl: 'app/organisation-admin-pages/members/member.html',
-    //styles: ['.modalOurMembersVisible {display: block;}'],
-    styleUrls: ['styles/styles.css', 'app/organisation-admin-pages/styles/organisation-admin-styles.css', 'app/organisation-admin-pages/members/member.css'],
+    templateUrl: 'member.html',
+    styleUrls: ['member.css'],
     providers: [MemberService],
     directives: [AgGridNg2]
 })

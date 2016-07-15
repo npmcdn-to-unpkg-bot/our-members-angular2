@@ -8,9 +8,9 @@ import {AgGridNg2} from 'ag-grid-ng2/main';
 
 
 @Component({
+    moduleId: module.id,
     selector: 'change-organisation',
-    templateUrl: 'app/organisation-admin-pages/change-organisation/change-organisation.html',
-    styleUrls: ['styles/styles.css', 'app/organisation-admin-pages/styles/organisation-admin-styles.css'],
+    templateUrl: 'change-organisation.html',
     providers: [ChangeOrganisationService],
     directives: [AgGridNg2]
 })

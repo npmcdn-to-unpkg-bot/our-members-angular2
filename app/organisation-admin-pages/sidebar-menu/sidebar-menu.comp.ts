@@ -4,9 +4,10 @@ import {HelperService} from '../../helper/helper.serv';
 import {SidebarMenuService} from './sidebar-menu.serv';
 
 @Component({
+    moduleId: module.id,
     selector: 'sidebar-menu',
-    templateUrl: 'app/organisation-admin-pages/sidebar-menu/sidebar-menu.html',
-    styleUrls: ['styles/styles.css', 'app/organisation-admin-pages/styles/organisation-admin-styles.css', 'app/organisation-admin-pages/sidebar-menu/sidebar-menu.css'],
+    templateUrl: 'sidebar-menu.html',
+    styleUrls: ['sidebar-menu.css'],
     directives: [ROUTER_DIRECTIVES],
     providers: [SidebarMenuService]
 })

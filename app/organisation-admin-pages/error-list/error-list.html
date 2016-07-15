@@ -1,7 +1,9 @@
-﻿<div class="row">
-    <div class="col-sm-12">
-        <ag-grid-ng2 class="ag-fresh medium-grid" [gridOptions]="gridOptions"></ag-grid-ng2>
+﻿<div [hidden]="!showErrorList">
+    <div class="row">
+        <div class="col-sm-12">
+            <ag-grid-ng2 class="ag-fresh medium-grid" [gridOptions]="gridOptions"></ag-grid-ng2>
+        </div>
     </div>
-</div>    
+</div>
 
-<errorDisplayModal (closed)="errorDisplayClosed($event)"></errorDisplayModal>
+<errorDisplayModal (closed)="errorDisplayClosed($event)" [hidden]="showErrorList"></errorDisplayModal>

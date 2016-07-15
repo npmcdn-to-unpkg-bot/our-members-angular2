@@ -1,10 +1,9 @@
 ﻿import {Component} from '@angular/core';
 
 @Component({
+    moduleId: module.id,
     selector: 'home-pages-bottom-buttons',
-
-    templateUrl: 'app/home-pages/home-pages-bottom-buttons/home-pages-bottom-buttons.html',
-    styleUrls: ['app/home-pages/styles/home-pages.css']
+    templateUrl: 'home-pages-bottom-buttons.html'
 })
 
 export class HomePagesBottomButtons {

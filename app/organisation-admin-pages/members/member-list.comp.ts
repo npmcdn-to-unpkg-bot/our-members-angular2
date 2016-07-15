@@ -8,9 +8,9 @@ import {AgGridNg2} from 'ag-grid-ng2/main';
 
 
 @Component({
+    moduleId: module.id,
     selector: 'member-list',
-    templateUrl: 'app/organisation-admin-pages/members/member-list.html',
-    styleUrls: ['styles/styles.css', 'app/organisation-admin-pages/styles/organisation-admin-styles.css'],
+    templateUrl: 'member-list.html',
     providers: [MemberListService],
     directives: [AgGridNg2, MemberComponent]
 
@@ -32,10 +32,10 @@ export class MembersListComponent {
         if (refreshList === HelperService.C_TRUE) {
             this.loadMemberListData();
         }
+        this.showMembershipList = true;
     }
 
     Members: any[];
-
 
     //////////////////////////////////////////////////////////////
     //get data
@@ -70,16 +70,14 @@ export class MembersListComponent {
         }
     }
 
-    popupClosed = () => {
-        //do nothing
-    }
-
     addMember = () => {
         this.memberComponent.addMember();
+        this.showMembershipList = false;
     }
 
     editMember = () => {
         var OrganisationMemberID: number = this.getSelectedOrganisationMemberID();
+        this.showMembershipList = false;
         if (OrganisationMemberID === -1) {
             alert('Please select a member to edit');
             //this.popupComponent.showPopup('Please select  a member to edit');
@@ -99,6 +97,7 @@ export class MembersListComponent {
         { headerName: "Owing", field: "FeesOwing" }
     ];
 
+    showMembershipList: boolean = true;
     selectedMemberId: number;
     rowSelected: boolean = false;
     onRowClicked = (params: any) => {
@@ -113,6 +112,7 @@ export class MembersListComponent {
     }
 
     onRowDoubleClicked = (params: any) => {
+        this.showMembershipList = false;
         var selectedMember: structOrganisationMember = <structOrganisationMember>params.data;
         this.memberComponent.loadMember(selectedMember.OrganisationMemberID);
         //this.showMemberModal = true;

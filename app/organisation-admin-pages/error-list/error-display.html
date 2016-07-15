@@ -1,32 +1,40 @@
-﻿<div class="modalSolsof modalSolsof100" [class.modalSolsofVisible]="errorDisplayVisible" (click)="cancelMember()">
-    <div class="modal-contentSolsof" (click)="$event.stopPropagation()">
+﻿<div class="form-content form-container">
 
-        <div class="row">
+    <div class="row">
+        <div class="col-sm-12">
             {{structError.ErrorDate}}
         </div>
-        <hr />
-        <div class="row">
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-12">
             {{structError.Message}}
         </div>
-        <hr />
-        <div class="row">
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-12">
             {{structError.Stack}}
         </div>
-        <hr />
-        <div class="row">
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-12">
             {{structError.UserName}}
         </div>
-        <hr />
-        <div class="row">
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-12">
             {{structError.OrganisationName}}
         </div>
-
-        <div class="row save-and-cancel-buttons-row">
-            <div class="col-sm-12">
-                <button type="button" class="save-button" (click)="deleteError()">Delete</button>
-                <button type="button" class="cancel-button" (click)="cancelErrorDisplay()">Cancel</button>
-            </div>
-        </div>
-
     </div>
+
+    <div class="row save-and-cancel-buttons-row">
+        <div class="col-sm-12">
+            <button type="button" class="save-button" (click)="deleteError()">Delete</button>
+            <button type="button" class="cancel-button" (click)="cancelErrorDisplay()">Cancel</button>
+        </div>
+    </div>
+
 </div>

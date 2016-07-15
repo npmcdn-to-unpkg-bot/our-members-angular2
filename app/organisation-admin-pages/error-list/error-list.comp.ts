@@ -7,9 +7,10 @@ import {ErrorDisplayComponent} from './error-display.comp';
 
 
 @Component({
+    moduleId: module.id,
     selector: 'error-list',
-    templateUrl: 'app/organisation-admin-pages/error-list/error-list.html',
-    styleUrls: ['styles/styles.css', 'app/organisation-admin-pages/styles/organisation-admin-styles.css', 'app/organisation-admin-pages/error-list/error-list.css'],
+    templateUrl: 'error-list.html',
+    styleUrls: ['error-list.css'],
     providers: [ErrorListService, ErrorDisplayComponent],
     directives: [AgGridNg2, ErrorDisplayComponent]
 })
@@ -70,8 +71,9 @@ export class ErrorListComponent {
         if (result === HelperService.C_TRUE) {
             this.loadErrors();
         }
+        this.showErrorList = true;
     }
-
+    showErrorList: boolean = true;
     //////////////////////////////////////////////
     //grid
     columnDefs: any[] = [
@@ -83,6 +85,7 @@ export class ErrorListComponent {
     ];
 
     onRowDoubleClicked = (params: any) => {
+        this.showErrorList = false;
         var selectedError: structError = <structError>params.data;
         this.errorDisplayComponent.displayError(selectedError);
     }
