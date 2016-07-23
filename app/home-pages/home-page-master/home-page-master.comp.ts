@@ -2,7 +2,7 @@
 import {Component, Directive} from '@angular/core';
 import {HomePagesLinks}  from '../home-pages-links/home-pages-links.comp';
 import {HomePagesBottomButtons}  from '../home-pages-bottom-buttons/home-pages-bottom-buttons.comp';
-import {HelperService} from '../../helper/helper.serv';
+import {HelperService} from '../../services/helper/helper.serv';
 import {HomePage}  from '../home-page/home-page.comp';
 import {AboutTrialPeriodComponent}  from '../about-trial-period/about-trial-period.comp';
 import {ContactUsComponent}  from '../contact-us/contact-us.comp';
@@ -17,7 +17,6 @@ import {AboutHelpComponent}  from '../about-help/about-help.comp';
 import {AboutUsComponent}  from '../about-us/about-us.comp';
 import {TermsComponent}  from '../terms/terms.comp';
 import {PrivacyComponent}  from '../privacy/privacy.comp';
-import {LoginComponent}  from '../login/login.comp';
 import {OrganisationAdminMasterComponent}  from '../../organisation-admin-pages/organisation-admin-master/organisation-admin-master.comp';
 
 @Component({
@@ -39,9 +38,7 @@ import {OrganisationAdminMasterComponent}  from '../../organisation-admin-pages/
     { path: '/about-help', name: 'AboutHelpComponent', component: AboutHelpComponent },
     { path: '/about-us', name: 'AboutUsComponent', component: AboutUsComponent },
     { path: '/terms', name: 'TermsComponent', component: TermsComponent },
-    { path: '/privacy', name: 'PrivacyComponent', component: PrivacyComponent },
-    { path: '/login', name: 'LoginComponent', component: LoginComponent },
-
+    { path: '/privacy', name: 'PrivacyComponent', component: PrivacyComponent }
 ])
 
 export class HomePageMasterComponent {

@@ -5,6 +5,8 @@ import { HTTP_PROVIDERS } from '@angular/http';
 import { bootstrap }    from '@angular/platform-browser-dynamic';
 import {AppComponent} from './app-master/app-master.comp';
 
+//enableProdMode();
+
 
 bootstrap(AppComponent, [
     ROUTER_PROVIDERS,

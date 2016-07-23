@@ -10,16 +10,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var helper_serv_1 = require('../helper/helper.serv');
+var helper_serv_1 = require('../services/helper/helper.serv');
 var home_page_master_comp_1 = require('../home-pages/home-page-master/home-page-master.comp');
 var header_buttons_comp_1 = require('../header-buttons/header-buttons.comp');
 var footer_buttons_comp_1 = require('../home-pages/footer-buttons/footer-buttons.comp');
 var organisation_admin_master_comp_1 = require('../organisation-admin-pages/organisation-admin-master/organisation-admin-master.comp');
-core_1.enableProdMode();
 var AppComponent = (function () {
     function AppComponent() {
+        var _this = this;
         this.title = 'iB2';
         this.tokenValid = helper_serv_1.HelperService.tokenIsValid();
+        this.showLoginButton = function () {
+            _this.headerButtons.loginComponent.loggedIn = false;
+        };
         this.threeLineButtonDisplay = 'none';
         console.log('constructor AppComponent');
     }
@@ -31,6 +34,10 @@ var AppComponent = (function () {
             this.threeLineButtonDisplay = 'none';
         }
     };
+    __decorate([
+        core_1.ViewChild(header_buttons_comp_1.HeaderButtons), 
+        __metadata('design:type', header_buttons_comp_1.HeaderButtons)
+    ], AppComponent.prototype, "headerButtons", void 0);
     AppComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

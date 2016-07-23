@@ -1,14 +1,11 @@
-﻿import {Component, enableProdMode} from '@angular/core';
+﻿import {Component, ViewChild} from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
-import {HelperService} from '../helper/helper.serv';
+import {HelperService} from '../services/helper/helper.serv';
 import {HomePageMasterComponent} from '../home-pages/home-page-master/home-page-master.comp';
 import {AboutTrialPeriodComponent} from '../home-pages/about-trial-period/about-trial-period.comp';
 import {HeaderButtons} from  '../header-buttons/header-buttons.comp';
 import {FooterButtons} from  '../home-pages/footer-buttons/footer-buttons.comp';
 import {OrganisationAdminMasterComponent} from  '../organisation-admin-pages/organisation-admin-master/organisation-admin-master.comp';
-
-enableProdMode();
-
 
 @Component({
     moduleId: module.id,
@@ -30,6 +27,11 @@ export class AppComponent {
     }
     public title = 'iB2';
     tokenValid: boolean = HelperService.tokenIsValid();
+
+    @ViewChild(HeaderButtons) headerButtons: HeaderButtons;
+    showLoginButton = () => {
+        this.headerButtons.loginComponent.loggedIn = false;
+    }
 
     threeLineButtonDisplay: string = 'none';
 

@@ -1,6 +1,6 @@
 ﻿import {Component, ViewChild} from '@angular/core';
 import {RecentLoginsService} from './recent-logins.serv';
-import {HelperService} from '../../helper/helper.serv';
+import {HelperService} from '../../services/helper/helper.serv';
 import { Router, RouterLink } from '@angular/router-deprecated';
 import {AgGridNg2} from 'ag-grid-ng2/main';
 

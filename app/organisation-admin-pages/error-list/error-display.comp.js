@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 //import {RouteConfig, ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
-var helper_serv_1 = require('../../helper/helper.serv');
+var helper_serv_1 = require('../../services/helper/helper.serv');
 var error_display_serv_1 = require('./error-display.serv');
 var ErrorDisplayComponent = (function () {
     function ErrorDisplayComponent(errorDisplayService) {

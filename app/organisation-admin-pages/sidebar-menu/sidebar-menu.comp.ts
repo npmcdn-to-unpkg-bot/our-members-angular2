@@ -1,7 +1,12 @@
-﻿import {Component} from '@angular/core';
+﻿import {Component, OnDestroy } from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
-import {HelperService} from '../../helper/helper.serv';
+import {HelperService} from '../../services/helper/helper.serv';
 import {SidebarMenuService} from './sidebar-menu.serv';
+import {OrganisationAdminMasterComponent} from '../organisation-admin-master/organisation-admin-master.comp';
+import {AppComponent} from '../../app-master/app-master.comp';
+
+import { CommunicationService } from '../../services/communication/communication.serv';
+import { Subscription }   from 'rxjs/Subscription';
 
 @Component({
     moduleId: module.id,
@@ -12,10 +17,25 @@ import {SidebarMenuService} from './sidebar-menu.serv';
     providers: [SidebarMenuService]
 })
 
-export class SidebarMenuComponent {
-    constructor(private router: Router, private sidebarMenuService: SidebarMenuService) {
+export class SidebarMenuComponent implements OnDestroy {
+
+    //subscription: Subscription;
+    constructor(private communicationService: CommunicationService, private router: Router, private sidebarMenuService: SidebarMenuService) {
+
         console.log('constructor SidebarMenuComponent ');
+
+        //set up a listener to wait for parent to send string
+        //this.subscription = communicationService.communicationAnnounced$.subscribe(
+        //    communication => {
+        //        alert(communication);
+        //    });
     }
+
+    ngOnDestroy() {
+        // prevent memory leak when component destroyed
+        //this.subscription.unsubscribe();
+    }
+
 
     ngOnInit() {
         this.getAdminLoggedIn();
@@ -129,9 +149,11 @@ export class SidebarMenuComponent {
             }
         }
     }
-    logout = () => {
-        HelperService.deleteTokenFromStorage();
-        this.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
-    }
 
+
+    logout = () => {
+        this.communicationService.loggedoutCommunication(true);
+        HelperService.deleteTokenFromStorage();
+        this.router.parent.navigate(['HomePageMaster', 'HomePageContent']);
+    }
 }

@@ -10,16 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var router_deprecated_1 = require('@angular/router-deprecated');
 var core_1 = require('@angular/core');
-var helper_serv_1 = require('../../helper/helper.serv');
+var helper_serv_1 = require('../../services/helper/helper.serv');
 var member_list_comp_1 = require('../members/member-list.comp');
 var change_organisation_comp_1 = require('../change-organisation/change-organisation.comp');
 var error_list_comp_1 = require('../error-list/error-list.comp');
 var recent_logins_comp_1 = require('../recent-logins/recent-logins.comp');
 var sidebar_menu_comp_1 = require('../sidebar-menu/sidebar-menu.comp');
+var communication_serv_1 = require('../../services/communication/communication.serv');
 var OrganisationAdminMasterComponent = (function () {
-    function OrganisationAdminMasterComponent(router) {
+    function OrganisationAdminMasterComponent(router, communicationService) {
         this.router = router;
+        this.communicationService = communicationService;
         console.log('constructor OrganisationAdminMasterComponent');
+        communicationService.loggedoutcommunication$.subscribe(function (child) {
+            alert(child);
+        });
     }
     OrganisationAdminMasterComponent.prototype.ngOnInit = function () {
         var tokenValid = helper_serv_1.HelperService.tokenIsValid();
@@ -31,7 +36,8 @@ var OrganisationAdminMasterComponent = (function () {
         core_1.Component({
             templateUrl: 'app/organisation-admin-pages/organisation-admin-master/organisation-admin-master.html',
             styleUrls: ['app/organisation-admin-pages/organisation-admin-master/organisation-admin-master.css'],
-            directives: [router_deprecated_1.ROUTER_DIRECTIVES, sidebar_menu_comp_1.SidebarMenuComponent]
+            directives: [router_deprecated_1.ROUTER_DIRECTIVES, sidebar_menu_comp_1.SidebarMenuComponent],
+            providers: [communication_serv_1.CommunicationService]
         }),
         router_deprecated_1.RouteConfig([
             { path: '/member-list', name: 'MembersList', component: member_list_comp_1.MembersListComponent, useAsDefault: true },
@@ -39,7 +45,7 @@ var OrganisationAdminMasterComponent = (function () {
             { path: '/recent-logins', name: 'RecentLogins', component: recent_logins_comp_1.RecentLoginsComponent },
             { path: '/error-list', name: 'ErrorList', component: error_list_comp_1.ErrorListComponent }
         ]), 
-        __metadata('design:paramtypes', [router_deprecated_1.Router])
+        __metadata('design:paramtypes', [router_deprecated_1.Router, communication_serv_1.CommunicationService])
     ], OrganisationAdminMasterComponent);
     return OrganisationAdminMasterComponent;
 }());

@@ -26,7 +26,6 @@ var about_help_comp_1 = require('../about-help/about-help.comp');
 var about_us_comp_1 = require('../about-us/about-us.comp');
 var terms_comp_1 = require('../terms/terms.comp');
 var privacy_comp_1 = require('../privacy/privacy.comp');
-var login_comp_1 = require('../login/login.comp');
 var HomePageMasterComponent = (function () {
     function HomePageMasterComponent() {
     }
@@ -50,8 +49,7 @@ var HomePageMasterComponent = (function () {
             { path: '/about-help', name: 'AboutHelpComponent', component: about_help_comp_1.AboutHelpComponent },
             { path: '/about-us', name: 'AboutUsComponent', component: about_us_comp_1.AboutUsComponent },
             { path: '/terms', name: 'TermsComponent', component: terms_comp_1.TermsComponent },
-            { path: '/privacy', name: 'PrivacyComponent', component: privacy_comp_1.PrivacyComponent },
-            { path: '/login', name: 'LoginComponent', component: login_comp_1.LoginComponent },
+            { path: '/privacy', name: 'PrivacyComponent', component: privacy_comp_1.PrivacyComponent }
         ]), 
         __metadata('design:paramtypes', [])
     ], HomePageMasterComponent);

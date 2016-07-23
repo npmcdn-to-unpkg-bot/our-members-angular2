@@ -1,6 +1,6 @@
 ﻿import {Component, Output, EventEmitter} from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
-import {HelperService} from '../../helper/helper.serv';
+import {HelperService} from '../../services/helper/helper.serv';
 import {MemberService} from './member.serv';
 import {AgGridNg2} from 'ag-grid-ng2/main';
 
@@ -18,12 +18,6 @@ export class MemberComponent {
         HelperService.log('constructor MemberComponent');
     }
 
-    //loadData = (countries: any[], Groups: any[], MembershipTypes: any[], defaultCountryId: number) => {
-    //    this.countries = countries;
-    //    this.Groups = Groups;
-    //    this.MembershipTypes = MembershipTypes;
-    //    this.defaultCountryId = defaultCountryId;
-    //}
     ngOnInit() {
         this.Member = this.getEmptyMember(0);
     }

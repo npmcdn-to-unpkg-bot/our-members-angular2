@@ -1,0 +1,44 @@
+﻿.login-form {
+    background-color: #393939;
+    color: white;
+    padding: 10px 2%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 400px;
+}
+
+.login-button {
+    margin-top: 20px;
+    padding: 10px 4%;
+    color: White;
+    background-color: #7DA31A;
+    font-size: larger;
+    border: none;
+}
+
+
+.header-login-button {
+    width: 94%;
+    margin-left: 3%;
+    color: white;
+    background-color: #7DA31A;
+    font-size: large;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #DC9000;
+}
+
+    .header-login-button:hover {
+        background-color: #FF6600;
+    }
+
+    @media only screen and (max-width: 1024px) {
+    .header-login-button {
+        min-height: 50px;
+    }
+
+    @media only screen and (max-width: 768px) {
+    .header-login-button {
+        min-height: 0;
+    }

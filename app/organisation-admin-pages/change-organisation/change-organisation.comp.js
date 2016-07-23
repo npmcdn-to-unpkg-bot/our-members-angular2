@@ -12,7 +12,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 //import {Response} from '@angular/http';
 var core_1 = require('@angular/core');
 var change_organisation_serv_1 = require('./change-organisation.serv');
-var helper_serv_1 = require('../../helper/helper.serv');
+var helper_serv_1 = require('../../services/helper/helper.serv');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var main_1 = require('ag-grid-ng2/main');
 var ChangeOrganisationComponent = (function () {

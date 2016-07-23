@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var helper_serv_1 = require('../../helper/helper.serv');
+var helper_serv_1 = require('../../services/helper/helper.serv');
 var member_serv_1 = require('./member.serv');
 var main_1 = require('ag-grid-ng2/main');
 var MemberComponent = (function () {
@@ -228,12 +228,6 @@ var MemberComponent = (function () {
         this.teamsGroupsGridOptions = helper_serv_1.HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked);
         helper_serv_1.HelperService.log('constructor MemberComponent');
     }
-    //loadData = (countries: any[], Groups: any[], MembershipTypes: any[], defaultCountryId: number) => {
-    //    this.countries = countries;
-    //    this.Groups = Groups;
-    //    this.MembershipTypes = MembershipTypes;
-    //    this.defaultCountryId = defaultCountryId;
-    //}
     MemberComponent.prototype.ngOnInit = function () {
         this.Member = this.getEmptyMember(0);
     };

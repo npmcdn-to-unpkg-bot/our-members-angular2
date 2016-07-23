@@ -1,6 +1,6 @@
 ﻿import {Component, Output, EventEmitter} from '@angular/core';
 //import {RouteConfig, ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
-import {HelperService} from '../../helper/helper.serv';
+import {HelperService} from '../../services/helper/helper.serv';
 import {ErrorDisplayService} from './error-display.serv';
 
 @Component({

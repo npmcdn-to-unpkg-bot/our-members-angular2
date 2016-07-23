@@ -10,11 +10,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var helper_serv_1 = require('../../helper/helper.serv');
+var helper_serv_1 = require('../../services/helper/helper.serv');
 var sidebar_menu_serv_1 = require('./sidebar-menu.serv');
+var communication_serv_1 = require('../../services/communication/communication.serv');
 var SidebarMenuComponent = (function () {
-    function SidebarMenuComponent(router, sidebarMenuService) {
+    //subscription: Subscription;
+    function SidebarMenuComponent(communicationService, router, sidebarMenuService) {
         var _this = this;
+        this.communicationService = communicationService;
         this.router = router;
         this.sidebarMenuService = sidebarMenuService;
         this.getAdminLoggedIn = function () {
@@ -129,11 +132,21 @@ var SidebarMenuComponent = (function () {
             }
         };
         this.logout = function () {
+            _this.communicationService.loggedoutCommunication(true);
             helper_serv_1.HelperService.deleteTokenFromStorage();
-            _this.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
+            _this.router.parent.navigate(['HomePageMaster', 'HomePageContent']);
         };
         console.log('constructor SidebarMenuComponent ');
+        //set up a listener to wait for parent to send string
+        //this.subscription = communicationService.communicationAnnounced$.subscribe(
+        //    communication => {
+        //        alert(communication);
+        //    });
     }
+    SidebarMenuComponent.prototype.ngOnDestroy = function () {
+        // prevent memory leak when component destroyed
+        //this.subscription.unsubscribe();
+    };
     SidebarMenuComponent.prototype.ngOnInit = function () {
         this.getAdminLoggedIn();
     };
@@ -146,7 +159,7 @@ var SidebarMenuComponent = (function () {
             directives: [router_deprecated_1.ROUTER_DIRECTIVES],
             providers: [sidebar_menu_serv_1.SidebarMenuService]
         }), 
-        __metadata('design:paramtypes', [router_deprecated_1.Router, sidebar_menu_serv_1.SidebarMenuService])
+        __metadata('design:paramtypes', [communication_serv_1.CommunicationService, router_deprecated_1.Router, sidebar_menu_serv_1.SidebarMenuService])
     ], SidebarMenuComponent);
     return SidebarMenuComponent;
 }());

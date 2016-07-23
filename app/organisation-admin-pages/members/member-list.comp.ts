@@ -1,6 +1,6 @@
-﻿import {Component, ViewChild} from '@angular/core';
+﻿import {Component, ViewChild } from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
-import {HelperService} from '../../helper/helper.serv';
+import {HelperService} from '../../services/helper/helper.serv';
 import {MemberListService} from './member-list.serv';
 import {MemberComponent} from  './member.comp';
 import {AgGridNg2} from 'ag-grid-ng2/main';

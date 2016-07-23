@@ -2,7 +2,7 @@
 //import {Response} from '@angular/http';
 import {Component} from '@angular/core';
 import {ChangeOrganisationService} from './change-organisation.serv';
-import {HelperService} from '../../helper/helper.serv';
+import {HelperService} from '../../services/helper/helper.serv';
 import { Router, RouterLink } from '@angular/router-deprecated';
 import {AgGridNg2} from 'ag-grid-ng2/main';
 

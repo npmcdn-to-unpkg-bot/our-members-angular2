@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var helper_serv_1 = require('../../helper/helper.serv');
+var helper_serv_1 = require('../../services/helper/helper.serv');
 var member_list_serv_1 = require('./member-list.serv');
 var member_comp_1 = require('./member.comp');
 var main_1 = require('ag-grid-ng2/main');

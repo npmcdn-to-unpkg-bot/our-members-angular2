@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 //import {Router} from '@angular/router-deprecated';
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-var helper_serv_1 = require('../../helper/helper.serv');
+var helper_serv_1 = require('../../services/helper/helper.serv');
 require('rxjs/Rx'); //for map
 var HttpHandlerService = (function () {
     function HttpHandlerService(http) {
