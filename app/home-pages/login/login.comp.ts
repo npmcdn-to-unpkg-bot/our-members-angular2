@@ -1,40 +1,41 @@
-﻿//import {Component} from '@angular/core';
-//import {Router, RouterLink, RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
-//import {LoginService} from './login.serv';
-//import {Http, Headers} from '@angular/http';
-//import {MembersListComponent} from '../../organisation-admin-pages/members/member-list.comp';
+﻿import {Component} from '@angular/core';
+import {Router, RouterLink, ROUTER_DIRECTIVES} from '@angular/router';
+import {LoginService} from './login.serv';
+import {Http, Headers} from '@angular/http';
+import {MembersListComponent} from '../../organisation-admin-pages/members/member-list.comp';
 
-//@Component({
-//    moduleId: module.id,
-//    selector: 'login',
-//    templateUrl: 'login.html',
-//    styleUrls: ['login.css'],
-//    directives: [ROUTER_DIRECTIVES],
-//    providers: [LoginService]
-//})
+@Component({
+    moduleId: module.id,
+    selector: 'login',
+    templateUrl: 'login.html',
+    styleUrls: ['login.css'],
+    directives: [ROUTER_DIRECTIVES],
+    providers: [LoginService]
+})
 
-//export class LoginComponent {
-//    constructor(private router: Router, private http: Http) {
-//        console.log('constructor LoginComponent ');
-//    }
+export class LoginComponent {
+    constructor(private router: Router, private http: Http) {
+        console.log('constructor LoginComponent ');
+    }
 
-//    login: structLogin = {
-//        UserName: '',
-//        Password: '',
-//    };
+    login: structLogin = {
+        UserName: '',
+        Password: '',
+    };
 
-//    ngOnInit() {
-//    }
+    ngOnInit() {
+    }
 
-//    loginfinished() {
-//        this.router.parent.navigate(['OrganisationAdminMaster']);
-//    }
+    loginfinished = () => {
+        this.router.navigate(['/organisation-admin-master']);
+        //this.router.navigate(['/organisation-admin-master', 'member-list']);
+    }
 
-//    loginService: LoginService = new LoginService(this.http, this.router, this.loginfinished);
+    loginService: LoginService = new LoginService(this.http, this.router, this.loginfinished);
 
-//    okClicked = () => {
-//        var loginService: LoginService = new LoginService(this.http, this.router, this.loginfinished);
-//        this.loginService.authenticate(this.login.UserName, this.login.Password);
-//    }
+    okClicked = () => {
+        var loginService: LoginService = new LoginService(this.http, this.router, this.loginfinished);
+        this.loginService.authenticate(this.login.UserName, this.login.Password);
+    }
 
-//}
+}

@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_deprecated_1 = require('@angular/router-deprecated');
+var router_1 = require('@angular/router');
 var ContactUsComponent = (function () {
     function ContactUsComponent() {
     }
@@ -19,7 +19,7 @@ var ContactUsComponent = (function () {
             selector: 'contact-us',
             templateUrl: 'contact-us.html',
             styleUrls: ['contact-us.css'],
-            directives: [router_deprecated_1.ROUTER_DIRECTIVES]
+            directives: [router_1.ROUTER_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
     ], ContactUsComponent);

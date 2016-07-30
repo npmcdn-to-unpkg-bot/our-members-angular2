@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var recent_logins_serv_1 = require('./recent-logins.serv');
 var helper_serv_1 = require('../../services/helper/helper.serv');
-var router_deprecated_1 = require('@angular/router-deprecated');
+var router_1 = require('@angular/router');
 var main_1 = require('ag-grid-ng2/main');
 var RecentLoginsComponent = (function () {
     function RecentLoginsComponent(router, recentLoginsService) {
@@ -27,7 +27,7 @@ var RecentLoginsComponent = (function () {
                 _this.recentLoginsService.getRecentLogins().subscribe(onGetRecentLoginsSuccess, logError);
             }
             else {
-                _this.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
+                _this.router.navigate(['HomePageMaster', 'LoginComponent']);
             }
             function logError(e) {
                 helper_serv_1.HelperService.log('getErrors Error');
@@ -70,7 +70,7 @@ var RecentLoginsComponent = (function () {
             providers: [recent_logins_serv_1.RecentLoginsService],
             directives: [main_1.AgGridNg2]
         }), 
-        __metadata('design:paramtypes', [router_deprecated_1.Router, recent_logins_serv_1.RecentLoginsService])
+        __metadata('design:paramtypes', [router_1.Router, recent_logins_serv_1.RecentLoginsService])
     ], RecentLoginsComponent);
     return RecentLoginsComponent;
 }());

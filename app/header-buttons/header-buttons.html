@@ -1,12 +1,14 @@
 ﻿
 <div class="row">
     <div style="width: 33%; float: left;">
-        <button type="button" class="header-button" [routerLink]="['HomePageMaster','HomePageContent']">Home</button>
+        <!--<button type="button" class="header-button" >Home</button>-->
+        <button type="button" class="header-button" [routerLink]="['home-page']">Home</button>
     </div>
     <div style="width: 33%; float: left;">
-        <button type="button" class="header-button" [routerLink]="['HomePageMaster','ContactUsComponent']">Contact Us</button>
+        <button type="button" class="header-button" [routerLink]="['home-page','contact-us']">Contact Us</button>
     </div>
     <div style="width: 33%; float: left;">
+        <button type="button" class="header-button" [routerLink]="['home-page','login']">Login</button>
         <login></login>
     </div>
 </div>

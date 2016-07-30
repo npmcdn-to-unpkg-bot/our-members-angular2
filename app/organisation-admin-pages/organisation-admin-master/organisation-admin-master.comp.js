@@ -8,13 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var router_deprecated_1 = require('@angular/router-deprecated');
+var router_1 = require('@angular/router');
 var core_1 = require('@angular/core');
 var helper_serv_1 = require('../../services/helper/helper.serv');
-var member_list_comp_1 = require('../members/member-list.comp');
-var change_organisation_comp_1 = require('../change-organisation/change-organisation.comp');
-var error_list_comp_1 = require('../error-list/error-list.comp');
-var recent_logins_comp_1 = require('../recent-logins/recent-logins.comp');
 var sidebar_menu_comp_1 = require('../sidebar-menu/sidebar-menu.comp');
 var communication_serv_1 = require('../../services/communication/communication.serv');
 var OrganisationAdminMasterComponent = (function () {
@@ -29,23 +25,17 @@ var OrganisationAdminMasterComponent = (function () {
     OrganisationAdminMasterComponent.prototype.ngOnInit = function () {
         var tokenValid = helper_serv_1.HelperService.tokenIsValid();
         if (tokenValid === false) {
-            this.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
+            this.router.navigate(['HomePageMaster', 'LoginComponent']);
         }
     };
     OrganisationAdminMasterComponent = __decorate([
         core_1.Component({
             templateUrl: 'app/organisation-admin-pages/organisation-admin-master/organisation-admin-master.html',
             styleUrls: ['app/organisation-admin-pages/organisation-admin-master/organisation-admin-master.css'],
-            directives: [router_deprecated_1.ROUTER_DIRECTIVES, sidebar_menu_comp_1.SidebarMenuComponent],
+            directives: [router_1.ROUTER_DIRECTIVES, sidebar_menu_comp_1.SidebarMenuComponent],
             providers: [communication_serv_1.CommunicationService]
-        }),
-        router_deprecated_1.RouteConfig([
-            { path: '/member-list', name: 'MembersList', component: member_list_comp_1.MembersListComponent, useAsDefault: true },
-            { path: '/change-organisation', name: 'ChangeOrganisation', component: change_organisation_comp_1.ChangeOrganisationComponent },
-            { path: '/recent-logins', name: 'RecentLogins', component: recent_logins_comp_1.RecentLoginsComponent },
-            { path: '/error-list', name: 'ErrorList', component: error_list_comp_1.ErrorListComponent }
-        ]), 
-        __metadata('design:paramtypes', [router_deprecated_1.Router, communication_serv_1.CommunicationService])
+        }), 
+        __metadata('design:paramtypes', [router_1.Router, communication_serv_1.CommunicationService])
     ], OrganisationAdminMasterComponent);
     return OrganisationAdminMasterComponent;
 }());

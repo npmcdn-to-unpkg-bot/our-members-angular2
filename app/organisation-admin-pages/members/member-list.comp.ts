@@ -1,5 +1,5 @@
 ﻿import {Component, ViewChild } from '@angular/core';
-import {RouteConfig, ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
+import { ROUTER_DIRECTIVES, Router} from '@angular/router';
 import {HelperService} from '../../services/helper/helper.serv';
 import {MemberListService} from './member-list.serv';
 import {MemberComponent} from  './member.comp';
@@ -45,7 +45,7 @@ export class MembersListComponent {
         if (HelperService.tokenIsValid()) {
             this.memberListService.getMemberListData().subscribe(onGetMemberListSuccess, logError);
         } else {
-            this.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
+            this.router.navigate(['HomePageMaster', 'LoginComponent']);
         }
         function logError(e: any) {
             console.log('getMembers Error');

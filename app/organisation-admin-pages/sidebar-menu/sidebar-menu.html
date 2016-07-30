@@ -5,7 +5,7 @@
             Members
         </div>
         <div class="menu-group-content" [ngClass]="{'transition':membersContentDisplay}" [hidden]="!membersContentDisplay">
-            <div class="menu-group-link">
+            <div class="menu-group-link" [routerLink]="['member-list']">
                 Manage Members
             </div>
             <div class="menu-group-link">
@@ -184,14 +184,14 @@
             Admin
         </div>
         <div class="menu-group-content" [hidden]="!adminContentDisplay">
-            <div class="menu-group-link" [routerLink]="['ChangeOrganisation']">
+            <div class="menu-group-link" [routerLink]="['change-organisation']">
                 Change Organisation
             </div>
-            <div class="menu-group-link" [routerLink]="['ErrorList']">
-                Error List
-            </div>
-            <div class="menu-group-link" [routerLink]="['RecentLogins']">
+            <div class="menu-group-link" [routerLink]="['recent-logins']">
                 Recent Logins
+            </div>
+            <div class="menu-group-link" [routerLink]="['error-list']">
+                Error List
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-﻿//import {Router} from '@angular/router-deprecated';
+﻿//import {Router} from '@angular/router';
 import {Injectable} from '@angular/core';
 import {Http, Headers, HTTP_PROVIDERS, RequestOptionsArgs, Request, Response, URLSearchParams} from '@angular/http';
 import {Observable} from 'rxjs/Observable';

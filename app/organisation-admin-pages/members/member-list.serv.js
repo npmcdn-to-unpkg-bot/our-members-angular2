@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var router_deprecated_1 = require('@angular/router-deprecated');
+var router_1 = require('@angular/router');
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 var http_handler_serv_1 = require('../../services/http-handler/http-handler.serv');
@@ -33,7 +33,7 @@ var MemberListService = (function () {
     };
     MemberListService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http, router_deprecated_1.Router])
+        __metadata('design:paramtypes', [http_1.Http, router_1.Router])
     ], MemberListService);
     return MemberListService;
 }());

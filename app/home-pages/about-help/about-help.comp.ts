@@ -1,5 +1,5 @@
 ﻿import {Component} from '@angular/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import { ROUTER_DIRECTIVES} from '@angular/router';
 
 @Component({
     moduleId: module.id,

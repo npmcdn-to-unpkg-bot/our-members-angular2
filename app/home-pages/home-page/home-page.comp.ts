@@ -1,9 +1,9 @@
 ﻿import {Component} from '@angular/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import { ROUTER_DIRECTIVES} from '@angular/router';
 
 @Component({
     moduleId: module.id,
-    selector: 'home-page-content',
+    //selector: 'home-page-content',
     templateUrl: 'home-page.html',
     styleUrls: ['home-page.css'],
     directives: [ROUTER_DIRECTIVES]

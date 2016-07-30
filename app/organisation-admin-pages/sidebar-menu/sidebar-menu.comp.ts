@@ -1,5 +1,5 @@
 ﻿import {Component, OnDestroy } from '@angular/core';
-import {RouteConfig, ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
+import { ROUTER_DIRECTIVES, Router} from '@angular/router';
 import {HelperService} from '../../services/helper/helper.serv';
 import {SidebarMenuService} from './sidebar-menu.serv';
 import {OrganisationAdminMasterComponent} from '../organisation-admin-master/organisation-admin-master.comp';
@@ -47,7 +47,7 @@ export class SidebarMenuComponent implements OnDestroy {
         if (HelperService.tokenIsValid()) {
             this.sidebarMenuService.getAdminLoggedIn().subscribe(getAdminLoggedInSuccess, logError);
         } else {
-            this.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
+            this.router.navigate(['HomePageMaster', 'LoginComponent']);
         }
         function logError(e: any) {
             console.log('getMembers Error');
@@ -154,6 +154,6 @@ export class SidebarMenuComponent implements OnDestroy {
     logout = () => {
         this.communicationService.loggedoutCommunication(true);
         HelperService.deleteTokenFromStorage();
-        this.router.parent.navigate(['HomePageMaster', 'HomePageContent']);
+        this.router.navigate(['HomePageMaster', 'HomePageContent']);
     }
 }

@@ -1,4 +1,4 @@
-﻿import {Router} from '@angular/router-deprecated';
+﻿import {Router} from '@angular/router';
 import {Injectable, OnDestroy} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 

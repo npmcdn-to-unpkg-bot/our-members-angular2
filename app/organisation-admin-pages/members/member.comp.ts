@@ -1,5 +1,5 @@
 ﻿import {Component, Output, EventEmitter} from '@angular/core';
-import {RouteConfig, ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
+import { ROUTER_DIRECTIVES, Router} from '@angular/router';
 import {HelperService} from '../../services/helper/helper.serv';
 import {MemberService} from './member.serv';
 import {AgGridNg2} from 'ag-grid-ng2/main';
@@ -168,7 +168,7 @@ export class MemberComponent {
             loadMemberThis.titleMember = 'Edit Member';
             loadMemberThis.memberService.getMember(OrganisationMemberID).subscribe(onGetMemberSuccess, logError);
         } else {
-            loadMemberThis.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
+            loadMemberThis.router.navigate(['HomePageMaster', 'LoginComponent']);
         }
         function onGetMemberSuccess(Member: structOrganisationMember) {
             loadMemberThis.editMember = true;
@@ -222,13 +222,13 @@ export class MemberComponent {
 
                 okClickedThis.memberService.updateMember(okClickedThis.Member).subscribe(updateMemberSuccess, logError);
             } else {
-                okClickedThis.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
+                okClickedThis.router.navigate(['HomePageMaster', 'LoginComponent']);
             }
         } else {
             if (HelperService.tokenIsValid()) {
                 okClickedThis.memberService.saveNewMember(okClickedThis.Member).subscribe(updateMemberSuccess, logError);
             } else {
-                okClickedThis.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
+                okClickedThis.router.navigate(['HomePageMaster', 'LoginComponent']);
             }
         }
 

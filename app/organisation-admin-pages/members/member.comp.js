@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_deprecated_1 = require('@angular/router-deprecated');
+var router_1 = require('@angular/router');
 var helper_serv_1 = require('../../services/helper/helper.serv');
 var member_serv_1 = require('./member.serv');
 var main_1 = require('ag-grid-ng2/main');
@@ -145,7 +145,7 @@ var MemberComponent = (function () {
                 loadMemberThis.memberService.getMember(OrganisationMemberID).subscribe(onGetMemberSuccess, logError);
             }
             else {
-                loadMemberThis.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
+                loadMemberThis.router.navigate(['HomePageMaster', 'LoginComponent']);
             }
             function onGetMemberSuccess(Member) {
                 loadMemberThis.editMember = true;
@@ -194,7 +194,7 @@ var MemberComponent = (function () {
                     okClickedThis.memberService.updateMember(okClickedThis.Member).subscribe(updateMemberSuccess, logError);
                 }
                 else {
-                    okClickedThis.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
+                    okClickedThis.router.navigate(['HomePageMaster', 'LoginComponent']);
                 }
             }
             else {
@@ -202,7 +202,7 @@ var MemberComponent = (function () {
                     okClickedThis.memberService.saveNewMember(okClickedThis.Member).subscribe(updateMemberSuccess, logError);
                 }
                 else {
-                    okClickedThis.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
+                    okClickedThis.router.navigate(['HomePageMaster', 'LoginComponent']);
                 }
             }
             function logError(obj) {
@@ -244,7 +244,7 @@ var MemberComponent = (function () {
             providers: [member_serv_1.MemberService],
             directives: [main_1.AgGridNg2]
         }), 
-        __metadata('design:paramtypes', [router_deprecated_1.Router, member_serv_1.MemberService])
+        __metadata('design:paramtypes', [router_1.Router, member_serv_1.MemberService])
     ], MemberComponent);
     return MemberComponent;
 }());

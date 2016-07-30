@@ -1,7 +1,8 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <base href="/app">
+    <base href="/">
+    <!--<base href="/app">-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
 
@@ -23,12 +24,8 @@
 
     <script src="systemjs.config.js"></script>
     <script>
-        System.import('app').catch(function (err) { console.error(err); });
+        System.import('app')//.catch(function (err) { console.error(err); });
     </script>
-
-    <!--<script>
-        System.import('lib').catch(function(err){ console.error(err);  });
-    </script>-->
     <title>Our Members</title>
 </head>
 

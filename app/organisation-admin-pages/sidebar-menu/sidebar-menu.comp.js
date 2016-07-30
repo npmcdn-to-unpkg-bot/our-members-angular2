@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_deprecated_1 = require('@angular/router-deprecated');
+var router_1 = require('@angular/router');
 var helper_serv_1 = require('../../services/helper/helper.serv');
 var sidebar_menu_serv_1 = require('./sidebar-menu.serv');
 var communication_serv_1 = require('../../services/communication/communication.serv');
@@ -26,7 +26,7 @@ var SidebarMenuComponent = (function () {
                 _this.sidebarMenuService.getAdminLoggedIn().subscribe(getAdminLoggedInSuccess, logError);
             }
             else {
-                _this.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
+                _this.router.navigate(['HomePageMaster', 'LoginComponent']);
             }
             function logError(e) {
                 console.log('getMembers Error');
@@ -134,7 +134,7 @@ var SidebarMenuComponent = (function () {
         this.logout = function () {
             _this.communicationService.loggedoutCommunication(true);
             helper_serv_1.HelperService.deleteTokenFromStorage();
-            _this.router.parent.navigate(['HomePageMaster', 'HomePageContent']);
+            _this.router.navigate(['HomePageMaster', 'HomePageContent']);
         };
         console.log('constructor SidebarMenuComponent ');
         //set up a listener to wait for parent to send string
@@ -156,10 +156,10 @@ var SidebarMenuComponent = (function () {
             selector: 'sidebar-menu',
             templateUrl: 'sidebar-menu.html',
             styleUrls: ['sidebar-menu.css'],
-            directives: [router_deprecated_1.ROUTER_DIRECTIVES],
+            directives: [router_1.ROUTER_DIRECTIVES],
             providers: [sidebar_menu_serv_1.SidebarMenuService]
         }), 
-        __metadata('design:paramtypes', [communication_serv_1.CommunicationService, router_deprecated_1.Router, sidebar_menu_serv_1.SidebarMenuService])
+        __metadata('design:paramtypes', [communication_serv_1.CommunicationService, router_1.Router, sidebar_menu_serv_1.SidebarMenuService])
     ], SidebarMenuComponent);
     return SidebarMenuComponent;
 }());

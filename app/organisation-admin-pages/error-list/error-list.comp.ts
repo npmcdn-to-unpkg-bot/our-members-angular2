@@ -1,7 +1,7 @@
 ﻿import {Component, ViewChild} from '@angular/core';
 import {ErrorListService} from './error-list.serv';
 import {HelperService} from '../../services/helper/helper.serv';
-import { Router, RouterLink } from '@angular/router-deprecated';
+import { Router, RouterLink } from '@angular/router';
 import {AgGridNg2} from 'ag-grid-ng2/main';
 import {ErrorDisplayComponent} from './error-display.comp';
 
@@ -36,7 +36,7 @@ export class ErrorListComponent {
         if (HelperService.tokenIsValid()) {
             this.errorListService.getErrors().subscribe(onGetErrorsSuccess, logError);
         } else {
-            this.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
+            this.router.navigate(['HomePageMaster', 'LoginComponent']);
         }
         function logError(e: any) {
             HelperService.log('getErrors Error');
@@ -55,7 +55,7 @@ export class ErrorListComponent {
         if (HelperService.tokenIsValid()) {
             this.errorListService.getErrors().subscribe(onErrorListSuccess, logError);
         } else {
-            errorListThis.router.parent.navigate(['Login']);
+            errorListThis.router.navigate(['Login']);
         }
         function logError(e: any) {
             HelperService.log('errorList Error');

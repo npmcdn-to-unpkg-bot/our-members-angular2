@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-//import {RouteConfig, ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
+//import { ROUTER_DIRECTIVES, Router} from '@angular/router';
 var helper_serv_1 = require('../../services/helper/helper.serv');
 var error_display_serv_1 = require('./error-display.serv');
 var ErrorDisplayComponent = (function () {

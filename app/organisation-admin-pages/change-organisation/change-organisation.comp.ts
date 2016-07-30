@@ -3,7 +3,7 @@
 import {Component} from '@angular/core';
 import {ChangeOrganisationService} from './change-organisation.serv';
 import {HelperService} from '../../services/helper/helper.serv';
-import { Router, RouterLink } from '@angular/router-deprecated';
+import { Router, RouterLink } from '@angular/router';
 import {AgGridNg2} from 'ag-grid-ng2/main';
 
 
@@ -35,7 +35,7 @@ export class ChangeOrganisationComponent {
         if (HelperService.tokenIsValid()) {
             this.changeOrganisationService.getOrganisations().subscribe(onGetOrganisationsSuccess, logError);
         } else {
-            this.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
+            this.router.navigate(['HomePageMaster', 'LoginComponent']);
         }
         function logError(e: any) {
             HelperService.log('getOrganisations Error');
@@ -54,14 +54,14 @@ export class ChangeOrganisationComponent {
         if (HelperService.tokenIsValid()) {
             this.changeOrganisationService.changeOrganisation(Id).subscribe(onChangeOrganisationSuccess, logError);
         } else {
-            changeOrganisationThis.router.parent.navigate(['Login']);
+            changeOrganisationThis.router.navigate(['Login']);
         }
         function logError(e: any) {
             HelperService.log('changeOrganisation Error');
         }
 
         function onChangeOrganisationSuccess(data: any) {
-            changeOrganisationThis.router.navigate(['MembersList']);
+            changeOrganisationThis.router.navigate(['/organisation-admin-master', 'member-list']);
         }
     }
 

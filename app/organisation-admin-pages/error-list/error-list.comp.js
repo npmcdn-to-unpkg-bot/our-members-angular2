@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var error_list_serv_1 = require('./error-list.serv');
 var helper_serv_1 = require('../../services/helper/helper.serv');
-var router_deprecated_1 = require('@angular/router-deprecated');
+var router_1 = require('@angular/router');
 var main_1 = require('ag-grid-ng2/main');
 var error_display_comp_1 = require('./error-display.comp');
 var ErrorListComponent = (function () {
@@ -28,7 +28,7 @@ var ErrorListComponent = (function () {
                 _this.errorListService.getErrors().subscribe(onGetErrorsSuccess, logError);
             }
             else {
-                _this.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
+                _this.router.navigate(['HomePageMaster', 'LoginComponent']);
             }
             function logError(e) {
                 helper_serv_1.HelperService.log('getErrors Error');
@@ -46,7 +46,7 @@ var ErrorListComponent = (function () {
                 _this.errorListService.getErrors().subscribe(onErrorListSuccess, logError);
             }
             else {
-                errorListThis.router.parent.navigate(['Login']);
+                errorListThis.router.navigate(['Login']);
             }
             function logError(e) {
                 helper_serv_1.HelperService.log('errorList Error');
@@ -97,7 +97,7 @@ var ErrorListComponent = (function () {
             providers: [error_list_serv_1.ErrorListService, error_display_comp_1.ErrorDisplayComponent],
             directives: [main_1.AgGridNg2, error_display_comp_1.ErrorDisplayComponent]
         }), 
-        __metadata('design:paramtypes', [router_deprecated_1.Router, error_list_serv_1.ErrorListService])
+        __metadata('design:paramtypes', [router_1.Router, error_list_serv_1.ErrorListService])
     ], ErrorListComponent);
     return ErrorListComponent;
 }());

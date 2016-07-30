@@ -13,7 +13,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var change_organisation_serv_1 = require('./change-organisation.serv');
 var helper_serv_1 = require('../../services/helper/helper.serv');
-var router_deprecated_1 = require('@angular/router-deprecated');
+var router_1 = require('@angular/router');
 var main_1 = require('ag-grid-ng2/main');
 var ChangeOrganisationComponent = (function () {
     function ChangeOrganisationComponent(router, changeOrganisationService) {
@@ -29,7 +29,7 @@ var ChangeOrganisationComponent = (function () {
                 _this.changeOrganisationService.getOrganisations().subscribe(onGetOrganisationsSuccess, logError);
             }
             else {
-                _this.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
+                _this.router.navigate(['HomePageMaster', 'LoginComponent']);
             }
             function logError(e) {
                 helper_serv_1.HelperService.log('getOrganisations Error');
@@ -47,13 +47,13 @@ var ChangeOrganisationComponent = (function () {
                 _this.changeOrganisationService.changeOrganisation(Id).subscribe(onChangeOrganisationSuccess, logError);
             }
             else {
-                changeOrganisationThis.router.parent.navigate(['Login']);
+                changeOrganisationThis.router.navigate(['Login']);
             }
             function logError(e) {
                 helper_serv_1.HelperService.log('changeOrganisation Error');
             }
             function onChangeOrganisationSuccess(data) {
-                changeOrganisationThis.router.navigate(['MembersList']);
+                changeOrganisationThis.router.navigate(['/organisation-admin-master', 'member-list']);
             }
         };
         //////////////////////////////////////////////
@@ -83,7 +83,7 @@ var ChangeOrganisationComponent = (function () {
             providers: [change_organisation_serv_1.ChangeOrganisationService],
             directives: [main_1.AgGridNg2]
         }), 
-        __metadata('design:paramtypes', [router_deprecated_1.Router, change_organisation_serv_1.ChangeOrganisationService])
+        __metadata('design:paramtypes', [router_1.Router, change_organisation_serv_1.ChangeOrganisationService])
     ], ChangeOrganisationComponent);
     return ChangeOrganisationComponent;
 }());

@@ -1,16 +1,18 @@
 {
-  "name": "our-members",
-  "version": "0.0.1",
+  "name": "angular2-hello-world",
+  "version": "1.0.0",
   "scripts": {
     "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "lite": "lite-server",
-    "//(azure does not do typings) postinstall": "typings install",
+    "postinstall": "typings install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings"
   },
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
+    "ag-grid": "5.x.x",
+    "ag-grid-ng2": "5.x.x",
     "@angular/common": "2.0.0-rc.4",
     "@angular/compiler": "2.0.0-rc.4",
     "@angular/core": "2.0.0-rc.4",
@@ -27,17 +29,12 @@
     "rxjs": "5.0.0-beta.6",
     "zone.js": "^0.6.12",
     "angular2-in-memory-web-api": "0.0.14",
-    "bootstrap": "^3.3.6",
-
-    "ag-grid": "5.0.x",
-    "ag-grid-ng2": "5.0.x"
+    "bootstrap": "^3.3.6"
   },
   "devDependencies": {
     "concurrently": "^2.0.0",
     "lite-server": "^2.2.0",
     "typescript": "^1.8.10",
-    "typings": "^1.0.4"
+    "typings": "^1.x.x"
   }
-
-
 }

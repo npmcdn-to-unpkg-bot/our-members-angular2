@@ -1,4 +1,4 @@
-﻿import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+﻿import {ROUTER_DIRECTIVES} from '@angular/router';
 import {Component, Directive} from '@angular/core';
 import {HomePagesLinks}  from '../home-pages-links/home-pages-links.comp';
 import {HomePagesBottomButtons}  from '../home-pages-bottom-buttons/home-pages-bottom-buttons.comp';
@@ -24,22 +24,22 @@ import {OrganisationAdminMasterComponent}  from '../../organisation-admin-pages/
     templateUrl: 'home-page-master.html',
     directives: [ROUTER_DIRECTIVES, HomePagesLinks, HomePagesBottomButtons]
 })
-@RouteConfig([
-    { path: '/home-page-content', name: 'HomePageContent', component: HomePage, useAsDefault: true },
-    { path: '/about-trial-period-content', name: 'AboutTrialPeriodContent', component: AboutTrialPeriodComponent },
-    { path: '/contact-us', name: 'ContactUsComponent', component: ContactUsComponent },
-    { path: '/register', name: 'RegisterComponent', component: RegisterComponent },
-    { path: '/about-member-list', name: 'AboutMemberListComponent', component: AboutMemberListComponent },
-    { path: '/about-reminders', name: 'AboutRemindersComponent', component: AboutRemindersComponent },
-    { path: '/about-finances', name: 'AboutFinancesComponent', component: AboutFinancesComponent },
-    { path: '/about-communicate', name: 'AboutCommunicateComponent', component: AboutCommunicateComponent },
-    { path: '/about-events', name: 'AboutEventsComponent', component: AboutEventsComponent },
-    { path: '/subscription', name: 'SubscriptionComponent', component: SubscriptionComponent },
-    { path: '/about-help', name: 'AboutHelpComponent', component: AboutHelpComponent },
-    { path: '/about-us', name: 'AboutUsComponent', component: AboutUsComponent },
-    { path: '/terms', name: 'TermsComponent', component: TermsComponent },
-    { path: '/privacy', name: 'PrivacyComponent', component: PrivacyComponent }
-])
+//@RouteConfig([
+//    { path: '/home-page-content', name: 'HomePageContent', component: HomePage, useAsDefault: true },
+//    { path: '/about-trial-period-content', name: 'AboutTrialPeriodContent', component: AboutTrialPeriodComponent },
+//    { path: '/contact-us', name: 'ContactUsComponent', component: ContactUsComponent },
+//    { path: '/register', name: 'RegisterComponent', component: RegisterComponent },
+//    { path: '/about-member-list', name: 'AboutMemberListComponent', component: AboutMemberListComponent },
+//    { path: '/about-reminders', name: 'AboutRemindersComponent', component: AboutRemindersComponent },
+//    { path: '/about-finances', name: 'AboutFinancesComponent', component: AboutFinancesComponent },
+//    { path: '/about-communicate', name: 'AboutCommunicateComponent', component: AboutCommunicateComponent },
+//    { path: '/about-events', name: 'AboutEventsComponent', component: AboutEventsComponent },
+//    { path: '/subscription', name: 'SubscriptionComponent', component: SubscriptionComponent },
+//    { path: '/about-help', name: 'AboutHelpComponent', component: AboutHelpComponent },
+//    { path: '/about-us', name: 'AboutUsComponent', component: AboutUsComponent },
+//    { path: '/terms', name: 'TermsComponent', component: TermsComponent },
+//    { path: '/privacy', name: 'PrivacyComponent', component: PrivacyComponent }
+//])
 
 export class HomePageMasterComponent {
 }

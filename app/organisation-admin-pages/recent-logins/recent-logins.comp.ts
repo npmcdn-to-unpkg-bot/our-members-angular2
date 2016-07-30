@@ -1,7 +1,7 @@
 ﻿import {Component, ViewChild} from '@angular/core';
 import {RecentLoginsService} from './recent-logins.serv';
 import {HelperService} from '../../services/helper/helper.serv';
-import { Router, RouterLink } from '@angular/router-deprecated';
+import { Router, RouterLink } from '@angular/router';
 import {AgGridNg2} from 'ag-grid-ng2/main';
 
 
@@ -31,7 +31,7 @@ export class RecentLoginsComponent {
         if (HelperService.tokenIsValid()) {
             this.recentLoginsService.getRecentLogins().subscribe(onGetRecentLoginsSuccess, logError);
         } else {
-            this.router.parent.navigate(['HomePageMaster', 'LoginComponent']);
+            this.router.navigate(['HomePageMaster', 'LoginComponent']);
         }
         function logError(e: any) {
             HelperService.log('getErrors Error');

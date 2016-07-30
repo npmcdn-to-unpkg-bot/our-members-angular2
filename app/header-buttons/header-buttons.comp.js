@@ -9,24 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_deprecated_1 = require('@angular/router-deprecated');
-var login_button_comp_1 = require('./login-button/login-button.comp');
+var router_1 = require('@angular/router');
+//import {LoginComponent} from './login-button/login-button.comp';
 var HeaderButtons = (function () {
     function HeaderButtons() {
-        var _this = this;
-        this.showLoginButton = function () {
-            _this.loginComponent.loggedIn = false;
-        };
     }
-    __decorate([
-        core_1.ViewChild(login_button_comp_1.LoginComponent), 
-        __metadata('design:type', login_button_comp_1.LoginComponent)
-    ], HeaderButtons.prototype, "loginComponent", void 0);
     HeaderButtons = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'header-buttons',
-            directives: [router_deprecated_1.ROUTER_DIRECTIVES, login_button_comp_1.LoginComponent],
+            //directives: [LoginComponent, RouterLink],
+            directives: [router_1.ROUTER_DIRECTIVES],
+            //directives: [ROUTER_DIRECTIVES, LoginComponent],
             templateUrl: 'header-buttons.html',
             styleUrls: ['header-buttons.css']
         }), 
