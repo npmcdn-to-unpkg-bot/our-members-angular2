@@ -31,7 +31,7 @@ export class RecentLoginsComponent {
         if (HelperService.tokenIsValid()) {
             this.recentLoginsService.getRecentLogins().subscribe(onGetRecentLoginsSuccess, logError);
         } else {
-            this.router.navigate(['HomePageMaster', 'LoginComponent']);
+            this.router.navigate(['/home-page', 'login']);
         }
         function logError(e: any) {
             HelperService.log('getErrors Error');

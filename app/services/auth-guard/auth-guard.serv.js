@@ -32,7 +32,7 @@ var AuthGuard = (function () {
         //};
         // Navigate to the login page with extras
         //navigate to the home page with a parameter to open the LoginService modal
-        this.router.navigate(['/login']);
+        this.router.navigate(['/home-page', 'login']);
         //this.router.navigate(['/login'], navigationExtras);
         return false;
     };

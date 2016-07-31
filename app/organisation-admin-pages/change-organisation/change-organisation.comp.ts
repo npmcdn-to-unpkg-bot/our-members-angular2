@@ -35,7 +35,7 @@ export class ChangeOrganisationComponent {
         if (HelperService.tokenIsValid()) {
             this.changeOrganisationService.getOrganisations().subscribe(onGetOrganisationsSuccess, logError);
         } else {
-            this.router.navigate(['HomePageMaster', 'LoginComponent']);
+            this.router.navigate(['/home-page', 'login']);
         }
         function logError(e: any) {
             HelperService.log('getOrganisations Error');
@@ -54,7 +54,7 @@ export class ChangeOrganisationComponent {
         if (HelperService.tokenIsValid()) {
             this.changeOrganisationService.changeOrganisation(Id).subscribe(onChangeOrganisationSuccess, logError);
         } else {
-            changeOrganisationThis.router.navigate(['Login']);
+            changeOrganisationThis.router.navigate(['/home-page', 'login']);
         }
         function logError(e: any) {
             HelperService.log('changeOrganisation Error');

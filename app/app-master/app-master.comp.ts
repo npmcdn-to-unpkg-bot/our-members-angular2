@@ -30,7 +30,6 @@ import {ErrorListComponent} from '../organisation-admin-pages/error-list/error-l
 import {RecentLoginsComponent} from '../organisation-admin-pages/recent-logins/recent-logins.comp';
 import {OrganisationAdminMasterComponent} from '../organisation-admin-pages/organisation-admin-master/organisation-admin-master.comp';
 
-
 @Component({
     moduleId: module.id,
     selector: 'ib2-app',

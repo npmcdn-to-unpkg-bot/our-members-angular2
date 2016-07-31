@@ -2,6 +2,7 @@
 import { ROUTER_DIRECTIVES, Router} from '@angular/router';
 import {HelperService} from '../../services/helper/helper.serv';
 import {MemberListService} from './member-list.serv';
+import {MemberService} from './member.serv';
 import {MemberComponent} from  './member.comp';
 import {AgGridNg2} from 'ag-grid-ng2/main';
 
@@ -11,13 +12,13 @@ import {AgGridNg2} from 'ag-grid-ng2/main';
     moduleId: module.id,
     selector: 'member-list',
     templateUrl: 'member-list.html',
-    providers: [MemberListService],
+    providers: [MemberListService, MemberService],
     directives: [AgGridNg2, MemberComponent]
 
 })
 
 export class MembersListComponent {
-    constructor(private router: Router, private memberListService: MemberListService) {
+    constructor(private router: Router, private memberListService: MemberListService, private memberService: MemberService) {
         //constructor(private router: Router, private memberListService: MemberListService, private countriesService: CountriesService, private membershipTypesService: MembershipTypesService, private groupsService: GroupsService, popupComponent: PopupComponent) {
         HelperService.log('constructor RegisterComponent ');
     }
@@ -45,7 +46,7 @@ export class MembersListComponent {
         if (HelperService.tokenIsValid()) {
             this.memberListService.getMemberListData().subscribe(onGetMemberListSuccess, logError);
         } else {
-            this.router.navigate(['HomePageMaster', 'LoginComponent']);
+            this.router.navigate(['/home-page', 'login']);
         }
         function logError(e: any) {
             console.log('getMembers Error');
@@ -83,6 +84,39 @@ export class MembersListComponent {
             //this.popupComponent.showPopup('Please select  a member to edit');
         } else {
             this.memberComponent.loadMember(OrganisationMemberID);
+        }
+    }
+
+    deleteMember = () => {
+        var deleteMemberThis = this;
+        var OrganisationMemberID: number = this.getSelectedOrganisationMemberID();
+        if (OrganisationMemberID === -1) {
+            alert('Please select a member to delete');
+            //this.popupComponent.showPopup('Please select  a member to edit');
+        } else {
+            if (confirm('Do you want to delete this member?')) {
+                this.memberService.testDeleteMember(OrganisationMemberID);
+                if (HelperService.tokenIsValid()) {
+                    deleteMemberThis.memberService.testDeleteMember(OrganisationMemberID).subscribe(onTestDeleteMember, logError);
+                } else {
+                    deleteMemberThis.router.navigate(['/home-page', 'login']);
+                }
+                function onTestDeleteMember(structError: structError) {
+                    if (structError.boolError) {
+                        alert(structError.ErrorMessage)
+                    } else {
+                        deleteMemberThis.memberService.deleteMember(OrganisationMemberID).subscribe(onDeleteMember, logError);
+                    }
+                    function onDeleteMember() {
+                        deleteMemberThis.loadMemberListData();
+                    }
+                }
+
+                function logError() {
+                    HelperService.log('loadMember Error');
+                }
+            }
+
         }
     }
 

@@ -39,6 +39,26 @@ var MemberService = (function () {
         var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http);
         return httpHandlerService.putObject(Member, 'api/member');
     };
+    MemberService.prototype.testDeleteMember = function (OrganisationMemberID) {
+        var parameters = [];
+        var parameter = {
+            name: 'OrganisationMemberID',
+            value: OrganisationMemberID.toString()
+        };
+        parameters[0] = parameter;
+        var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http);
+        return httpHandlerService.getObject(parameters, 'api/member-list/test-delete', true);
+    };
+    MemberService.prototype.deleteMember = function (OrganisationMemberID) {
+        var parameters = [];
+        var parameter = {
+            name: 'OrganisationMemberID',
+            value: OrganisationMemberID.toString()
+        };
+        parameters[0] = parameter;
+        var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http);
+        return httpHandlerService.deleteObject(parameters, 'api/member-list/delete-member');
+    };
     MemberService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http, router_1.Router])

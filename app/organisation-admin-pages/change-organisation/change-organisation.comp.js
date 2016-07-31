@@ -29,7 +29,7 @@ var ChangeOrganisationComponent = (function () {
                 _this.changeOrganisationService.getOrganisations().subscribe(onGetOrganisationsSuccess, logError);
             }
             else {
-                _this.router.navigate(['HomePageMaster', 'LoginComponent']);
+                _this.router.navigate(['/home-page', 'login']);
             }
             function logError(e) {
                 helper_serv_1.HelperService.log('getOrganisations Error');
@@ -47,7 +47,7 @@ var ChangeOrganisationComponent = (function () {
                 _this.changeOrganisationService.changeOrganisation(Id).subscribe(onChangeOrganisationSuccess, logError);
             }
             else {
-                changeOrganisationThis.router.navigate(['Login']);
+                changeOrganisationThis.router.navigate(['/home-page', 'login']);
             }
             function logError(e) {
                 helper_serv_1.HelperService.log('changeOrganisation Error');

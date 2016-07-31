@@ -40,5 +40,52 @@ export class MemberService {
         var httpHandlerService = new HttpHandlerService(this.http);
         return httpHandlerService.putObject(Member, 'api/member');
     }
+
+    testDeleteMember(OrganisationMemberID: number) {
+        var parameters: modSharedTypes.IHttpParameter[] = [];
+        var parameter: modSharedTypes.IHttpParameter = {
+            name: 'OrganisationMemberID',
+            value: OrganisationMemberID.toString()
+        };
+        parameters[0] = parameter;
+
+        var httpHandlerService = new HttpHandlerService(this.http);
+        return httpHandlerService.getObject<structError>(parameters, 'api/member-list/test-delete', true);
+    }
+
+    deleteMember(OrganisationMemberID: number) {
+        var parameters: modSharedTypes.IHttpParameter[] = [];
+        var parameter: modSharedTypes.IHttpParameter = {
+            name: 'OrganisationMemberID',
+            value: OrganisationMemberID.toString()
+        };
+        parameters[0] = parameter;
+
+        var httpHandlerService = new HttpHandlerService(this.http);
+        return httpHandlerService.deleteObject(parameters, 'api/member-list/delete-member');
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

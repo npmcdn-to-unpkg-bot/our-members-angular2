@@ -15,7 +15,7 @@ export class ErrorDisplayComponent {
         HelperService.log('constructor ErrorDisplayComponent');
     }
 
-    structError: structError = {
+    structError: structErrorDetails = {
         ErrorID: -1,
         ErrorDate: new Date(),
         Message: '',
@@ -28,7 +28,7 @@ export class ErrorDisplayComponent {
         
     }
 
-    displayError = (structError: structError) => {
+    displayError = (structError: structErrorDetails) => {
         this.structError = structError;
         this.errorDisplayVisible = true;
     }

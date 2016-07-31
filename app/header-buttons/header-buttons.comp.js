@@ -17,10 +17,10 @@ var HeaderButtons = (function () {
         this.router = router;
         this.loginButtonClicked = function () {
             if (_this.loggedIn) {
-                _this.router.navigate(['organisation-admin-master']);
+                _this.router.navigate(['/organisation-admin-master']);
             }
             else {
-                _this.router.navigate(['home-page', 'login']);
+                _this.router.navigate(['/home-page', 'login']);
             }
         };
         this.loggedIn = false;

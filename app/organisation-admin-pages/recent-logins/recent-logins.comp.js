@@ -27,7 +27,7 @@ var RecentLoginsComponent = (function () {
                 _this.recentLoginsService.getRecentLogins().subscribe(onGetRecentLoginsSuccess, logError);
             }
             else {
-                _this.router.navigate(['HomePageMaster', 'LoginComponent']);
+                _this.router.navigate(['/home-page', 'login']);
             }
             function logError(e) {
                 helper_serv_1.HelperService.log('getErrors Error');

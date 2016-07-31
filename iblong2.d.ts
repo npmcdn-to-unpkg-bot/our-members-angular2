@@ -92,11 +92,16 @@ interface structMemberListData {
     NextMemberNumber: number;
 }
 
-interface structError {
+interface structErrorDetails {
     ErrorID: number;
     ErrorDate: Date;
     Message: string;
     Stack: string;
     UserName: string;
     OrganisationName: string;
+}
+
+interface structError { 
+    boolError: boolean;
+    ErrorMessage: string;
 }

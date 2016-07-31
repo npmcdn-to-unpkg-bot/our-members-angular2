@@ -28,7 +28,7 @@ var ErrorListComponent = (function () {
                 _this.errorListService.getErrors().subscribe(onGetErrorsSuccess, logError);
             }
             else {
-                _this.router.navigate(['HomePageMaster', 'LoginComponent']);
+                _this.router.navigate(['/home-page', 'login']);
             }
             function logError(e) {
                 helper_serv_1.HelperService.log('getErrors Error');
@@ -46,13 +46,13 @@ var ErrorListComponent = (function () {
                 _this.errorListService.getErrors().subscribe(onErrorListSuccess, logError);
             }
             else {
-                errorListThis.router.navigate(['Login']);
+                errorListThis.router.navigate(['/home-page', 'login']);
             }
             function logError(e) {
                 helper_serv_1.HelperService.log('errorList Error');
             }
             function onErrorListSuccess(data) {
-                errorListThis.router.navigate(['MembersList']);
+                errorListThis.router.navigate(['/organisation-admin-master', 'member-list']);
             }
         };
         this.errorDisplayClosed = function (result) {

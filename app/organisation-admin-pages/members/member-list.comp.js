@@ -12,13 +12,15 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var helper_serv_1 = require('../../services/helper/helper.serv');
 var member_list_serv_1 = require('./member-list.serv');
+var member_serv_1 = require('./member.serv');
 var member_comp_1 = require('./member.comp');
 var main_1 = require('ag-grid-ng2/main');
 var MembersListComponent = (function () {
-    function MembersListComponent(router, memberListService) {
+    function MembersListComponent(router, memberListService, memberService) {
         var _this = this;
         this.router = router;
         this.memberListService = memberListService;
+        this.memberService = memberService;
         this.memberComponentClosed = function (refreshList) {
             if (refreshList === helper_serv_1.HelperService.C_TRUE) {
                 _this.loadMemberListData();
@@ -33,7 +35,7 @@ var MembersListComponent = (function () {
                 _this.memberListService.getMemberListData().subscribe(onGetMemberListSuccess, logError);
             }
             else {
-                _this.router.navigate(['HomePageMaster', 'LoginComponent']);
+                _this.router.navigate(['/home-page', 'login']);
             }
             function logError(e) {
                 console.log('getMembers Error');
@@ -68,6 +70,38 @@ var MembersListComponent = (function () {
             }
             else {
                 _this.memberComponent.loadMember(OrganisationMemberID);
+            }
+        };
+        this.deleteMember = function () {
+            var deleteMemberThis = _this;
+            var OrganisationMemberID = _this.getSelectedOrganisationMemberID();
+            if (OrganisationMemberID === -1) {
+                alert('Please select a member to delete');
+            }
+            else {
+                if (confirm('Do you want to delete this member?')) {
+                    _this.memberService.testDeleteMember(OrganisationMemberID);
+                    if (helper_serv_1.HelperService.tokenIsValid()) {
+                        deleteMemberThis.memberService.testDeleteMember(OrganisationMemberID).subscribe(onTestDeleteMember, logError);
+                    }
+                    else {
+                        deleteMemberThis.router.navigate(['/home-page', 'login']);
+                    }
+                    function onTestDeleteMember(structError) {
+                        if (structError.boolError) {
+                            alert(structError.ErrorMessage);
+                        }
+                        else {
+                            deleteMemberThis.memberService.deleteMember(OrganisationMemberID).subscribe(onDeleteMember, logError);
+                        }
+                        function onDeleteMember() {
+                            deleteMemberThis.loadMemberListData();
+                        }
+                    }
+                    function logError() {
+                        helper_serv_1.HelperService.log('loadMember Error');
+                    }
+                }
             }
         };
         /////////////////////////////////////////////////////////////
@@ -114,10 +148,10 @@ var MembersListComponent = (function () {
             moduleId: module.id,
             selector: 'member-list',
             templateUrl: 'member-list.html',
-            providers: [member_list_serv_1.MemberListService],
+            providers: [member_list_serv_1.MemberListService, member_serv_1.MemberService],
             directives: [main_1.AgGridNg2, member_comp_1.MemberComponent]
         }), 
-        __metadata('design:paramtypes', [router_1.Router, member_list_serv_1.MemberListService])
+        __metadata('design:paramtypes', [router_1.Router, member_list_serv_1.MemberListService, member_serv_1.MemberService])
     ], MembersListComponent);
     return MembersListComponent;
 }());

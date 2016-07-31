@@ -36,7 +36,7 @@ export class ErrorListComponent {
         if (HelperService.tokenIsValid()) {
             this.errorListService.getErrors().subscribe(onGetErrorsSuccess, logError);
         } else {
-            this.router.navigate(['HomePageMaster', 'LoginComponent']);
+            this.router.navigate(['/home-page', 'login']);
         }
         function logError(e: any) {
             HelperService.log('getErrors Error');
@@ -55,14 +55,14 @@ export class ErrorListComponent {
         if (HelperService.tokenIsValid()) {
             this.errorListService.getErrors().subscribe(onErrorListSuccess, logError);
         } else {
-            errorListThis.router.navigate(['Login']);
+            errorListThis.router.navigate(['/home-page', 'login']);
         }
         function logError(e: any) {
             HelperService.log('errorList Error');
         }
 
         function onErrorListSuccess(data: any) {
-            errorListThis.router.navigate(['MembersList']);
+            errorListThis.router.navigate(['/organisation-admin-master', 'member-list']);
         }
     }
 
@@ -86,7 +86,7 @@ export class ErrorListComponent {
 
     onRowDoubleClicked = (params: any) => {
         this.showErrorList = false;
-        var selectedError: structError = <structError>params.data;
+        var selectedError: structErrorDetails = <structErrorDetails>params.data;
         this.errorDisplayComponent.displayError(selectedError);
     }
     onRowClicked = () => { }

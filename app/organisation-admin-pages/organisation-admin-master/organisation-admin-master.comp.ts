@@ -40,8 +40,7 @@ export class OrganisationAdminMasterComponent {
     ngOnInit() {
         var tokenValid: boolean = HelperService.tokenIsValid();
         if (tokenValid === false) {
-            this.router.navigate(['HomePageMaster', 'LoginComponent']);
-            //this.router.navigate(['HomePageMaster', 'LoginComponent']);
+            this.router.navigate(['/home-page', 'login']);
         }
     }
 }

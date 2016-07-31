@@ -146,7 +146,7 @@ var MemberComponent = (function () {
                 loadMemberThis.memberService.getMember(OrganisationMemberID).subscribe(onGetMemberSuccess, logError);
             }
             else {
-                loadMemberThis.router.navigate(['HomePageMaster', 'LoginComponent']);
+                loadMemberThis.router.navigate(['/home-page', 'login']);
             }
             function onGetMemberSuccess(Member) {
                 loadMemberThis.editMember = true;
@@ -195,7 +195,7 @@ var MemberComponent = (function () {
                     okClickedThis.memberService.updateMember(okClickedThis.Member).subscribe(updateMemberSuccess, logError);
                 }
                 else {
-                    okClickedThis.router.navigate(['HomePageMaster', 'LoginComponent']);
+                    okClickedThis.router.navigate(['/home-page', 'login']);
                 }
             }
             else {
@@ -203,7 +203,7 @@ var MemberComponent = (function () {
                     okClickedThis.memberService.saveNewMember(okClickedThis.Member).subscribe(updateMemberSuccess, logError);
                 }
                 else {
-                    okClickedThis.router.navigate(['HomePageMaster', 'LoginComponent']);
+                    okClickedThis.router.navigate(['/home-page', 'login']);
                 }
             }
             function logError(obj) {

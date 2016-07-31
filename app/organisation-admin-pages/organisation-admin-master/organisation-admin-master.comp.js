@@ -30,7 +30,7 @@ var OrganisationAdminMasterComponent = (function () {
     OrganisationAdminMasterComponent.prototype.ngOnInit = function () {
         var tokenValid = helper_serv_1.HelperService.tokenIsValid();
         if (tokenValid === false) {
-            this.router.navigate(['HomePageMaster', 'LoginComponent']);
+            this.router.navigate(['/home-page', 'login']);
         }
     };
     OrganisationAdminMasterComponent = __decorate([

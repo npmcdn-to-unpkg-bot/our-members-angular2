@@ -169,7 +169,7 @@ export class MemberComponent {
             loadMemberThis.titleMember = 'Edit Member';
             loadMemberThis.memberService.getMember(OrganisationMemberID).subscribe(onGetMemberSuccess, logError);
         } else {
-            loadMemberThis.router.navigate(['HomePageMaster', 'LoginComponent']);
+            loadMemberThis.router.navigate(['/home-page', 'login']);
         }
         function onGetMemberSuccess(Member: structOrganisationMember) {
             loadMemberThis.editMember = true;
@@ -223,13 +223,13 @@ export class MemberComponent {
 
                 okClickedThis.memberService.updateMember(okClickedThis.Member).subscribe(updateMemberSuccess, logError);
             } else {
-                okClickedThis.router.navigate(['HomePageMaster', 'LoginComponent']);
+                okClickedThis.router.navigate(['/home-page', 'login']);
             }
         } else {
             if (HelperService.tokenIsValid()) {
                 okClickedThis.memberService.saveNewMember(okClickedThis.Member).subscribe(updateMemberSuccess, logError);
             } else {
-                okClickedThis.router.navigate(['HomePageMaster', 'LoginComponent']);
+                okClickedThis.router.navigate(['/home-page', 'login']);
             }
         }
 

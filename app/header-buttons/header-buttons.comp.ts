@@ -21,9 +21,9 @@ export class HeaderButtons {
 
     loginButtonClicked = () => {
         if (this.loggedIn) {
-            this.router.navigate(['organisation-admin-master']);
+            this.router.navigate(['/organisation-admin-master']);
         } else {
-            this.router.navigate(['home-page', 'login']);
+            this.router.navigate(['/home-page', 'login']);
         }
     }
 
