@@ -8,18 +8,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+/// <reference path="../../services/login/login.serv.ts" />
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var helper_serv_1 = require('../../services/helper/helper.serv');
 var sidebar_menu_serv_1 = require('./sidebar-menu.serv');
+var login_serv_1 = require('../../services/login/login.serv');
 var communication_serv_1 = require('../../services/communication/communication.serv');
 var SidebarMenuComponent = (function () {
     //subscription: Subscription;
-    function SidebarMenuComponent(communicationService, router, sidebarMenuService) {
+    function SidebarMenuComponent(router, sidebarMenuService, loginService) {
+        //constructor(private router: Router, private sidebarMenuService: SidebarMenuService, private loginService: LoginService) {
+        //constructor(private communicationService: CommunicationService, private router: Router, private sidebarMenuService: SidebarMenuService) {
         var _this = this;
-        this.communicationService = communicationService;
         this.router = router;
         this.sidebarMenuService = sidebarMenuService;
+        this.loginService = loginService;
         this.getAdminLoggedIn = function () {
             var getAdminLoggedInThis = _this;
             if (helper_serv_1.HelperService.tokenIsValid()) {
@@ -132,9 +136,10 @@ var SidebarMenuComponent = (function () {
             }
         };
         this.logout = function () {
-            _this.communicationService.loggedoutCommunication(true);
-            helper_serv_1.HelperService.deleteTokenFromStorage();
-            _this.router.navigate(['HomePageMaster', 'HomePageContent']);
+            //CommunicationService.getInstance().loggedoutCommunication(false);
+            _this.loginService.logout();
+            //HelperService.deleteTokenFromStorage();
+            //this.router.navigate(['home-page', 'login']);
         };
         console.log('constructor SidebarMenuComponent ');
         //set up a listener to wait for parent to send string
@@ -157,9 +162,9 @@ var SidebarMenuComponent = (function () {
             templateUrl: 'sidebar-menu.html',
             styleUrls: ['sidebar-menu.css'],
             directives: [router_1.ROUTER_DIRECTIVES],
-            providers: [sidebar_menu_serv_1.SidebarMenuService]
+            providers: [sidebar_menu_serv_1.SidebarMenuService, communication_serv_1.CommunicationService, login_serv_1.LoginService]
         }), 
-        __metadata('design:paramtypes', [communication_serv_1.CommunicationService, router_1.Router, sidebar_menu_serv_1.SidebarMenuService])
+        __metadata('design:paramtypes', [router_1.Router, sidebar_menu_serv_1.SidebarMenuService, login_serv_1.LoginService])
     ], SidebarMenuComponent);
     return SidebarMenuComponent;
 }());

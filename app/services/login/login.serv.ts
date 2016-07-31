@@ -4,11 +4,13 @@ import {RequestOptionsArgs, Request, Response} from '@angular/http';
 import {Http, Headers, HTTP_PROVIDERS} from '@angular/http';
 import {HelperService} from '../../services/helper/helper.serv';
 import {HttpHandlerService} from  '../../services/http-handler/http-handler.serv';
+import { CommunicationService } from '../../services/communication/communication.serv';
 
 
 @Injectable()
 export class LoginService {
-    constructor(private http: Http, private router: Router, private callback: () => void) {
+    constructor(private http: Http, private router: Router) {
+        //constructor(private http: Http, private router: Router, private callback: () => void) {
         console.log('constructor LoginService');
     }
 
@@ -16,8 +18,10 @@ export class LoginService {
         var storeTokenThis = this;
         var t: ITokenresponse = <ITokenresponse>response.json()
         HelperService.saveTokenToStorage(userName, t);
-        this.callback();
+        this.router.navigate(['/organisation-admin-master']);
         storeTokenThis.isLoggedIn = true;
+        CommunicationService.getInstance().loggedoutCommunication(true);
+
     };
 
     isLoggedIn: boolean = false;
@@ -26,6 +30,13 @@ export class LoginService {
     logError() {
         window.alert('Error logging in');
     };
+
+    logout = () => {
+        this.isLoggedIn = false;
+        HelperService.deleteTokenFromStorage();
+        CommunicationService.getInstance().loggedoutCommunication(false);
+        this.router.navigate(['home-page', 'login']);
+    }
 
     authenticate(username: string, password: string) {
         var authenticateThis = this;
@@ -53,7 +64,7 @@ export class LoginService {
 
         function authenticationComplete() {
             console.log('Authentication Complete');
-            authenticateThis.callback();
+            //authenticateThis.callback();
         }
     }
 

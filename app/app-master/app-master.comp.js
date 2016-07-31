@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+/// <reference path="../services/communication/communication.serv.ts" />
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var helper_serv_1 = require('../services/helper/helper.serv');
@@ -36,13 +37,19 @@ var recent_logins_comp_1 = require('../organisation-admin-pages/recent-logins/re
 var organisation_admin_master_comp_1 = require('../organisation-admin-pages/organisation-admin-master/organisation-admin-master.comp');
 var AppComponent = (function () {
     function AppComponent() {
+        var _this = this;
         this.title = 'iB2';
         this.tokenValid = helper_serv_1.HelperService.tokenIsValid();
-        //showLoginButton = () => {
-        //    this.headerButtons.loginComponent.loggedIn = false;
-        //}
+        this.showLoginButton = function (loggedIn) {
+            _this.headerButtons.changeLoginState(loggedIn);
+        };
         this.threeLineButtonDisplay = 'none';
+        //constructor(private communicationService: CommunicationService) {
         console.log('constructor AppComponent');
+        //CommunicationService.getInstance().loggedoutcommunication$.subscribe(
+        //    loggedIn => {
+        //        this.showLoginButton(loggedIn);
+        //    });
     }
     AppComponent.prototype.showHideThreeLineButton = function () {
         if (this.threeLineButtonDisplay === 'none') {
@@ -63,6 +70,7 @@ var AppComponent = (function () {
             templateUrl: 'app-master.html',
             styleUrls: ['app-master.css'],
             directives: [router_1.ROUTER_DIRECTIVES, header_buttons_comp_1.HeaderButtons, footer_buttons_comp_1.FooterButtons],
+            //providers: [CommunicationService],
             precompile: [
                 home_page_master_comp_1.HomePageMasterComponent,
                 member_list_comp_1.MembersListComponent,

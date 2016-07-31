@@ -12,21 +12,30 @@ var router_1 = require('@angular/router');
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 var helper_serv_1 = require('../../services/helper/helper.serv');
+var communication_serv_1 = require('../../services/communication/communication.serv');
 var LoginService = (function () {
-    function LoginService(http, router, callback) {
+    function LoginService(http, router) {
+        var _this = this;
         this.http = http;
         this.router = router;
-        this.callback = callback;
         this.isLoggedIn = false;
         this.redirectUrl = '';
+        this.logout = function () {
+            _this.isLoggedIn = false;
+            helper_serv_1.HelperService.deleteTokenFromStorage();
+            communication_serv_1.CommunicationService.getInstance().loggedoutCommunication(false);
+            _this.router.navigate(['home-page', 'login']);
+        };
+        //constructor(private http: Http, private router: Router, private callback: () => void) {
         console.log('constructor LoginService');
     }
     LoginService.prototype.storeToken = function (response, userName) {
         var storeTokenThis = this;
         var t = response.json();
         helper_serv_1.HelperService.saveTokenToStorage(userName, t);
-        this.callback();
+        this.router.navigate(['/organisation-admin-master']);
         storeTokenThis.isLoggedIn = true;
+        communication_serv_1.CommunicationService.getInstance().loggedoutCommunication(true);
     };
     ;
     LoginService.prototype.logError = function () {
@@ -48,12 +57,12 @@ var LoginService = (function () {
             .subscribe(function (response) { return _this.storeToken(response, username); }, this.logError, function () { return authenticationComplete(); });
         function authenticationComplete() {
             console.log('Authentication Complete');
-            authenticateThis.callback();
+            //authenticateThis.callback();
         }
     };
     LoginService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http, router_1.Router, Function])
+        __metadata('design:paramtypes', [http_1.Http, router_1.Router])
     ], LoginService);
     return LoginService;
 }());

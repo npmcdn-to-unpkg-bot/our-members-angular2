@@ -1,6 +1,6 @@
 ﻿import { RouterConfig }       from '@angular/router';
 import { AuthGuard }          from './services/auth-guard/auth-guard.serv';
-import { LoginService }        from './home-pages/login/login.serv';
+import { LoginService }        from './services/login/login.serv';
 import { LoginComponent }     from './home-pages/login/login.comp';
 
 export const loginRoutes: RouterConfig = [

@@ -10,21 +10,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-//import {LoginComponent} from './login-button/login-button.comp';
+var communication_serv_1 = require('../services/communication/communication.serv');
 var HeaderButtons = (function () {
-    function HeaderButtons() {
+    function HeaderButtons(router) {
+        var _this = this;
+        this.router = router;
+        this.loginButtonClicked = function () {
+            if (_this.loggedIn) {
+                _this.router.navigate(['organisation-admin-master']);
+            }
+            else {
+                _this.router.navigate(['home-page', 'login']);
+            }
+        };
+        this.loggedIn = false;
+        this.loginButtonText = 'Login';
+        this.changeLoginState = function (loggedIn) {
+            var changeLoginStateThis = _this;
+            changeLoginStateThis.loggedIn = loggedIn;
+            if (loggedIn) {
+                changeLoginStateThis.loginButtonText = 'Return to my iB2';
+            }
+            else {
+                changeLoginStateThis.loginButtonText = 'Login';
+            }
+        };
+        communication_serv_1.CommunicationService.getInstance().loggedoutcommunication$.subscribe(function (loggedIn) {
+            _this.changeLoginState(loggedIn);
+        });
     }
     HeaderButtons = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'header-buttons',
-            //directives: [LoginComponent, RouterLink],
             directives: [router_1.ROUTER_DIRECTIVES],
-            //directives: [ROUTER_DIRECTIVES, LoginComponent],
             templateUrl: 'header-buttons.html',
             styleUrls: ['header-buttons.css']
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_1.Router])
     ], HeaderButtons);
     return HeaderButtons;
 }());

@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var login_serv_1 = require('./login.serv');
+var login_serv_1 = require('../../services/login/login.serv');
 var http_1 = require('@angular/http');
 var LoginComponent = (function () {
     function LoginComponent(router, http) {
@@ -25,9 +25,9 @@ var LoginComponent = (function () {
             _this.router.navigate(['/organisation-admin-master']);
             //this.router.navigate(['/organisation-admin-master', 'member-list']);
         };
-        this.loginService = new login_serv_1.LoginService(this.http, this.router, this.loginfinished);
+        this.loginService = new login_serv_1.LoginService(this.http, this.router);
         this.okClicked = function () {
-            var loginService = new login_serv_1.LoginService(_this.http, _this.router, _this.loginfinished);
+            var loginService = new login_serv_1.LoginService(_this.http, _this.router);
             _this.loginService.authenticate(_this.login.UserName, _this.login.Password);
         };
         console.log('constructor LoginComponent ');

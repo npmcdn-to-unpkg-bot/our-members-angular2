@@ -1,9 +1,11 @@
-﻿import {Component, OnDestroy } from '@angular/core';
+﻿/// <reference path="../../services/login/login.serv.ts" />
+import {Component, OnDestroy } from '@angular/core';
 import { ROUTER_DIRECTIVES, Router} from '@angular/router';
 import {HelperService} from '../../services/helper/helper.serv';
 import {SidebarMenuService} from './sidebar-menu.serv';
 import {OrganisationAdminMasterComponent} from '../organisation-admin-master/organisation-admin-master.comp';
 import {AppComponent} from '../../app-master/app-master.comp';
+import {LoginService} from '../../services/login/login.serv';
 
 import { CommunicationService } from '../../services/communication/communication.serv';
 import { Subscription }   from 'rxjs/Subscription';
@@ -14,13 +16,16 @@ import { Subscription }   from 'rxjs/Subscription';
     templateUrl: 'sidebar-menu.html',
     styleUrls: ['sidebar-menu.css'],
     directives: [ROUTER_DIRECTIVES],
-    providers: [SidebarMenuService]
+    providers: [SidebarMenuService, CommunicationService, LoginService]
+    //providers: [SidebarMenuService, LoginService, CommunicationService]
 })
 
 export class SidebarMenuComponent implements OnDestroy {
 
     //subscription: Subscription;
-    constructor(private communicationService: CommunicationService, private router: Router, private sidebarMenuService: SidebarMenuService) {
+    constructor(private router: Router, private sidebarMenuService: SidebarMenuService, private loginService: LoginService) {
+        //constructor(private router: Router, private sidebarMenuService: SidebarMenuService, private loginService: LoginService) {
+        //constructor(private communicationService: CommunicationService, private router: Router, private sidebarMenuService: SidebarMenuService) {
 
         console.log('constructor SidebarMenuComponent ');
 
@@ -152,8 +157,9 @@ export class SidebarMenuComponent implements OnDestroy {
 
 
     logout = () => {
-        this.communicationService.loggedoutCommunication(true);
-        HelperService.deleteTokenFromStorage();
-        this.router.navigate(['HomePageMaster', 'HomePageContent']);
+        //CommunicationService.getInstance().loggedoutCommunication(false);
+        this.loginService.logout();
+        //HelperService.deleteTokenFromStorage();
+        //this.router.navigate(['home-page', 'login']);
     }
 }

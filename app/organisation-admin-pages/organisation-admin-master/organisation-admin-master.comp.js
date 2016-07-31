@@ -8,19 +8,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+/// <reference path="../../app-master/app-master.comp.ts" />
 var router_1 = require('@angular/router');
 var core_1 = require('@angular/core');
 var helper_serv_1 = require('../../services/helper/helper.serv');
 var sidebar_menu_comp_1 = require('../sidebar-menu/sidebar-menu.comp');
 var communication_serv_1 = require('../../services/communication/communication.serv');
+//import { AppComponent }     from '../../app-master/app-master.comp';
 var OrganisationAdminMasterComponent = (function () {
-    function OrganisationAdminMasterComponent(router, communicationService) {
+    function OrganisationAdminMasterComponent(router) {
         this.router = router;
-        this.communicationService = communicationService;
+        //constructor(public router: Router, private communicationService: CommunicationService) {
+        //constructor(public router: Router, private communicationService: CommunicationService, appComponent: AppComponent) {
+        var contrustorThis = this;
         console.log('constructor OrganisationAdminMasterComponent');
-        communicationService.loggedoutcommunication$.subscribe(function (child) {
-            alert(child);
-        });
+        //CommunicationService.getInstance().loggedoutcommunication$.subscribe(
+        //    child => {
+        //        CommunicationService.getInstance().loggedoutCommunication1(child);
+        //    });
     }
     OrganisationAdminMasterComponent.prototype.ngOnInit = function () {
         var tokenValid = helper_serv_1.HelperService.tokenIsValid();
@@ -35,7 +40,7 @@ var OrganisationAdminMasterComponent = (function () {
             directives: [router_1.ROUTER_DIRECTIVES, sidebar_menu_comp_1.SidebarMenuComponent],
             providers: [communication_serv_1.CommunicationService]
         }), 
-        __metadata('design:paramtypes', [router_1.Router, communication_serv_1.CommunicationService])
+        __metadata('design:paramtypes', [router_1.Router])
     ], OrganisationAdminMasterComponent);
     return OrganisationAdminMasterComponent;
 }());

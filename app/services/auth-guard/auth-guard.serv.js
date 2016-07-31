@@ -8,10 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/// <reference path="../../home-pages/login/login.serv.ts" />
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var login_serv_1 = require('../../home-pages/login/login.serv');
+var login_serv_1 = require('../login/login.serv');
 var AuthGuard = (function () {
     function AuthGuard(loginService, router) {
         this.loginService = loginService;

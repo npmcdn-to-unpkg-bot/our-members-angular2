@@ -1,23 +1,43 @@
 ﻿import {Component, ViewChild} from '@angular/core';
-import {ROUTER_DIRECTIVES } from '@angular/router';
-//import {LoginComponent} from './login-button/login-button.comp';
+import {ROUTER_DIRECTIVES, Router } from '@angular/router';
+import {CommunicationService} from  '../services/communication/communication.serv';
 
 @Component({
     moduleId: module.id,
     selector: 'header-buttons',
-    //directives: [LoginComponent, RouterLink],
     directives: [ROUTER_DIRECTIVES],
-    //directives: [ROUTER_DIRECTIVES, LoginComponent],
     templateUrl: 'header-buttons.html',
     styleUrls: ['header-buttons.css']
-    //providers: [Router]
 })
 
 export class HeaderButtons {
 
-    //@ViewChild(LoginComponent) loginComponent: LoginComponent;
-    //showLoginButton = () => {
-    //    this.loginComponent.loggedIn = false;
-    //}
+    constructor(private router: Router) {
+        CommunicationService.getInstance().loggedoutcommunication$.subscribe(
+            loggedIn => {
+                this.changeLoginState(loggedIn);
+            });
+    }
 
+    loginButtonClicked = () => {
+        if (this.loggedIn) {
+            this.router.navigate(['organisation-admin-master']);
+        } else {
+            this.router.navigate(['home-page', 'login']);
+        }
+    }
+
+    loggedIn: boolean = false;
+
+    loginButtonText: string = 'Login';
+
+    changeLoginState = (loggedIn: boolean) => {
+        var changeLoginStateThis = this;
+        changeLoginStateThis.loggedIn = loggedIn;
+        if (loggedIn) {
+            changeLoginStateThis.loginButtonText = 'Return to my iB2';
+        } else {
+            changeLoginStateThis.loginButtonText = 'Login';
+        }
+    }
 }

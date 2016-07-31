@@ -1,10 +1,12 @@
-﻿import {Component, ViewChild} from '@angular/core';
+﻿/// <reference path="../services/communication/communication.serv.ts" />
+import {Component, ViewChild} from '@angular/core';
 import {ROUTER_DIRECTIVES} from '@angular/router';
 import {HelperService} from '../services/helper/helper.serv';
 import {HomePageMasterComponent} from '../home-pages/home-page-master/home-page-master.comp';
 import {AboutTrialPeriodComponent} from '../home-pages/about-trial-period/about-trial-period.comp';
 import {HeaderButtons} from  '../header-buttons/header-buttons.comp';
 import {FooterButtons} from  '../home-pages/footer-buttons/footer-buttons.comp';
+//import {CommunicationService} from  '../services/communication/communication.serv';
 
 import {HomePagesLinks}  from '../home-pages/home-pages-links/home-pages-links.comp';
 import {HomePagesBottomButtons}  from '../home-pages/home-pages-bottom-buttons/home-pages-bottom-buttons.comp';
@@ -35,6 +37,7 @@ import {OrganisationAdminMasterComponent} from '../organisation-admin-pages/orga
     templateUrl: 'app-master.html',
     styleUrls: ['app-master.css'],
     directives: [ROUTER_DIRECTIVES, HeaderButtons, FooterButtons],
+    //providers: [CommunicationService],
     precompile: [
         HomePageMasterComponent,
         MembersListComponent,
@@ -60,23 +63,25 @@ import {OrganisationAdminMasterComponent} from '../organisation-admin-pages/orga
     ]
 
 })
-//@RouteConfig([
-//    { path: '/home-page-master/...', name: 'HomePageMaster', component: HomePageMasterComponent, useAsDefault: true },
-//    { path: '/organisation-admin-master/...', name: 'OrganisationAdminMaster', component: OrganisationAdminMasterComponent }
-//])
 
 export class AppComponent {
 
     constructor() {
+        //constructor(private communicationService: CommunicationService) {
         console.log('constructor AppComponent');
+        //CommunicationService.getInstance().loggedoutcommunication$.subscribe(
+        //    loggedIn => {
+        //        this.showLoginButton(loggedIn);
+        //    });
     }
+
     public title = 'iB2';
     tokenValid: boolean = HelperService.tokenIsValid();
 
     @ViewChild(HeaderButtons) headerButtons: HeaderButtons;
-    //showLoginButton = () => {
-    //    this.headerButtons.loginComponent.loggedIn = false;
-    //}
+    showLoginButton = (loggedIn: boolean) => {
+        this.headerButtons.changeLoginState(loggedIn)
+    }
 
     threeLineButtonDisplay: string = 'none';
 

@@ -16,12 +16,24 @@ var CommunicationService = (function () {
         this.communicationLoggedOutSource = new Subject_1.Subject();
         // Observable string streams
         this.loggedoutcommunication$ = this.communicationLoggedOutSource.asObservable();
+        if (!CommunicationService.isCreating) {
+            throw new Error("You can't call new in Singleton instances! Call CommunicationService.getInstance() instead.");
+        }
     }
+    CommunicationService.getInstance = function () {
+        if (CommunicationService.instance == null) {
+            CommunicationService.isCreating = true;
+            CommunicationService.instance = new CommunicationService();
+            CommunicationService.isCreating = false;
+        }
+        return CommunicationService.instance;
+    };
     // Service message commands
     //function called by child to pass message to parent
     CommunicationService.prototype.loggedoutCommunication = function (val) {
         this.communicationLoggedOutSource.next(val);
     };
+    CommunicationService.isCreating = false;
     CommunicationService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])

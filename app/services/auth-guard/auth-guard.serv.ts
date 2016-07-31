@@ -1,7 +1,6 @@
-﻿/// <reference path="../../home-pages/login/login.serv.ts" />
-import { Injectable } from '@angular/core';
+﻿import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot }    from '@angular/router';
-import { LoginService } from '../../home-pages/login/login.serv';
+import { LoginService } from '../login/login.serv';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
