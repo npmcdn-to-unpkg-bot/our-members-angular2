@@ -139,6 +139,7 @@ var MemberComponent = (function () {
         //get data
         this.loadMember = function (OrganisationMemberID) {
             var loadMemberThis = _this;
+            loadMemberThis.Member = loadMemberThis.getEmptyMember(0);
             //loadMemberThis.Member = loadMemberThis.getEmptyMember();
             if (helper_serv_1.HelperService.tokenIsValid()) {
                 loadMemberThis.titleMember = 'Edit Member';

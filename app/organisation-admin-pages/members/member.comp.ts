@@ -163,6 +163,7 @@ export class MemberComponent {
     //get data
     loadMember = (OrganisationMemberID: number) => {
         var loadMemberThis = this;
+        loadMemberThis.Member = loadMemberThis.getEmptyMember(0);
         //loadMemberThis.Member = loadMemberThis.getEmptyMember();
         if (HelperService.tokenIsValid()) {
             loadMemberThis.titleMember = 'Edit Member';
