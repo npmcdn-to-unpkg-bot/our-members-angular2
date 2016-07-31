@@ -2,9 +2,9 @@
   "name": "angular2-hello-world",
   "version": "1.0.0",
   "scripts": {
-    "start___": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "start___ ": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "lite": "lite-server",
-    "postinstall": "typings install",
+    "postinstall__": "typings install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings"
