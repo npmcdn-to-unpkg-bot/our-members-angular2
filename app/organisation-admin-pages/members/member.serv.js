@@ -49,6 +49,16 @@ var MemberService = (function () {
         var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http);
         return httpHandlerService.getObject(parameters, 'api/member-list/test-delete', true);
     };
+    MemberService.prototype.registerMember = function (OrganisationMemberID) {
+        var parameters = [];
+        var parameter = {
+            name: 'OrganisationMemberID',
+            value: OrganisationMemberID.toString()
+        };
+        parameters[0] = parameter;
+        var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http);
+        return httpHandlerService.getObject(parameters, 'api/member-list/register-member', true);
+    };
     MemberService.prototype.deleteMember = function (OrganisationMemberID) {
         var parameters = [];
         var parameter = {

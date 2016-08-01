@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+/// <reference path="../../utilities/confirm/confirm.comp.ts" />
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var helper_serv_1 = require('../../services/helper/helper.serv');
@@ -15,6 +16,8 @@ var member_list_serv_1 = require('./member-list.serv');
 var member_serv_1 = require('./member.serv');
 var member_comp_1 = require('./member.comp');
 var main_1 = require('ag-grid-ng2/main');
+var confirm_comp_1 = require('../../utilities/confirm/confirm.comp');
+var popup_comp_1 = require('../../utilities/popup/popup.comp');
 var MembersListComponent = (function () {
     function MembersListComponent(router, memberListService, memberService) {
         var _this = this;
@@ -66,7 +69,7 @@ var MembersListComponent = (function () {
             var OrganisationMemberID = _this.getSelectedOrganisationMemberID();
             _this.showMembershipList = false;
             if (OrganisationMemberID === -1) {
-                alert('Please select a member to edit');
+                _this.popupComponent.showPopup('Please select  a member to edit');
             }
             else {
                 _this.memberComponent.loadMember(OrganisationMemberID);
@@ -76,31 +79,53 @@ var MembersListComponent = (function () {
             var deleteMemberThis = _this;
             var OrganisationMemberID = _this.getSelectedOrganisationMemberID();
             if (OrganisationMemberID === -1) {
-                alert('Please select a member to delete');
+                deleteMemberThis.popupComponent.showPopup('Please select  a member to edit');
             }
             else {
-                if (confirm('Do you want to delete this member?')) {
-                    _this.memberService.testDeleteMember(OrganisationMemberID);
-                    if (helper_serv_1.HelperService.tokenIsValid()) {
-                        deleteMemberThis.memberService.testDeleteMember(OrganisationMemberID).subscribe(onTestDeleteMember, logError);
+                deleteMemberThis.confirmComponent.showConfirm('Do you want to delete this member?', returnFunction);
+            }
+            function returnFunction() {
+                var returnFunctionThis = deleteMemberThis;
+                if (helper_serv_1.HelperService.tokenIsValid()) {
+                    returnFunctionThis.memberService.testDeleteMember(OrganisationMemberID).subscribe(onTestDeleteMember, logError);
+                }
+                else {
+                    returnFunctionThis.router.navigate(['/home-page', 'login']);
+                }
+                function onTestDeleteMember(structError) {
+                    if (structError.boolError) {
+                        returnFunctionThis.popupComponent.showPopup(structError.ErrorMessage);
                     }
                     else {
-                        deleteMemberThis.router.navigate(['/home-page', 'login']);
+                        returnFunctionThis.memberService.deleteMember(OrganisationMemberID).subscribe(onDeleteMember, logError);
                     }
-                    function onTestDeleteMember(structError) {
-                        if (structError.boolError) {
-                            alert(structError.ErrorMessage);
-                        }
-                        else {
-                            deleteMemberThis.memberService.deleteMember(OrganisationMemberID).subscribe(onDeleteMember, logError);
-                        }
-                        function onDeleteMember() {
-                            deleteMemberThis.loadMemberListData();
-                        }
+                    function onDeleteMember() {
+                        returnFunctionThis.loadMemberListData();
                     }
-                    function logError() {
-                        helper_serv_1.HelperService.log('loadMember Error');
-                    }
+                }
+                function logError() {
+                    helper_serv_1.HelperService.log('loadMember Error');
+                }
+            }
+        };
+        this.registerMember = function () {
+            var registerMemberThis = _this;
+            var OrganisationMemberID = _this.getSelectedOrganisationMemberID();
+            if (OrganisationMemberID === -1) {
+                _this.popupComponent.showPopup('Please select  a member to register');
+            }
+            else {
+                if (helper_serv_1.HelperService.tokenIsValid()) {
+                    registerMemberThis.memberService.registerMember(OrganisationMemberID).subscribe(onRegisterMember, logError);
+                }
+                else {
+                    registerMemberThis.router.navigate(['/home-page', 'login']);
+                }
+                function onRegisterMember() {
+                    this.popupComponent.showPopup('Member successfully regiserd');
+                }
+                function logError() {
+                    helper_serv_1.HelperService.log('loadMember Error');
                 }
             }
         };
@@ -143,13 +168,21 @@ var MembersListComponent = (function () {
         core_1.ViewChild(member_comp_1.MemberComponent), 
         __metadata('design:type', member_comp_1.MemberComponent)
     ], MembersListComponent.prototype, "memberComponent", void 0);
+    __decorate([
+        core_1.ViewChild(confirm_comp_1.ConfirmComponent), 
+        __metadata('design:type', confirm_comp_1.ConfirmComponent)
+    ], MembersListComponent.prototype, "confirmComponent", void 0);
+    __decorate([
+        core_1.ViewChild(popup_comp_1.PopupComponent), 
+        __metadata('design:type', popup_comp_1.PopupComponent)
+    ], MembersListComponent.prototype, "popupComponent", void 0);
     MembersListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'member-list',
             templateUrl: 'member-list.html',
             providers: [member_list_serv_1.MemberListService, member_serv_1.MemberService],
-            directives: [main_1.AgGridNg2, member_comp_1.MemberComponent]
+            directives: [main_1.AgGridNg2, member_comp_1.MemberComponent, confirm_comp_1.ConfirmComponent, popup_comp_1.PopupComponent]
         }), 
         __metadata('design:paramtypes', [router_1.Router, member_list_serv_1.MemberListService, member_serv_1.MemberService])
     ], MembersListComponent);

@@ -1,5 +1,5 @@
 ﻿<div class="modalSolsof modalSolsof200" [class.modalSolsofVisible]="popupVisible" (click)="cancel()">
-    <div class="modal-contentSolsof modalSolsof-very-narrow" (click)="$event.stopPropagation()">
+    <div class="modal-contentSolsof modalSolsof-narrow" (click)="$event.stopPropagation()">
         <div class="row">
             <div class="col-sm-1 ">
             </div>
@@ -10,9 +10,11 @@
         <div class="row">
             <div class="col-sm-4 ">
             </div>
-
             <div class="col-sm-4 ">
-                <button type="button" class="ok-button" (click)="cancel()">OK</button>
+                <button type="button" style="width: 100%; float:none;" class="save-button" (click)="cancel()">OK</button>
+                <!--<button type="button" class="save-button" style="float:none;" (click)="cancel()">OK</button>-->
+            </div>
+            <div class="col-sm-4 ">
             </div>
         </div>
     </div>

@@ -11,7 +11,7 @@
                 <button type="button" class="organisation-admin-page-menu-item" (click)="addMember()">Add Member</button>
                 <button type="button" class="organisation-admin-page-menu-item" [disabled]="!rowSelected" (click)="editMember()">Edit Member</button>
                 <button type="button" class="organisation-admin-page-menu-item" [disabled]="!rowSelected" (click)="deleteMember()">Delete Member</button>
-                <button type="button" class="organisation-admin-page-menu-item" [disabled]="!rowSelected">Register Member</button>
+                <button type="button" class="organisation-admin-page-menu-item" [disabled]="!rowSelected" (click)="registerMember()">Register Member</button>
                 <button type="button" class="organisation-admin-page-menu-item" [disabled]="!rowSelected">Receipt Member</button>
                 <button type="button" class="organisation-admin-page-menu-item" [disabled]="!rowSelected">Member Communication</button>
                 <button type="button" class="organisation-admin-page-menu-item" [disabled]="!rowSelected">Member Statement</button>
@@ -41,3 +41,5 @@
     </div>
 </div>
 <memberModal (closed)="memberComponentClosed($event)" [hidden]="showMembershipList"></memberModal>
+<confirm></confirm>
+<popup></popup>

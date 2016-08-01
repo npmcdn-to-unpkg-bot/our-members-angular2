@@ -1,10 +1,12 @@
 ﻿.popup-message {
+    /*text-align: center;*/
+    /*text-justify: distribute;*/
     font-size: large;
-    padding: 20px 0;
+    /*padding: 5px 0;*/
 }
 
-.ok-button {
+/*.ok-button {
     background-color: #7da31a;
     font-size: larger;
     padding: 10px 30%;
-}
+}*/

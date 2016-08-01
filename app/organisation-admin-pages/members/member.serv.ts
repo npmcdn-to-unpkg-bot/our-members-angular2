@@ -53,6 +53,18 @@ export class MemberService {
         return httpHandlerService.getObject<structError>(parameters, 'api/member-list/test-delete', true);
     }
 
+    registerMember(OrganisationMemberID: number) {
+        var parameters: modSharedTypes.IHttpParameter[] = [];
+        var parameter: modSharedTypes.IHttpParameter = {
+            name: 'OrganisationMemberID',
+            value: OrganisationMemberID.toString()
+        };
+        parameters[0] = parameter;
+
+        var httpHandlerService = new HttpHandlerService(this.http);
+        return httpHandlerService.getObject<boolean>(parameters, 'api/member-list/register-member', true);
+    }
+
     deleteMember(OrganisationMemberID: number) {
         var parameters: modSharedTypes.IHttpParameter[] = [];
         var parameter: modSharedTypes.IHttpParameter = {
