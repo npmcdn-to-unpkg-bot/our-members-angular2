@@ -30,7 +30,7 @@ var SidebarMenuComponent = (function () {
                 _this.sidebarMenuService.getAdminLoggedIn().subscribe(getAdminLoggedInSuccess, logError);
             }
             else {
-                _this.router.navigate(['/home-page', 'login']);
+                helper_serv_1.HelperService.sendToLogin(_this.router);
             }
             function logError(e) {
                 console.log('getMembers Error');

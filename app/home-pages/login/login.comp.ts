@@ -2,7 +2,9 @@
 import {Router, RouterLink, ROUTER_DIRECTIVES} from '@angular/router';
 import {LoginService} from '../../services/login/login.serv';
 import {Http, Headers} from '@angular/http';
-import {MembersListComponent} from '../../organisation-admin-pages/members/member-list.comp';
+import {MembersListComponent} from '../../organisation-admin-pages/members/member-list/member-list.comp';
+import { NgForm }    from '@angular/forms';
+
 
 @Component({
     moduleId: module.id,

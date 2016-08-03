@@ -1,8 +1,9 @@
-﻿import {Component, ViewChild} from '@angular/core';
+﻿/// <reference path="../../services/helper/helper.serv.ts" />
+import {Component, ViewChild} from '@angular/core';
 import {RecentLoginsService} from './recent-logins.serv';
-import {HelperService} from '../../services/helper/helper.serv';
 import { Router, RouterLink } from '@angular/router';
 import {AgGridNg2} from 'ag-grid-ng2/main';
+import {HelperService} from '../../services/helper/helper.serv';
 
 
 @Component({
@@ -31,7 +32,7 @@ export class RecentLoginsComponent {
         if (HelperService.tokenIsValid()) {
             this.recentLoginsService.getRecentLogins().subscribe(onGetRecentLoginsSuccess, logError);
         } else {
-            this.router.navigate(['/home-page', 'login']);
+            HelperService.sendToLogin(this.router);
         }
         function logError(e: any) {
             HelperService.log('getErrors Error');

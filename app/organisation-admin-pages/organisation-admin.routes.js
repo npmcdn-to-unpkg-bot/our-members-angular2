@@ -1,5 +1,5 @@
 "use strict";
-var member_list_comp_1 = require('./members/member-list.comp');
+var member_list_comp_1 = require('./members/member-list/member-list.comp');
 var change_organisation_comp_1 = require('./change-organisation/change-organisation.comp');
 var error_list_comp_1 = require('./error-list/error-list.comp');
 var recent_logins_comp_1 = require('./recent-logins/recent-logins.comp');

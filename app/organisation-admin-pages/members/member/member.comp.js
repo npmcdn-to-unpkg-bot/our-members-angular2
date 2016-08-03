@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var helper_serv_1 = require('../../services/helper/helper.serv');
+var helper_serv_1 = require('../../../services/helper/helper.serv');
 var member_serv_1 = require('./member.serv');
 var main_1 = require('ag-grid-ng2/main');
 var MemberComponent = (function () {
@@ -146,7 +146,7 @@ var MemberComponent = (function () {
                 loadMemberThis.memberService.getMember(OrganisationMemberID).subscribe(onGetMemberSuccess, logError);
             }
             else {
-                loadMemberThis.router.navigate(['/home-page', 'login']);
+                helper_serv_1.HelperService.sendToLogin(loadMemberThis.router);
             }
             function onGetMemberSuccess(Member) {
                 loadMemberThis.editMember = true;
@@ -195,7 +195,7 @@ var MemberComponent = (function () {
                     okClickedThis.memberService.updateMember(okClickedThis.Member).subscribe(updateMemberSuccess, logError);
                 }
                 else {
-                    okClickedThis.router.navigate(['/home-page', 'login']);
+                    helper_serv_1.HelperService.sendToLogin(okClickedThis.router);
                 }
             }
             else {
@@ -203,7 +203,7 @@ var MemberComponent = (function () {
                     okClickedThis.memberService.saveNewMember(okClickedThis.Member).subscribe(updateMemberSuccess, logError);
                 }
                 else {
-                    okClickedThis.router.navigate(['/home-page', 'login']);
+                    helper_serv_1.HelperService.sendToLogin(okClickedThis.router);
                 }
             }
             function logError(obj) {

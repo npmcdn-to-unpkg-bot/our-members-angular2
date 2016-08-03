@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var communication_serv_1 = require('../services/communication/communication.serv');
+var helper_serv_1 = require('../services/helper/helper.serv');
 var HeaderButtons = (function () {
     function HeaderButtons(router) {
         var _this = this;
@@ -20,7 +21,7 @@ var HeaderButtons = (function () {
                 _this.router.navigate(['/organisation-admin-master']);
             }
             else {
-                _this.router.navigate(['/home-page', 'login']);
+                helper_serv_1.HelperService.sendToLogin(_this.router);
             }
         };
         this.loggedIn = false;

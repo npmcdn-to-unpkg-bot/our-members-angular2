@@ -21,7 +21,7 @@
                         <label for="inputFirstName">First Name</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputFirstName ngControl="ngcFirstName" [(ngModel)]="Member.FirstName" />
+                        <input class="form-control" type="text" #inputFirstName ngControl="ngcFirstName" [(ngModel)]="Member.FirstName" name="FirstName" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -29,7 +29,7 @@
                         <label for="inputMiddleName">Middle Name</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputMiddleName ngControl="ngcMiddleName" [(ngModel)]="Member.MiddleName" />
+                        <input class="form-control" type="text" #inputMiddleName ngControl="ngcMiddleName" [(ngModel)]="Member.MiddleName" name="MiddleName" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -37,7 +37,7 @@
                         <label for="inputLastName">Last Name</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" required #inputLastName ngControl="ngcLastName" [(ngModel)]="Member.LastName" />
+                        <input class="form-control" type="text" required #inputLastName ngControl="ngcLastName" [(ngModel)]="Member.LastName" name="LastName" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -45,7 +45,7 @@
                         <label for="inputTitle">Title</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputTitle ngControl="ngcTitle" [(ngModel)]="Member.Title" />
+                        <input class="form-control" type="text" #inputTitle ngControl="ngcTitle" [(ngModel)]="Member.Title" name="Title" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -53,7 +53,7 @@
                         <label for="inputPhone1">Phone1</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputPhone1 ngControl="ngcPhone1" [(ngModel)]="Member.Phone1" />
+                        <input class="form-control" type="text" #inputPhone1 ngControl="ngcPhone1" [(ngModel)]="Member.Phone1" name="Phone1" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -61,7 +61,7 @@
                         <label for="inputPhone2">Phone2</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputPhone2 ngControl="ngcPhone2" [(ngModel)]="Member.Phone2" />
+                        <input class="form-control" type="text" #inputPhone2 ngControl="ngcPhone2" [(ngModel)]="Member.Phone2" name="Phone2" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -69,7 +69,7 @@
                         <label for="inputPhone3">Phone3</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputPhone3 ngControl="ngcPhone3" [(ngModel)]="Member.Phone3" />
+                        <input class="form-control" type="text" #inputPhone3 ngControl="ngcPhone3" [(ngModel)]="Member.Phone3" name="Phone3" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -77,7 +77,7 @@
                         <label for="inputFax">Fax</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputFax ngControl="ngcFax" [(ngModel)]="Member.Fax" />
+                        <input class="form-control" type="text" #inputFax ngControl="ngcFax" [(ngModel)]="Member.Fax" name="Fax" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -85,7 +85,7 @@
                         <label for="inputStreetAddress1">Street Address 1</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputStreetAddress1 ngControl="ngcStreetAddress1" [(ngModel)]="Member.StreetAddress1" />
+                        <input class="form-control" type="text" #inputStreetAddress1 ngControl="ngcStreetAddress1" [(ngModel)]="Member.StreetAddress1" name="StreetAddress1" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -93,7 +93,7 @@
                         <label for="inputStreetAddress2">Street Address 2</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputStreetAddress2 ngControl="ngcStreetAddress2" [(ngModel)]="Member.StreetAddress2" />
+                        <input class="form-control" type="text" #inputStreetAddress2 ngControl="ngcStreetAddress2" [(ngModel)]="Member.StreetAddress2" name="StreetAddress2" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -101,7 +101,7 @@
                         <label for="inputSuburb">Suburb</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputSuburb ngControl="ngcSuburb" [(ngModel)]="Member.Suburb" />
+                        <input class="form-control" type="text" #inputSuburb ngControl="ngcSuburb" [(ngModel)]="Member.Suburb" name="Suburb" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -109,7 +109,7 @@
                         <label for="inputPostcode">Postcode</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputPostcode ngControl="ngcPostcode" [(ngModel)]="Member.Postcode" />
+                        <input class="form-control" type="text" #inputPostcode ngControl="ngcPostcode" [(ngModel)]="Member.Postcode" name="Postcode" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -117,7 +117,7 @@
                         <label for="inputState">State</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputState ngControl="ngcState" [(ngModel)]="Member.State" />
+                        <input class="form-control" type="text" #inputState ngControl="ngcState" [(ngModel)]="Member.State" name="State" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -125,7 +125,7 @@
                         <label for="inputCountryID">Country</label>
                     </div>
                     <div class="col-sm-7">
-                        <select class="form-control" #cmbCountries ngControl="ngcCountries" [(ngModel)]="Member.CountryID">
+                        <select class="form-control" #cmbCountries ngControl="ngcCountries" [(ngModel)]="Member.CountryID" name="CountryID">
                             <option *ngFor="let country of countries" [value]="country.CountryID">
                                 {{ country.Name }}
                             </option>
@@ -137,7 +137,7 @@
                         <label for="inputEmailAddress">Email Address</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="email" #inputEmailAddress ngControl="ngcEmailAddress" [(ngModel)]="Member.EmailAddress" />
+                        <input class="form-control" type="email" #inputEmailAddress ngControl="ngcEmailAddress" [(ngModel)]="Member.EmailAddress" name="EmailAddress" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -145,7 +145,7 @@
                         <label for="inputContactPerson">Contact Person</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputContactPerson ngControl="ngcContactPerson" [(ngModel)]="Member.ContactPerson" />
+                        <input class="form-control" type="text" #inputContactPerson ngControl="ngcContactPerson" [(ngModel)]="Member.ContactPerson" name="ContactPerson" />
                     </div>
                 </div>
 
@@ -156,7 +156,7 @@
                         <label for="inputGender">Gender</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputGender ngControl="ngcGender" [(ngModel)]="Member.Gender" />
+                        <input class="form-control" type="text" #inputGender ngControl="ngcGender" [(ngModel)]="Member.Gender" name="Gender" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -164,7 +164,7 @@
                         <label for="inputDateOfBirth">Date of Birth</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="date" #inputDateOfBirth ngControl="ngcDateOfBirth" [(ngModel)]="Member.DateOfBirth" />
+                        <input class="form-control" type="date" #inputDateOfBirth ngControl="ngcDateOfBirth" [(ngModel)]="Member.DateOfBirth" name="DateOfBirth" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -172,7 +172,7 @@
                         <label for="inputMedicareNumber">Medicare Number</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputMedicareNumber ngControl="ngcMedicareNumber" [(ngModel)]="Member.MedicareNumber" />
+                        <input class="form-control" type="text" #inputMedicareNumber ngControl="ngcMedicareNumber" [(ngModel)]="Member.MedicareNumber" name="MedicareNumber" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -180,7 +180,7 @@
                         <label for="inputAmbulance">Ambulance</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputAmbulance ngControl="ngcAmbulance" [(ngModel)]="Member.Ambulance" />
+                        <input class="form-control" type="text" #inputAmbulance ngControl="ngcAmbulance" [(ngModel)]="Member.Ambulance" name="Ambulance" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -188,7 +188,7 @@
                         <label for="inputPhotoVideo">Photo Video</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputPhotoVideo ngControl="ngcPhotoVideo" [(ngModel)]="Member.PhotoVideo" />
+                        <input class="form-control" type="text" #inputPhotoVideo ngControl="ngcPhotoVideo" [(ngModel)]="Member.PhotoVideo" name="PhotoVideo" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -196,7 +196,7 @@
                         <label for="inputBirthCertificateNumber">Birth Certificate Number</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputBirthCertificateNumber ngControl="ngcBirthCertificateNumber" [(ngModel)]="Member.BirthCertificateNumber" />
+                        <input class="form-control" type="text" #inputBirthCertificateNumber ngControl="ngcBirthCertificateNumber" [(ngModel)]="Member.BirthCertificateNumber" name="BirthCertificateNumber" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -204,7 +204,7 @@
                         <label for="inputHairColour">Hair Colour</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputHairColour ngControl="ngcHairColour" [(ngModel)]="Member.HairColour" />
+                        <input class="form-control" type="text" #inputHairColour ngControl="ngcHairColour" [(ngModel)]="Member.HairColour" name="HairColour" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -212,7 +212,7 @@
                         <label for="inputEyeColour">Eye Colour</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputEyeColour ngControl="ngcEyeColour" [(ngModel)]="Member.EyeColour" />
+                        <input class="form-control" type="text" #inputEyeColour ngControl="ngcEyeColour" [(ngModel)]="Member.EyeColour" name="EyeColour" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -220,7 +220,7 @@
                         <label for="inputMedicalNotes">Medical Notes</label>
                     </div>
                     <div class="col-sm-7">
-                        <textarea class="form-control" rows="4" #inputMedicalNotes ngControl="ngcMedicalNotes" [(ngModel)]="Member.MedicalNotes"></textarea>
+                        <textarea class="form-control" rows="4" #inputMedicalNotes ngControl="ngcMedicalNotes" [(ngModel)]="Member.MedicalNotes" name="MedicalNotes"></textarea>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -228,7 +228,7 @@
                         <label for="inputComments">Comments</label>
                     </div>
                     <div class="col-sm-7">
-                        <textarea class="form-control" rows="4" #inputComments ngControl="ngcComments" [(ngModel)]="Member.Comments"></textarea>
+                        <textarea class="form-control" rows="4" #inputComments ngControl="ngcComments" [(ngModel)]="Member.Comments" name="Comments"></textarea>
                     </div>
                 </div>
             </div>
@@ -238,7 +238,7 @@
                         <label for="inputMemberNumber">Member Number</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputMemberNumber ngControl="ngcMemberNumber" [(ngModel)]="Member.MemberNumber" />
+                        <input class="form-control" type="text" #inputMemberNumber ngControl="ngcMemberNumber" [(ngModel)]="Member.MemberNumber" name="MemberNumber" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -246,7 +246,7 @@
                         <label for="inputLicenseNumber">License Number</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputLicenseNumber ngControl="ngcLicenseNumber" [(ngModel)]="Member.LicenseNumber" />
+                        <input class="form-control" type="text" #inputLicenseNumber ngControl="ngcLicenseNumber" [(ngModel)]="Member.LicenseNumber" name="LicenseNumber" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -254,7 +254,7 @@
                         <label for="inputVolunteer">Volunteer</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputVolunteer ngControl="ngcVolunteer" [(ngModel)]="Member.Volunteer" />
+                        <input class="form-control" type="text" #inputVolunteer ngControl="ngcVolunteer" [(ngModel)]="Member.Volunteer" name="Volunteer" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -262,7 +262,7 @@
                         <label for="inputAccreditation">Accreditation</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputAccreditation ngControl="ngcAccreditation" [(ngModel)]="Member.Accreditation" />
+                        <input class="form-control" type="text" #inputAccreditation ngControl="ngcAccreditation" [(ngModel)]="Member.Accreditation" name="Accreditation" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -270,7 +270,7 @@
                         <label for="inputPlayerNumber">Player Number</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputPlayerNumber ngControl="ngcPlayerNumber" [(ngModel)]="Member.PlayerNumber" />
+                        <input class="form-control" type="text" #inputPlayerNumber ngControl="ngcPlayerNumber" [(ngModel)]="Member.PlayerNumber" name="PlayerNumber" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -278,7 +278,7 @@
                         <label for="inputMembershipTypeID">MembershipTypeID</label>
                     </div>
                     <div class="col-sm-7">
-                        <select class="form-control" required #cmbMembership ngControl="ngcMembershipType" [(ngModel)]="Member.MembershipTypeID">
+                        <select class="form-control" required #cmbMembership ngControl="ngcMembershipType" [(ngModel)]="Member.MembershipTypeID" name="MembershipTypeID">
                             <option *ngFor="let Membership of MembershipTypes" [value]="Membership.MembershipTypeID">
                                 {{ Membership.Name }}
                             </option>
@@ -290,7 +290,7 @@
                         <label for="inputStartDate">Start Date</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="date" #inputStartDate ngControl="ngcStartDate" [(ngModel)]="Member.StartDate" />
+                        <input class="form-control" type="date" #inputStartDate ngControl="ngcStartDate" [(ngModel)]="Member.StartDate" name="StartDate" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -298,7 +298,7 @@
                         <label for="inputMembershipPaidTo">Membership Paid to</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="date" #inputMembershipPaidTo ngControl="ngcMembershipPaidTo" [(ngModel)]="Member.MembershipPaidTo" disabled="disabled" />
+                        <input class="form-control" type="date" #inputMembershipPaidTo ngControl="ngcMembershipPaidTo" [(ngModel)]="Member.MembershipPaidTo" name="MembershipPaidTo" disabled="disabled" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -306,7 +306,7 @@
                         <label for="inputInvoicedTo">Invoiced to</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputInvoicedTo ngControl="ngcInvoicedTo" [(ngModel)]="Member.InvoicedTo" />
+                        <input class="form-control" type="text" #inputInvoicedTo ngControl="ngcInvoicedTo" [(ngModel)]="Member.InvoicedTo" name="InvoicedTo" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -314,7 +314,7 @@
                         <label for="inputBalanceOwing">Balance Owing</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" #inputBalanceOwing ngControl="ngcBalanceOwing" [(ngModel)]="Member.BalanceOwing" />
+                        <input class="form-control" type="text" #inputBalanceOwing ngControl="ngcBalanceOwing" [(ngModel)]="Member.BalanceOwing" name="BalanceOwing" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -330,7 +330,7 @@
                         <label for="inputActive">Active</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="checkbox" #inputActive ngControl="ngcActive" [(ngModel)]="Member.Active" />
+                        <input class="form-control" type="checkbox" #inputActive ngControl="ngcActive" [(ngModel)]="Member.Active" name="Active" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -338,7 +338,7 @@
                         <label for="inputReceivesMail">Receives Mail</label>
                     </div>
                     <div class="col-sm-7">
-                        <input class="form-control" type="checkbox" #inputReceivesMail ngControl="ngcReceivesMail" [(ngModel)]="Member.ReceivesMail" />
+                        <input class="form-control" type="checkbox" #inputReceivesMail ngControl="ngcReceivesMail" [(ngModel)]="Member.ReceivesMail" name="ReceivesMail" />
                     </div>
                 </div>
             </div>

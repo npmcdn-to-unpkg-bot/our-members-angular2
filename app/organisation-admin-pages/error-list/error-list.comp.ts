@@ -36,7 +36,7 @@ export class ErrorListComponent {
         if (HelperService.tokenIsValid()) {
             this.errorListService.getErrors().subscribe(onGetErrorsSuccess, logError);
         } else {
-            this.router.navigate(['/home-page', 'login']);
+            HelperService.sendToLogin(this.router)
         }
         function logError(e: any) {
             HelperService.log('getErrors Error');
@@ -55,7 +55,7 @@ export class ErrorListComponent {
         if (HelperService.tokenIsValid()) {
             this.errorListService.getErrors().subscribe(onErrorListSuccess, logError);
         } else {
-            errorListThis.router.navigate(['/home-page', 'login']);
+            HelperService.sendToLogin(errorListThis.router)
         }
         function logError(e: any) {
             HelperService.log('errorList Error');

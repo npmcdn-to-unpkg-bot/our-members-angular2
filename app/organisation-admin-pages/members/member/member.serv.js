@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var router_1 = require('@angular/router');
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-var http_handler_serv_1 = require('../../services/http-handler/http-handler.serv');
+var http_handler_serv_1 = require('../../../services/http-handler/http-handler.serv');
 var MemberService = (function () {
     function MemberService(http, router) {
         this.http = http;

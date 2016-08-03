@@ -381,6 +381,9 @@ var HelperService = (function () {
             return HelperService.Month_Names[month] + " " + day.toString() + " " + year.toString();
         }
     };
+    HelperService.sendToLogin = function (router) {
+        router.navigate(['/home-page', 'login']);
+    };
     return HelperService;
 }());
 exports.HelperService = HelperService;

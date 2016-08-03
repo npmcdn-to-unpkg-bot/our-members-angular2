@@ -8,11 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+/// <reference path="../../services/helper/helper.serv.ts" />
 var core_1 = require('@angular/core');
 var recent_logins_serv_1 = require('./recent-logins.serv');
-var helper_serv_1 = require('../../services/helper/helper.serv');
 var router_1 = require('@angular/router');
 var main_1 = require('ag-grid-ng2/main');
+var helper_serv_1 = require('../../services/helper/helper.serv');
 var RecentLoginsComponent = (function () {
     function RecentLoginsComponent(router, recentLoginsService) {
         var _this = this;
@@ -27,7 +28,7 @@ var RecentLoginsComponent = (function () {
                 _this.recentLoginsService.getRecentLogins().subscribe(onGetRecentLoginsSuccess, logError);
             }
             else {
-                _this.router.navigate(['/home-page', 'login']);
+                helper_serv_1.HelperService.sendToLogin(_this.router);
             }
             function logError(e) {
                 helper_serv_1.HelperService.log('getErrors Error');

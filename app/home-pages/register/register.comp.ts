@@ -3,6 +3,7 @@ import { ROUTER_DIRECTIVES} from '@angular/router';
 import {CountriesService} from '../../services/countries/countries.serv';
 import {RegisterService} from './register.serv';
 import {UserNameService} from  '../../services/user-name/user-name.serv';
+import { NgForm }    from '@angular/forms';
 
 
 @Component({

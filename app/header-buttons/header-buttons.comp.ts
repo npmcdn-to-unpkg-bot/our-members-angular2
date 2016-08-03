@@ -1,6 +1,7 @@
 ﻿import {Component, ViewChild} from '@angular/core';
 import {ROUTER_DIRECTIVES, Router } from '@angular/router';
 import {CommunicationService} from  '../services/communication/communication.serv';
+import {HelperService} from  '../services/helper/helper.serv';
 
 @Component({
     moduleId: module.id,
@@ -23,7 +24,7 @@ export class HeaderButtons {
         if (this.loggedIn) {
             this.router.navigate(['/organisation-admin-master']);
         } else {
-            this.router.navigate(['/home-page', 'login']);
+            HelperService.sendToLogin(this.router)
         }
     }
 

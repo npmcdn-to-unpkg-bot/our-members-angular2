@@ -40,6 +40,7 @@
         </div>
     </div>
 </div>
-<memberModal (closed)="memberComponentClosed($event)" [hidden]="showMembershipList"></memberModal>
+<memberModal (closed)="memberComponentClosed($event)" [hidden]="!showMembershipModal"></memberModal>
 <confirm></confirm>
 <popup></popup>
+

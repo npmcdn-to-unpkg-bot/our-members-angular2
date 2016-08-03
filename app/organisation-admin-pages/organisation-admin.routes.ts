@@ -1,5 +1,5 @@
 ﻿import { RouterConfig }          from '@angular/router';
-import {MembersListComponent} from './members/member-list.comp';
+import {MembersListComponent} from './members/member-list/member-list.comp';
 import {ChangeOrganisationComponent} from './change-organisation/change-organisation.comp';
 import {ErrorListComponent} from './error-list/error-list.comp';
 import {RecentLoginsComponent} from './recent-logins/recent-logins.comp';

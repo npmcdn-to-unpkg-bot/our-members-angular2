@@ -8,7 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/// <reference path="../../app-master/app-master.comp.ts" />
 var router_1 = require('@angular/router');
 var core_1 = require('@angular/core');
 var helper_serv_1 = require('../../services/helper/helper.serv');
@@ -30,7 +29,7 @@ var OrganisationAdminMasterComponent = (function () {
     OrganisationAdminMasterComponent.prototype.ngOnInit = function () {
         var tokenValid = helper_serv_1.HelperService.tokenIsValid();
         if (tokenValid === false) {
-            this.router.navigate(['/home-page', 'login']);
+            helper_serv_1.HelperService.sendToLogin(this.router);
         }
     };
     OrganisationAdminMasterComponent = __decorate([

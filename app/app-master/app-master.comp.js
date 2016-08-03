@@ -8,7 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/// <reference path="../services/communication/communication.serv.ts" />
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var helper_serv_1 = require('../services/helper/helper.serv');
@@ -30,14 +29,16 @@ var about_us_comp_1 = require('../home-pages/about-us/about-us.comp');
 var terms_comp_1 = require('../home-pages/terms/terms.comp');
 var privacy_comp_1 = require('../home-pages/privacy/privacy.comp');
 var login_comp_1 = require('../home-pages/login/login.comp');
-var member_list_comp_1 = require('../organisation-admin-pages/members/member-list.comp');
+var member_list_comp_1 = require('../organisation-admin-pages/members/member-list/member-list.comp');
 var change_organisation_comp_1 = require('../organisation-admin-pages/change-organisation/change-organisation.comp');
 var error_list_comp_1 = require('../organisation-admin-pages/error-list/error-list.comp');
 var recent_logins_comp_1 = require('../organisation-admin-pages/recent-logins/recent-logins.comp');
 var organisation_admin_master_comp_1 = require('../organisation-admin-pages/organisation-admin-master/organisation-admin-master.comp');
+var compiler_1 = require('@angular/compiler');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(runtimeCompiler) {
         var _this = this;
+        this.runtimeCompiler = runtimeCompiler;
         this.title = 'iB2';
         this.tokenValid = helper_serv_1.HelperService.tokenIsValid();
         this.showLoginButton = function (loggedIn) {
@@ -50,6 +51,7 @@ var AppComponent = (function () {
         //    loggedIn => {
         //        this.showLoginButton(loggedIn);
         //    });
+        runtimeCompiler.clearCache();
     }
     AppComponent.prototype.showHideThreeLineButton = function () {
         if (this.threeLineButtonDisplay === 'none') {
@@ -95,7 +97,7 @@ var AppComponent = (function () {
                 organisation_admin_master_comp_1.OrganisationAdminMasterComponent
             ]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [compiler_1.RuntimeCompiler])
     ], AppComponent);
     return AppComponent;
 }());

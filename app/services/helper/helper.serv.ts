@@ -394,6 +394,10 @@ export class HelperService {
     }
 
     Month_Names: string[] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    static sendToLogin = (router: Router) => {
+        router.navigate(['/home-page', 'login']);
+    }
 }
 
 

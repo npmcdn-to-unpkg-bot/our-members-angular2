@@ -1,6 +1,8 @@
-﻿import { Injectable } from '@angular/core';
+﻿/// <reference path="../helper/helper.serv.ts" />
+import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot }    from '@angular/router';
 import { LoginService } from '../login/login.serv';
+import { HelperService} from '../helper/helper.serv';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
@@ -24,7 +26,7 @@ export class AuthGuard implements CanActivate {
 
         // Navigate to the login page with extras
         //navigate to the home page with a parameter to open the LoginService modal
-        this.router.navigate(['/home-page', 'login']);
+        HelperService.sendToLogin(this.router);
         //this.router.navigate(['/login'], navigationExtras);
         return false;
     }

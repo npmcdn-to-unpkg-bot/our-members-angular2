@@ -52,7 +52,7 @@ export class SidebarMenuComponent implements OnDestroy {
         if (HelperService.tokenIsValid()) {
             this.sidebarMenuService.getAdminLoggedIn().subscribe(getAdminLoggedInSuccess, logError);
         } else {
-            this.router.navigate(['/home-page', 'login']);
+            HelperService.sendToLogin(this.router);
         }
         function logError(e: any) {
             console.log('getMembers Error');

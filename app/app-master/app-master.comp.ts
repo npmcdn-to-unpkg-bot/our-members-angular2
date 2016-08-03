@@ -1,5 +1,4 @@
-﻿/// <reference path="../services/communication/communication.serv.ts" />
-import {Component, ViewChild} from '@angular/core';
+﻿import {Component, ViewChild} from '@angular/core';
 import {ROUTER_DIRECTIVES} from '@angular/router';
 import {HelperService} from '../services/helper/helper.serv';
 import {HomePageMasterComponent} from '../home-pages/home-page-master/home-page-master.comp';
@@ -24,11 +23,12 @@ import {AboutUsComponent}  from '../home-pages/about-us/about-us.comp';
 import {TermsComponent}  from '../home-pages/terms/terms.comp';
 import {PrivacyComponent}  from '../home-pages/privacy/privacy.comp';
 import {LoginComponent}  from '../home-pages/login/login.comp';
-import {MembersListComponent} from '../organisation-admin-pages/members/member-list.comp';
+import {MembersListComponent} from '../organisation-admin-pages/members/member-list/member-list.comp';
 import {ChangeOrganisationComponent} from '../organisation-admin-pages/change-organisation/change-organisation.comp';
 import {ErrorListComponent} from '../organisation-admin-pages/error-list/error-list.comp';
 import {RecentLoginsComponent} from '../organisation-admin-pages/recent-logins/recent-logins.comp';
 import {OrganisationAdminMasterComponent} from '../organisation-admin-pages/organisation-admin-master/organisation-admin-master.comp';
+import { RuntimeCompiler} from '@angular/compiler';
 
 @Component({
     moduleId: module.id,
@@ -65,13 +65,14 @@ import {OrganisationAdminMasterComponent} from '../organisation-admin-pages/orga
 
 export class AppComponent {
 
-    constructor() {
+    constructor(private runtimeCompiler: RuntimeCompiler) {
         //constructor(private communicationService: CommunicationService) {
         console.log('constructor AppComponent');
         //CommunicationService.getInstance().loggedoutcommunication$.subscribe(
         //    loggedIn => {
         //        this.showLoginButton(loggedIn);
         //    });
+        runtimeCompiler.clearCache();
     }
 
     public title = 'iB2';

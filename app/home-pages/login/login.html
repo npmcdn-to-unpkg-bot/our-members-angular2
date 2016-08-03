@@ -5,7 +5,15 @@
                 <label for="inputUserName">User Name</label>
             </div>
             <div class="col-sm-6">
-                <input class="form-control" type="text" required #inputUserName ngControl="ngcUserName" [(ngModel)]="login.UserName" />
+
+                <input type="text"
+                       class="form-control"
+                       required
+                       [(ngModel)]="login.UserName"
+                       name="UserName"
+                       #inputUserName="ngModel"
+                       ngControl="ngcUserName" />
+
             </div>
         </div>
 
@@ -14,7 +22,15 @@
                 <label for="inputPassword">Password</label>
             </div>
             <div class="col-sm-6">
-                <input type="password" [(ngModel)]="login.Password" class="form-control" #inputPassword="ngForm" required ngControl="ngcPassword" />
+
+                <input type="password" 
+                       class="form-control" 
+                       required 
+                       [(ngModel)]="login.Password" 
+                       name="Password"
+                       #inputPassword="ngModel" 
+                       ngControl="ngcPassword" />
+
             </div>
         </div>
         <div class="form-group row">

@@ -1,13 +1,12 @@
-﻿/// <reference path="../../utilities/confirm/confirm.comp.ts" />
-import {Component, ViewChild } from '@angular/core';
+﻿import {Component, ViewChild } from '@angular/core';
 import { ROUTER_DIRECTIVES, Router} from '@angular/router';
-import {HelperService} from '../../services/helper/helper.serv';
+import {HelperService} from '../../../services/helper/helper.serv';
 import {MemberListService} from './member-list.serv';
-import {MemberService} from './member.serv';
-import {MemberComponent} from  './member.comp';
+import {MemberService} from '../member/member.serv';
+import {MemberComponent} from  '../member/member.comp';
 import {AgGridNg2} from 'ag-grid-ng2/main';
-import {ConfirmComponent} from '../../utilities/confirm/confirm.comp';
-import {PopupComponent} from '../../utilities/popup/popup.comp';
+import {ConfirmComponent} from '../../../utilities/confirm/confirm.comp';
+import {PopupComponent} from '../../../utilities/popup/popup.comp';
 
 
 @Component({
@@ -38,6 +37,7 @@ export class MembersListComponent {
             this.loadMemberListData();
         }
         this.showMembershipList = true;
+        this.showMembershipModal = false;
     }
 
     Members: any[];
@@ -50,7 +50,7 @@ export class MembersListComponent {
         if (HelperService.tokenIsValid()) {
             this.memberListService.getMemberListData().subscribe(onGetMemberListSuccess, logError);
         } else {
-            this.router.navigate(['/home-page', 'login']);
+            HelperService.sendToLogin(this.router)
         }
         function logError(e: any) {
             console.log('getMembers Error');
@@ -78,11 +78,13 @@ export class MembersListComponent {
     addMember = () => {
         this.memberComponent.addMember();
         this.showMembershipList = false;
+        this.showMembershipModal = true;
     }
 
     editMember = () => {
         var OrganisationMemberID: number = this.getSelectedOrganisationMemberID();
         this.showMembershipList = false;
+        this.showMembershipModal = true;
         if (OrganisationMemberID === -1) {
             this.popupComponent.showPopup('Please select  a member to edit');
         } else {
@@ -103,7 +105,7 @@ export class MembersListComponent {
             if (HelperService.tokenIsValid()) {
                 returnFunctionThis.memberService.testDeleteMember(OrganisationMemberID).subscribe(onTestDeleteMember, logError);
             } else {
-                returnFunctionThis.router.navigate(['/home-page', 'login']);
+                HelperService.sendToLogin(returnFunctionThis.router)
             }
             function onTestDeleteMember(structError: structError) {
                 if (structError.boolError) {
@@ -132,7 +134,7 @@ export class MembersListComponent {
             if (HelperService.tokenIsValid()) {
                 registerMemberThis.memberService.registerMember(OrganisationMemberID).subscribe(onRegisterMember, logError);
             } else {
-                registerMemberThis.router.navigate(['/home-page', 'login']);
+                HelperService.sendToLogin(registerMemberThis.router)
             }
             function onRegisterMember() {
                 this.popupComponent.showPopup('Member successfully regiserd');
@@ -157,6 +159,7 @@ export class MembersListComponent {
     ];
 
     showMembershipList: boolean = true;
+    showMembershipModal: boolean = false;
     selectedMemberId: number;
     rowSelected: boolean = false;
     onRowClicked = (params: any) => {
@@ -172,6 +175,7 @@ export class MembersListComponent {
 
     onRowDoubleClicked = (params: any) => {
         this.showMembershipList = false;
+        this.showMembershipModal = true;
         var selectedMember: structOrganisationMember = <structOrganisationMember>params.data;
         this.memberComponent.loadMember(selectedMember.OrganisationMemberID);
         //this.showMemberModal = true;

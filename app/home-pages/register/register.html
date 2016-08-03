@@ -36,22 +36,37 @@
 </div>
 <div class="form-container"  >
     <form (ngSubmit)="okClicked()" #transactionForm="ngForm">
-        <!--<div class="container">-->
         <div class="form-group row">
             <div class="col-sm-6 form-label">
                 <label for="inputOrganisationName">Organisation Name</label>
             </div>
             <div class="col-sm-6">
-                <input class="form-control" type="text" required #inputOrganisationName ngControl="ngcOrganisationName" [(ngModel)]="register.OrganisationName" />
+
+                <input type="text"
+                       class="form-control"
+                       required
+                       [(ngModel)]="register.OrganisationName"
+                       name="OrganisationName"
+                       #inputOrganisationName="ngModel"
+                       ngControl="ngcOrganisationName" />
             </div>
         </div>
-         
+
         <div class="form-group row">
             <div class="col-sm-6 form-label">
                 <label for="inputUserName">User Name</label>
             </div>
             <div class="col-sm-6">
-                <input type="text" [(ngModel)]="register.RegisterUserName" class="form-control" #inputUserName="ngForm" required (blur)="userNameBlur()" ngControl="ngcUserName" />
+
+                <input type="text"
+                       class="form-control"
+                       required
+                       [(ngModel)]="register.RegisterUserName"
+                       name="RegisterUserName"
+                       #inputUserName="ngModel"
+                       ngControl="ngcUserName"
+                       (blur)="userNameBlur()" />
+
                 <div style="color: red; font-weight: bold;" [hidden]="!UserNameDuplicate" class="col-sm-12">
                     This User Name is already registered. Please choose another.
                 </div>
@@ -62,7 +77,14 @@
                 <label for="inputPassword">Password</label>
             </div>
             <div class="col-sm-6">
-                <input type="password" [(ngModel)]="register.Password" class="form-control" #inputPassword="ngForm" required ngControl="ngcPassword" />
+
+                <input type="password"
+                       class="form-control"
+                       required
+                       [(ngModel)]="register.Password"
+                       name="Password"
+                       #inputPassword="ngModel"
+                       ngControl="ngcPassword" />
             </div>
         </div>
         <div class="form-group row">
@@ -70,7 +92,14 @@
                 <label for="inputEmail">Email</label>
             </div>
             <div class="col-sm-6">
-                <input type="email" [(ngModel)]="register.Email" class="form-control" #inputEmail="ngForm" required ngControl="ngcEmail" />
+
+                <input type="email" 
+                       class="form-control" 
+                       required 
+                       [(ngModel)]="register.Email" 
+                       name="Email"
+                       #inputEmail="ngModel" 
+                       ngControl="ngcEmail" />
             </div>
         </div>
 
@@ -79,11 +108,19 @@
                 <label for="cmbCountries">Country</label>
             </div>
             <div class="col-sm-6">
-                <select class="form-control" required #cmbCountries ngControl="ngcCountries" [(ngModel)]="register.CountryID">
-                    <option *ngFor="let country of countries" [value]="country.CountryID">
+
+                <select class="form-control"
+                        required
+                        [(ngModel)]="register.CountryID"
+                        name="CountryID"
+                        #cmbCountries="ngModel"
+                        ngControl="ngcCountries">
+                    <option *ngFor="let country of countries"
+                            [value]="country.CountryID">
                         {{ country.Name }}
                     </option>
                 </select>
+
             </div>
         </div>
 
@@ -92,7 +129,14 @@
                 <label for="chkTermsOfUse">I have read and agree to iBlong2's Terms of Use</label>
             </div>
             <div class="col-sm-2">
-                <input type="checkbox" [(ngModel)]="register.TermsOfUse" class="form-control" #chkTermsOfUse="ngForm" required ngControl="ngcTermsOfUse" />
+
+                <input type="checkbox" 
+                       class="form-control" 
+                       required 
+                       [(ngModel)]="register.TermsOfUse" 
+                       name="TermsOfUse"
+                       #chkTermsOfUse="ngModel" 
+                       ngControl="ngcTermsOfUse" />
             </div>
             <div class="col-sm-4">
                 <!--<a class="terms" [routerLink]="['TermsComponent']">Read Terms of Use</a>-->

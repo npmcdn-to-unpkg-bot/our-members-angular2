@@ -8,16 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/// <reference path="../../utilities/confirm/confirm.comp.ts" />
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var helper_serv_1 = require('../../services/helper/helper.serv');
+var helper_serv_1 = require('../../../services/helper/helper.serv');
 var member_list_serv_1 = require('./member-list.serv');
-var member_serv_1 = require('./member.serv');
-var member_comp_1 = require('./member.comp');
+var member_serv_1 = require('../member/member.serv');
+var member_comp_1 = require('../member/member.comp');
 var main_1 = require('ag-grid-ng2/main');
-var confirm_comp_1 = require('../../utilities/confirm/confirm.comp');
-var popup_comp_1 = require('../../utilities/popup/popup.comp');
+var confirm_comp_1 = require('../../../utilities/confirm/confirm.comp');
+var popup_comp_1 = require('../../../utilities/popup/popup.comp');
 var MembersListComponent = (function () {
     function MembersListComponent(router, memberListService, memberService) {
         var _this = this;
@@ -29,6 +28,7 @@ var MembersListComponent = (function () {
                 _this.loadMemberListData();
             }
             _this.showMembershipList = true;
+            _this.showMembershipModal = false;
         };
         //////////////////////////////////////////////////////////////
         //get data
@@ -38,7 +38,7 @@ var MembersListComponent = (function () {
                 _this.memberListService.getMemberListData().subscribe(onGetMemberListSuccess, logError);
             }
             else {
-                _this.router.navigate(['/home-page', 'login']);
+                helper_serv_1.HelperService.sendToLogin(_this.router);
             }
             function logError(e) {
                 console.log('getMembers Error');
@@ -64,10 +64,12 @@ var MembersListComponent = (function () {
         this.addMember = function () {
             _this.memberComponent.addMember();
             _this.showMembershipList = false;
+            _this.showMembershipModal = true;
         };
         this.editMember = function () {
             var OrganisationMemberID = _this.getSelectedOrganisationMemberID();
             _this.showMembershipList = false;
+            _this.showMembershipModal = true;
             if (OrganisationMemberID === -1) {
                 _this.popupComponent.showPopup('Please select  a member to edit');
             }
@@ -90,7 +92,7 @@ var MembersListComponent = (function () {
                     returnFunctionThis.memberService.testDeleteMember(OrganisationMemberID).subscribe(onTestDeleteMember, logError);
                 }
                 else {
-                    returnFunctionThis.router.navigate(['/home-page', 'login']);
+                    helper_serv_1.HelperService.sendToLogin(returnFunctionThis.router);
                 }
                 function onTestDeleteMember(structError) {
                     if (structError.boolError) {
@@ -119,7 +121,7 @@ var MembersListComponent = (function () {
                     registerMemberThis.memberService.registerMember(OrganisationMemberID).subscribe(onRegisterMember, logError);
                 }
                 else {
-                    registerMemberThis.router.navigate(['/home-page', 'login']);
+                    helper_serv_1.HelperService.sendToLogin(registerMemberThis.router);
                 }
                 function onRegisterMember() {
                     this.popupComponent.showPopup('Member successfully regiserd');
@@ -139,6 +141,7 @@ var MembersListComponent = (function () {
             { headerName: "Owing", field: "FeesOwing" }
         ];
         this.showMembershipList = true;
+        this.showMembershipModal = false;
         this.rowSelected = false;
         this.onRowClicked = function (params) {
             var onRowClickedThis = _this;
@@ -153,6 +156,7 @@ var MembersListComponent = (function () {
         };
         this.onRowDoubleClicked = function (params) {
             _this.showMembershipList = false;
+            _this.showMembershipModal = true;
             var selectedMember = params.data;
             _this.memberComponent.loadMember(selectedMember.OrganisationMemberID);
             //this.showMemberModal = true;

@@ -1,8 +1,7 @@
-﻿/// <reference path="../../app-master/app-master.comp.ts" />
-import {Router, ROUTER_DIRECTIVES} from '@angular/router';
+﻿import {Router, ROUTER_DIRECTIVES} from '@angular/router';
 import {Component, Directive, Output, EventEmitter} from '@angular/core';
 import {HelperService} from '../../services/helper/helper.serv';
-import {MembersListComponent} from '../members/member-list.comp';
+import {MembersListComponent} from '../members/member-list/member-list.comp';
 import {ChangeOrganisationComponent} from '../change-organisation/change-organisation.comp';
 import {ErrorListComponent} from '../error-list/error-list.comp';
 import {RecentLoginsComponent} from '../recent-logins/recent-logins.comp';
@@ -40,7 +39,7 @@ export class OrganisationAdminMasterComponent {
     ngOnInit() {
         var tokenValid: boolean = HelperService.tokenIsValid();
         if (tokenValid === false) {
-            this.router.navigate(['/home-page', 'login']);
+            HelperService.sendToLogin(this.router)
         }
     }
 }

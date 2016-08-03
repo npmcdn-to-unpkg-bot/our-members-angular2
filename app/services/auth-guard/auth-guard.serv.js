@@ -8,9 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+/// <reference path="../helper/helper.serv.ts" />
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var login_serv_1 = require('../login/login.serv');
+var helper_serv_1 = require('../helper/helper.serv');
 var AuthGuard = (function () {
     function AuthGuard(loginService, router) {
         this.loginService = loginService;
@@ -32,7 +34,7 @@ var AuthGuard = (function () {
         //};
         // Navigate to the login page with extras
         //navigate to the home page with a parameter to open the LoginService modal
-        this.router.navigate(['/home-page', 'login']);
+        helper_serv_1.HelperService.sendToLogin(this.router);
         //this.router.navigate(['/login'], navigationExtras);
         return false;
     };

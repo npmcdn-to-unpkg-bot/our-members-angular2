@@ -11,31 +11,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var router_1 = require('@angular/router');
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-var http_handler_serv_1 = require('../../services/http-handler/http-handler.serv');
-var MemberListService = (function () {
-    function MemberListService(http, router) {
+var http_handler_serv_1 = require('../../../services/http-handler/http-handler.serv');
+var RegisterForSeasonService = (function () {
+    function RegisterForSeasonService(http, router) {
         this.http = http;
         this.router = router;
-        console.log('constructor MemberListService');
+        console.log('constructor RegisterForSeasonService');
     }
-    MemberListService.prototype.parseResponse = function (res) {
+    RegisterForSeasonService.prototype.parseResponse = function (res) {
         return res.json();
     };
-    //getMemberList(): Observable<any[]> {
-    //    var parameters: modSharedTypes.IHttpParameter[] = [];
-    //    var httpHandlerService = new HttpHandlerService(this.http);
-    //    return httpHandlerService.getObject<any[]>(parameters, 'api/member-list', true);
-    //}
-    MemberListService.prototype.getMemberListData = function () {
+    RegisterForSeasonService.prototype.getRegisterForSeasonData = function (OrganisationMemberID) {
         var parameters = [];
+        var parameter = {
+            name: 'OrganisationMemberID',
+            value: OrganisationMemberID.toString()
+        };
+        parameters[0] = parameter;
         var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http);
-        return httpHandlerService.getObject(parameters, 'api/member-list', true);
+        return httpHandlerService.getObject(parameters, 'api/member/register-for-season', true);
     };
-    MemberListService = __decorate([
+    RegisterForSeasonService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http, router_1.Router])
-    ], MemberListService);
-    return MemberListService;
+    ], RegisterForSeasonService);
+    return RegisterForSeasonService;
 }());
-exports.MemberListService = MemberListService;
-//# sourceMappingURL=member-list.serv.js.map
+exports.RegisterForSeasonService = RegisterForSeasonService;
+//# sourceMappingURL=register-for-season.serv.js.map

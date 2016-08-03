@@ -1,0 +1,41 @@
+﻿<div class="modalSolsof modalSolsof200" [hidden]="!showRegisterModal" (click)="cancel()">
+    <div class="modal-contentSolsof modalSolsof-narrow" (click)="$event.stopPropagation()">
+        <!--Content------------------------------------->
+        <div class="row organisation-admin-page-menu-container">
+            <div class="organisation-admin-page-menu-header">
+                Register for
+            </div>
+            <div class="row">
+                <div class="col-sm-12 ">
+                    <div class="radio-button-container">
+                        <div class="radio-button-element">
+                            <input class="radio-button" type="radio" name="register-for-season" value="thisSeason">{{thisSeasonText}}
+                        </div>
+                        <div class="radio-button-element">
+                            <input class="radio-button" type="radio" name="register-for-season" value="nextSeason">{{nextSeasonText}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-7 ">
+                Comment
+            </div>
+            <div class="col-sm-5 ">
+                <input type="text" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1 ">
+            </div>
+            <div class="col-sm-5 ">
+                <button type="button" class="save-button" (click)="ok()">OK</button>
+            </div>
+            <div class="col-sm-5 ">
+                <button type="button" class="cancel-button" (click)="cancel()">Cancel</button>
+            </div>
+        </div>
+        <!--------------------------------------->
+    </div>
+</div>
