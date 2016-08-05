@@ -105,3 +105,8 @@ interface structError {
     boolError: boolean;
     ErrorMessage: string;
 }
+
+interface structRegisterMemberFormData { 
+    sThisSeasonEndDate: string;
+    sInvoicedToDate: string;
+}

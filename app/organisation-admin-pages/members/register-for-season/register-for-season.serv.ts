@@ -17,17 +17,24 @@ export class RegisterForSeasonService {
         return res.json();
     }
 
-    getRegisterForSeasonData(OrganisationMemberID: number): Observable<structMemberListData> {
+    getRegisterForSeasonData(OrganisationMemberID: number): Observable<structRegisterMemberFormData> {
 
         var parameters: modSharedTypes.IHttpParameter[] = [];
-        var parameter: modSharedTypes.IHttpParameter = {
+
+        var parameterOrganisationMemberID: modSharedTypes.IHttpParameter = {
             name: 'OrganisationMemberID',
             value: OrganisationMemberID.toString()
         };
-        parameters[0] = parameter;
+        parameters[0] = parameterOrganisationMemberID;
 
+        var parameterCurrentDate: modSharedTypes.IHttpParameter = {
+            name: 'sCurrentDate',
+            value: HelperService.formatDateForJSon(new Date())
+        };
+        parameters[1] = parameterCurrentDate;
+        
         var httpHandlerService = new HttpHandlerService(this.http);
-        return httpHandlerService.getObject<structMemberListData>(parameters, 'api/member/register-for-season', true);
+        return httpHandlerService.getObject<structRegisterMemberFormData>(parameters, 'api/member/register-for-season', true);
     }
 }
 

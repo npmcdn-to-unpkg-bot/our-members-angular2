@@ -94,12 +94,6 @@ export class MemberComponent {
     PersonalSelected: boolean = false;
     OrganisationSelected: boolean = false;
 
-    //newMember = () => {
-    //    this.memberVisible = true;
-    //    window.onkeyup = this.testEsc;
-    //    this.Member = this.getEmptyMember();
-    //}
-
     testEsc = (event: KeyboardEvent) => {
         if (event.keyCode === 27) {
             event.stopPropagation();
