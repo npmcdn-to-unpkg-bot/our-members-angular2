@@ -2,4 +2,5 @@
 **/*.pdf
 node_modules
 *.sln
+npm-debug.log.*
 

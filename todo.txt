@@ -15,27 +15,6 @@ save add / edit
 open receipt on return?
 -----------------------------
 
-
------------------------------
-New Forms rc3
-bootstrap: 
-
-import { bootstrap }    from '@angular/platform-browser-dynamic';
-import { disableDeprecatedForms, provideForms } from '@angular/forms';
-import { AppComponent } from './app.component';
-bootstrap(AppComponent, [
-  disableDeprecatedForms(),
-  provideForms()
- ])
------------------------------
-
-
-
-valid token changes login button to return to my iblong2:
-login form sends event to 
-
-
-
 add member does lookup to get next member number
 add member has "Save" and "Save and then Receipt" buttons
 validation of save member shows correct page
@@ -45,3 +24,12 @@ add "Double-click to drill down" message to list
 then 
 	delete member
 	receipt member
+
+register member:
+	api to load form with data structure (Sub LoadInvoiceRadioButtonList):
+		header message
+		showThisSeasonRadioButton
+		thisSeasonEndDate
+		showNextSeasonRadioButton
+		nextSeasonEndDate
+	on save: wcfRegisterMemberForSeason(ByVal OrganisationMemberID As Integer, ByVal sEndDate As String, ByVal Comment As String, ByVal sCurrentDate As String)
