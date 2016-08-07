@@ -44,12 +44,13 @@ var RegisterForSeasonComponent = (function () {
             function getRegisterForSeasonDataSuccess(structRegisterMemberFormData) {
                 var InvoicedToDate = helper_serv_1.HelperService.translateJavascriptDate(structRegisterMemberFormData.sInvoicedToDate);
                 loadFormThis.registerForSeason = loadFormThis.C_thisSeason;
-                loadFormThis.comment;
+                loadFormThis.comment = '';
                 loadFormThis.headerLabel = '';
                 loadFormThis.thisSeasonVisible = false;
                 loadFormThis.nextSeasonVisible = false;
                 loadFormThis.thisSeasonLabel = '';
                 loadFormThis.nextSeasonLabel = '';
+                loadFormThis.okButtonEnabled = true;
                 var ThisSeasonEndDate = helper_serv_1.HelperService.translateJavascriptDate(structRegisterMemberFormData.sThisSeasonEndDate);
                 loadFormThis.ThisSeasonEndDate = ThisSeasonEndDate;
                 var ThisSeasonStartDate = new Date(ThisSeasonEndDate.getFullYear() - 1, ThisSeasonEndDate.getMonth(), ThisSeasonEndDate.getDate() + 1); //ThisSeasonEndDate;//.AddYears(-1).AddDays(1)

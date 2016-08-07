@@ -58,12 +58,13 @@ export class RegisterForSeasonComponent {
             var InvoicedToDate: Date = HelperService.translateJavascriptDate(structRegisterMemberFormData.sInvoicedToDate);
 
             loadFormThis.registerForSeason = loadFormThis.C_thisSeason;
-            loadFormThis.comment;
+            loadFormThis.comment = '';
             loadFormThis.headerLabel = '';
             loadFormThis.thisSeasonVisible = false;
             loadFormThis.nextSeasonVisible = false;
             loadFormThis.thisSeasonLabel = '';
             loadFormThis.nextSeasonLabel = '';
+            loadFormThis.okButtonEnabled = true;
 
             var ThisSeasonEndDate: Date = HelperService.translateJavascriptDate(structRegisterMemberFormData.sThisSeasonEndDate);
             loadFormThis.ThisSeasonEndDate = ThisSeasonEndDate;
