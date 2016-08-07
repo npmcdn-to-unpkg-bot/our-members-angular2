@@ -101,12 +101,19 @@ interface structErrorDetails {
     OrganisationName: string;
 }
 
-interface structError { 
+interface structError {
     boolError: boolean;
     ErrorMessage: string;
 }
 
-interface structRegisterMemberFormData { 
+interface structRegisterMemberFormData {
     sThisSeasonEndDate: string;
     sInvoicedToDate: string;
+}
+
+interface structsaveRegisterForSeasonData {
+    OrganisationMemberID: number;
+    sEndDate: string;
+    comment: string;
+    sCurrentDate: string;
 }

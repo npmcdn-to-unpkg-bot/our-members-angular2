@@ -1,9 +1,11 @@
-﻿import {Component, ViewChild } from '@angular/core';
+﻿/// <reference path="../register-for-season/register-for-season.comp.ts" />
+import {Component, ViewChild } from '@angular/core';
 import { ROUTER_DIRECTIVES, Router} from '@angular/router';
 import {HelperService} from '../../../services/helper/helper.serv';
 import {MemberListService} from './member-list.serv';
 import {MemberService} from '../member/member.serv';
 import {MemberComponent} from  '../member/member.comp';
+import {RegisterForSeasonComponent} from  '../register-for-season/register-for-season.comp';
 import {AgGridNg2} from 'ag-grid-ng2/main';
 import {ConfirmComponent} from '../../../utilities/confirm/confirm.comp';
 import {PopupComponent} from '../../../utilities/popup/popup.comp';
@@ -14,17 +16,17 @@ import {PopupComponent} from '../../../utilities/popup/popup.comp';
     selector: 'member-list',
     templateUrl: 'member-list.html',
     providers: [MemberListService, MemberService],
-    directives: [AgGridNg2, MemberComponent, ConfirmComponent, PopupComponent]
+    directives: [AgGridNg2, MemberComponent, ConfirmComponent, PopupComponent, RegisterForSeasonComponent]
 
 })
 
 export class MembersListComponent {
     constructor(private router: Router, private memberListService: MemberListService, private memberService: MemberService) {
-        //constructor(private router: Router, private memberListService: MemberListService, private countriesService: CountriesService, private membershipTypesService: MembershipTypesService, private groupsService: GroupsService, popupComponent: PopupComponent) {
         HelperService.log('constructor RegisterComponent ');
     }
 
     @ViewChild(MemberComponent) memberComponent: MemberComponent;
+    @ViewChild(RegisterForSeasonComponent) registerForSeasonComponent: RegisterForSeasonComponent;
     @ViewChild(ConfirmComponent) confirmComponent: ConfirmComponent;
     @ViewChild(PopupComponent) popupComponent: PopupComponent;
 
@@ -32,7 +34,7 @@ export class MembersListComponent {
         this.loadMemberListData();
     }
 
-    memberComponentClosed = (refreshList: string) => {
+    refreshList = (refreshList: string) => {
         if (refreshList === HelperService.C_TRUE) {
             this.loadMemberListData();
         }
@@ -126,26 +128,18 @@ export class MembersListComponent {
     }
 
     registerMember = () => {
-        var registerMemberThis = this;
-        var OrganisationMemberID: number = this.getSelectedOrganisationMemberID();
-        if (OrganisationMemberID === -1) {
-            this.popupComponent.showPopup('Please select  a member to register');
+        var selectedMembers: any[] = this.gridOptions.api.getSelectedRows();
+        if (selectedMembers[0].isDefaultMembershipType) {
+            this.popupComponent.showPopup('You cannot register a member who is Unclassified Membership Type');
         } else {
-            if (HelperService.tokenIsValid()) {
-                registerMemberThis.memberService.registerMember(OrganisationMemberID).subscribe(onRegisterMember, logError);
+            var OrganisationMemberID: number = this.getSelectedOrganisationMemberID();
+            if (OrganisationMemberID === -1) {
+                this.popupComponent.showPopup('Please select  a member to edit');
             } else {
-                HelperService.sendToLogin(registerMemberThis.router)
+                this.registerForSeasonComponent.showForm(OrganisationMemberID);
             }
-            function onRegisterMember() {
-                this.popupComponent.showPopup('Member successfully regiserd');
-            }
-
-            function logError() {
-                HelperService.log('loadMember Error');
-            }
-
         }
-    }
+  }
 
     /////////////////////////////////////////////////////////////
     //grid

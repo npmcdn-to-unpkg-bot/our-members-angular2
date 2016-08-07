@@ -1,35 +1,61 @@
-﻿<div class="modalSolsof modalSolsof200" [hidden]="!showRegisterModal" (click)="cancel()">
-    <div class="modal-contentSolsof modalSolsof-narrow" (click)="$event.stopPropagation()">
+﻿<div class="modalSolsof modalSolsof200" [class.modalSolsofVisible]="registerForSeasonVisible" (click)="cancel()">
+    <div class="modal-contentSolsof modalSolsof-wide" (click)="$event.stopPropagation()">
         <!--Content------------------------------------->
-        <form (ngSubmit)="okClicked()" #transactionForm="ngForm">
-            <div class="row">
-                <div class="col-sm-6 ">
-                    <label>Register for</label>
+        <form (ngSubmit)="okClicked()" #transactionForm="ngForm" class="form-content">
+            <div class="form-group row">
+                <div class="col-sm-12 ">
+                    {{headerLabel}}
                 </div>
-                <div class="col-sm-6 ">
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12 ">
                     <div class="radio-button-container">
                         <div class="radio-button-element">
-                            <input class="radio-button" type="radio" name="register-for-season" value="thisSeason" [hidden]="!thisSeasonVisible">{{thisSeasonText}}
+
+                            <input type="radio"
+                                   class="radio-button"
+                                   [(ngModel)]="registerForSeason"
+                                   name="registerForSeason"
+                                   #inputRegisterForThisSeason="ngModel"
+                                   ngControl="ngcRegisterForThisSeason"
+                                   [hidden]="!thisSeasonVisible"
+                                   [value]=C_thisSeason>
+                            {{thisSeasonLabel}}
                         </div>
+
                         <div class="radio-button-element">
-                            <input class="radio-button" type="radio" name="register-for-season" value="nextSeason" [hidden]="!nextSeasonVisible">{{nextSeasonText}}
+                            <input type="radio"
+                                   class="radio-button"
+                                   [(ngModel)]="registerForSeason"
+                                   name="registerForSeason"
+                                   #inputRegisterForNextSeason="ngModel"
+                                   ngControl="ngcRegisterForNextSeason"
+                                   [hidden]="!nextSeasonVisible"
+                                   [value]=C_nextSeason>
+                            {{nextSeasonLabel}}
+
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-7 ">
+                <div class="col-sm-7 form-label">
                     Comment
                 </div>
                 <div class="col-sm-5 ">
-                    <input type="text" />
+                    <input type="text"
+                           class="form-control"
+                           [(ngModel)]="comment"
+                           name="comment"
+                           #inputComment="ngModel"
+                           ngControl="ngcComment" />
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-1 ">
                 </div>
                 <div class="col-sm-5 ">
-                    <button type="button" class="save-button" (click)="ok()">OK</button>
+                    <button type="submit"  class="save-button" [disabled]="!okButtonEnabled">OK</button>
                 </div>
                 <div class="col-sm-5 ">
                     <button type="button" class="cancel-button" (click)="cancel()">Cancel</button>

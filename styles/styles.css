@@ -236,12 +236,12 @@ input[type="checkbox"], select.form-control, textarea.form-control {
 
 
 .modal-contentSolsof {
-    background-color: white;
     margin: 20px auto 0 auto;
-    padding: 20px;
     border: 1px solid darkgrey;
     width: 90%;
     box-shadow: 0 0 50px black;
+    background-color: #EDF2D4;
+    padding: 10px 2%;
 }
 
 .modalSolsof100 {
@@ -359,9 +359,9 @@ input[type="checkbox"], select.form-control, textarea.form-control {
     color: white;
 }
 
-.sms-button:hover {
-    background-color: #1A76D8;
-}
+    .sms-button:hover {
+        background-color: #1A76D8;
+    }
 
 .sms-buttons-container {
     margin: 10px 0 0 0;
@@ -414,7 +414,7 @@ input[type="checkbox"], select.form-control, textarea.form-control {
     margin-top: 5px;
     width: 100%;
     max-width: 100px;
-    /*cursor: pointer;*/    
+    /*cursor: pointer;*/
 }
 
 .footer-button {

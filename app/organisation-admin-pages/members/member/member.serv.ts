@@ -41,18 +41,6 @@ export class MemberService {
         return httpHandlerService.putObject(Member, 'api/member');
     }
 
-    testDeleteMember(OrganisationMemberID: number) {
-        var parameters: modSharedTypes.IHttpParameter[] = [];
-        var parameter: modSharedTypes.IHttpParameter = {
-            name: 'OrganisationMemberID',
-            value: OrganisationMemberID.toString()
-        };
-        parameters[0] = parameter;
-
-        var httpHandlerService = new HttpHandlerService(this.http);
-        return httpHandlerService.getObject<structError>(parameters, 'api/member-list/test-delete', true);
-    }
-
     registerMember(OrganisationMemberID: number) {
         var parameters: modSharedTypes.IHttpParameter[] = [];
         var parameter: modSharedTypes.IHttpParameter = {
@@ -76,6 +64,49 @@ export class MemberService {
         var httpHandlerService = new HttpHandlerService(this.http);
         return httpHandlerService.deleteObject(parameters, 'api/member-list/delete-member');
     }
+
+    testDeleteMember(OrganisationMemberID: number) {
+        var parameters: modSharedTypes.IHttpParameter[] = [];
+        var parameter: modSharedTypes.IHttpParameter = {
+            name: 'OrganisationMemberID',
+            value: OrganisationMemberID.toString()
+        };
+        parameters[0] = parameter;
+
+        var httpHandlerService = new HttpHandlerService(this.http);
+        return httpHandlerService.getObject<structError>(parameters, 'api/member-list/test-delete', true);
+    }
+
+    getRegisterForSeasonData(OrganisationMemberID: number): Observable<structRegisterMemberFormData> {
+
+        var parameters: modSharedTypes.IHttpParameter[] = [];
+
+        var parameterOrganisationMemberID: modSharedTypes.IHttpParameter = {
+            name: 'OrganisationMemberID',
+            value: OrganisationMemberID.toString()
+        };
+        parameters[0] = parameterOrganisationMemberID;
+
+        var parameterCurrentDate: modSharedTypes.IHttpParameter = {
+            name: 'sCurrentDate',
+            value: HelperService.formatDateForJSon(new Date())
+        };
+        parameters[1] = parameterCurrentDate;
+
+        var httpHandlerService = new HttpHandlerService(this.http);
+        return httpHandlerService.getObject<structRegisterMemberFormData>(parameters, 'api/member-list/register-for-season', true);
+    }
+
+    //saveNewMember(Member: structOrganisationMember): Observable<Response> {
+    //    var httpHandlerService = new HttpHandlerService(this.http);
+    //    return httpHandlerService.postObject(Member, 'api/member');
+    //}
+
+    saveRegisterForSeasonData(structsaveRegisterForSeasonData: structsaveRegisterForSeasonData): Observable<Response> {
+        var httpHandlerService = new HttpHandlerService(this.http);
+        return httpHandlerService.postObject(structsaveRegisterForSeasonData, 'api/member-list/save-register-for-season');
+    }
+
 
 }
 

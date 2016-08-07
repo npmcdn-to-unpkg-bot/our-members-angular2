@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var router_1 = require('@angular/router');
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
+var helper_serv_1 = require('../../../services/helper/helper.serv');
 var http_handler_serv_1 = require('../../../services/http-handler/http-handler.serv');
 var MemberService = (function () {
     function MemberService(http, router) {
@@ -39,16 +40,6 @@ var MemberService = (function () {
         var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http);
         return httpHandlerService.putObject(Member, 'api/member');
     };
-    MemberService.prototype.testDeleteMember = function (OrganisationMemberID) {
-        var parameters = [];
-        var parameter = {
-            name: 'OrganisationMemberID',
-            value: OrganisationMemberID.toString()
-        };
-        parameters[0] = parameter;
-        var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http);
-        return httpHandlerService.getObject(parameters, 'api/member-list/test-delete', true);
-    };
     MemberService.prototype.registerMember = function (OrganisationMemberID) {
         var parameters = [];
         var parameter = {
@@ -68,6 +59,39 @@ var MemberService = (function () {
         parameters[0] = parameter;
         var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http);
         return httpHandlerService.deleteObject(parameters, 'api/member-list/delete-member');
+    };
+    MemberService.prototype.testDeleteMember = function (OrganisationMemberID) {
+        var parameters = [];
+        var parameter = {
+            name: 'OrganisationMemberID',
+            value: OrganisationMemberID.toString()
+        };
+        parameters[0] = parameter;
+        var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http);
+        return httpHandlerService.getObject(parameters, 'api/member-list/test-delete', true);
+    };
+    MemberService.prototype.getRegisterForSeasonData = function (OrganisationMemberID) {
+        var parameters = [];
+        var parameterOrganisationMemberID = {
+            name: 'OrganisationMemberID',
+            value: OrganisationMemberID.toString()
+        };
+        parameters[0] = parameterOrganisationMemberID;
+        var parameterCurrentDate = {
+            name: 'sCurrentDate',
+            value: helper_serv_1.HelperService.formatDateForJSon(new Date())
+        };
+        parameters[1] = parameterCurrentDate;
+        var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http);
+        return httpHandlerService.getObject(parameters, 'api/member-list/register-for-season', true);
+    };
+    //saveNewMember(Member: structOrganisationMember): Observable<Response> {
+    //    var httpHandlerService = new HttpHandlerService(this.http);
+    //    return httpHandlerService.postObject(Member, 'api/member');
+    //}
+    MemberService.prototype.saveRegisterForSeasonData = function (structsaveRegisterForSeasonData) {
+        var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http);
+        return httpHandlerService.postObject(structsaveRegisterForSeasonData, 'api/member-list/save-register-for-season');
     };
     MemberService = __decorate([
         core_1.Injectable(), 

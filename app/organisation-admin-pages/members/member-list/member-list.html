@@ -40,7 +40,8 @@
         </div>
     </div>
 </div>
-<memberModal (closed)="memberComponentClosed($event)" [hidden]="!showMembershipModal"></memberModal>
+<memberModal (closed)="refreshList($event)" [hidden]="!showMembershipModal"></memberModal>
 <confirm></confirm>
 <popup></popup>
+<register-for-season (closed)="refreshList($event)"></register-for-season>
 

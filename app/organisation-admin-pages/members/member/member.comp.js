@@ -85,11 +85,6 @@ var MemberComponent = (function () {
         this.ContactSelected = true;
         this.PersonalSelected = false;
         this.OrganisationSelected = false;
-        //newMember = () => {
-        //    this.memberVisible = true;
-        //    window.onkeyup = this.testEsc;
-        //    this.Member = this.getEmptyMember();
-        //}
         this.testEsc = function (event) {
             if (event.keyCode === 27) {
                 event.stopPropagation();

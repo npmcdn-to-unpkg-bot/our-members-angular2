@@ -8,12 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+/// <reference path="../register-for-season/register-for-season.comp.ts" />
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var helper_serv_1 = require('../../../services/helper/helper.serv');
 var member_list_serv_1 = require('./member-list.serv');
 var member_serv_1 = require('../member/member.serv');
 var member_comp_1 = require('../member/member.comp');
+var register_for_season_comp_1 = require('../register-for-season/register-for-season.comp');
 var main_1 = require('ag-grid-ng2/main');
 var confirm_comp_1 = require('../../../utilities/confirm/confirm.comp');
 var popup_comp_1 = require('../../../utilities/popup/popup.comp');
@@ -23,7 +25,7 @@ var MembersListComponent = (function () {
         this.router = router;
         this.memberListService = memberListService;
         this.memberService = memberService;
-        this.memberComponentClosed = function (refreshList) {
+        this.refreshList = function (refreshList) {
             if (refreshList === helper_serv_1.HelperService.C_TRUE) {
                 _this.loadMemberListData();
             }
@@ -111,23 +113,17 @@ var MembersListComponent = (function () {
             }
         };
         this.registerMember = function () {
-            var registerMemberThis = _this;
-            var OrganisationMemberID = _this.getSelectedOrganisationMemberID();
-            if (OrganisationMemberID === -1) {
-                _this.popupComponent.showPopup('Please select  a member to register');
+            var selectedMembers = _this.gridOptions.api.getSelectedRows();
+            if (selectedMembers[0].isDefaultMembershipType) {
+                _this.popupComponent.showPopup('You cannot register a member who is Unclassified Membership Type');
             }
             else {
-                if (helper_serv_1.HelperService.tokenIsValid()) {
-                    registerMemberThis.memberService.registerMember(OrganisationMemberID).subscribe(onRegisterMember, logError);
+                var OrganisationMemberID = _this.getSelectedOrganisationMemberID();
+                if (OrganisationMemberID === -1) {
+                    _this.popupComponent.showPopup('Please select  a member to edit');
                 }
                 else {
-                    helper_serv_1.HelperService.sendToLogin(registerMemberThis.router);
-                }
-                function onRegisterMember() {
-                    this.popupComponent.showPopup('Member successfully regiserd');
-                }
-                function logError() {
-                    helper_serv_1.HelperService.log('loadMember Error');
+                    _this.registerForSeasonComponent.showForm(OrganisationMemberID);
                 }
             }
         };
@@ -162,7 +158,6 @@ var MembersListComponent = (function () {
             //this.showMemberModal = true;
         };
         this.gridOptions = helper_serv_1.HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked);
-        //constructor(private router: Router, private memberListService: MemberListService, private countriesService: CountriesService, private membershipTypesService: MembershipTypesService, private groupsService: GroupsService, popupComponent: PopupComponent) {
         helper_serv_1.HelperService.log('constructor RegisterComponent ');
     }
     MembersListComponent.prototype.ngOnInit = function () {
@@ -172,6 +167,10 @@ var MembersListComponent = (function () {
         core_1.ViewChild(member_comp_1.MemberComponent), 
         __metadata('design:type', member_comp_1.MemberComponent)
     ], MembersListComponent.prototype, "memberComponent", void 0);
+    __decorate([
+        core_1.ViewChild(register_for_season_comp_1.RegisterForSeasonComponent), 
+        __metadata('design:type', register_for_season_comp_1.RegisterForSeasonComponent)
+    ], MembersListComponent.prototype, "registerForSeasonComponent", void 0);
     __decorate([
         core_1.ViewChild(confirm_comp_1.ConfirmComponent), 
         __metadata('design:type', confirm_comp_1.ConfirmComponent)
@@ -186,7 +185,7 @@ var MembersListComponent = (function () {
             selector: 'member-list',
             templateUrl: 'member-list.html',
             providers: [member_list_serv_1.MemberListService, member_serv_1.MemberService],
-            directives: [main_1.AgGridNg2, member_comp_1.MemberComponent, confirm_comp_1.ConfirmComponent, popup_comp_1.PopupComponent]
+            directives: [main_1.AgGridNg2, member_comp_1.MemberComponent, confirm_comp_1.ConfirmComponent, popup_comp_1.PopupComponent, register_for_season_comp_1.RegisterForSeasonComponent]
         }), 
         __metadata('design:paramtypes', [router_1.Router, member_list_serv_1.MemberListService, member_serv_1.MemberService])
     ], MembersListComponent);

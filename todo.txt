@@ -22,7 +22,6 @@ validation of save member shows correct page
 add "Double-click to drill down" message to list
 
 then 
-	delete member
 	receipt member
 
 register member:
@@ -33,3 +32,6 @@ register member:
 		showNextSeasonRadioButton
 		nextSeasonEndDate
 	on save: wcfRegisterMemberForSeason(ByVal OrganisationMemberID As Integer, ByVal sEndDate As String, ByVal Comment As String, ByVal sCurrentDate As String)
+
+
+display part of connection string
