@@ -1,9 +1,14 @@
-﻿import {Component} from '@angular/core';
+﻿/// <reference path="../../services/communication/communication.serv.ts" />
+/// <reference path="../../services/helper/helper.serv.ts" />
+import {Component} from '@angular/core';
 import {Router, RouterLink, ROUTER_DIRECTIVES} from '@angular/router';
 import {LoginService} from '../../services/login/login.serv';
-import {Http, Headers} from '@angular/http';
+import {Http, Headers, Response} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
 import {MembersListComponent} from '../../organisation-admin-pages/members/member-list/member-list.comp';
 import { NgForm }    from '@angular/forms';
+import { HelperService}    from '../../services/helper/helper.serv';
+import { CommunicationService}    from '../../services/communication/communication.serv';
 
 
 @Component({
@@ -16,11 +21,11 @@ import { NgForm }    from '@angular/forms';
 })
 
 export class LoginComponent {
-    constructor(private router: Router, private http: Http) {
+    constructor(public router: Router, public http: Http, public loginService: LoginService) {
         console.log('constructor LoginComponent ');
     }
 
-    login: structLogin = {
+    structLogin: structLogin = {
         UserName: '',
         Password: '',
     };
@@ -28,16 +33,7 @@ export class LoginComponent {
     ngOnInit() {
     }
 
-    loginfinished = () => {
-        this.router.navigate(['/organisation-admin-master']);
-        //this.router.navigate(['/organisation-admin-master', 'member-list']);
-    }
-
-    loginService: LoginService = new LoginService(this.http, this.router);
-
     okClicked = () => {
-        var loginService: LoginService = new LoginService(this.http, this.router);
-        this.loginService.authenticate(this.login.UserName, this.login.Password);
+        this.loginService.authenticate(this.structLogin.UserName, this.structLogin.Password);
     }
-
 }

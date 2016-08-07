@@ -8,24 +8,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+/// <reference path="../store-logged-in-state/store-logged-in-state.serv.ts" />
 /// <reference path="../helper/helper.serv.ts" />
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var login_serv_1 = require('../login/login.serv');
 var helper_serv_1 = require('../helper/helper.serv');
+var store_logged_in_state_serv_1 = require('../store-logged-in-state/store-logged-in-state.serv');
 var AuthGuard = (function () {
-    function AuthGuard(loginService, router) {
-        this.loginService = loginService;
+    function AuthGuard(router) {
         this.router = router;
     }
     AuthGuard.prototype.canActivate = function (route, state) {
-        if (this.loginService.isLoggedIn) {
+        if (store_logged_in_state_serv_1.StoreLoggedInStateService.getInstance().loggedIn) {
             return true;
         }
         // Store the attempted URL for redirecting
-        this.loginService.redirectUrl = state.url;
-        // Create a dummy session id
-        //let sessionId = 123456789;
+        store_logged_in_state_serv_1.StoreLoggedInStateService.getInstance().redirectUrl = state.url;
         // Set our navigation extras object
         // that contains our global query params and fragment
         //let navigationExtras = {
@@ -40,7 +38,7 @@ var AuthGuard = (function () {
     };
     AuthGuard = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [login_serv_1.LoginService, router_1.Router])
+        __metadata('design:paramtypes', [router_1.Router])
     ], AuthGuard);
     return AuthGuard;
 }());

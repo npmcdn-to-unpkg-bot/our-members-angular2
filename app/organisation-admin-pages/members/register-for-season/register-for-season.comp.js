@@ -27,7 +27,7 @@ var RegisterForSeasonComponent = (function () {
         this.nextSeasonVisible = false;
         this.thisSeasonLabel = '';
         this.nextSeasonLabel = '';
-        this.okButtonEnabled = true;
+        this.okButtonVisible = true;
         this.showForm = function (OrganisationMemberID) {
             window.onkeyup = _this.testEsc;
             _this.loadForm(OrganisationMemberID);
@@ -50,7 +50,7 @@ var RegisterForSeasonComponent = (function () {
                 loadFormThis.nextSeasonVisible = false;
                 loadFormThis.thisSeasonLabel = '';
                 loadFormThis.nextSeasonLabel = '';
-                loadFormThis.okButtonEnabled = true;
+                loadFormThis.okButtonVisible = true;
                 var ThisSeasonEndDate = helper_serv_1.HelperService.translateJavascriptDate(structRegisterMemberFormData.sThisSeasonEndDate);
                 loadFormThis.ThisSeasonEndDate = ThisSeasonEndDate;
                 var ThisSeasonStartDate = new Date(ThisSeasonEndDate.getFullYear() - 1, ThisSeasonEndDate.getMonth(), ThisSeasonEndDate.getDate() + 1); //ThisSeasonEndDate;//.AddYears(-1).AddDays(1)
@@ -90,8 +90,7 @@ var RegisterForSeasonComponent = (function () {
                             //If the player is already registered for both 
                             if ((InvoicedToDate >= NextSeasonStartDate) && (InvoicedToDate <= NextSeasonEndDate)) {
                                 loadFormThis.headerLabel = 'Player already registered for next season: ' + helper_serv_1.HelperService.formatDate(NextSeasonStartDate) + ' - ' + helper_serv_1.HelperService.formatDate(NextSeasonEndDate);
-                                loadFormThis.okButtonEnabled = false;
-                                loadFormThis.okButtonEnabled = false;
+                                loadFormThis.okButtonVisible = false;
                             }
                             else {
                                 loadFormThis.thisSeasonLabel = 'Register for this season: ' + helper_serv_1.HelperService.formatDate(ThisSeasonEndDate) + " - " + helper_serv_1.HelperService.formatDate(ThisSeasonEndDate);

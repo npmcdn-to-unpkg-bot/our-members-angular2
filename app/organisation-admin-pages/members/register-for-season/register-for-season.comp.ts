@@ -38,7 +38,7 @@ export class RegisterForSeasonComponent {
     thisSeasonLabel: string = '';
     nextSeasonLabel: string = '';
 
-    okButtonEnabled: boolean = true;
+    okButtonVisible: boolean = true;
 
     showForm = (OrganisationMemberID: number) => {
         window.onkeyup = this.testEsc;
@@ -64,7 +64,7 @@ export class RegisterForSeasonComponent {
             loadFormThis.nextSeasonVisible = false;
             loadFormThis.thisSeasonLabel = '';
             loadFormThis.nextSeasonLabel = '';
-            loadFormThis.okButtonEnabled = true;
+            loadFormThis.okButtonVisible = true;
 
             var ThisSeasonEndDate: Date = HelperService.translateJavascriptDate(structRegisterMemberFormData.sThisSeasonEndDate);
             loadFormThis.ThisSeasonEndDate = ThisSeasonEndDate;
@@ -102,8 +102,7 @@ export class RegisterForSeasonComponent {
                         //If the player is already registered for both 
                         if ((InvoicedToDate >= NextSeasonStartDate) && (InvoicedToDate <= NextSeasonEndDate)) {
                             loadFormThis.headerLabel = 'Player already registered for next season: ' + HelperService.formatDate(NextSeasonStartDate) + ' - ' + HelperService.formatDate(NextSeasonEndDate);
-                            loadFormThis.okButtonEnabled = false;
-                            loadFormThis.okButtonEnabled = false;
+                            loadFormThis.okButtonVisible = false;
                         } else {
                             loadFormThis.thisSeasonLabel = 'Register for this season: ' + HelperService.formatDate(ThisSeasonEndDate) + " - " + HelperService.formatDate(ThisSeasonEndDate);
                             loadFormThis.nextSeasonLabel = 'Register for next season: ' + HelperService.formatDate(NextSeasonEndDate) + " - " + HelperService.formatDate(NextSeasonEndDate);

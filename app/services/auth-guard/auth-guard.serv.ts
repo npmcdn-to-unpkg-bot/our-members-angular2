@@ -1,21 +1,19 @@
-﻿/// <reference path="../helper/helper.serv.ts" />
+﻿/// <reference path="../store-logged-in-state/store-logged-in-state.serv.ts" />
+/// <reference path="../helper/helper.serv.ts" />
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot }    from '@angular/router';
-import { LoginService } from '../login/login.serv';
 import { HelperService} from '../helper/helper.serv';
+import { StoreLoggedInStateService} from '../store-logged-in-state/store-logged-in-state.serv';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-    constructor(private loginService: LoginService, private router: Router) { }
+    constructor(private router: Router) { }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        if (this.loginService.isLoggedIn) { return true; }
+        if (StoreLoggedInStateService.getInstance().loggedIn) { return true; }
 
         // Store the attempted URL for redirecting
-        this.loginService.redirectUrl = state.url;
-
-        // Create a dummy session id
-        //let sessionId = 123456789;
+        StoreLoggedInStateService.getInstance().redirectUrl = state.url;
 
         // Set our navigation extras object
         // that contains our global query params and fragment

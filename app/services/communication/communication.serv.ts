@@ -22,11 +22,6 @@ export class CommunicationService {
         return CommunicationService.instance;
     }
 
-
-
-
-
-
     // Observable string sources
     private communicationLoggedOutSource = new Subject<boolean>();
 

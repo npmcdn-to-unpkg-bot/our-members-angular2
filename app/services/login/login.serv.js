@@ -8,34 +8,42 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+/// <reference path="../store-logged-in-state/store-logged-in-state.serv.ts" />
 var router_1 = require('@angular/router');
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 var helper_serv_1 = require('../../services/helper/helper.serv');
 var communication_serv_1 = require('../../services/communication/communication.serv');
+var store_logged_in_state_serv_1 = require('../store-logged-in-state/store-logged-in-state.serv');
 var LoginService = (function () {
     function LoginService(http, router) {
         var _this = this;
         this.http = http;
         this.router = router;
-        this.isLoggedIn = false;
         this.redirectUrl = '';
         this.logout = function () {
-            _this.isLoggedIn = false;
             helper_serv_1.HelperService.deleteTokenFromStorage();
             communication_serv_1.CommunicationService.getInstance().loggedoutCommunication(false);
             _this.router.navigate(['home-page', 'login']);
+            store_logged_in_state_serv_1.StoreLoggedInStateService.getInstance().loggedIn = false;
         };
-        //constructor(private http: Http, private router: Router, private callback: () => void) {
         console.log('constructor LoginService');
     }
     LoginService.prototype.storeToken = function (response, userName) {
         var storeTokenThis = this;
         var t = response.json();
         helper_serv_1.HelperService.saveTokenToStorage(userName, t);
-        this.router.navigate(['/organisation-admin-master']);
-        storeTokenThis.isLoggedIn = true;
+        var redirect;
+        if (store_logged_in_state_serv_1.StoreLoggedInStateService.getInstance().redirectUrl !== '') {
+            redirect = store_logged_in_state_serv_1.StoreLoggedInStateService.getInstance().redirectUrl;
+        }
+        else {
+            redirect = '/organisation-admin-master';
+        }
+        // Redirect the user
+        this.router.navigate([redirect]);
         communication_serv_1.CommunicationService.getInstance().loggedoutCommunication(true);
+        store_logged_in_state_serv_1.StoreLoggedInStateService.getInstance().loggedIn = true;
     };
     ;
     LoginService.prototype.logError = function () {
@@ -47,17 +55,13 @@ var LoginService = (function () {
         var authenticateThis = this;
         var usernamePlusPassword = "grant_type=password&username=" + username + "&password=" + password;
         var headers = new http_1.Headers();
-        //headers.append('Accept', 'application/json');
-        //headers.append('Content-Type', 'application/json');
         var args = {};
         args.headers = headers;
         var serviceBase = helper_serv_1.HelperService.getServiceBase();
-        this.http
-            .post(serviceBase + 'token', usernamePlusPassword, args)
+        this.http.post(serviceBase + 'token', usernamePlusPassword, args)
             .subscribe(function (response) { return _this.storeToken(response, username); }, this.logError, function () { return authenticationComplete(); });
         function authenticationComplete() {
             console.log('Authentication Complete');
-            //authenticateThis.callback();
         }
     };
     LoginService = __decorate([
