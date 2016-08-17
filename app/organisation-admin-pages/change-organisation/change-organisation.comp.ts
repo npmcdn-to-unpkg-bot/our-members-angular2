@@ -1,10 +1,10 @@
 ﻿/// <reference path="../../../iblong2.d.ts" />
 //import {Response} from '@angular/http';
-import {Component} from '@angular/core';
-import {ChangeOrganisationService} from './change-organisation.serv';
-import {HelperService} from '../../services/helper/helper.serv';
-import { Router, RouterLink } from '@angular/router';
-import {AgGridNg2} from 'ag-grid-ng2/main';
+import {Component} from "@angular/core";
+import {ChangeOrganisationService} from "./change-organisation.serv";
+import {HelperService} from "../../services/helper/helper.serv";
+import {Router} from "@angular/router";
+import {AgGridNg2} from "ag-grid-ng2/main";
 
 
 @Component({
@@ -20,7 +20,7 @@ export class ChangeOrganisationComponent {
 
     constructor(public router: Router, private changeOrganisationService: ChangeOrganisationService) {
         HelperService.log('constructor ChangeOrganisationComponent');
-    } 
+    }
     //load Organisations when page loaded
     ngOnInit() {
         this.loadOrganisations();
@@ -32,11 +32,7 @@ export class ChangeOrganisationComponent {
 
     loadOrganisations = () => {
         var loadOrganisationsThis = this;
-        if (HelperService.tokenIsValid()) {
-            this.changeOrganisationService.getOrganisations().subscribe(onGetOrganisationsSuccess, logError);
-        } else {
-            HelperService.sendToLogin(this.router)
-        }
+        this.changeOrganisationService.getOrganisations().subscribe(onGetOrganisationsSuccess, logError);
         function logError(e: any) {
             HelperService.log('getOrganisations Error');
         }
@@ -51,11 +47,7 @@ export class ChangeOrganisationComponent {
 
     changeOrganisation = (Id: number) => {
         var changeOrganisationThis = this, Id: number;
-        if (HelperService.tokenIsValid()) {
-            this.changeOrganisationService.changeOrganisation(Id).subscribe(onChangeOrganisationSuccess, logError);
-        } else {
-            HelperService.sendToLogin(changeOrganisationThis.router)
-        }
+        this.changeOrganisationService.changeOrganisation(Id).subscribe(onChangeOrganisationSuccess, logError);
         function logError(e: any) {
             HelperService.log('changeOrganisation Error');
         }

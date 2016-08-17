@@ -1,14 +1,10 @@
 ﻿/// <reference path="../../services/login/login.serv.ts" />
-import {Component, OnDestroy } from '@angular/core';
-import { ROUTER_DIRECTIVES, Router} from '@angular/router';
-import {HelperService} from '../../services/helper/helper.serv';
-import {SidebarMenuService} from './sidebar-menu.serv';
-import {OrganisationAdminMasterComponent} from '../organisation-admin-master/organisation-admin-master.comp';
-import {AppComponent} from '../../app-master/app-master.comp';
-import {LoginService} from '../../services/login/login.serv';
-
-import { CommunicationService } from '../../services/communication/communication.serv';
-import { Subscription }   from 'rxjs/Subscription';
+import {Component} from "@angular/core";
+import {ROUTER_DIRECTIVES, Router} from "@angular/router";
+import {HelperService} from "../../services/helper/helper.serv";
+import {SidebarMenuService} from "./sidebar-menu.serv";
+import {LoginService} from "../../services/login/login.serv";
+import {CommunicationService} from "../../services/communication/communication.serv";
 
 @Component({
     moduleId: module.id,
@@ -17,30 +13,14 @@ import { Subscription }   from 'rxjs/Subscription';
     styleUrls: ['sidebar-menu.css'],
     directives: [ROUTER_DIRECTIVES],
     providers: [SidebarMenuService, CommunicationService, LoginService]
-    //providers: [SidebarMenuService, LoginService, CommunicationService]
 })
 
-export class SidebarMenuComponent implements OnDestroy {
+export class SidebarMenuComponent {
 
     //subscription: Subscription;
     constructor(private router: Router, private sidebarMenuService: SidebarMenuService, private loginService: LoginService) {
-        //constructor(private router: Router, private sidebarMenuService: SidebarMenuService, private loginService: LoginService) {
-        //constructor(private communicationService: CommunicationService, private router: Router, private sidebarMenuService: SidebarMenuService) {
-
         console.log('constructor SidebarMenuComponent ');
-
-        //set up a listener to wait for parent to send string
-        //this.subscription = communicationService.communicationAnnounced$.subscribe(
-        //    communication => {
-        //        alert(communication);
-        //    });
     }
-
-    ngOnDestroy() {
-        // prevent memory leak when component destroyed
-        //this.subscription.unsubscribe();
-    }
-
 
     ngOnInit() {
         this.getAdminLoggedIn();
@@ -56,11 +36,15 @@ export class SidebarMenuComponent implements OnDestroy {
         }
         function logError(e: any) {
             console.log('getMembers Error');
-            //loadMembersThis.getMembersSuccess = false;
+            getAdminLoggedInThis.adminLoggedIn = false;
         }
 
         function getAdminLoggedInSuccess(data: boolean) {
-            getAdminLoggedInThis.adminLoggedIn = data;
+            if (data=== null){
+                getAdminLoggedInThis.adminLoggedIn = false;
+            } else {
+                getAdminLoggedInThis.adminLoggedIn = data;
+            }
         }
     };
 

@@ -9,16 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 /// <reference path="../register-for-season/register-for-season.comp.ts" />
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var helper_serv_1 = require('../../../services/helper/helper.serv');
-var member_list_serv_1 = require('./member-list.serv');
-var member_serv_1 = require('../member/member.serv');
-var member_comp_1 = require('../member/member.comp');
-var register_for_season_comp_1 = require('../register-for-season/register-for-season.comp');
-var main_1 = require('ag-grid-ng2/main');
-var confirm_comp_1 = require('../../../utilities/confirm/confirm.comp');
-var popup_comp_1 = require('../../../utilities/popup/popup.comp');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var helper_serv_1 = require("../../../services/helper/helper.serv");
+var member_list_serv_1 = require("./member-list.serv");
+var member_serv_1 = require("../member/member.serv");
+var member_comp_1 = require("../member/member.comp");
+var register_for_season_comp_1 = require("../register-for-season/register-for-season.comp");
+var main_1 = require("ag-grid-ng2/main");
+var confirm_comp_1 = require("../../../utilities/confirm/confirm.comp");
+var popup_comp_1 = require("../../../utilities/popup/popup.comp");
 var MembersListComponent = (function () {
     function MembersListComponent(router, memberListService, memberService) {
         var _this = this;
@@ -47,6 +47,7 @@ var MembersListComponent = (function () {
                 //loadMembersThis.getMembersSuccess = false;
             }
             function onGetMemberListSuccess(data) {
+                loadMembersThis.IncrementMemberNumber = data.IncrementMemberNumber;
                 loadMembersThis.Members = data.Members;
                 loadMembersThis.gridOptions.api.setRowData(loadMembersThis.Members);
                 loadMembersThis.gridOptions.api.sizeColumnsToFit();
@@ -64,7 +65,7 @@ var MembersListComponent = (function () {
             }
         };
         this.addMember = function () {
-            _this.memberComponent.addMember();
+            _this.memberComponent.addMember(_this.IncrementMemberNumber);
             _this.showMembershipList = false;
             _this.showMembershipModal = true;
         };
@@ -86,30 +87,33 @@ var MembersListComponent = (function () {
                 deleteMemberThis.popupComponent.showPopup('Please select  a member to edit');
             }
             else {
-                deleteMemberThis.confirmComponent.showConfirm('Do you want to delete this member?', returnFunction);
-            }
-            function returnFunction() {
-                var returnFunctionThis = deleteMemberThis;
-                if (helper_serv_1.HelperService.tokenIsValid()) {
-                    returnFunctionThis.memberService.testDeleteMember(OrganisationMemberID).subscribe(onTestDeleteMember, logError);
-                }
-                else {
-                    helper_serv_1.HelperService.sendToLogin(returnFunctionThis.router);
-                }
-                function onTestDeleteMember(structError) {
-                    if (structError.boolError) {
-                        returnFunctionThis.popupComponent.showPopup(structError.ErrorMessage);
+                //alert('deleteMemberThis.confirmComponent.showConfirm(Do you want to delete this member?, returnFunction)')
+                var observable = deleteMemberThis.confirmComponent.showConfirm('Do you want to delete this member?');
+                observable.subscribe(function (deleteMember) {
+                    if (deleteMember) {
+                        var returnFunctionThis = deleteMemberThis;
+                        if (helper_serv_1.HelperService.tokenIsValid()) {
+                            returnFunctionThis.memberService.testDeleteMember(OrganisationMemberID).subscribe(onTestDeleteMember, logError);
+                        }
+                        else {
+                            helper_serv_1.HelperService.sendToLogin(returnFunctionThis.router);
+                        }
+                        function onTestDeleteMember(structError) {
+                            if (structError.boolError) {
+                                returnFunctionThis.popupComponent.showPopup(structError.ErrorMessage);
+                            }
+                            else {
+                                returnFunctionThis.memberService.deleteMember(OrganisationMemberID).subscribe(onDeleteMember, logError);
+                            }
+                            function onDeleteMember() {
+                                returnFunctionThis.loadMemberListData();
+                            }
+                        }
+                        function logError() {
+                            helper_serv_1.HelperService.log('loadMember Error');
+                        }
                     }
-                    else {
-                        returnFunctionThis.memberService.deleteMember(OrganisationMemberID).subscribe(onDeleteMember, logError);
-                    }
-                    function onDeleteMember() {
-                        returnFunctionThis.loadMemberListData();
-                    }
-                }
-                function logError() {
-                    helper_serv_1.HelperService.log('loadMember Error');
-                }
+                });
             }
         };
         this.registerMember = function () {

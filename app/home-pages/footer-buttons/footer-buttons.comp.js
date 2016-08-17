@@ -8,10 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var footer_buttons_serv_1 = require("./footer-buttons.serv");
 var FooterButtons = (function () {
-    function FooterButtons() {
+    function FooterButtons(footerButtonsService) {
+        var _this = this;
+        this.footerButtonsService = footerButtonsService;
+        this.ngOnInit = function () {
+            _this.footerButtonsService.getDevOrProd().subscribe(function (s) { _this.prodOrDev = s; });
+        };
+        // this.footerButtonsService.getDevOrProd().subscribe((s: string) => {
+        //     this.prodOrDev = s
+        // });
     }
     FooterButtons = __decorate([
         core_1.Component({
@@ -19,9 +28,10 @@ var FooterButtons = (function () {
             selector: 'footer-buttons',
             templateUrl: 'footer-buttons.html',
             styleUrls: ['footer-buttons.css'],
-            directives: [router_1.ROUTER_DIRECTIVES]
+            directives: [router_1.ROUTER_DIRECTIVES],
+            providers: [footer_buttons_serv_1.FooterButtonsService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [footer_buttons_serv_1.FooterButtonsService])
     ], FooterButtons);
     return FooterButtons;
 }());

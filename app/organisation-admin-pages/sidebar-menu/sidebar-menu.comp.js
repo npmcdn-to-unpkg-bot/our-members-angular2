@@ -9,17 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 /// <reference path="../../services/login/login.serv.ts" />
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var helper_serv_1 = require('../../services/helper/helper.serv');
-var sidebar_menu_serv_1 = require('./sidebar-menu.serv');
-var login_serv_1 = require('../../services/login/login.serv');
-var communication_serv_1 = require('../../services/communication/communication.serv');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var helper_serv_1 = require("../../services/helper/helper.serv");
+var sidebar_menu_serv_1 = require("./sidebar-menu.serv");
+var login_serv_1 = require("../../services/login/login.serv");
+var communication_serv_1 = require("../../services/communication/communication.serv");
 var SidebarMenuComponent = (function () {
     //subscription: Subscription;
     function SidebarMenuComponent(router, sidebarMenuService, loginService) {
-        //constructor(private router: Router, private sidebarMenuService: SidebarMenuService, private loginService: LoginService) {
-        //constructor(private communicationService: CommunicationService, private router: Router, private sidebarMenuService: SidebarMenuService) {
         var _this = this;
         this.router = router;
         this.sidebarMenuService = sidebarMenuService;
@@ -34,10 +32,15 @@ var SidebarMenuComponent = (function () {
             }
             function logError(e) {
                 console.log('getMembers Error');
-                //loadMembersThis.getMembersSuccess = false;
+                getAdminLoggedInThis.adminLoggedIn = false;
             }
             function getAdminLoggedInSuccess(data) {
-                getAdminLoggedInThis.adminLoggedIn = data;
+                if (data === null) {
+                    getAdminLoggedInThis.adminLoggedIn = false;
+                }
+                else {
+                    getAdminLoggedInThis.adminLoggedIn = data;
+                }
             }
         };
         this.adminLoggedIn = false;
@@ -142,16 +145,7 @@ var SidebarMenuComponent = (function () {
             //this.router.navigate(['home-page', 'login']);
         };
         console.log('constructor SidebarMenuComponent ');
-        //set up a listener to wait for parent to send string
-        //this.subscription = communicationService.communicationAnnounced$.subscribe(
-        //    communication => {
-        //        alert(communication);
-        //    });
     }
-    SidebarMenuComponent.prototype.ngOnDestroy = function () {
-        // prevent memory leak when component destroyed
-        //this.subscription.unsubscribe();
-    };
     SidebarMenuComponent.prototype.ngOnInit = function () {
         this.getAdminLoggedIn();
     };

@@ -1,13 +1,4 @@
-﻿Router:
-base href essential
-routes for a feature area go in a routes page with an exported constant array of routes
-** is wildcard for unspecified page
-'' is page with no extension to url
-exported constants for all feature areas are collated with ... prefix n app.routes.ts
-this is imported when bootstrapping
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-
+﻿
 -----------------------------
 form valid
 click add member, check if need new member number
@@ -15,23 +6,9 @@ save add / edit
 open receipt on return?
 -----------------------------
 
-add member does lookup to get next member number
 add member has "Save" and "Save and then Receipt" buttons
 validation of save member shows correct page
 
-add "Double-click to drill down" message to list
-
 then 
-	receipt member
+	email member
 
-register member:
-	api to load form with data structure (Sub LoadInvoiceRadioButtonList):
-		header message
-		showThisSeasonRadioButton
-		thisSeasonEndDate
-		showNextSeasonRadioButton
-		nextSeasonEndDate
-	on save: wcfRegisterMemberForSeason(ByVal OrganisationMemberID As Integer, ByVal sEndDate As String, ByVal Comment As String, ByVal sCurrentDate As String)
-
-
-display part of connection string

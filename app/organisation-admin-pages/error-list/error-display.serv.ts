@@ -1,10 +1,7 @@
-﻿import {Router} from '@angular/router';
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-
-import {Http, Headers, HTTP_PROVIDERS, RequestOptionsArgs, Request, Response, URLSearchParams} from '@angular/http';
-import {HelperService} from '../../services/helper/helper.serv';
-import {HttpHandlerService} from  '../../services/http-handler/http-handler.serv';
+﻿import {Router} from "@angular/router";
+import {Injectable} from "@angular/core";
+import {Http} from "@angular/http";
+import {HttpHandlerService} from "../../services/http-handler/http-handler.serv";
 
 
 @Injectable()
@@ -16,7 +13,7 @@ export class ErrorDisplayService {
 
 
     deleteError = (ErrorID: number) => {
-        var httpHandlerService = new HttpHandlerService(this.http);
+        var httpHandlerService = new HttpHandlerService(this.http, this.router);
         var parameters: modSharedTypes.IHttpParameter[] = [];
         parameters[0] = {
             name: 'ErrorID',

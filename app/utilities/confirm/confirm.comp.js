@@ -8,37 +8,40 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var helper_serv_1 = require('../../services/helper/helper.serv');
+var core_1 = require("@angular/core");
+var helper_serv_1 = require("../../services/helper/helper.serv");
+var Observable_1 = require("rxjs/Observable");
 var ConfirmComponent = (function () {
     function ConfirmComponent() {
         var _this = this;
         this.confirmVisible = false;
-        this.showConfirm = function (s, returnFunction) {
-            _this.returnFunction = returnFunction;
+        this.showConfirm = function (s) {
             _this.message = s;
             _this.confirmVisible = true;
             window.onkeyup = _this.testEsc;
+            var observable = new Observable_1.Observable(function (sender) { _this.observer = sender; });
+            return observable;
         };
         this.testEsc = function (event) {
             if (event.keyCode === 27) {
                 event.stopPropagation();
-                _this.cancel();
+                _this.returnResult(false);
             }
         };
         this.message = '';
-        //cancelMember
         this.closed = new core_1.EventEmitter();
-        this.cancel = function () {
+        this.returnResult = function (result) {
             window.onkeyup = null;
             _this.confirmVisible = false;
-            _this.closed.emit('false');
-        };
-        this.ok = function () {
-            window.onkeyup = null;
-            _this.confirmVisible = false;
-            _this.returnFunction();
-            _this.closed.emit('true');
+            if (result) {
+                _this.closed.emit('true');
+            }
+            else {
+                _this.closed.emit('false');
+            }
+            _this.observer.next(result);
+            _this.observer.complete();
+            return result;
         };
         helper_serv_1.HelperService.log('constructor ConfirmComponent');
     }
@@ -51,7 +54,7 @@ var ConfirmComponent = (function () {
             moduleId: module.id,
             selector: 'confirm',
             templateUrl: 'confirm.html',
-            styleUrls: ['confirm.css'],
+            styleUrls: ['confirm.css']
         }), 
         __metadata('design:paramtypes', [])
     ], ConfirmComponent);

@@ -1,11 +1,13 @@
-﻿import {Component, Output, EventEmitter} from '@angular/core';
-import {HelperService} from '../../services/helper/helper.serv';
+﻿import {Component, Output, EventEmitter} from "@angular/core";
+import {HelperService} from "../../services/helper/helper.serv";
+import {Observer} from "rxjs/Observer";
+import {Observable} from "rxjs/Observable";
 
 @Component({
-moduleId: module.id,
+    moduleId: module.id,
     selector: 'confirm',
     templateUrl: 'confirm.html',
-    styleUrls: ['confirm.css'],
+    styleUrls: ['confirm.css']
     //styleUrls: ['styles/styles.css', 'app/organisation-admin-pages/styles/organisation-admin-styles.css', 'confirm.css'],
 })
 
@@ -15,36 +17,40 @@ export class ConfirmComponent {
     }
 
     confirmVisible: boolean = false;
-    returnFunction: () => void;
-    showConfirm = (s: string, returnFunction: () => void) => {
-        this.returnFunction = returnFunction;
+
+    showConfirm = (s: string): Observable<boolean> => {
         this.message = s;
         this.confirmVisible = true;
         window.onkeyup = this.testEsc;
-    }
+
+        var observable: Observable<boolean> = new Observable<boolean>((sender: Observer<boolean>) => {this.observer = sender;});
+        return observable;
+    };
 
     testEsc = (event: KeyboardEvent) => {
         if (event.keyCode === 27) {
             event.stopPropagation();
-            this.cancel();
+            this.returnResult(false);
         }
-    }
+    };
 
     message: string = '';
 
-    //cancelMember
     @Output() closed: EventEmitter<string> = new EventEmitter<string>();
 
-    cancel = () => {
-        window.onkeyup = null;
-        this.confirmVisible = false;
-        this.closed.emit('false');
-    }
+    observer: Observer<boolean>;
 
-    ok = () => {
+    returnResult = (result: boolean): boolean => {
         window.onkeyup = null;
         this.confirmVisible = false;
-        this.returnFunction();
-        this.closed.emit('true');
+        if (result) {
+            this.closed.emit('true');
+        } else {
+            this.closed.emit('false');
+        }
+        this.observer.next(result);
+        this.observer.complete();
+        return result;
     }
 }
+

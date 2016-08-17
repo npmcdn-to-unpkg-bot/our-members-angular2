@@ -8,11 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var helper_serv_1 = require('../../../services/helper/helper.serv');
-var member_serv_1 = require('./member.serv');
-var main_1 = require('ag-grid-ng2/main');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var helper_serv_1 = require("../../../services/helper/helper.serv");
+var member_serv_1 = require("./member.serv");
+var main_1 = require("ag-grid-ng2/main");
 var MemberComponent = (function () {
     function MemberComponent(router, memberService) {
         var _this = this;
@@ -125,17 +125,28 @@ var MemberComponent = (function () {
             _this.defaultCountryId = defaultCountryId;
             window.onkeyup = _this.testEsc;
         };
-        this.addMember = function () {
-            _this.editMember = false;
-            _this.Member = _this.getEmptyMember(_this.defaultCountryId);
-            _this.memberVisible = true;
+        this.addMember = function (IncrementMemberNumber) {
+            var addMemberThis = _this;
+            addMemberThis.IncrementMemberNumber = IncrementMemberNumber;
+            addMemberThis.editMember = false;
+            addMemberThis.Member = addMemberThis.getEmptyMember(addMemberThis.defaultCountryId);
+            addMemberThis.memberVisible = true;
+            if (IncrementMemberNumber) {
+                var obs = addMemberThis.memberService.getNextMemberNumber();
+                obs.subscribe(updateMemberSuccess, logError);
+            }
+            function updateMemberSuccess(nextMemberNumber) {
+                addMemberThis.Member.MemberNumber = nextMemberNumber.toString();
+            }
+            function logError() {
+                helper_serv_1.HelperService.log('addMember Error');
+            }
         };
         //////////////////////////////////////////////////////////////
         //get data
         this.loadMember = function (OrganisationMemberID) {
             var loadMemberThis = _this;
             loadMemberThis.Member = loadMemberThis.getEmptyMember(0);
-            //loadMemberThis.Member = loadMemberThis.getEmptyMember();
             if (helper_serv_1.HelperService.tokenIsValid()) {
                 loadMemberThis.titleMember = 'Edit Member';
                 loadMemberThis.memberService.getMember(OrganisationMemberID).subscribe(onGetMemberSuccess, logError);
@@ -165,9 +176,6 @@ var MemberComponent = (function () {
                 //filter the member GroupIDArray to see if this GroupID from the rows is present in it
                 var Member = _this.Member;
                 var memberGroupIDArray = Member.GroupIDArray;
-                function checkPresence(pGroupID) {
-                    return pGroupID === rowsToDisplayGroupID;
-                }
                 var filtered = memberGroupIDArray.filter(checkPresence);
                 //if found
                 if (filtered.length > 0) {
@@ -176,6 +184,9 @@ var MemberComponent = (function () {
             }
             _this.teamsGroupsGridOptions.api.refreshView();
             //this.teamsGroupsGridOptions.api.softRefreshView();
+            function checkPresence(pGroupID) {
+                return pGroupID === rowsToDisplayGroupID;
+            }
         };
         this.saveMember = function () {
             var okClickedThis = _this;

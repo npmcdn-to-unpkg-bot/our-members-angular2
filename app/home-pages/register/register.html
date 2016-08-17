@@ -1,14 +1,14 @@
 ﻿<div class="row">
     <div class="col-sm-2">
         <a class="text-video-link" href="https://www.youtube.com/embed/4gPBO6yUK18" target="_blank">
-            <img class="video-pdf-button" src="../../../../images/video.png" />
+            <img class="video-pdf-button" src="../../../images/video.png" />
         </a>
     </div>
     <div class="col-sm-10">
         <div class="mainheading">
             Welcome to iBlong2
         </div>
-        <span class="font-size-large" >Creating your User Account and Login</span>
+        <span class="font-size-large">Creating your User Account and Login</span>
         <br />
         <br />
         Here is where you create your organisation&#39;s account in iBlong2. An email confirming
@@ -31,123 +31,125 @@
 </div>
 
 
-<div class="create-organisation-title" >
+<div class="create-organisation-title">
     Create Organisation Account
 </div>
-<div class="form-container"  >
-    <form (ngSubmit)="okClicked()" #transactionForm="ngForm">
-        <div class="form-group row">
-            <div class="col-sm-6 form-label">
-                <label for="inputOrganisationName">Organisation Name</label>
-            </div>
-            <div class="col-sm-6">
+<div class="form-container">
+        <form (ngSubmit)="okClicked()" #registerForm="ngForm">
+            {{registerForm.touched}}
+            <div class="form-group row">
+                <div class="col-sm-6 form-label">
+                    <label for="OrganisationName">Organisation Name</label>
+                </div>
+                <div class="col-sm-6">
 
-                <input type="text"
-                       class="form-control"
-                       required
-                       [(ngModel)]="register.OrganisationName"
-                       name="OrganisationName"
-                       #inputOrganisationName="ngModel"
-                       ngControl="ngcOrganisationName" />
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <div class="col-sm-6 form-label">
-                <label for="inputUserName">User Name</label>
-            </div>
-            <div class="col-sm-6">
-
-                <input type="text"
-                       class="form-control"
-                       required
-                       [(ngModel)]="register.RegisterUserName"
-                       name="RegisterUserName"
-                       #inputUserName="ngModel"
-                       ngControl="ngcUserName"
-                       (blur)="userNameBlur()" />
-
-                <div style="color: red; font-weight: bold;" [hidden]="!UserNameDuplicate" class="col-sm-12">
-                    This User Name is already registered. Please choose another.
+                    <input type="text"
+                           class="form-control"
+                           required
+                           [(ngModel)]="register.OrganisationName"
+                           name="OrganisationName"
+                           #inputOrganisationName="ngModel"
+                           ngControl="ngcOrganisationName" />
                 </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-sm-6 form-label">
-                <label for="inputPassword">Password</label>
-            </div>
-            <div class="col-sm-6">
 
-                <input type="password"
-                       class="form-control"
-                       required
-                       [(ngModel)]="register.Password"
-                       name="Password"
-                       #inputPassword="ngModel"
-                       ngControl="ngcPassword" />
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-sm-6 form-label">
-                <label for="inputEmail">Email</label>
-            </div>
-            <div class="col-sm-6">
+            <div class="form-group row">
+                <div class="col-sm-6 form-label">
+                    <label for="inputUserName">User Name</label>
+                </div>
+                <div class="col-sm-6">
 
-                <input type="email" 
-                       class="form-control" 
-                       required 
-                       [(ngModel)]="register.Email" 
-                       name="Email"
-                       #inputEmail="ngModel" 
-                       ngControl="ngcEmail" />
-            </div>
-        </div>
+                    <input type="text"
+                           class="form-control"
+                           required
+                           [(ngModel)]="register.RegisterUserName"
+                           name="RegisterUserName"
+                           #inputUserName="ngModel"
+                           ngControl="ngcUserName"
+                           (blur)="userNameBlur()" />
 
-        <div class="form-group row">
-            <div class="col-sm-6 form-label">
-                <label for="cmbCountries">Country</label>
+                    <div style="color: red; font-weight: bold;" [hidden]="!UserNameDuplicate" class="col-sm-12">
+                        This User Name is already registered. Please choose another.
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-6">
+            <div class="form-group row">
+                <div class="col-sm-6 form-label">
+                    <label for="inputPassword">Password</label>
+                </div>
+                <div class="col-sm-6">
 
-                <select class="form-control"
-                        required
-                        [(ngModel)]="register.CountryID"
-                        name="CountryID"
-                        #cmbCountries="ngModel"
-                        ngControl="ngcCountries">
-                    <option *ngFor="let country of countries"
-                            [value]="country.CountryID">
-                        {{ country.Name }}
-                    </option>
-                </select>
+                    <input type="password"
+                           class="form-control"
+                           required
+                           [(ngModel)]="register.Password"
+                           name="Password"
+                           #inputPassword="ngModel"
+                           ngControl="ngcPassword" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6 form-label">
+                    <label for="inputEmail">Email</label>
+                </div>
+                <div class="col-sm-6">
 
+                    <input type="email"
+                           class="form-control"
+                           required
+                           [(ngModel)]="register.Email"
+                           name="Email"
+                           #inputEmail="ngModel"
+                           ngControl="ngcEmail" />
+                </div>
             </div>
-        </div>
 
-        <div class="form-group row">
-            <div class="col-sm-6 form-label">
-                <label for="chkTermsOfUse">I have read and agree to iBlong2's Terms of Use</label>
-            </div>
-            <div class="col-sm-2">
+            <div class="form-group row">
+                <div class="col-sm-6 form-label">
+                    <label for="cmbCountries">Country</label>
+                </div>
+                <div class="col-sm-6">
 
-                <input type="checkbox" 
-                       class="form-control" 
-                       required 
-                       [(ngModel)]="register.TermsOfUse" 
-                       name="TermsOfUse"
-                       #chkTermsOfUse="ngModel" 
-                       ngControl="ngcTermsOfUse" />
+                    <select class="form-control"
+                            required
+                            [(ngModel)]="register.CountryID"
+                            name="CountryID"
+                            #cmbCountries="ngModel"
+                            ngControl="ngcCountries">
+                        <option *ngFor="let country of countries"
+                                [value]="country.CountryID">
+                            {{ country.Name }}
+                        </option>
+                    </select>
+
+                </div>
             </div>
-            <div class="col-sm-4">
-                <!--<a class="terms" [routerLink]="['TermsComponent']">Read Terms of Use</a>-->
+
+            <div class="form-group row">
+                <div class="col-sm-6 form-label">
+                    <label for="chkTermsOfUse">I have read and agree to iBlong2's Terms of Use</label>
+                </div>
+                <div class="col-sm-2">
+
+                    <input type="checkbox"
+                           class="form-control"
+                           required
+                           [(ngModel)]="register.TermsOfUse"
+                           name="TermsOfUse"
+                           #chkTermsOfUse="ngModel"
+                           ngControl="ngcTermsOfUse" />
+                </div>
+                <div class="col-sm-4">
+                    <!--<a class="terms" [routerLink]="['TermsComponent']">Read Terms of Use</a>-->
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-        </div>
-        <div class="form-group row">
-            <div class="col-sm-12">
-                <button class="register-button" type="submit">Create Account</button>
+            <div class="form-group row">
             </div>
-        </div>
-    </form>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <button class="register-button" type="submit">Create Account</button>
+                </div>
+            </div>
+        </form>
 </div>
+<confirm></confirm>

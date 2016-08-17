@@ -82,6 +82,11 @@ interface structOrganisationMember {
     boolMmembershipInvoiceEntered: boolean;
 }
 
+interface structNextMemberNumber {
+    organisationUsesIncrementingMemberNumbers: boolean;
+    memberNumber: number;
+}
+
 interface structMemberListData {
     Members: any[];
     Countries: any[];

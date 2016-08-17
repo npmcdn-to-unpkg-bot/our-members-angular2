@@ -8,12 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var error_list_serv_1 = require('./error-list.serv');
-var helper_serv_1 = require('../../services/helper/helper.serv');
-var router_1 = require('@angular/router');
-var main_1 = require('ag-grid-ng2/main');
-var error_display_comp_1 = require('./error-display.comp');
+var core_1 = require("@angular/core");
+var error_list_serv_1 = require("./error-list.serv");
+var helper_serv_1 = require("../../services/helper/helper.serv");
+var router_1 = require("@angular/router");
+var main_1 = require("ag-grid-ng2/main");
+var error_display_comp_1 = require("./error-display.comp");
+var error_display_serv_1 = require("./error-display.serv");
 var ErrorListComponent = (function () {
     function ErrorListComponent(router, errorListService) {
         var _this = this;
@@ -94,7 +95,7 @@ var ErrorListComponent = (function () {
             selector: 'error-list',
             templateUrl: 'error-list.html',
             styleUrls: ['error-list.css'],
-            providers: [error_list_serv_1.ErrorListService, error_display_comp_1.ErrorDisplayComponent],
+            providers: [error_list_serv_1.ErrorListService, error_display_comp_1.ErrorDisplayComponent, error_display_serv_1.ErrorDisplayService],
             directives: [main_1.AgGridNg2, error_display_comp_1.ErrorDisplayComponent]
         }), 
         __metadata('design:paramtypes', [router_1.Router, error_list_serv_1.ErrorListService])

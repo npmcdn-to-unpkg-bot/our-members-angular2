@@ -1,9 +1,10 @@
-﻿import {Component, ViewChild} from '@angular/core';
-import {ErrorListService} from './error-list.serv';
-import {HelperService} from '../../services/helper/helper.serv';
-import { Router, RouterLink } from '@angular/router';
-import {AgGridNg2} from 'ag-grid-ng2/main';
-import {ErrorDisplayComponent} from './error-display.comp';
+﻿import {Component, ViewChild} from "@angular/core";
+import {ErrorListService} from "./error-list.serv";
+import {HelperService} from "../../services/helper/helper.serv";
+import {Router} from "@angular/router";
+import {AgGridNg2} from "ag-grid-ng2/main";
+import {ErrorDisplayComponent} from "./error-display.comp";
+import {ErrorDisplayService} from "./error-display.serv";
 
 
 @Component({
@@ -11,7 +12,7 @@ import {ErrorDisplayComponent} from './error-display.comp';
     selector: 'error-list',
     templateUrl: 'error-list.html',
     styleUrls: ['error-list.css'],
-    providers: [ErrorListService, ErrorDisplayComponent],
+    providers: [ErrorListService, ErrorDisplayComponent, ErrorDisplayService],
     directives: [AgGridNg2, ErrorDisplayComponent]
 })
 

@@ -1,9 +1,9 @@
-﻿import {Component, Output, EventEmitter } from '@angular/core';
-import { ROUTER_DIRECTIVES, Router} from '@angular/router';
-import {HelperService} from '../../../services/helper/helper.serv';
-import {MemberService} from './member.serv';
-import {AgGridNg2} from 'ag-grid-ng2/main';
-import { NgForm }    from '@angular/forms';
+﻿import {Component, Output, EventEmitter} from "@angular/core";
+import {Router} from "@angular/router";
+import {HelperService} from "../../../services/helper/helper.serv";
+import {MemberService} from "./member.serv";
+import {AgGridNg2} from "ag-grid-ng2/main";
+import {Observable} from "rxjs/Observable";
 
 @Component({
     moduleId: module.id,
@@ -134,6 +134,7 @@ export class MemberComponent {
     MembershipTypes: any[];
     Groups: any[];
     defaultCountryId: number;
+    IncrementMemberNumber: boolean;
 
     loadObjects = (countries: any[], MembershipTypes: any[], Groups: any[], defaultCountryId: number) => {
         this.countries = countries;
@@ -144,13 +145,24 @@ export class MemberComponent {
         this.teamsGroupsGridOptions.suppressRowClickSelection = true;
         this.defaultCountryId = defaultCountryId;
         window.onkeyup = this.testEsc;
-
     }
 
-    addMember = () => {
-        this.editMember = false;
-        this.Member = this.getEmptyMember(this.defaultCountryId);
-        this.memberVisible = true;
+    addMember = (IncrementMemberNumber: boolean) => {
+        var addMemberThis = this;
+        addMemberThis.IncrementMemberNumber = IncrementMemberNumber;
+        addMemberThis.editMember = false;
+        addMemberThis.Member = addMemberThis.getEmptyMember(addMemberThis.defaultCountryId);
+        addMemberThis.memberVisible = true;
+        if (IncrementMemberNumber) {
+            var obs: Observable<number> = addMemberThis.memberService.getNextMemberNumber();
+            obs.subscribe(updateMemberSuccess, logError);
+        }
+        function updateMemberSuccess(nextMemberNumber: number) {
+            addMemberThis.Member.MemberNumber = nextMemberNumber.toString();
+        }
+        function logError() {
+            HelperService.log('addMember Error');
+        }
     }
 
 
@@ -159,7 +171,6 @@ export class MemberComponent {
     loadMember = (OrganisationMemberID: number) => {
         var loadMemberThis = this;
         loadMemberThis.Member = loadMemberThis.getEmptyMember(0);
-        //loadMemberThis.Member = loadMemberThis.getEmptyMember();
         if (HelperService.tokenIsValid()) {
             loadMemberThis.titleMember = 'Edit Member';
             loadMemberThis.memberService.getMember(OrganisationMemberID).subscribe(onGetMemberSuccess, logError);
@@ -191,9 +202,6 @@ export class MemberComponent {
             var Member = this.Member
             var memberGroupIDArray: number[] = Member.GroupIDArray;
 
-            function checkPresence(pGroupID) {
-                return pGroupID === rowsToDisplayGroupID;
-            }
             var filtered: number[] = memberGroupIDArray.filter(checkPresence);
             //if found
             if (filtered.length > 0) {
@@ -202,6 +210,9 @@ export class MemberComponent {
         }
         this.teamsGroupsGridOptions.api.refreshView();
         //this.teamsGroupsGridOptions.api.softRefreshView();
+        function checkPresence(pGroupID: number) {
+            return pGroupID === rowsToDisplayGroupID;
+        }
     }
 
 

@@ -1,9 +1,11 @@
-﻿import {Component} from '@angular/core';
-import { ROUTER_DIRECTIVES} from '@angular/router';
-import {CountriesService} from '../../services/countries/countries.serv';
-import {RegisterService} from './register.serv';
-import {UserNameService} from  '../../services/user-name/user-name.serv';
-import { NgForm }    from '@angular/forms';
+﻿//import {FORM_DIRECTIVES, FormBuilder,Validators} from '@angular/forms';
+import {Component, ViewChild} from "@angular/core";
+import {ROUTER_DIRECTIVES, CanDeactivate} from "@angular/router";
+import {CountriesService} from "../../services/countries/countries.serv";
+import {RegisterService} from "./register.serv";
+import {UserNameService} from "../../services/user-name/user-name.serv";
+import {ConfirmComponent} from "../../utilities/confirm/confirm.comp";
+import {NgForm} from "@angular/forms";
 
 
 @Component({
@@ -11,14 +13,18 @@ import { NgForm }    from '@angular/forms';
     selector: 'register',
     templateUrl: 'register.html',
     styleUrls: ['register.css'],
-    directives: [ROUTER_DIRECTIVES],
-    providers: [CountriesService, RegisterService, UserNameService]
+    directives: [ROUTER_DIRECTIVES, ConfirmComponent],
+    //directives: [ROUTER_DIRECTIVES, REACTIVE_FORM_DIRECTIVES, ConfirmComponent],
+    providers: [CountriesService, RegisterService, UserNameService, ConfirmComponent
+    ]
 })
 
-export class RegisterComponent {
+export class RegisterComponent implements CanDeactivate<boolean> {
     constructor(private countriesService: CountriesService, private registerService: RegisterService, private userNameService: UserNameService) {
         console.log('constructor RegisterComponent ');
     }
+
+    @ViewChild('registerForm') public registerForm: NgForm;
 
     register: structRegistration = {
         OrganisationName: '',
@@ -30,7 +36,6 @@ export class RegisterComponent {
     };
     countries: any[] = [];
 
-
     onGetCountriesSuccess: boolean
 
     ngOnInit() {
@@ -38,15 +43,16 @@ export class RegisterComponent {
         this.UserNameDuplicate = false;
     }
 
-
     okClicked = () => {
         this.registerService.saveNewRegister(this.register).subscribe(addRegistrationSuccess, logError, complete);
         function addRegistrationSuccess() {
             console.log('addRegistrationSuccess')
         }
+
         function logError() {
             console.log('logError')
         }
+
         function complete() {
             console.log('complete')
         }
@@ -64,6 +70,7 @@ export class RegisterComponent {
         function onGetCountriesSuccess(Countries: structIdName[]) {
             loadCountriesThis.countries = Countries;
         }
+
         function complete() {
             console.log('getCountries complete');
         }
@@ -73,7 +80,7 @@ export class RegisterComponent {
 
     userNameBlur = () => {
         var userNameBlurThis = this;
-        if (userNameBlurThis.register.RegisterUserName !== '') { 
+        if (userNameBlurThis.register.RegisterUserName !== '') {
             this.userNameService.checkUserName(userNameBlurThis.register.RegisterUserName).subscribe(onCheckUserNameSuccess, logCheckUserNameError, complete);
         }
         function logCheckUserNameError(e: any) {
@@ -81,18 +88,20 @@ export class RegisterComponent {
             console.log(e);
             userNameBlurThis.UserNameDuplicate = false;
         }
-        //var lUserNameDuplicate: boolean
+
         function onCheckUserNameSuccess(UserNameDuplicate: boolean) {
             userNameBlurThis.UserNameDuplicate = UserNameDuplicate;
-            //lUserNameDuplicate = UserNameDuplicate;
-            //setTimeout(asdff, 1000);
         }
-        //function asdff() {
-        //    userNameBlurThis.UserNameDuplicate = lUserNameDuplicate;
-        //}
 
         function complete() {
             console.log('userNameBlur complete');
         }
     }
+
+    @ViewChild(ConfirmComponent) confirmComponent: ConfirmComponent;
+
+    canDeactivate() {
+        return this.confirmComponent.showConfirm('Are you sure you want to leave this form?');
+    }
 }
+

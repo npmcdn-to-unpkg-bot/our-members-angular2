@@ -8,17 +8,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var router_1 = require('@angular/router');
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-var http_handler_serv_1 = require('../../../services/http-handler/http-handler.serv');
+var router_1 = require("@angular/router");
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+var http_handler_serv_1 = require("../../../services/http-handler/http-handler.serv");
 var MemberListService = (function () {
     function MemberListService(http, router) {
         this.http = http;
         this.router = router;
         console.log('constructor MemberListService');
     }
-    MemberListService.prototype.parseResponse = function (res) {
+    MemberListService.parseResponse = function (res) {
         return res.json();
     };
     //getMemberList(): Observable<any[]> {
@@ -28,7 +28,7 @@ var MemberListService = (function () {
     //}
     MemberListService.prototype.getMemberListData = function () {
         var parameters = [];
-        var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http);
+        var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http, this.router);
         return httpHandlerService.getObject(parameters, 'api/member-list', true);
     };
     MemberListService = __decorate([

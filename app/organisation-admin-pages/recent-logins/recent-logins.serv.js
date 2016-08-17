@@ -8,10 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var router_1 = require('@angular/router');
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-var http_handler_serv_1 = require('../../services/http-handler/http-handler.serv');
+var router_1 = require("@angular/router");
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+var http_handler_serv_1 = require("../../services/http-handler/http-handler.serv");
 var RecentLoginsService = (function () {
     function RecentLoginsService(http, router) {
         this.http = http;
@@ -20,7 +20,7 @@ var RecentLoginsService = (function () {
     }
     RecentLoginsService.prototype.getRecentLogins = function () {
         var parameters = [];
-        var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http);
+        var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http, this.router);
         return httpHandlerService.getObject(parameters, 'api/recent-logins', true);
     };
     RecentLoginsService = __decorate([

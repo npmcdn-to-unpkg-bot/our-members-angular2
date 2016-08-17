@@ -1,19 +1,22 @@
-﻿/// <reference path="login.routes.ts" />
-import { provideRouter, RouterConfig }  from '@angular/router';
-import { HomePagesRoutes } from './home-pages/home-pages.routes';
-import { organisationAdminRoutes }       from './organisation-admin-pages/organisation-admin.routes';
-import {authProviders}from './login.routes';
-import { CanDeactivateGuard } from './services/can-deactivate/can-deactivate-guard.serv';
-import { loginRoutes } from './login.routes';
+﻿/// <reference path="home-pages/page-not-found/page-not-found.comp.ts" />
+/// <reference path="login.routes.ts" />
+import {Routes, RouterModule} from "@angular/router";
+import {homePagesRoutes} from "./home-pages/home-pages.routes";
+import {organisationAdminRoutes} from "./organisation-admin-pages/organisation-admin.routes";
+import {loginRoutes} from "./login.routes";
+import {PageNotFoundComponent} from "./home-pages/page-not-found/page-not-found.comp";
 
-export const routes: RouterConfig = [
-    ...HomePagesRoutes,
+const routes: Routes = [
+    ...homePagesRoutes,
     ...loginRoutes,
-    ...organisationAdminRoutes
+    ...organisationAdminRoutes,
+    { path: '**', component: PageNotFoundComponent }
 ];
 
-export const appRouterProviders = [
-    provideRouter(routes),
-    authProviders,
-    CanDeactivateGuard
-];
+// const appRouterProviders = [
+//     provideRouter(routes),
+//     authProviders,
+//     CanDeactivateGuard
+// ];
+
+export const routing = RouterModule.forRoot(routes);

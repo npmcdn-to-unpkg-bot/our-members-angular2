@@ -8,50 +8,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var helper_serv_1 = require('../services/helper/helper.serv');
-var home_page_master_comp_1 = require('../home-pages/home-page-master/home-page-master.comp');
-var about_trial_period_comp_1 = require('../home-pages/about-trial-period/about-trial-period.comp');
-var header_buttons_comp_1 = require('../header-buttons/header-buttons.comp');
-var footer_buttons_comp_1 = require('../home-pages/footer-buttons/footer-buttons.comp');
-var home_page_comp_1 = require('../home-pages/home-page/home-page.comp');
-var contact_us_comp_1 = require('../home-pages/contact-us/contact-us.comp');
-var register_comp_1 = require('../home-pages/register/register.comp');
-var about_member_list_comp_1 = require('../home-pages/about-member-list/about-member-list.comp');
-var about_reminders_comp_1 = require('../home-pages/about-reminders/about-reminders.comp');
-var about_finances_comp_1 = require('../home-pages/about-finances/about-finances.comp');
-var about_communicate_comp_1 = require('../home-pages/about-communicate/about-communicate.comp');
-var about_events_comp_1 = require('../home-pages/about-events/about-events.comp');
-var subscription_comp_1 = require('../home-pages/subscription/subscription.comp');
-var about_help_comp_1 = require('../home-pages/about-help/about-help.comp');
-var about_us_comp_1 = require('../home-pages/about-us/about-us.comp');
-var terms_comp_1 = require('../home-pages/terms/terms.comp');
-var privacy_comp_1 = require('../home-pages/privacy/privacy.comp');
-var login_comp_1 = require('../home-pages/login/login.comp');
-var member_list_comp_1 = require('../organisation-admin-pages/members/member-list/member-list.comp');
-var change_organisation_comp_1 = require('../organisation-admin-pages/change-organisation/change-organisation.comp');
-var error_list_comp_1 = require('../organisation-admin-pages/error-list/error-list.comp');
-var recent_logins_comp_1 = require('../organisation-admin-pages/recent-logins/recent-logins.comp');
-var organisation_admin_master_comp_1 = require('../organisation-admin-pages/organisation-admin-master/organisation-admin-master.comp');
-var compiler_1 = require('@angular/compiler');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var helper_serv_1 = require("../services/helper/helper.serv");
+var header_buttons_comp_1 = require("../header-buttons/header-buttons.comp");
+var footer_buttons_comp_1 = require("../home-pages/footer-buttons/footer-buttons.comp");
+// import {HomePagesLinks}  from '../home-pages/home-pages-links/home-pages-links.comp';
+// import {HomePagesBottomButtons}  from '../home-pages/home-pages-bottom-buttons/home-pages-bottom-buttons.comp';
+//import {RuntimeCompiler} from '@angular/compiler';
 var AppComponent = (function () {
-    function AppComponent(runtimeCompiler) {
+    function AppComponent() {
         var _this = this;
-        this.runtimeCompiler = runtimeCompiler;
         this.title = 'iB2';
         this.tokenValid = helper_serv_1.HelperService.tokenIsValid();
         this.showLoginButton = function (loggedIn) {
             _this.headerButtons.changeLoginState(loggedIn);
         };
         this.threeLineButtonDisplay = 'none';
-        //constructor(private communicationService: CommunicationService) {
+        //constructor(private runtimeCompiler: RuntimeCompiler) {
         console.log('constructor AppComponent');
-        //CommunicationService.getInstance().loggedoutcommunication$.subscribe(
-        //    loggedIn => {
-        //        this.showLoginButton(loggedIn);
-        //    });
-        runtimeCompiler.clearCache();
+        //runtimeCompiler.clearCache();
     }
     AppComponent.prototype.showHideThreeLineButton = function () {
         if (this.threeLineButtonDisplay === 'none') {
@@ -71,33 +47,9 @@ var AppComponent = (function () {
             selector: 'ib2-app',
             templateUrl: 'app-master.html',
             styleUrls: ['app-master.css'],
-            directives: [router_1.ROUTER_DIRECTIVES, header_buttons_comp_1.HeaderButtons, footer_buttons_comp_1.FooterButtons],
-            //providers: [CommunicationService],
-            precompile: [
-                home_page_master_comp_1.HomePageMasterComponent,
-                member_list_comp_1.MembersListComponent,
-                change_organisation_comp_1.ChangeOrganisationComponent,
-                recent_logins_comp_1.RecentLoginsComponent,
-                error_list_comp_1.ErrorListComponent,
-                home_page_comp_1.HomePage,
-                about_trial_period_comp_1.AboutTrialPeriodComponent,
-                contact_us_comp_1.ContactUsComponent,
-                register_comp_1.RegisterComponent,
-                about_member_list_comp_1.AboutMemberListComponent,
-                about_reminders_comp_1.AboutRemindersComponent,
-                about_finances_comp_1.AboutFinancesComponent,
-                about_communicate_comp_1.AboutCommunicateComponent,
-                about_events_comp_1.AboutEventsComponent,
-                subscription_comp_1.SubscriptionComponent,
-                about_help_comp_1.AboutHelpComponent,
-                about_us_comp_1.AboutUsComponent,
-                terms_comp_1.TermsComponent,
-                privacy_comp_1.PrivacyComponent,
-                login_comp_1.LoginComponent,
-                organisation_admin_master_comp_1.OrganisationAdminMasterComponent
-            ]
+            directives: [router_1.ROUTER_DIRECTIVES, header_buttons_comp_1.HeaderButtons, footer_buttons_comp_1.FooterButtons]
         }), 
-        __metadata('design:paramtypes', [compiler_1.RuntimeCompiler])
+        __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());

@@ -1,15 +1,15 @@
 ﻿/// <reference path="../register-for-season/register-for-season.comp.ts" />
-import {Component, ViewChild } from '@angular/core';
-import { ROUTER_DIRECTIVES, Router} from '@angular/router';
-import {HelperService} from '../../../services/helper/helper.serv';
-import {MemberListService} from './member-list.serv';
-import {MemberService} from '../member/member.serv';
-import {MemberComponent} from  '../member/member.comp';
-import {RegisterForSeasonComponent} from  '../register-for-season/register-for-season.comp';
-import {AgGridNg2} from 'ag-grid-ng2/main';
-import {ConfirmComponent} from '../../../utilities/confirm/confirm.comp';
-import {PopupComponent} from '../../../utilities/popup/popup.comp';
-
+import {Component, ViewChild} from "@angular/core";
+import {Router} from "@angular/router";
+import {HelperService} from "../../../services/helper/helper.serv";
+import {MemberListService} from "./member-list.serv";
+import {MemberService} from "../member/member.serv";
+import {MemberComponent} from "../member/member.comp";
+import {RegisterForSeasonComponent} from "../register-for-season/register-for-season.comp";
+import {AgGridNg2} from "ag-grid-ng2/main";
+import {ConfirmComponent} from "../../../utilities/confirm/confirm.comp";
+import {PopupComponent} from "../../../utilities/popup/popup.comp";
+import {Observable} from "rxjs/Observable";
 
 @Component({
     moduleId: module.id,
@@ -43,6 +43,7 @@ export class MembersListComponent {
     }
 
     Members: any[];
+    IncrementMemberNumber: boolean;
 
     //////////////////////////////////////////////////////////////
     //get data
@@ -60,6 +61,7 @@ export class MembersListComponent {
         }
 
         function onGetMemberListSuccess(data: structMemberListData) {
+            loadMembersThis.IncrementMemberNumber = data.IncrementMemberNumber;
             loadMembersThis.Members = data.Members;
             loadMembersThis.gridOptions.api.setRowData(loadMembersThis.Members);
             loadMembersThis.gridOptions.api.sizeColumnsToFit();
@@ -78,7 +80,7 @@ export class MembersListComponent {
     }
 
     addMember = () => {
-        this.memberComponent.addMember();
+        this.memberComponent.addMember(this.IncrementMemberNumber); 
         this.showMembershipList = false;
         this.showMembershipModal = true;
     }
@@ -100,31 +102,33 @@ export class MembersListComponent {
         if (OrganisationMemberID === -1) {
             deleteMemberThis.popupComponent.showPopup('Please select  a member to edit');
         } else {
-            deleteMemberThis.confirmComponent.showConfirm('Do you want to delete this member?', returnFunction)
-        }
-        function returnFunction() {
-            var returnFunctionThis = deleteMemberThis;
-            if (HelperService.tokenIsValid()) {
-                returnFunctionThis.memberService.testDeleteMember(OrganisationMemberID).subscribe(onTestDeleteMember, logError);
-            } else {
-                HelperService.sendToLogin(returnFunctionThis.router)
-            }
-            function onTestDeleteMember(structError: structError) {
-                if (structError.boolError) {
-                    returnFunctionThis.popupComponent.showPopup(structError.ErrorMessage);
-                } else {
-                    returnFunctionThis.memberService.deleteMember(OrganisationMemberID).subscribe(onDeleteMember, logError);
-                }
-                function onDeleteMember() {
-                    returnFunctionThis.loadMemberListData();
-                }
-            }
+            //alert('deleteMemberThis.confirmComponent.showConfirm(Do you want to delete this member?, returnFunction)')
+            var observable: Observable<boolean> = deleteMemberThis.confirmComponent.showConfirm('Do you want to delete this member?')
+            observable.subscribe((deleteMember: boolean) => {
+                if (deleteMember) {
+                    var returnFunctionThis = deleteMemberThis;
+                    if (HelperService.tokenIsValid()) {
+                        returnFunctionThis.memberService.testDeleteMember(OrganisationMemberID).subscribe(onTestDeleteMember, logError);
+                    } else {
+                        HelperService.sendToLogin(returnFunctionThis.router)
+                    }
+                    function onTestDeleteMember(structError: structError) {
+                        if (structError.boolError) {
+                            returnFunctionThis.popupComponent.showPopup(structError.ErrorMessage);
+                        } else {
+                            returnFunctionThis.memberService.deleteMember(OrganisationMemberID).subscribe(onDeleteMember, logError);
+                        }
+                        function onDeleteMember() {
+                            returnFunctionThis.loadMemberListData();
+                        }
+                    }
 
-            function logError() {
-                HelperService.log('loadMember Error');
-            }
+                    function logError() {
+                        HelperService.log('loadMember Error');
+                    }
+                }
+            });
         }
-
     }
 
     registerMember = () => {
@@ -139,7 +143,7 @@ export class MembersListComponent {
                 this.registerForSeasonComponent.showForm(OrganisationMemberID);
             }
         }
-  }
+    }
 
     /////////////////////////////////////////////////////////////
     //grid

@@ -8,11 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var countries_serv_1 = require('../../services/countries/countries.serv');
-var register_serv_1 = require('./register.serv');
-var user_name_serv_1 = require('../../services/user-name/user-name.serv');
+//import {FORM_DIRECTIVES, FormBuilder,Validators} from '@angular/forms';
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var countries_serv_1 = require("../../services/countries/countries.serv");
+var register_serv_1 = require("./register.serv");
+var user_name_serv_1 = require("../../services/user-name/user-name.serv");
+var confirm_comp_1 = require("../../utilities/confirm/confirm.comp");
+var forms_1 = require("@angular/forms");
 var RegisterComponent = (function () {
     function RegisterComponent(countriesService, registerService, userNameService) {
         var _this = this;
@@ -65,15 +68,9 @@ var RegisterComponent = (function () {
                 console.log(e);
                 userNameBlurThis.UserNameDuplicate = false;
             }
-            //var lUserNameDuplicate: boolean
             function onCheckUserNameSuccess(UserNameDuplicate) {
                 userNameBlurThis.UserNameDuplicate = UserNameDuplicate;
-                //lUserNameDuplicate = UserNameDuplicate;
-                //setTimeout(asdff, 1000);
             }
-            //function asdff() {
-            //    userNameBlurThis.UserNameDuplicate = lUserNameDuplicate;
-            //}
             function complete() {
                 console.log('userNameBlur complete');
             }
@@ -84,14 +81,27 @@ var RegisterComponent = (function () {
         this.loadCountries();
         this.UserNameDuplicate = false;
     };
+    RegisterComponent.prototype.canDeactivate = function () {
+        return this.confirmComponent.showConfirm('Are you sure you want to leave this form?');
+    };
+    __decorate([
+        core_1.ViewChild('registerForm'), 
+        __metadata('design:type', forms_1.NgForm)
+    ], RegisterComponent.prototype, "registerForm", void 0);
+    __decorate([
+        core_1.ViewChild(confirm_comp_1.ConfirmComponent), 
+        __metadata('design:type', confirm_comp_1.ConfirmComponent)
+    ], RegisterComponent.prototype, "confirmComponent", void 0);
     RegisterComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'register',
             templateUrl: 'register.html',
             styleUrls: ['register.css'],
-            directives: [router_1.ROUTER_DIRECTIVES],
-            providers: [countries_serv_1.CountriesService, register_serv_1.RegisterService, user_name_serv_1.UserNameService]
+            directives: [router_1.ROUTER_DIRECTIVES, confirm_comp_1.ConfirmComponent],
+            //directives: [ROUTER_DIRECTIVES, REACTIVE_FORM_DIRECTIVES, ConfirmComponent],
+            providers: [countries_serv_1.CountriesService, register_serv_1.RegisterService, user_name_serv_1.UserNameService, confirm_comp_1.ConfirmComponent
+            ]
         }), 
         __metadata('design:paramtypes', [countries_serv_1.CountriesService, register_serv_1.RegisterService, user_name_serv_1.UserNameService])
     ], RegisterComponent);

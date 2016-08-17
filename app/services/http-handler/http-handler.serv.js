@@ -9,54 +9,67 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 //import {Router} from '@angular/router';
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-var helper_serv_1 = require('../../services/helper/helper.serv');
-require('rxjs/Rx'); //for map
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var http_1 = require("@angular/http");
+var helper_serv_1 = require("../../services/helper/helper.serv");
+require("rxjs/Rx"); //for map
 var HttpHandlerService = (function () {
-    function HttpHandlerService(http) {
+    function HttpHandlerService(http, router) {
         this.http = http;
+        this.router = router;
         console.log('constructor HttpHandlerService');
         this.serviceBase = helper_serv_1.HelperService.getServiceBase();
     }
     //use http get to retrieve an object of type T
     //parameters: an array of name / value pairs
     HttpHandlerService.prototype.getObject = function (parameters, url, includeToken) {
-        var options = this.getOptions(parameters, includeToken);
-        var obs = this.http.get(this.serviceBase + url, options).map(function (res) { return res.json(); });
-        return obs;
+        if (helper_serv_1.HelperService.tokenIsValid()) {
+            var options = this.getOptions(parameters, includeToken);
+            var obs = this.http.get(this.serviceBase + url, options).map(function (res) { return res.json(); });
+            return obs;
+        }
+        else {
+            helper_serv_1.HelperService.sendToLogin(this.router);
+        }
     };
     HttpHandlerService.prototype.deleteObject = function (parameters, url) {
-        //deleteObject<T>(parameters: modSharedTypes.IHttpParameter[], url: string): Observable < any > {
-        var options = this.getOptions(parameters, true);
-        return this.http.delete(this.serviceBase + url, options);
+        if (helper_serv_1.HelperService.tokenIsValid()) {
+            var options = this.getOptions(parameters, true);
+            return this.http.delete(this.serviceBase + url, options);
+        }
+        else {
+            helper_serv_1.HelperService.sendToLogin(this.router);
+        }
     };
     //use http post to send an object 
     HttpHandlerService.prototype.postObject = function (parameterObj, url, includeToken) {
         if (includeToken === void 0) { includeToken = true; }
-        //postObject<T>(parameterObj: Object, url: string, includeToken: boolean = true): Observable < Response > {
-        var options = this.postOptions(includeToken);
-        var s = JSON.stringify(parameterObj);
-        return this.http.post(this.serviceBase + url, s, options);
+        if (helper_serv_1.HelperService.tokenIsValid()) {
+            var options = this.postOptions(includeToken);
+            var s = JSON.stringify(parameterObj);
+            return this.http.post(this.serviceBase + url, s, options);
+        }
+        else {
+            helper_serv_1.HelperService.sendToLogin(this.router);
+        }
     };
     //use http put to send an object 
     HttpHandlerService.prototype.putObject = function (parameterObj, url, includeToken) {
         if (includeToken === void 0) { includeToken = true; }
-        var options = this.postOptions(includeToken);
-        var s = JSON.stringify(parameterObj);
-        return this.http.put(this.serviceBase + url, s, options);
-    };
-    HttpHandlerService.prototype.logError = function () {
-        console.log('get Entities failed');
-    };
-    ;
-    HttpHandlerService.prototype.parseResponse = function (res) {
-        return res.json();
+        if (helper_serv_1.HelperService.tokenIsValid()) {
+            var options = this.postOptions(includeToken);
+            var s = JSON.stringify(parameterObj);
+            return this.http.put(this.serviceBase + url, s, options);
+        }
+        else {
+            helper_serv_1.HelperService.sendToLogin(this.router);
+        }
     };
     HttpHandlerService.prototype.getHeaders = function (includeToken) {
         var headers = new http_1.Headers();
-        //get login token from storage and add headers
         var token;
+        //get login token from storage and add headers
         headers.append('Accept', 'application/json');
         headers.append('Content-Type', 'application/json');
         if (includeToken) {
@@ -79,6 +92,7 @@ var HttpHandlerService = (function () {
         var params = this.getParameters(parameters);
         options.search = params;
         options.headers = headers;
+        options.body = '';
         return options;
     };
     HttpHandlerService.prototype.postOptions = function (includeToken) {
@@ -90,7 +104,7 @@ var HttpHandlerService = (function () {
     HttpHandlerService = __decorate([
         //for map
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
+        __metadata('design:paramtypes', [http_1.Http, router_1.Router])
     ], HttpHandlerService);
     return HttpHandlerService;
 }());

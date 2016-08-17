@@ -10,11 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 /// <reference path="../../../iblong2.d.ts" />
 //import {Response} from '@angular/http';
-var core_1 = require('@angular/core');
-var change_organisation_serv_1 = require('./change-organisation.serv');
-var helper_serv_1 = require('../../services/helper/helper.serv');
-var router_1 = require('@angular/router');
-var main_1 = require('ag-grid-ng2/main');
+var core_1 = require("@angular/core");
+var change_organisation_serv_1 = require("./change-organisation.serv");
+var helper_serv_1 = require("../../services/helper/helper.serv");
+var router_1 = require("@angular/router");
+var main_1 = require("ag-grid-ng2/main");
 var ChangeOrganisationComponent = (function () {
     function ChangeOrganisationComponent(router, changeOrganisationService) {
         var _this = this;
@@ -25,12 +25,7 @@ var ChangeOrganisationComponent = (function () {
         //get data
         this.loadOrganisations = function () {
             var loadOrganisationsThis = _this;
-            if (helper_serv_1.HelperService.tokenIsValid()) {
-                _this.changeOrganisationService.getOrganisations().subscribe(onGetOrganisationsSuccess, logError);
-            }
-            else {
-                helper_serv_1.HelperService.sendToLogin(_this.router);
-            }
+            _this.changeOrganisationService.getOrganisations().subscribe(onGetOrganisationsSuccess, logError);
             function logError(e) {
                 helper_serv_1.HelperService.log('getOrganisations Error');
             }
@@ -43,12 +38,7 @@ var ChangeOrganisationComponent = (function () {
         };
         this.changeOrganisation = function (Id) {
             var changeOrganisationThis = _this, Id;
-            if (helper_serv_1.HelperService.tokenIsValid()) {
-                _this.changeOrganisationService.changeOrganisation(Id).subscribe(onChangeOrganisationSuccess, logError);
-            }
-            else {
-                helper_serv_1.HelperService.sendToLogin(changeOrganisationThis.router);
-            }
+            _this.changeOrganisationService.changeOrganisation(Id).subscribe(onChangeOrganisationSuccess, logError);
             function logError(e) {
                 helper_serv_1.HelperService.log('changeOrganisation Error');
             }
