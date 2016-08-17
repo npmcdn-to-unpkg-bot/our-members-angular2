@@ -13,9 +13,9 @@ import {FooterButtonsService} from "./footer-buttons.serv";
 
 export class FooterButtons implements OnInit {
     constructor(private footerButtonsService: FooterButtonsService) {
-        // this.footerButtonsService.getDevOrProd().subscribe((s: string) => {
-        //     this.prodOrDev = s
-        // });
+        this.footerButtonsService.getDevOrProd().subscribe((s: string) => {
+            this.prodOrDev = s
+        });
     }
     prodOrDev: string;
 

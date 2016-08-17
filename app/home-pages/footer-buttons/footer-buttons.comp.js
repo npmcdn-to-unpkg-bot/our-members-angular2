@@ -18,9 +18,9 @@ var FooterButtons = (function () {
         this.ngOnInit = function () {
             _this.footerButtonsService.getDevOrProd().subscribe(function (s) { _this.prodOrDev = s; });
         };
-        // this.footerButtonsService.getDevOrProd().subscribe((s: string) => {
-        //     this.prodOrDev = s
-        // });
+        this.footerButtonsService.getDevOrProd().subscribe(function (s) {
+            _this.prodOrDev = s;
+        });
     }
     FooterButtons = __decorate([
         core_1.Component({
