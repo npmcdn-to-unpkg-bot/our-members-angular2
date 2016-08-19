@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72af1e14-6c78-4b81-8fbc-d75cb2cf064a" name="Default" comment="choose members">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.serv.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.comp.js" afterPath="$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.comp.js" />
     </list>
     <ignored path="our-members-angular2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,22 +49,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="choose-members.comp.ts" pinned="true" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/organisation-admin-pages/choose-members/choose-members.comp.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="email-member.comp.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.comp.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,7 +125,6 @@
         <option value="$PROJECT_DIR$/app/organisation-admin-pages/members/member-list/member-list.html" />
         <option value="$PROJECT_DIR$/app/home-pages/footer-buttons/footer-buttons.serv.ts" />
         <option value="$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.html" />
-        <option value="$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.comp.ts" />
         <option value="$PROJECT_DIR$/app/organisation-admin-pages/members/register-for-season/register-for-season.html" />
         <option value="$PROJECT_DIR$/app/organisation-admin-pages/members/member-list/member-list.comp.js" />
         <option value="$PROJECT_DIR$/app/organisation-admin-pages/members/member-list/member-list.comp.ts" />
@@ -134,6 +135,8 @@
         <option value="$PROJECT_DIR$/app/home-pages/register/register.html" />
         <option value="$PROJECT_DIR$/styles/styles.css" />
         <option value="$PROJECT_DIR$/app/organisation-admin-pages/choose-members/choose-members.html" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.comp.ts" />
       </list>
     </option>
   </component>
@@ -487,7 +490,7 @@
       <workItem from="1471478950679" duration="17030000" />
       <workItem from="1471588864974" duration="597000" />
       <workItem from="1471593168089" duration="11184000" />
-      <workItem from="1471636450845" duration="1405000" />
+      <workItem from="1471636450845" duration="1545000" />
     </task>
     <task id="LOCAL-00001" summary="rc5">
       <created>1471466277735</created>
@@ -538,11 +541,18 @@
       <option name="project" value="LOCAL" />
       <updated>1471636602773</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="choose members">
+      <created>1471638586256</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1471638586256</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64207000" />
+    <option name="totallyTimeSpent" value="64347000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -933,16 +943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.comp.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="13" column="50" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/organisation-admin-pages/choose-members/choose-members.comp.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -962,6 +962,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/organisation-admin-pages/members/member/member.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
@@ -970,11 +978,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+    <entry file="file://$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.comp.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
-          <folding />
+        <state relative-caret-position="391">
+          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

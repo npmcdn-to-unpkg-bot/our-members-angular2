@@ -19,10 +19,10 @@ var EmailMemberComponent = (function () {
         var _this = this;
         this.router = router;
         this.emailMemberService = emailMemberService;
-        // applyFiltersNext = ()=> {
-        //     this.hideAll();
-        //     this.memberFilter = true;
-        // }
+        this.applyFiltersNext = function () {
+            _this.hideAll();
+            //this.memberFilter = true;
+        };
         // memberFilterBack = ()=> {
         //     this.hideAll();
         //     this.applyFilters = true;
