@@ -6,6 +6,7 @@ import {RecentLoginsComponent} from "./recent-logins/recent-logins.comp";
 import {CanDeactivateGuard} from "../services/can-deactivate/can-deactivate-guard.serv";
 import {AuthGuard} from "../services/auth-guard/auth-guard.serv";
 import {OrganisationAdminMasterComponent} from "./organisation-admin-master/organisation-admin-master.comp";
+import {EmailMemberComponent} from "./email-member/email-member.comp";
 
 
 export const organisationAdminRoutes: Routes = [
@@ -18,7 +19,8 @@ export const organisationAdminRoutes: Routes = [
             {path: 'member-list', component: MembersListComponent, canDeactivate: [CanDeactivateGuard]},
             {path: 'change-organisation', component: ChangeOrganisationComponent},
             {path: 'recent-logins', component: RecentLoginsComponent},
-            {path: 'error-list', component: ErrorListComponent}
+            {path: 'error-list', component: ErrorListComponent},
+            {path: 'email-members', component: EmailMemberComponent}
         ]
     }
 ];

@@ -34,6 +34,12 @@ interface structJustAnInt {
     i: number;
 }
 
+interface structCountry {
+    CountryID: number;
+    Name: string;
+}
+
+
 interface structOrganisationMember {
     OrganisationMemberID: number;
     FirstName: string;
@@ -82,19 +88,31 @@ interface structOrganisationMember {
     boolMmembershipInvoiceEntered: boolean;
 }
 
-interface structNextMemberNumber {
-    organisationUsesIncrementingMemberNumbers: boolean;
-    memberNumber: number;
-}
+// interface structNextMemberNumber {
+//     organisationUsesIncrementingMemberNumbers: boolean;
+//     memberNumber: number;
+// }
 
 interface structMemberListData {
     Members: any[];
-    Countries: any[];
+    Countries: structCountry[];
     Groups: any[];
     MembershipTypes: any[];
     defaultCountryId: number;
     IncrementMemberNumber: boolean;
     NextMemberNumber: number;
+}
+
+interface structGroup {
+    GroupID: number;
+    Name: string;
+}
+
+interface  structMembershipType {
+    MembershipTypeID: number;
+    Name: string;
+    Cost: number;
+    Months: number;
 }
 
 interface structErrorDetails {
@@ -122,3 +140,4 @@ interface structsaveRegisterForSeasonData {
     comment: string;
     sCurrentDate: string;
 }
+

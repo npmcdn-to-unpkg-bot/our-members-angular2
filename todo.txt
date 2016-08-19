@@ -1,7 +1,6 @@
 ﻿
 -----------------------------
 form valid
-click add member, check if need new member number
 save add / edit
 open receipt on return?
 -----------------------------
@@ -11,4 +10,9 @@ validation of save member shows correct page
 
 then 
 	email member
+page 1   show filters, next button fills grid
+page 2  grid of members with checkboxes, select all, unselect all, back, next
+page 3 subject, message, add atachment, back, send
+page 4 upload file, list of uploads with checkboxes. upload file refreshes list and selects in list. return to message button
+
 

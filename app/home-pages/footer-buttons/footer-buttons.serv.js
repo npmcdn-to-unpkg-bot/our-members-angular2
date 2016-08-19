@@ -16,7 +16,7 @@ var FooterButtonsService = (function () {
     function FooterButtonsService(http, router) {
         this.http = http;
         this.router = router;
-        console.log('constructor CountriesService');
+        console.log('constructor FooterButtonsService');
     }
     FooterButtonsService.prototype.getDevOrProd = function () {
         var parameters = [];

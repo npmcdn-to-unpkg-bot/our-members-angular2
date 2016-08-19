@@ -6,7 +6,7 @@ import {Http} from "@angular/http";
 @Injectable()
 export class FooterButtonsService {
     constructor(private http: Http, private router: Router) {
-        console.log('constructor CountriesService');
+        console.log('constructor FooterButtonsService');
     }
 
     getDevOrProd() {

@@ -1,0 +1,119 @@
+<div class="form-container">
+    <form (ngSubmit)="saveMemberIds()" #transactionForm="ngForm">
+        <div class="form-content">
+            <div [hidden]="!applyFilters" style="border: 1px gray solid; padding: 10px 2%">
+                <div class="row">
+                    <div class="col-sm-12 info-text">
+                        <!--Firstly select the members or groups with whom you wish to communicate and then click the "NEXT"-->
+                        <!--button.<br /> If you wish to email a set of members who are not all part of a group just press-->
+                        <!--"NEXT" - you will be able to select individual members on the next screen.-->
+                    </div>
+
+                    <div class="col-sm-4 form-label">
+                        Membership Status
+                    </div>
+                    <div class="col-sm-8 ">
+                        <div class="radio-button-container">
+                            <div class="radio-button-element">
+                                <input type="radio"
+                                       id="inputMembershipStatusActive"
+                                       class="radio-button"
+                                       [(ngModel)]="membershipStatus"
+                                       name="membershipStatus"
+                                       #inputMembershipStatusActive="ngModel"
+                                       ngControl="ngcMembershipStatusActive"
+                                       [value]=C_Active>
+                                <label for="inputMembershipStatusActive">Active</label>
+
+                            </div>
+                            <div class="radio-button-element">
+                                <input type="radio"
+                                       id="inputMembershipStatusInactive"
+                                       class="radio-button"
+                                       [(ngModel)]="membershipStatus"
+                                       name="membershipStatus"
+                                       #inputMembershipStatusInactive="ngModel"
+                                       ngControl="ngcMembershipStatusInactive"
+                                       [value]=C_Inactive>
+                                <label for="inputMembershipStatusInactive">Inactive</label>
+                            </div>
+                            <div class="radio-button-element">
+                                <input type="radio"
+                                       id="inputMembershipStatusBoth"
+                                       class="radio-button"
+                                       [(ngModel)]="membershipStatus"
+                                       name="membershipStatus"
+                                       #inputMembershipStatusBoth="ngModel"
+                                       ngControl="ngcMembershipStatusBoth"
+                                       [value]=C_Both>
+                                <label for="inputMembershipStatusBoth">Both</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 form-label">
+                        Choose filter
+                    </div>
+                    <div class="col-sm-8 ">
+                        <div class="radio-button-container">
+                            <div class="radio-button-element">
+                                <input type="radio"
+                                       id="inputMemberFilterMembers"
+                                       class="radio-button"
+                                       [(ngModel)]="memberFilter"
+                                       name="memberFilter"
+                                       #inputMemberFilterMembers="ngModel"
+                                       ngControl="ngcMemberFilterMembers"
+                                       [value]=C_Members>
+                                <label for="inputMemberFilterMembers">Select Members</label>
+                            </div>
+                            <div class="radio-button-element">
+                                <input type="radio"
+                                       id="inputMemberFilterTeamsGroups"
+                                       class="radio-button"
+                                       [(ngModel)]="memberFilter"
+                                       name="memberFilter"
+                                       #inputMemberFilterTeamsGroups="ngModel"
+                                       ngControl="ngcMemberFilterTeamsGroups"
+                                       [value]=C_TeamsGroups>
+                                <label for="inputMemberFilterTeamsGroups">Select Teams/Groups</label>
+                            </div>
+                            <div class="radio-button-element">
+                                <input type="radio"
+                                       id="inputMemberFilterMembershipType"
+                                       class="radio-button"
+                                       [(ngModel)]="memberFilter"
+                                       name="memberFilter"
+                                       #inputMemberFilterMembershipType="ngModel"
+                                       ngControl="ngcMemberFilterMembershipType"
+                                       [value]=C_MembershipType>
+                                <label for="inputMemberFilterMembershipType">Select Membership Type</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-10 ">
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="button" class="save-button" (click)="applyFiltersNext()">Next</button>
+                    </div>
+                </div>
+            </div>
+            <div [hidden]="!memberGrid" style="border: 1px gray solid; padding: 10px 2%">
+                memberFilter
+                <div class="row">
+                    <div class="col-sm-2 ">
+                        <button class="save-button" (click)="memberFilterBack()">Back</button>
+                    </div>
+                    <div class="col-sm-8 ">
+                    </div>
+                    <div class="col-sm-2">
+                        <button class="save-button" (click)="memberFilterNext()">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

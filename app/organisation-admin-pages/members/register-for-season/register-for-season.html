@@ -11,29 +11,29 @@
                 <div class="col-sm-12 ">
                     <div class="radio-button-container">
                         <div class="radio-button-element">
-
                             <input type="radio"
+                                   id="inputRegisterForThisSeason"
                                    class="radio-button"
                                    [(ngModel)]="registerForSeason"
                                    name="registerForSeason"
                                    #inputRegisterForThisSeason="ngModel"
                                    ngControl="ngcRegisterForThisSeason"
-                                   [hidden]="!thisSeasonVisible"
+                                   *ngIf="thisSeasonVisible"
                                    [value]=C_thisSeason>
-                            {{thisSeasonLabel}}
-                        </div>
+                            <label for="inputRegisterForThisSeason">{{thisSeasonLabel}}</label>
 
+                        </div>
                         <div class="radio-button-element">
                             <input type="radio"
+                                   id="inputRegisterForNextSeason"
                                    class="radio-button"
                                    [(ngModel)]="registerForSeason"
                                    name="registerForSeason"
                                    #inputRegisterForNextSeason="ngModel"
                                    ngControl="ngcRegisterForNextSeason"
-                                   [hidden]="!nextSeasonVisible"
+                                   *ngIf="nextSeasonVisible"
                                    [value]=C_nextSeason>
-                            {{nextSeasonLabel}}
-
+                            <label for="inputRegisterForNextSeason">{{nextSeasonLabel}}</label>
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                 <div class="col-sm-1 ">
                 </div>
                 <div class="col-sm-5 ">
-                    <button type="submit"  class="save-button" [hidden]="!okButtonVisible">OK</button>
+                    <button type="submit"  class="save-button" *ngIf="okButtonVisible">OK</button>
                 </div>
                 <div class="col-sm-5 ">
                     <button type="button" class="cancel-button" (click)="cancel()">Cancel</button>

@@ -1,106 +1,106 @@
 ﻿<div class="menu-container">
     <div class="menu-group">
         <div class="menu-group-header" (click)="membersClick()">
-            <img src="../../../../images/Users.png" />
+            <img src="../../../images/Users.png" />
             Members
         </div>
-        <div class="menu-group-content" [ngClass]="{'transition':membersContentDisplay}" [hidden]="!membersContentDisplay">
+        <div class="menu-group-content" [ngClass]="{'transition':membersContentDisplay}" *ngIf="membersContentDisplay">
             <div class="menu-group-link" [routerLink]="['member-list']">
                 Manage Members
             </div>
-            <div class="menu-group-link">
-                Manage Teams or Groups
-            </div>
-            <div class="menu-group-link">
-                Print Member or Team Lists
-            </div>
-            <div class="menu-group-link">
-                Email Management
-            </div>
+            <!--<div class="menu-group-link">-->
+                <!--Manage Teams or Groups-->
+            <!--</div>-->
+            <!--<div class="menu-group-link">-->
+                <!--Print Member or Team Lists-->
+            <!--</div>-->
+            <!--<div class="menu-group-link">-->
+                <!--Email Management-->
+            <!--</div>-->
         </div>
     </div>
-    <div class="menu-group">
-        <div class="menu-group-header" (click)="moneyClick()">
-            <img src="../../../../images/Receipt.png" />
-            Money
-        </div>
-        <div class="menu-group-content" [hidden]="!moneyContentDisplay" [ngClass]="{'transition':membersContentDisplay}">
-            <div class="menu-group-link">
-                Bank Accounts
-            </div>
-            <div class="menu-group-link">
-                Bank Transfer
-            </div>
-            <div class="menu-group-link">
-                Bank Reconciliation
-            </div>
-            <div class="menu-group-link">
-                Deposit
-            </div>
-            <div class="menu-group-link">
-                Expense
-            </div>
-            <div class="menu-group-link">
-                Financal Categories
-            </div>
-            <div class="menu-group-link">
-                Import Bank Records
-            </div>
-            <div class="menu-group-link">
-                Invoice
-            </div>
-            <div class="menu-group-link">
-                Memberships Owing
-            </div>
-            <div class="menu-group-link">
-                Receipt
-            </div>
-        </div>
-    </div>
+    <!--<div class="menu-group">-->
+        <!--<div class="menu-group-header" (click)="moneyClick()">-->
+            <!--<img src="../../../images/Receipt.png" />-->
+            <!--Money-->
+        <!--</div>-->
+        <!--<div class="menu-group-content" *ngIf="moneyContentDisplay" [ngClass]="{'transition':membersContentDisplay}">-->
+            <!--<div class="menu-group-link">-->
+                <!--Bank Accounts-->
+            <!--</div>-->
+            <!--<div class="menu-group-link">-->
+                <!--Bank Transfer-->
+            <!--</div>-->
+            <!--<div class="menu-group-link">-->
+                <!--Bank Reconciliation-->
+            <!--</div>-->
+            <!--<div class="menu-group-link">-->
+                <!--Deposit-->
+            <!--</div>-->
+            <!--<div class="menu-group-link">-->
+                <!--Expense-->
+            <!--</div>-->
+            <!--<div class="menu-group-link">-->
+                <!--Financal Categories-->
+            <!--</div>-->
+            <!--<div class="menu-group-link">-->
+                <!--Import Bank Records-->
+            <!--</div>-->
+            <!--<div class="menu-group-link">-->
+                <!--Invoice-->
+            <!--</div>-->
+            <!--<div class="menu-group-link">-->
+                <!--Memberships Owing-->
+            <!--</div>-->
+            <!--<div class="menu-group-link">-->
+                <!--Receipt-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
     <div class="menu-group">
         <div class="menu-group-header" (click)="communicationClick()">
-            <img src="../../../../images/Mail.png" />
+            <img src="../../../images/Mail.png" />
             Communication
         </div>
-        <div class="menu-group-content" [hidden]="!communicationContentDisplay">
-            <div class="menu-group-link">
-                Communications Sent
-            </div>
-            <div class="menu-group-link">
+        <div class="menu-group-content" *ngIf="communicationContentDisplay">
+            <!--<div class="menu-group-link">-->
+                <!--Communications Sent-->
+            <!--</div>-->
+            <div class="menu-group-link" [routerLink]="['email-members']">
                 Email Members
             </div>
-            <div class="menu-group-link">
-                Email Management
-            </div>
-            <div class="menu-group-link">
-                Member Statements - Email
-            </div>
-            <div class="menu-group-link">
-                Member Statements - Print
-            </div>
-            <div class="menu-group-link">
-                Print Labels
-            </div>
-            <div class="menu-group-link">
-                Reminders - Email
-            </div>
-            <div class="menu-group-link">
-                Reminders - Print
-            </div>
-            <div class="menu-group-link">
-                SMS Members
-            </div>
-            <div class="menu-group-link">
-                SMS - buy Units
-            </div>
+            <!--<div class="menu-group-link">-->
+                <!--Email Management-->
+            <!--</div>-->
+            <!--<div class="menu-group-link">-->
+                <!--Member Statements - Email-->
+            <!--</div>-->
+            <!--<div class="menu-group-link">-->
+                <!--Member Statements - Print-->
+            <!--</div>-->
+            <!--<div class="menu-group-link">-->
+                <!--Print Labels-->
+            <!--</div>-->
+            <!--<div class="menu-group-link">-->
+                <!--Reminders - Email-->
+            <!--</div>-->
+            <!--<div class="menu-group-link">-->
+                <!--Reminders - Print-->
+            <!--</div>-->
+            <!--<div class="menu-group-link">-->
+                <!--SMS Members-->
+            <!--</div>-->
+            <!--<div class="menu-group-link">-->
+                <!--SMS - buy Units-->
+            <!--</div>-->
         </div>
     </div>
     <div class="menu-group">
         <div class="menu-group-header" (click)="reportsClick()">
-            <img src="../../../../images/Folder.png" />
+            <img src="../../../images/Folder.png" />
             Reports
         </div>
-        <div class="menu-group-content" [hidden]="!reportsContentDisplay">
+        <div class="menu-group-content" *ngIf="reportsContentDisplay">
             <div class="menu-group-link">
                 Audit
             </div>
@@ -120,10 +120,10 @@
     </div>
     <div class="menu-group">
         <div class="menu-group-header" (click)="settingsClick()">
-            <img src="../../../../images/Gears.png" />
+            <img src="../../../images/Gears.png" />
             Settings
         </div>
-        <div class="menu-group-content" [hidden]="!settingsContentDisplay">
+        <div class="menu-group-content" *ngIf="settingsContentDisplay">
             <div class="menu-group-link">
                 Account Categories
             </div>
@@ -152,10 +152,10 @@
     </div>
     <div class="menu-group">
         <div class="menu-group-header" (click)="userManagementClick()">
-            <img src="../../../../images/Man.png" />
+            <img src="../../../images/Man.png" />
             User Management
         </div>
-        <div class="menu-group-content" [hidden]="!userManagementContentDisplay">
+        <div class="menu-group-content" *ngIf="userManagementContentDisplay">
             <div class="menu-group-link">
                 Roles
             </div>
@@ -166,10 +166,10 @@
     </div>
     <div class="menu-group">
         <div class="menu-group-header" (click)="helpResourcesClick()">
-            <img src="../../../../images/Info32.png" />
+            <img src="../../../images/Info32.png" />
             Help Resources
         </div>
-        <div class="menu-group-content" [hidden]="!helpResourcesContentDisplay">
+        <div class="menu-group-content" *ngIf="helpResourcesContentDisplay">
             <div class="menu-group-link">
                 iBlong2 User Guide
             </div>
@@ -179,11 +179,11 @@
         </div>
     </div>
     <div class="menu-group">
-        <div class="menu-group-header" (click)="adminClick()" [hidden]="!adminLoggedIn">
-            <img src="../../../../images/Info32.png" />
+        <div class="menu-group-header" (click)="adminClick()" *ngIf="adminLoggedIn">
+            <img src="../../../images/Info32.png" />
             Admin
         </div>
-        <div class="menu-group-content" [hidden]="!adminContentDisplay">
+        <div class="menu-group-content" *ngIf="adminContentDisplay">
             <div class="menu-group-link" [routerLink]="['change-organisation']">
                 Change Organisation
             </div>

@@ -52,7 +52,11 @@ var MembersListComponent = (function () {
                 loadMembersThis.gridOptions.api.setRowData(loadMembersThis.Members);
                 loadMembersThis.gridOptions.api.sizeColumnsToFit();
                 loadMembersThis.rowSelected = false;
-                loadMembersThis.memberComponent.loadObjects(data.Countries, data.MembershipTypes, data.Groups, data.defaultCountryId);
+                loadMembersThis.Countries = data.Countries;
+                loadMembersThis.MembershipTypes = data.MembershipTypes;
+                loadMembersThis.Groups = data.Groups;
+                loadMembersThis.defaultCountryId = data.defaultCountryId;
+                //loadMembersThis.memberComponent.loadObjects(data.Countries, data.MembershipTypes, data.Groups, data.defaultCountryId);
             }
         };
         this.getSelectedOrganisationMemberID = function () {
@@ -65,14 +69,15 @@ var MembersListComponent = (function () {
             }
         };
         this.addMember = function () {
-            _this.memberComponent.addMember(_this.IncrementMemberNumber);
-            _this.showMembershipList = false;
             _this.showMembershipModal = true;
+            _this.showMembershipList = false;
+            _this.memberComponent.addMember(_this.IncrementMemberNumber);
+            _this.memberComponent.loadObjects(_this.Countries, _this.MembershipTypes, _this.Groups, _this.defaultCountryId);
         };
         this.editMember = function () {
             var OrganisationMemberID = _this.getSelectedOrganisationMemberID();
-            _this.showMembershipList = false;
             _this.showMembershipModal = true;
+            _this.showMembershipList = false;
             if (OrganisationMemberID === -1) {
                 _this.popupComponent.showPopup('Please select  a member to edit');
             }
@@ -98,22 +103,22 @@ var MembersListComponent = (function () {
                         else {
                             helper_serv_1.HelperService.sendToLogin(returnFunctionThis.router);
                         }
-                        function onTestDeleteMember(structError) {
-                            if (structError.boolError) {
-                                returnFunctionThis.popupComponent.showPopup(structError.ErrorMessage);
-                            }
-                            else {
-                                returnFunctionThis.memberService.deleteMember(OrganisationMemberID).subscribe(onDeleteMember, logError);
-                            }
-                            function onDeleteMember() {
-                                returnFunctionThis.loadMemberListData();
-                            }
-                        }
-                        function logError() {
-                            helper_serv_1.HelperService.log('loadMember Error');
-                        }
                     }
                 });
+            }
+            function onTestDeleteMember(structError) {
+                if (structError.boolError) {
+                    deleteMemberThis.popupComponent.showPopup(structError.ErrorMessage);
+                }
+                else {
+                    deleteMemberThis.memberService.deleteMember(OrganisationMemberID).subscribe(onDeleteMember, logError);
+                }
+                function onDeleteMember() {
+                    deleteMemberThis.loadMemberListData();
+                }
+            }
+            function logError() {
+                helper_serv_1.HelperService.log('loadMember Error');
             }
         };
         this.registerMember = function () {

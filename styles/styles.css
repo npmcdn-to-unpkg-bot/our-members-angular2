@@ -145,6 +145,7 @@ input[type="checkbox"], select.form-control, textarea.form-control {
     }
 
 .radio-button-container {
+    border: 1px solid lightgrey;
     /*padding: 5px 10% 5px 10%;*/
 }
 
@@ -331,9 +332,8 @@ input[type="checkbox"], select.form-control, textarea.form-control {
     font-size: 14pt;
     /*font-weight: bold;*/
     color: white;
-    margin-right: 2%;
     float: left;
-    margin: 0 0 5px 0;
+    margin: 0 2% 5px 0;
 }
 
     .info-button:hover {
@@ -398,7 +398,7 @@ input[type="checkbox"], select.form-control, textarea.form-control {
 }
 
 .Body-text {
-    font-size: 14.0px;
+    font-size: 14px;
     line-height: 1.71em;
 }
 
@@ -425,4 +425,10 @@ input[type="checkbox"], select.form-control, textarea.form-control {
     font-size: large;
     margin: 10px 0 20px 0;
     padding: 5px 0;
+}
+
+.info-text{
+    font-size: large;
+    padding: 20px 4%;
+    color: black;
 }

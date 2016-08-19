@@ -43,6 +43,10 @@ export class MembersListComponent {
     }
 
     Members: any[];
+    Countries :structCountry[];
+    MembershipTypes:structMembershipType[];
+    Groups :structGroup[];
+    defaultCountryId: number;
     IncrementMemberNumber: boolean;
 
     //////////////////////////////////////////////////////////////
@@ -66,7 +70,11 @@ export class MembersListComponent {
             loadMembersThis.gridOptions.api.setRowData(loadMembersThis.Members);
             loadMembersThis.gridOptions.api.sizeColumnsToFit();
             loadMembersThis.rowSelected = false;
-            loadMembersThis.memberComponent.loadObjects(data.Countries, data.MembershipTypes, data.Groups, data.defaultCountryId)
+            loadMembersThis.Countries = data.Countries;
+            loadMembersThis.MembershipTypes = data.MembershipTypes;
+            loadMembersThis.Groups = data.Groups;
+            loadMembersThis.defaultCountryId = data.defaultCountryId;
+            //loadMembersThis.memberComponent.loadObjects(data.Countries, data.MembershipTypes, data.Groups, data.defaultCountryId);
         }
     }
 
@@ -80,15 +88,16 @@ export class MembersListComponent {
     }
 
     addMember = () => {
-        this.memberComponent.addMember(this.IncrementMemberNumber); 
-        this.showMembershipList = false;
         this.showMembershipModal = true;
+        this.showMembershipList = false;
+        this.memberComponent.addMember(this.IncrementMemberNumber);
+        this.memberComponent.loadObjects(this.Countries, this.MembershipTypes, this.Groups, this.defaultCountryId);
     }
 
     editMember = () => {
         var OrganisationMemberID: number = this.getSelectedOrganisationMemberID();
-        this.showMembershipList = false;
         this.showMembershipModal = true;
+        this.showMembershipList = false;
         if (OrganisationMemberID === -1) {
             this.popupComponent.showPopup('Please select  a member to edit');
         } else {
@@ -112,22 +121,22 @@ export class MembersListComponent {
                     } else {
                         HelperService.sendToLogin(returnFunctionThis.router)
                     }
-                    function onTestDeleteMember(structError: structError) {
-                        if (structError.boolError) {
-                            returnFunctionThis.popupComponent.showPopup(structError.ErrorMessage);
-                        } else {
-                            returnFunctionThis.memberService.deleteMember(OrganisationMemberID).subscribe(onDeleteMember, logError);
-                        }
-                        function onDeleteMember() {
-                            returnFunctionThis.loadMemberListData();
-                        }
-                    }
-
-                    function logError() {
-                        HelperService.log('loadMember Error');
-                    }
                 }
             });
+        }
+        function onTestDeleteMember(structError: structError) {
+            if (structError.boolError) {
+                deleteMemberThis.popupComponent.showPopup(structError.ErrorMessage);
+            } else {
+                deleteMemberThis.memberService.deleteMember(OrganisationMemberID).subscribe(onDeleteMember, logError);
+            }
+            function onDeleteMember() {
+                deleteMemberThis.loadMemberListData();
+            }
+        }
+
+        function logError() {
+            HelperService.log('loadMember Error');
         }
     }
 
@@ -149,11 +158,11 @@ export class MembersListComponent {
     //grid
     columnDefs: any[] = [
 
-        { headerName: "Last Name", field: "LastName" },
-        { headerName: "First Name", field: "FirstName" },
-        { headerName: "Membership Type", field: "MembershipType" },
-        { headerName: "M'ship To", field: "sMembershipPaidTo", cellRenderer: HelperService.formatDateCell },
-        { headerName: "Owing", field: "FeesOwing" }
+        {headerName: "Last Name", field: "LastName"},
+        {headerName: "First Name", field: "FirstName"},
+        {headerName: "Membership Type", field: "MembershipType"},
+        {headerName: "M'ship To", field: "sMembershipPaidTo", cellRenderer: HelperService.formatDateCell},
+        {headerName: "Owing", field: "FeesOwing"}
     ];
 
     showMembershipList: boolean = true;
