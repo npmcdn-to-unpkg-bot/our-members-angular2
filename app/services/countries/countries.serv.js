@@ -21,7 +21,7 @@ var CountriesService = (function () {
     CountriesService.prototype.getCountries = function () {
         var parameters = [];
         var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject(parameters, 'api/countries', false);
+        return httpHandlerService.getObject(parameters, 'api/countries', false, false);
     };
     CountriesService = __decorate([
         core_1.Injectable(), 

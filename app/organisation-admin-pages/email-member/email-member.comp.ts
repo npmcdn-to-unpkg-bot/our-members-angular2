@@ -4,6 +4,7 @@ import {HelperService} from "../../services/helper/helper.serv";
 import {AgGridNg2} from "ag-grid-ng2/main";
 import {EmailMemberService} from "../email-member/email-member.serv";
 import {ChooseMembersComponent} from "../choose-members/choose-members.comp";
+import {GridOptions} from "ag-grid/main";
 
 @Component({
     moduleId: module.id,
@@ -28,6 +29,12 @@ export class EmailMemberComponent implements OnInit {
         this.hideAll();
         //this.memberFilter = true;
     }
+
+    displayMembers=(structOrganisationMemberArray: structOrganisationMember[])=>{
+        this.gridOptions.api.setRowData(structOrganisationMemberArray);
+        console.log(structOrganisationMemberArray);
+    }
+
     // memberFilterBack = ()=> {
     //     this.hideAll();
     //     this.applyFilters = true;
@@ -62,4 +69,19 @@ export class EmailMemberComponent implements OnInit {
     sendEmail=()=>{
     }
     chooseMembers: boolean = true;
+
+
+    /////////////////////////////////////////////////////////////
+    //grid
+    columnDefs: any[] = [
+
+        {field: "OrganisationMemberID", hide: true},
+        {headerName: "Last Name", field: "LastName", checkboxSelection: true},
+        {headerName: "First Name", field: "FirstName"},
+    ];
+
+
+    gridOptions: GridOptions = HelperService.getGridOptions(this.columnDefs, null, null);
+
+
 }

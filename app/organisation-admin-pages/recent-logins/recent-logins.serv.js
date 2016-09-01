@@ -21,7 +21,7 @@ var RecentLoginsService = (function () {
     RecentLoginsService.prototype.getRecentLogins = function () {
         var parameters = [];
         var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject(parameters, 'api/recent-logins', true);
+        return httpHandlerService.getObject(parameters, 'api/recent-logins', true, false);
     };
     RecentLoginsService = __decorate([
         core_1.Injectable(), 

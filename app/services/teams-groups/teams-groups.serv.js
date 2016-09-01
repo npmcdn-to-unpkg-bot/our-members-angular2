@@ -21,7 +21,7 @@ var TeamsGroupsService = (function () {
     TeamsGroupsService.prototype.getTeamsGroups = function () {
         var parameters = [];
         var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject(parameters, 'api/groups', true);
+        return httpHandlerService.getObject(parameters, 'api/groups', true, false);
     };
     TeamsGroupsService = __decorate([
         core_1.Injectable(), 

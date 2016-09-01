@@ -1,7 +1,7 @@
 ﻿//import {Router} from '@angular/router';
 import {Injectable} from "@angular/core";
 import {Router} from "@angular/router";
-import {Http, Headers, RequestOptionsArgs, Response, URLSearchParams} from "@angular/http";
+import {Http, Headers, RequestOptionsArgs, Response, URLSearchParams, ResponseContentType} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 import {HelperService} from "../../services/helper/helper.serv";
 import "rxjs/Rx"; //for map
@@ -17,9 +17,12 @@ export class HttpHandlerService {
 
     //use http get to retrieve an object of type T
     //parameters: an array of name / value pairs
-    getObject<T>(parameters: modSharedTypes.IHttpParameter[], url: string, includeToken: boolean): Observable<T> {
+    getObject<T>(parameters: modSharedTypes.IHttpParameter[], url: string, includeToken: boolean, useArrayBuffer: boolean): Observable<T> {
         if (HelperService.tokenIsValid()) {
-            var options: RequestOptionsArgs = this.getOptions(parameters, includeToken);
+            var options: RequestOptionsArgs = this.getOptions(parameters, includeToken, useArrayBuffer);
+            // var options: RequestOptionsArgs={}
+            // options.responseType=ResponseContentType.ArrayBuffer;
+            //var obs = this.http.get(this.serviceBase + url, {responseType: ResponseContentType.ArrayBuffer}).map(res => res.json());
             var obs = this.http.get(this.serviceBase + url, options).map(res => res.json());
             return obs;
         } else {
@@ -29,7 +32,7 @@ export class HttpHandlerService {
 
     deleteObject(parameters: modSharedTypes.IHttpParameter[], url: string): Observable<Response> {
         if (HelperService.tokenIsValid()) {
-            var options: RequestOptionsArgs = this.getOptions(parameters, true);
+            var options: RequestOptionsArgs = this.getOptions(parameters, true, false);
             return this.http.delete(this.serviceBase + url, options);
         } else {
             HelperService.sendToLogin(this.router)
@@ -82,13 +85,16 @@ export class HttpHandlerService {
         return params;
     }
 
-    private getOptions(parameters: modSharedTypes.IHttpParameter[], includeToken: boolean) {
+    private getOptions(parameters: modSharedTypes.IHttpParameter[], includeToken: boolean, useArrayBuffer: boolean) {
         var options: RequestOptionsArgs = {};
         var headers = this.getHeaders(includeToken);
         var params: URLSearchParams = this.getParameters(parameters);
         options.search = params;
         options.headers = headers;
         options.body='';
+        if (useArrayBuffer){
+            options.responseType=ResponseContentType.ArrayBuffer;
+        }
         return options;
     }
 

@@ -12,7 +12,7 @@ export class FooterButtonsService {
     getDevOrProd() {
         var parameters: modSharedTypes.IHttpParameter[] = [];
         var httpHandlerService = new HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject(parameters, 'api/organisations/get-dev-or-prod', false);
+        return httpHandlerService.getObject(parameters, 'api/organisations/get-dev-or-prod', false, false);
     }
 }
 

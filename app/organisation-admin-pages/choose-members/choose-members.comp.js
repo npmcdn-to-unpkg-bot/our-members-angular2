@@ -13,16 +13,27 @@ var helper_serv_1 = require("../../services/helper/helper.serv");
 var forms_1 = require("@angular/forms");
 var membership_type_serv_1 = require("../../services/membership-type/membership-type.serv");
 var teams_groups_serv_1 = require("../../services/teams-groups/teams-groups.serv");
+var ag_grid_formcontrol_1 = require("../../utilities/ag-grid-formcontrol/ag-grid-formcontrol");
+var main_1 = require("ag-grid-ng2/main");
+var member_serv_1 = require("../members/member/member.serv");
 var ChooseMembersComponent = (function () {
-    function ChooseMembersComponent(builder, membershipTypesService, teamsGroupsService) {
+    function ChooseMembersComponent(builder, membershipTypesService, teamsGroupsService, memberService) {
         var _this = this;
         this.membershipTypesService = membershipTypesService;
         this.teamsGroupsService = teamsGroupsService;
+        this.memberService = memberService;
+        this.membersChosen = new core_1.EventEmitter();
+        this.showFilters = true;
+        this.memberGrid = false;
+        this.columnDefsTeamsGroups = [
+            { headerName: "GroupID", field: "GroupID", hide: true },
+            { headerName: "Name", field: "Name", width: 300, checkboxSelection: true }
+        ];
         this.getTeamsGroups = function () {
             var getTeamsGroupsThis = _this;
             getTeamsGroupsThis.teamsGroupsService.getTeamsGroups().subscribe(onGetMemberListSuccess, logError);
             function onGetMemberListSuccess(TeamsGroups) {
-                getTeamsGroupsThis.TeamsGroups = TeamsGroups;
+                getTeamsGroupsThis.teamFormControl.gridOptions.api.setRowData(TeamsGroups);
                 helper_serv_1.HelperService.log('getTeamsGroups success');
             }
             function logError() {
@@ -40,8 +51,22 @@ var ChooseMembersComponent = (function () {
                 helper_serv_1.HelperService.log('error getting MembershipTypes');
             }
         };
-        this.applyFiltersNext = function () {
-            alert('applyFiltersNext');
+        this.getFiltersNext = function () {
+            var structChooseMembers = _this.chooseMembersForm.value;
+            _this.showFilters = false;
+            _this.memberGrid = true;
+            _this.loadFilteredMembers(structChooseMembers);
+        };
+        this.loadFilteredMembers = function (structChooseMembers) {
+            var loadFilteredMembersThis = _this;
+            loadFilteredMembersThis.memberService.getFilteredMembers(structChooseMembers).subscribe(onLoadFilteredMembersSuccess, logError);
+            function onLoadFilteredMembersSuccess(structOrganisationMemberArray) {
+                loadFilteredMembersThis.gridOptionsMemberList.api.setRowData(structOrganisationMemberArray);
+                helper_serv_1.HelperService.log('loadFilteredMembers success');
+            }
+            function logError() {
+                helper_serv_1.HelperService.log('error loadFilteredMembers');
+            }
         };
         this.C_Active = 'Active';
         this.C_Inactive = 'Inactive';
@@ -49,11 +74,19 @@ var ChooseMembersComponent = (function () {
         this.C_Members = 'Members';
         this.C_TeamsGroups = 'TeamsGroups';
         this.C_MembershipType = 'MembershipType';
+        /////////////////////////////////////////////////////////////
+        //grid
+        this.columnDefsMembers = [
+            { headerName: "Last Name", field: "LastName", checkboxSelection: true },
+            { headerName: "First Name", field: "FirstName" }
+        ];
+        this.gridOptionsMemberList = helper_serv_1.HelperService.getGridOptions(this.columnDefsMembers, null, null);
         helper_serv_1.HelperService.log('constructor ChooseMembersComponent');
         this.chooseMembersForm = builder.group({
             membershipStatus: [this.C_Active],
             memberFilter: [this.C_Members],
-            membershipType: []
+            MembershipTypeID: [],
+            formControlTeamsGroups: []
         });
     }
     ChooseMembersComponent.prototype.ngOnInit = function () {
@@ -61,8 +94,6 @@ var ChooseMembersComponent = (function () {
         this.getTeamsGroups();
     };
     Object.defineProperty(ChooseMembersComponent.prototype, "showMembershipTypes", {
-        //can only resize a grid when it is visible
-        //this.teamsGroupsGridOptions.api.sizeColumnsToFit();
         get: function () {
             var memberFilter = this.chooseMembersForm.controls['memberFilter'];
             if (memberFilter.value === this.C_MembershipType) {
@@ -88,15 +119,23 @@ var ChooseMembersComponent = (function () {
         enumerable: true,
         configurable: true
     });
+    __decorate([
+        core_1.ViewChild(ag_grid_formcontrol_1.AgGridFormControl), 
+        __metadata('design:type', ag_grid_formcontrol_1.AgGridFormControl)
+    ], ChooseMembersComponent.prototype, "teamFormControl", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], ChooseMembersComponent.prototype, "membersChosen", void 0);
     ChooseMembersComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'choose-members',
             templateUrl: 'choose-members.html',
-            directives: [forms_1.REACTIVE_FORM_DIRECTIVES],
-            providers: [forms_1.FormBuilder, membership_type_serv_1.MembershipTypesService, teams_groups_serv_1.TeamsGroupsService]
+            directives: [forms_1.REACTIVE_FORM_DIRECTIVES, ag_grid_formcontrol_1.AgGridFormControl, main_1.AgGridNg2],
+            providers: [forms_1.FormBuilder, membership_type_serv_1.MembershipTypesService, teams_groups_serv_1.TeamsGroupsService, member_serv_1.MemberService]
         }), 
-        __metadata('design:paramtypes', [forms_1.FormBuilder, membership_type_serv_1.MembershipTypesService, teams_groups_serv_1.TeamsGroupsService])
+        __metadata('design:paramtypes', [forms_1.FormBuilder, membership_type_serv_1.MembershipTypesService, teams_groups_serv_1.TeamsGroupsService, member_serv_1.MemberService])
     ], ChooseMembersComponent);
     return ChooseMembersComponent;
 }());

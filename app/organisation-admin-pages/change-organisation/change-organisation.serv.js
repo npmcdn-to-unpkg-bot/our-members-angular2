@@ -24,7 +24,7 @@ var ChangeOrganisationService = (function () {
     ChangeOrganisationService.prototype.getOrganisations = function () {
         var parameters = [];
         var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject(parameters, 'api/organisations', true);
+        return httpHandlerService.getObject(parameters, 'api/organisations', true, false);
     };
     ChangeOrganisationService.prototype.changeOrganisation = function (OrganisationId) {
         var structJustAnInt = { i: OrganisationId };

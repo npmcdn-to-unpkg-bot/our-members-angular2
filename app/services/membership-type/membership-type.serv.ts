@@ -12,7 +12,7 @@ export class MembershipTypesService {
     getMembershipTypes() {
         var parameters: modSharedTypes.IHttpParameter[] = [];
         var httpHandlerService = new HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject(parameters, 'api/membership-types', true);
+        return httpHandlerService.getObject(parameters, 'api/membership-types', true, false);
     }
 }
 

@@ -20,7 +20,7 @@ export class ErrorListService {
         var parameters: modSharedTypes.IHttpParameter[] = [];
 
         var httpHandlerService = new HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject<any[]>(parameters, 'api/error-list', true);
+        return httpHandlerService.getObject<any[]>(parameters, 'api/error-list', true, false);
     }
 }
 

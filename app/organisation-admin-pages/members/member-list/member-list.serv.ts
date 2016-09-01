@@ -23,11 +23,10 @@ export class MemberListService {
     //    return httpHandlerService.getObject<any[]>(parameters, 'api/member-list', true);
     //}
 
-    getMemberListData(): Observable<structMemberListData> {
-
+    getMemberListData(): Observable<any> {
         var parameters: modSharedTypes.IHttpParameter[] = [];
         var httpHandlerService = new HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject<structMemberListData>(parameters, 'api/member-list', true);
+        return httpHandlerService.getObject<structMemberListData>(parameters, 'api/member-list', true, false);
     }
 }
 

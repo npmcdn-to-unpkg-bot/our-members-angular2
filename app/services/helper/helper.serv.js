@@ -3,6 +3,10 @@ var HelperService = (function () {
     function HelperService() {
         this.Month_Names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     }
+    HelperService.getServiceBase = function () {
+        //return 'https://ourmembersapiweb.azurewebsites.net/'
+        return 'http://localhost:26381/';
+    };
     HelperService.booleanToString = function (inp) {
         if (inp) {
             return this.C_TRUE;
@@ -22,10 +26,6 @@ var HelperService = (function () {
             return true;
         }
         return false;
-    };
-    HelperService.getServiceBase = function () {
-        return 'https://ourmembersapiweb.azurewebsites.net/';
-        //return 'http://localhost:26381/';
     };
     HelperService.getTokenName = function () {
         return 'id_token';
@@ -191,7 +191,6 @@ var HelperService = (function () {
             onRowDoubleClicked: onRowDoubleClicked,
             rowGroupPanelShow: 'always',
             //groupKeys: 'undefined',
-            groupHideGroupColumns: true,
             //groupSelectsChildren: true,
             groupColumnDef: 'groupColumn'
         };
@@ -202,7 +201,7 @@ var HelperService = (function () {
     };
     HelperService.formatDateForDisplay = function (d, includeTime, MonthAndYear, includeDayOfWeek) {
         'use strict';
-        var sup, day, dayOfWeek, sDayOfWeek, month, year, hour, minute, AmPm;
+        var sup, day, dayOfWeek, sDayOfWeek = '', month, year, hour, minute, AmPm;
         if (d === null) {
             return '';
         }

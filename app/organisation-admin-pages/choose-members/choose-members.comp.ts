@@ -1,43 +1,57 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, ViewChild, Output, EventEmitter} from "@angular/core";
 import {HelperService} from "../../services/helper/helper.serv";
 import {REACTIVE_FORM_DIRECTIVES, FormGroup, FormBuilder, FormControl} from "@angular/forms";
 import {MembershipTypesService} from "../../services/membership-type/membership-type.serv";
 import {TeamsGroupsService} from "../../services/teams-groups/teams-groups.serv";
-
+import {AgGridFormControl} from "../../utilities/ag-grid-formcontrol/ag-grid-formcontrol";
+import {AgGridNg2} from "ag-grid-ng2/main";
+import {GridOptions} from "ag-grid/main";
+import {MemberService} from "../members/member/member.serv";
 
 @Component({
     moduleId: module.id,
     selector: 'choose-members',
     templateUrl: 'choose-members.html',
-    directives: [REACTIVE_FORM_DIRECTIVES],
-    providers: [FormBuilder, MembershipTypesService, TeamsGroupsService]
+    directives: [REACTIVE_FORM_DIRECTIVES, AgGridFormControl, AgGridNg2],
+    providers: [FormBuilder, MembershipTypesService, TeamsGroupsService, MemberService]
     //styleUrls: ['register-for-season.css'],
 })
 
 export class ChooseMembersComponent implements OnInit {
-    constructor(builder: FormBuilder, private membershipTypesService: MembershipTypesService, private teamsGroupsService: TeamsGroupsService) {
+    constructor(builder: FormBuilder, private membershipTypesService: MembershipTypesService, private teamsGroupsService: TeamsGroupsService, private memberService: MemberService) {
         HelperService.log('constructor ChooseMembersComponent');
         this.chooseMembersForm = builder.group(
             {
                 membershipStatus: [this.C_Active], //active, inactive, both
                 memberFilter: [this.C_Members], //Members, TeamsGroups, MembershipType
-                membershipType: []
+                MembershipTypeID: [],
+                formControlTeamsGroups: []
             });
     }
 
+    @ViewChild(AgGridFormControl) teamFormControl: AgGridFormControl;
+    @Output() membersChosen: EventEmitter<structOrganisationMember[]> = new EventEmitter<structOrganisationMember[]>();
+
+    showFilters: boolean = true;
+    memberGrid: boolean = false;
+
     MembershipTypes: structMembershipType[];
-    TeamsGroups: structGroup[];
+
+    columnDefsTeamsGroups: any[] = [
+        {headerName: "GroupID", field: "GroupID", hide: true},
+        {headerName: "Name", field: "Name", width: 300, checkboxSelection: true}
+    ]
 
     ngOnInit() {
         this.getMembershipTypes();
         this.getTeamsGroups();
     }
 
-    getTeamsGroups=()=>{
+    getTeamsGroups = ()=> {
         var getTeamsGroupsThis = this;
         getTeamsGroupsThis.teamsGroupsService.getTeamsGroups().subscribe(onGetMemberListSuccess, logError)
         function onGetMemberListSuccess(TeamsGroups: structGroup[]) {
-            getTeamsGroupsThis.TeamsGroups = TeamsGroups;
+            getTeamsGroupsThis.teamFormControl.gridOptions.api.setRowData(TeamsGroups)
             HelperService.log('getTeamsGroups success');
         }
 
@@ -61,10 +75,25 @@ export class ChooseMembersComponent implements OnInit {
 
     chooseMembersForm: FormGroup;
 
-    applyFiltersNext = ()=> {
-        alert('applyFiltersNext');
+    getFiltersNext = ()=> {
+        let structChooseMembers: structChooseMembers = this.chooseMembersForm.value;
+        this.showFilters = false;
+        this.memberGrid = true;
+        this.loadFilteredMembers(structChooseMembers);
     }
 
+    loadFilteredMembers = (structChooseMembers: structChooseMembers)=> {
+        let loadFilteredMembersThis = this;
+        loadFilteredMembersThis.memberService.getFilteredMembers(structChooseMembers).subscribe(onLoadFilteredMembersSuccess, logError);
+        function onLoadFilteredMembersSuccess(structOrganisationMemberArray: structOrganisationMember[]) {
+            loadFilteredMembersThis.gridOptionsMemberList.api.setRowData(structOrganisationMemberArray);
+            HelperService.log('loadFilteredMembers success');
+        }
+
+        function logError() {
+            HelperService.log('error loadFilteredMembers');
+        }
+    }
 
     C_Active: string = 'Active';
     C_Inactive: string = 'Inactive';
@@ -73,10 +102,6 @@ export class ChooseMembersComponent implements OnInit {
     C_Members: string = 'Members';
     C_TeamsGroups: string = 'TeamsGroups';
     C_MembershipType: string = 'MembershipType';
-
-    //can only resize a grid when it is visible
-    //this.teamsGroupsGridOptions.api.sizeColumnsToFit();
-
 
     get showMembershipTypes(): boolean {
         let memberFilter: FormControl = <FormControl>this.chooseMembersForm.controls['memberFilter'];
@@ -95,4 +120,14 @@ export class ChooseMembersComponent implements OnInit {
             return false;
         }
     }
+
+    /////////////////////////////////////////////////////////////
+    //grid
+    columnDefsMembers: any[] = [
+
+        {headerName: "Last Name", field: "LastName", checkboxSelection: true},
+        {headerName: "First Name", field: "FirstName"}
+    ];
+
+    gridOptionsMemberList: GridOptions = HelperService.getGridOptions(this.columnDefsMembers, null, null);
 }

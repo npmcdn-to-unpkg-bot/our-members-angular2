@@ -16,6 +16,6 @@ export class RecentLoginsService {
         var parameters: modSharedTypes.IHttpParameter[] = [];
 
         var httpHandlerService = new HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject<any[]>(parameters, 'api/recent-logins', true);
+        return httpHandlerService.getObject<any[]>(parameters, 'api/recent-logins', true, false);
     }
 }

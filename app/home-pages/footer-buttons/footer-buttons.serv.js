@@ -21,7 +21,7 @@ var FooterButtonsService = (function () {
     FooterButtonsService.prototype.getDevOrProd = function () {
         var parameters = [];
         var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject(parameters, 'api/organisations/get-dev-or-prod', false);
+        return httpHandlerService.getObject(parameters, 'api/organisations/get-dev-or-prod', false, false);
     };
     FooterButtonsService = __decorate([
         core_1.Injectable(), 

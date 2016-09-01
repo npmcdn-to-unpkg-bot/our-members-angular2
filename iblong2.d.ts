@@ -141,3 +141,9 @@ interface structsaveRegisterForSeasonData {
     sCurrentDate: string;
 }
 
+interface  structChooseMembers {
+    membershipStatus: string,
+    memberFilter: string,
+    MembershipTypeID: string,
+    formControlTeamsGroups: structGroup[]
+}

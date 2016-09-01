@@ -23,6 +23,10 @@ var EmailMemberComponent = (function () {
             _this.hideAll();
             //this.memberFilter = true;
         };
+        this.displayMembers = function (structOrganisationMemberArray) {
+            _this.gridOptions.api.setRowData(structOrganisationMemberArray);
+            console.log(structOrganisationMemberArray);
+        };
         // memberFilterBack = ()=> {
         //     this.hideAll();
         //     this.applyFilters = true;
@@ -55,6 +59,14 @@ var EmailMemberComponent = (function () {
         this.sendEmail = function () {
         };
         this.chooseMembers = true;
+        /////////////////////////////////////////////////////////////
+        //grid
+        this.columnDefs = [
+            { field: "OrganisationMemberID", hide: true },
+            { headerName: "Last Name", field: "LastName", checkboxSelection: true },
+            { headerName: "First Name", field: "FirstName" },
+        ];
+        this.gridOptions = helper_serv_1.HelperService.getGridOptions(this.columnDefs, null, null);
         helper_serv_1.HelperService.log('constructor EmailComponent');
     }
     EmailMemberComponent.prototype.ngOnInit = function () {

@@ -24,7 +24,7 @@ var GroupsService = (function () {
     GroupsService.prototype.getGroups = function () {
         var parameters = [];
         var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject(parameters, 'api/groups', true);
+        return httpHandlerService.getObject(parameters, 'api/groups', true, false);
     };
     GroupsService = __decorate([
         core_1.Injectable(), 

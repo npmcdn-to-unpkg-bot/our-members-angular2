@@ -23,9 +23,12 @@ var HttpHandlerService = (function () {
     }
     //use http get to retrieve an object of type T
     //parameters: an array of name / value pairs
-    HttpHandlerService.prototype.getObject = function (parameters, url, includeToken) {
+    HttpHandlerService.prototype.getObject = function (parameters, url, includeToken, useArrayBuffer) {
         if (helper_serv_1.HelperService.tokenIsValid()) {
-            var options = this.getOptions(parameters, includeToken);
+            var options = this.getOptions(parameters, includeToken, useArrayBuffer);
+            // var options: RequestOptionsArgs={}
+            // options.responseType=ResponseContentType.ArrayBuffer;
+            //var obs = this.http.get(this.serviceBase + url, {responseType: ResponseContentType.ArrayBuffer}).map(res => res.json());
             var obs = this.http.get(this.serviceBase + url, options).map(function (res) { return res.json(); });
             return obs;
         }
@@ -35,7 +38,7 @@ var HttpHandlerService = (function () {
     };
     HttpHandlerService.prototype.deleteObject = function (parameters, url) {
         if (helper_serv_1.HelperService.tokenIsValid()) {
-            var options = this.getOptions(parameters, true);
+            var options = this.getOptions(parameters, true, false);
             return this.http.delete(this.serviceBase + url, options);
         }
         else {
@@ -86,13 +89,16 @@ var HttpHandlerService = (function () {
         params.append('preventCache', new Date().toString());
         return params;
     };
-    HttpHandlerService.prototype.getOptions = function (parameters, includeToken) {
+    HttpHandlerService.prototype.getOptions = function (parameters, includeToken, useArrayBuffer) {
         var options = {};
         var headers = this.getHeaders(includeToken);
         var params = this.getParameters(parameters);
         options.search = params;
         options.headers = headers;
         options.body = '';
+        if (useArrayBuffer) {
+            options.responseType = http_1.ResponseContentType.ArrayBuffer;
+        }
         return options;
     };
     HttpHandlerService.prototype.postOptions = function (includeToken) {

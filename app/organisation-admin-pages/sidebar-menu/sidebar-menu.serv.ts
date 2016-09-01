@@ -19,7 +19,7 @@ export class SidebarMenuService {
         var parameters: modSharedTypes.IHttpParameter[] = [];
 
         var httpHandlerService = new HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject<boolean>(parameters, 'api/admin-loggedin', true);
+        return httpHandlerService.getObject<boolean>(parameters, 'api/admin-loggedin', true, false);
     }
 }
 

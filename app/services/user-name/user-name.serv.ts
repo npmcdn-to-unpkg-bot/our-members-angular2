@@ -19,7 +19,7 @@ export class UserNameService {
         var parameters: modSharedTypes.IHttpParameter[] = [parameter];
 
         var httpHandlerService = new HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject(parameters, 'api/usernameunique', false);
+        return httpHandlerService.getObject(parameters, 'api/usernameunique', false, false);
     }
 }
 

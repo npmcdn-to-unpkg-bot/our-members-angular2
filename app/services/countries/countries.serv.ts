@@ -12,7 +12,7 @@ export class CountriesService {
     getCountries() {
         var parameters: modSharedTypes.IHttpParameter[] = [];
         var httpHandlerService = new HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject(parameters, 'api/countries', false);
+        return httpHandlerService.getObject(parameters, 'api/countries', false, false);
     }
 }
 

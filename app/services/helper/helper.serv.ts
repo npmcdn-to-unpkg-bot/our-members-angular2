@@ -1,6 +1,12 @@
-﻿import {Router} from '@angular/router';
+﻿import {Router} from "@angular/router";
+import {GridOptions} from "ag-grid/main";
 
 export class HelperService {
+
+    static getServiceBase(): string {
+        //return 'https://ourmembersapiweb.azurewebsites.net/'
+        return 'http://localhost:26381/';
+    }
 
     public static C_TRUE = 'true';
     public static C_FALSE = 'false';
@@ -24,11 +30,6 @@ export class HelperService {
             return true;
         }
         return false;
-    }
-
-    static getServiceBase(): string {
-        return 'https://ourmembersapiweb.azurewebsites.net/'
-        //return 'http://localhost:26381/';
     }
 
     static getTokenName(): string {
@@ -175,6 +176,7 @@ export class HelperService {
             return inp;
         }
     }
+
     static noNullNumber(inp: any): number {
         if (!inp) {
             return 0;
@@ -182,32 +184,35 @@ export class HelperService {
             return inp;
         }
     }
-    static autoSizeAll(columnDefs: any[], gridOptions: any) {
+
+    static autoSizeAll(columnDefs: any[], gridOptions: GridOptions) {
         var allColumnIds: string[] = [];
         columnDefs.forEach(function (columnDef) {
             allColumnIds.push(columnDef.field);
         });
         gridOptions.columnApi.autoSizeColumns(allColumnIds);
-    };
-    static getGridOptions(columnDefs: any[], onRowClicked: (params: any) => void, onRowDoubleClicked: (params: any) => void) {
+    };
+
+    static getGridOptions(columnDefs: any[], onRowClicked: (params: any) => void, onRowDoubleClicked: (params: any) => void): GridOptions {
         var rowData: any[] = [];
-        var gridOptions = {
+        var gridOptions: GridOptions = {
             columnDefs: columnDefs,
             rowData: rowData,
             enableSorting: true,
             enableFilter: true,
             groupUseEntireRow: true,
-            enableColResize: true,            rowSelection: "single",
+            enableColResize: true,
+            rowSelection: "single",
             onRowClicked: onRowClicked,
             onRowDoubleClicked: onRowDoubleClicked,
             rowGroupPanelShow: 'always',
             //groupKeys: 'undefined',
-            groupHideGroupColumns: true,
             //groupSelectsChildren: true,
             groupColumnDef: 'groupColumn'
-        }
+        };
         return gridOptions;
     }
+
     static formatDate(d: Date): string {
         return d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear();
     }
@@ -216,7 +221,7 @@ export class HelperService {
 
     static formatDateForDisplay(d: Date, includeTime: boolean, MonthAndYear: boolean, includeDayOfWeek: boolean): string {
         'use strict';
-        var sup: string, day: number, dayOfWeek: number, sDayOfWeek: string, month: number, year: number, hour: number, minute: number, AmPm: string;
+        var sup: string, day: number, dayOfWeek: number, sDayOfWeek: string = '', month: number, year: number, hour: number, minute: number, AmPm: string;
 
         if (d === null) {
             return '';
@@ -398,6 +403,7 @@ export class HelperService {
     static sendToLogin = (router: Router) => {
         router.navigate(['/home-page', 'login']);
     }
+
 }
 
 

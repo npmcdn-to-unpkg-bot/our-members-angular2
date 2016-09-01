@@ -30,12 +30,12 @@ var MemberService = (function () {
         };
         parameters[0] = parameter;
         var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject(parameters, 'api/member', true);
+        return httpHandlerService.getObject(parameters, 'api/member', true, false);
     };
     MemberService.prototype.getNextMemberNumber = function () {
         var parameters = [];
         var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject(parameters, 'api/member/get-next-member-number', true);
+        return httpHandlerService.getObject(parameters, 'api/member/get-next-member-number', true, false);
     };
     MemberService.prototype.saveNewMember = function (Member) {
         var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http, this.router);
@@ -53,7 +53,7 @@ var MemberService = (function () {
         };
         parameters[0] = parameter;
         var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject(parameters, 'api/member-list/register-member', true);
+        return httpHandlerService.getObject(parameters, 'api/member-list/register-member', true, false);
     };
     MemberService.prototype.deleteMember = function (OrganisationMemberID) {
         var parameters = [];
@@ -73,7 +73,7 @@ var MemberService = (function () {
         };
         parameters[0] = parameter;
         var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject(parameters, 'api/member-list/test-delete', true);
+        return httpHandlerService.getObject(parameters, 'api/member-list/test-delete', true, false);
     };
     MemberService.prototype.getRegisterForSeasonData = function (OrganisationMemberID) {
         var parameters = [];
@@ -81,18 +81,65 @@ var MemberService = (function () {
             name: 'OrganisationMemberID',
             value: OrganisationMemberID.toString()
         };
-        parameters[0] = parameterOrganisationMemberID;
+        parameters.push(parameterOrganisationMemberID);
         var parameterCurrentDate = {
             name: 'sCurrentDate',
             value: helper_serv_1.HelperService.formatDateForJSon(new Date())
         };
-        parameters[1] = parameterCurrentDate;
+        parameters.push(parameterCurrentDate);
         var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject(parameters, 'api/member-list/register-for-season', true);
+        return httpHandlerService.getObject(parameters, 'api/member-list/register-for-season', true, false);
     };
     MemberService.prototype.saveRegisterForSeasonData = function (structsaveRegisterForSeasonData) {
         var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http, this.router);
         return httpHandlerService.postObject(structsaveRegisterForSeasonData, 'api/member-list/save-register-for-season');
+    };
+    MemberService.prototype.getFilteredMembers = function (structChooseMembers) {
+        var parameters = [];
+        //membershipStatus As String, memberFilter As String, sGroupIDArray As String, MembershipTypeID As String)
+        parameters.push({
+            name: 'membershipStatus',
+            value: structChooseMembers.membershipStatus
+        });
+        parameters.push({
+            name: 'memberFilter',
+            value: structChooseMembers.memberFilter
+        });
+        //convert aray of GroupID to comma separated string
+        var s = '', i;
+        if (structChooseMembers.formControlTeamsGroups === null) {
+            s = '-1';
+        }
+        else {
+            for (i = 0; i < structChooseMembers.formControlTeamsGroups.length; i++) {
+                s += structChooseMembers.formControlTeamsGroups[i].GroupID.toString();
+                if (i < structChooseMembers.formControlTeamsGroups.length - 1) {
+                    s += ',';
+                }
+            }
+        }
+        parameters.push({
+            name: 'sGroupIDArray',
+            value: s
+        });
+        if (structChooseMembers.MembershipTypeID === null) {
+            parameters.push({
+                name: 'MembershipTypeID',
+                value: '-1'
+            });
+        }
+        else {
+            parameters.push({
+                name: 'MembershipTypeID',
+                value: structChooseMembers.MembershipTypeID
+            });
+        }
+        // parameters.push({
+        //     name: 'MembershipTypeID',
+        //     value: structChooseMembers.MembershipTypeID
+        // });
+        var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http, this.router);
+        return httpHandlerService.getObject(parameters, 'api/member/get-filtered-members', true, false);
     };
     MemberService = __decorate([
         core_1.Injectable(), 

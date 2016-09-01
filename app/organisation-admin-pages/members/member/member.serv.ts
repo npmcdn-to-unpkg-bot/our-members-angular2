@@ -20,23 +20,23 @@ export class MemberService {
 
         var parameters: modSharedTypes.IHttpParameter[] = [];
         var parameter: modSharedTypes.IHttpParameter = {
-            name: 'OrganisationMemberID', 
+            name: 'OrganisationMemberID',
             value: OrganisationMemberID.toString()
         };
         parameters[0] = parameter;
 
         var httpHandlerService = new HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject<structOrganisationMember>(parameters, 'api/member', true);
+        return httpHandlerService.getObject<structOrganisationMember>(parameters, 'api/member', true, false);
     }
 
     getNextMemberNumber(): Observable<number> {
         var parameters: modSharedTypes.IHttpParameter[] = [];
 
         var httpHandlerService = new HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject<number>(parameters, 'api/member/get-next-member-number', true);
+        return httpHandlerService.getObject<number>(parameters, 'api/member/get-next-member-number', true, false);
     }
 
-    saveNewMember(Member: structOrganisationMember): Observable<Response>{
+    saveNewMember(Member: structOrganisationMember): Observable<Response> {
         var httpHandlerService = new HttpHandlerService(this.http, this.router);
         return httpHandlerService.postObject(Member, 'api/member');
     }
@@ -56,7 +56,7 @@ export class MemberService {
         parameters[0] = parameter;
 
         var httpHandlerService = new HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject<boolean>(parameters, 'api/member-list/register-member', true);
+        return httpHandlerService.getObject<boolean>(parameters, 'api/member-list/register-member', true, false);
     }
 
     deleteMember(OrganisationMemberID: number) {
@@ -80,7 +80,7 @@ export class MemberService {
         parameters[0] = parameter;
 
         var httpHandlerService = new HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject<structError>(parameters, 'api/member-list/test-delete', true);
+        return httpHandlerService.getObject<structError>(parameters, 'api/member-list/test-delete', true, false);
     }
 
     getRegisterForSeasonData(OrganisationMemberID: number): Observable<structRegisterMemberFormData> {
@@ -91,16 +91,16 @@ export class MemberService {
             name: 'OrganisationMemberID',
             value: OrganisationMemberID.toString()
         };
-        parameters[0] = parameterOrganisationMemberID;
+        parameters.push(parameterOrganisationMemberID);
 
         var parameterCurrentDate: modSharedTypes.IHttpParameter = {
             name: 'sCurrentDate',
             value: HelperService.formatDateForJSon(new Date())
         };
-        parameters[1] = parameterCurrentDate;
+        parameters.push(parameterCurrentDate);
 
         var httpHandlerService = new HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject<structRegisterMemberFormData>(parameters, 'api/member-list/register-for-season', true);
+        return httpHandlerService.getObject<structRegisterMemberFormData>(parameters, 'api/member-list/register-for-season', true, false);
     }
 
     saveRegisterForSeasonData(structsaveRegisterForSeasonData: structsaveRegisterForSeasonData): Observable<Response> {
@@ -108,6 +108,59 @@ export class MemberService {
         return httpHandlerService.postObject(structsaveRegisterForSeasonData, 'api/member-list/save-register-for-season');
     }
 
+    getFilteredMembers(structChooseMembers: structChooseMembers): Observable<any> {
+        var parameters: modSharedTypes.IHttpParameter[] = [];
+
+        //membershipStatus As String, memberFilter As String, sGroupIDArray As String, MembershipTypeID As String)
+
+        parameters.push({
+            name: 'membershipStatus',
+            value: structChooseMembers.membershipStatus
+        });
+
+        parameters.push({
+            name: 'memberFilter',
+            value: structChooseMembers.memberFilter
+        });
+
+
+        //convert aray of GroupID to comma separated string
+        var s: string = '', i: number;
+        if (structChooseMembers.formControlTeamsGroups === null) {
+            s = '-1';
+        } else {
+            for (i = 0; i < structChooseMembers.formControlTeamsGroups.length; i++) {
+                s += structChooseMembers.formControlTeamsGroups[i].GroupID.toString();
+                if (i < structChooseMembers.formControlTeamsGroups.length - 1) {
+                    s += ',';
+                }
+            }
+        }
+        parameters.push({
+            name: 'sGroupIDArray',
+            value: s
+        });
+
+        if (structChooseMembers.MembershipTypeID=== null){
+            parameters.push({
+                name: 'MembershipTypeID',
+                value: '-1'
+            });
+        } else {
+            parameters.push({
+                name: 'MembershipTypeID',
+                value: structChooseMembers.MembershipTypeID
+            });
+        }
+
+        // parameters.push({
+        //     name: 'MembershipTypeID',
+        //     value: structChooseMembers.MembershipTypeID
+        // });
+
+        var httpHandlerService = new HttpHandlerService(this.http, this.router);
+        return httpHandlerService.getObject<structRegisterMemberFormData>(parameters, 'api/member/get-filtered-members', true, false);
+    }
 
 }
 

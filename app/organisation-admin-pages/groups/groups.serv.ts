@@ -20,7 +20,7 @@ export class GroupsService {
         var parameters: modSharedTypes.IHttpParameter[] = [];
 
         var httpHandlerService = new HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject<any[]>(parameters, 'api/groups', true);
+        return httpHandlerService.getObject<any[]>(parameters, 'api/groups', true, false);
     }
 }
 

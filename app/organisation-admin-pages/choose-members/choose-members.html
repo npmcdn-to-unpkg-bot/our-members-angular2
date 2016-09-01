@@ -1,5 +1,5 @@
-<div class="form-container">
-    <form (ngSubmit)="saveMemberIds()" [formGroup]="chooseMembersForm">
+<div class="form-container" [hidden]="!showFilters">
+    <form (ngSubmit)="getFiltersNext()" [formGroup]="chooseMembersForm">
         <div class="form-content">
             <div style="border: 1px gray solid; padding: 10px 2%">
                 <div class="form-group row">
@@ -10,7 +10,7 @@
                     </div>
 
                     <div class="col-sm-4 form-label">
-                            <label>Membership Status</label>
+                        <label>Membership Status</label>
                     </div>
                     <div class="col-sm-8 ">
                         <div class="radio-button-container">
@@ -87,8 +87,8 @@
                     <div class="col-sm-4 form-label">
                         <label>Choose Membership Type</label>
                     </div>
-                    <div class="col-sm-8 form-label" >
-                        <select class="form-control" formControlName="membershipType">
+                    <div class="col-sm-8 form-label">
+                        <select class="form-control" formControlName="MembershipTypeID">
                             <option *ngFor="let Membership of MembershipTypes" [value]="Membership.MembershipTypeID">
                                 {{ Membership.Name }}
                             </option>
@@ -101,7 +101,9 @@
                         <label>Teams / Groups</label>
                     </div>
                     <div class="col-sm-8">
-                        <ag-grid-ng2 class="ag-fresh short-grid" [gridOptions]="teamsGroupsGridOptions"></ag-grid-ng2>
+                        <ag-grid-formcontrol formControlName="formControlTeamsGroups"
+                                             [columnDefs]="columnDefsTeamsGroups"></ag-grid-formcontrol>
+                        <!--<ag-grid-formcontrol formControlName="formControlTeamsGroups" [rowData]="rowDataTeamsGroups"[columnDefs]="columnDefsTeamsGroups"></ag-grid-formcontrol>-->
                     </div>
                 </div>
 
@@ -109,23 +111,23 @@
                     <div class="col-sm-10 ">
                     </div>
                     <div class="col-sm-2">
-                        <button type="button" class="save-button" (click)="applyFiltersNext()">Next</button>
+                        <button type="submit" class="save-button">Next</button>
                     </div>
                 </div>
             </div>
-
-            <!--<div [hidden]="!memberGrid" style="border: 1px gray solid; padding: 10px 2%">-->
-                <!--<div class="form-group row">-->
-                    <!--<div class="col-sm-2 ">-->
-                        <!--<button class="save-button" (click)="memberFilterBack()">Back</button>-->
-                    <!--</div>-->
-                    <!--<div class="col-sm-8 ">-->
-                    <!--</div>-->
-                    <!--<div class="col-sm-2">-->
-                        <!--<button type="submit" class="save-button" (click)="memberFilterNext()">Next</button>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
         </div>
     </form>
+</div>
+<div [hidden]="!memberGrid" style="border: 1px gray solid; padding: 10px 2%">
+    <ag-grid-ng2 class="ag-fresh standard-grid" [gridOptions]="gridOptionsMemberList" title="Double-click to drill down"></ag-grid-ng2>
+    <div class="row">
+        <div class="col-sm-2 ">
+            <button class="save-button" (click)="memberFilterBack()">Back</button>
+        </div>
+        <div class="col-sm-8 ">
+        </div>
+        <div class="col-sm-2">
+            <button type="button" class="save-button" (click)="alert('Next')">Next</button>
+        </div>
+    </div>
 </div>

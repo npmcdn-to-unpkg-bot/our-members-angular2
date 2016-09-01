@@ -20,7 +20,7 @@ export class ChangeOrganisationService {
         var parameters: modSharedTypes.IHttpParameter[] = [];
 
         var httpHandlerService = new HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject<any[]>(parameters, 'api/organisations', true);
+        return httpHandlerService.getObject<any[]>(parameters, 'api/organisations', true, false);
     }
 
     changeOrganisation(OrganisationId: number) {

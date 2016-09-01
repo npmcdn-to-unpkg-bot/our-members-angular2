@@ -10,6 +10,7 @@ import {AgGridNg2} from "ag-grid-ng2/main";
 import {ConfirmComponent} from "../../../utilities/confirm/confirm.comp";
 import {PopupComponent} from "../../../utilities/popup/popup.comp";
 import {Observable} from "rxjs/Observable";
+import {GridOptions} from "ag-grid/main";
 
 @Component({
     moduleId: module.id,
@@ -188,5 +189,5 @@ export class MembersListComponent {
         //this.showMemberModal = true;
     }
 
-    gridOptions: any = HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked);
+    gridOptions: GridOptions = HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked);
 }

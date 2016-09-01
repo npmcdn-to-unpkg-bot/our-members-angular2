@@ -24,7 +24,7 @@ var SidebarMenuService = (function () {
     SidebarMenuService.prototype.getAdminLoggedIn = function () {
         var parameters = [];
         var httpHandlerService = new http_handler_serv_1.HttpHandlerService(this.http, this.router);
-        return httpHandlerService.getObject(parameters, 'api/admin-loggedin', true);
+        return httpHandlerService.getObject(parameters, 'api/admin-loggedin', true, false);
     };
     SidebarMenuService = __decorate([
         core_1.Injectable(), 
