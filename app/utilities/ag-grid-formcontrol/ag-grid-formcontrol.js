@@ -43,7 +43,7 @@ var AgGridFormControl = (function () {
         this.gridOptions.rowData = this.rowData;
         this.gridOptions.columnDefs = this.columnDefs;
         this.gridOptions.onSelectionChanged = this.onSelectionChanged;
-        this.gridOptions.rowSelection = "multipleqq";
+        this.gridOptions.rowSelection = "multiple";
     };
     AgGridFormControl.prototype.writeValue = function (value) {
         this.value = value;
