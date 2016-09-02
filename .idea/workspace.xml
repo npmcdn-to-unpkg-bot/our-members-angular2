@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="72af1e14-6c78-4b81-8fbc-d75cb2cf064a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/utilities/ag-grid-formcontrol/ag-grid-formcontrol.js" afterPath="$PROJECT_DIR$/app/utilities/ag-grid-formcontrol/ag-grid-formcontrol.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/utilities/ag-grid-formcontrol/ag-grid-formcontrol.ts" afterPath="$PROJECT_DIR$/app/utilities/ag-grid-formcontrol/ag-grid-formcontrol.ts" />
     </list>
     <ignored path="our-members-angular2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,7 +31,6 @@
             <state relative-caret-position="374">
               <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
               <folding>
-                <element signature="e#0#43#0" expanded="true" />
                 <marker date="1472785160095" expanded="false" signature="545:559" ph="..." />
               </folding>
             </state>
@@ -645,7 +642,7 @@
       <workItem from="1472457584514" duration="5387000" />
       <workItem from="1472630405337" duration="3035000" />
       <workItem from="1472716302245" duration="8295000" />
-      <workItem from="1472763516840" duration="2863000" />
+      <workItem from="1472763516840" duration="2875000" />
     </task>
     <task id="LOCAL-00001" summary="rc5">
       <created>1471466277735</created>
@@ -766,11 +763,18 @@
       <option name="project" value="LOCAL" />
       <updated>1472785109833</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="choose members 6">
+      <created>1472785172907</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1472785172907</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122888000" />
+    <option name="totallyTimeSpent" value="122900000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1214,7 +1218,6 @@
         <state relative-caret-position="374">
           <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
             <marker date="1472785160095" expanded="false" signature="545:559" ph="..." />
           </folding>
         </state>
