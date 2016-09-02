@@ -232,7 +232,7 @@ var MemberComponent = (function () {
         };
         this.onRowDoubleClicked = function (params) {
         };
-        this.teamsGroupsGridOptions = helper_serv_1.HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked);
+        this.teamsGroupsGridOptions = helper_serv_1.HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked, true);
         helper_serv_1.HelperService.log('constructor MemberComponent');
     }
     MemberComponent.prototype.ngOnInit = function () {

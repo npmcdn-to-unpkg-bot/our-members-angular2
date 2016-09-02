@@ -126,12 +126,12 @@ export class MemberService {
 
         //convert aray of GroupID to comma separated string
         var s: string = '', i: number;
-        if (structChooseMembers.formControlTeamsGroups === null) {
+        if (structChooseMembers.teamsGroups === null) {
             s = '-1';
         } else {
-            for (i = 0; i < structChooseMembers.formControlTeamsGroups.length; i++) {
-                s += structChooseMembers.formControlTeamsGroups[i].GroupID.toString();
-                if (i < structChooseMembers.formControlTeamsGroups.length - 1) {
+            for (i = 0; i < structChooseMembers.teamsGroups.length; i++) {
+                s += structChooseMembers.teamsGroups[i].GroupID.toString();
+                if (i < structChooseMembers.teamsGroups.length - 1) {
                     s += ',';
                 }
             }
@@ -141,7 +141,7 @@ export class MemberService {
             value: s
         });
 
-        if (structChooseMembers.MembershipTypeID=== null){
+        if (structChooseMembers.membershipType=== null){
             parameters.push({
                 name: 'MembershipTypeID',
                 value: '-1'
@@ -149,7 +149,7 @@ export class MemberService {
         } else {
             parameters.push({
                 name: 'MembershipTypeID',
-                value: structChooseMembers.MembershipTypeID
+                value: structChooseMembers.membershipType
             });
         }
 

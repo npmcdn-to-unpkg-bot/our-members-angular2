@@ -144,6 +144,6 @@ interface structsaveRegisterForSeasonData {
 interface  structChooseMembers {
     membershipStatus: string,
     memberFilter: string,
-    MembershipTypeID: string,
-    formControlTeamsGroups: structGroup[]
+    membershipType: string,
+    teamsGroups: structGroup[]
 }

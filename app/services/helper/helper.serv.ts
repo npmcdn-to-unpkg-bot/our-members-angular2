@@ -4,8 +4,8 @@ import {GridOptions} from "ag-grid/main";
 export class HelperService {
 
     static getServiceBase(): string {
-        //return 'https://ourmembersapiweb.azurewebsites.net/'
-        return 'http://localhost:26381/';
+        return 'https://ourmembersapiweb.azurewebsites.net/'
+        //return 'http://localhost:26381/';
     }
 
     public static C_TRUE = 'true';
@@ -193,23 +193,23 @@ export class HelperService {
         gridOptions.columnApi.autoSizeColumns(allColumnIds);
     };
 
-    static getGridOptions(columnDefs: any[], onRowClicked: (params: any) => void, onRowDoubleClicked: (params: any) => void): GridOptions {
+    static getGridOptions(columnDefs: any[], onRowClicked: (params: any) => void, onRowDoubleClicked: (params: any) => void, multiSelect: boolean): GridOptions {
         var rowData: any[] = [];
         var gridOptions: GridOptions = {
             columnDefs: columnDefs,
             rowData: rowData,
             enableSorting: true,
             enableFilter: true,
-            groupUseEntireRow: true,
             enableColResize: true,
-            rowSelection: "single",
             onRowClicked: onRowClicked,
-            onRowDoubleClicked: onRowDoubleClicked,
-            rowGroupPanelShow: 'always',
-            //groupKeys: 'undefined',
-            //groupSelectsChildren: true,
-            groupColumnDef: 'groupColumn'
+            onRowDoubleClicked: onRowDoubleClicked
         };
+        if (multiSelect) {
+            gridOptions.rowSelection='multiple';
+            gridOptions.suppressRowClickSelection = true;
+        } else {
+            gridOptions.rowSelection='single';
+        }
         return gridOptions;
     }
 

@@ -264,6 +264,6 @@ export class MemberComponent {
 
     onRowDoubleClicked = (params: any) => {
     }
-    teamsGroupsGridOptions: any = HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked);
+    teamsGroupsGridOptions: any = HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked, true);
 
 }

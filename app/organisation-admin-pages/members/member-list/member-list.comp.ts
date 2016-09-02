@@ -44,9 +44,9 @@ export class MembersListComponent {
     }
 
     Members: any[];
-    Countries :structCountry[];
-    MembershipTypes:structMembershipType[];
-    Groups :structGroup[];
+    Countries: structCountry[];
+    MembershipTypes: structMembershipType[];
+    Groups: structGroup[];
     defaultCountryId: number;
     IncrementMemberNumber: boolean;
 
@@ -75,6 +75,9 @@ export class MembersListComponent {
             loadMembersThis.MembershipTypes = data.MembershipTypes;
             loadMembersThis.Groups = data.Groups;
             loadMembersThis.defaultCountryId = data.defaultCountryId;
+            loadMembersThis.memberComponent.MembershipTypes = data.MembershipTypes;
+            loadMembersThis.memberComponent.Groups = data.Groups;
+            loadMembersThis.memberComponent.teamsGroupsGridOptions.api.setRowData(loadMembersThis.memberComponent.Groups);
             //loadMembersThis.memberComponent.loadObjects(data.Countries, data.MembershipTypes, data.Groups, data.defaultCountryId);
         }
     }
@@ -189,5 +192,5 @@ export class MembersListComponent {
         //this.showMemberModal = true;
     }
 
-    gridOptions: GridOptions = HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked);
+    gridOptions: GridOptions = HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked, false);
 }

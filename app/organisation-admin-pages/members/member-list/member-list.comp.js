@@ -56,6 +56,9 @@ var MembersListComponent = (function () {
                 loadMembersThis.MembershipTypes = data.MembershipTypes;
                 loadMembersThis.Groups = data.Groups;
                 loadMembersThis.defaultCountryId = data.defaultCountryId;
+                loadMembersThis.memberComponent.MembershipTypes = data.MembershipTypes;
+                loadMembersThis.memberComponent.Groups = data.Groups;
+                loadMembersThis.memberComponent.teamsGroupsGridOptions.api.setRowData(loadMembersThis.memberComponent.Groups);
                 //loadMembersThis.memberComponent.loadObjects(data.Countries, data.MembershipTypes, data.Groups, data.defaultCountryId);
             }
         };
@@ -166,7 +169,7 @@ var MembersListComponent = (function () {
             _this.memberComponent.loadMember(selectedMember.OrganisationMemberID);
             //this.showMemberModal = true;
         };
-        this.gridOptions = helper_serv_1.HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked);
+        this.gridOptions = helper_serv_1.HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked, false);
         helper_serv_1.HelperService.log('constructor RegisterComponent ');
     }
     MembersListComponent.prototype.ngOnInit = function () {

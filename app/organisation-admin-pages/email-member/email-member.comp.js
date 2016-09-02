@@ -24,7 +24,7 @@ var EmailMemberComponent = (function () {
             //this.memberFilter = true;
         };
         this.displayMembers = function (structOrganisationMemberArray) {
-            _this.gridOptions.api.setRowData(structOrganisationMemberArray);
+            //this.gridOptions.api.setRowData(structOrganisationMemberArray);
             console.log(structOrganisationMemberArray);
         };
         // memberFilterBack = ()=> {
@@ -66,7 +66,7 @@ var EmailMemberComponent = (function () {
             { headerName: "Last Name", field: "LastName", checkboxSelection: true },
             { headerName: "First Name", field: "FirstName" },
         ];
-        this.gridOptions = helper_serv_1.HelperService.getGridOptions(this.columnDefs, null, null);
+        this.gridOptions = helper_serv_1.HelperService.getGridOptions(this.columnDefs, null, null, true);
         helper_serv_1.HelperService.log('constructor EmailComponent');
     }
     EmailMemberComponent.prototype.ngOnInit = function () {

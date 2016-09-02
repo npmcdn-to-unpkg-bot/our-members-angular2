@@ -1,6 +1,13 @@
 import {Component, OnInit, ViewChild, Output, EventEmitter} from "@angular/core";
 import {HelperService} from "../../services/helper/helper.serv";
-import {REACTIVE_FORM_DIRECTIVES, FormGroup, FormBuilder, FormControl} from "@angular/forms";
+import {
+    REACTIVE_FORM_DIRECTIVES,
+    FormGroup,
+    FormBuilder,
+    FormControl,
+    Validators,
+    AbstractControl
+} from "@angular/forms";
 import {MembershipTypesService} from "../../services/membership-type/membership-type.serv";
 import {TeamsGroupsService} from "../../services/teams-groups/teams-groups.serv";
 import {AgGridFormControl} from "../../utilities/ag-grid-formcontrol/ag-grid-formcontrol";
@@ -24,8 +31,8 @@ export class ChooseMembersComponent implements OnInit {
             {
                 membershipStatus: [this.C_Active], //active, inactive, both
                 memberFilter: [this.C_Members], //Members, TeamsGroups, MembershipType
-                MembershipTypeID: [],
-                formControlTeamsGroups: []
+                membershipType: [null],
+                teamsGroups: [null]
             });
     }
 
@@ -73,6 +80,35 @@ export class ChooseMembersComponent implements OnInit {
 
     }
 
+    clearAllValidators = ()=> {
+        var teamsGroups: AbstractControl = this.chooseMembersForm.controls['teamsGroups'];
+        teamsGroups.clearValidators();
+        teamsGroups.updateValueAndValidity();
+
+        var membershipType: AbstractControl = this.chooseMembersForm.controls['membershipType'];
+        membershipType.clearValidators();
+        membershipType.updateValueAndValidity();
+
+    }
+
+    memberFilterTeamsGroupsClicked = ()=> {
+        this.clearAllValidators();
+        var teamsGroups: AbstractControl = this.chooseMembersForm.controls['teamsGroups'];
+        teamsGroups.setValidators(Validators.required)
+        teamsGroups.updateValueAndValidity();
+    }
+
+    memberFilterMembersClicked = ()=> {
+        this.clearAllValidators();
+    }
+
+    memberFilterMembershipTypeClicked = ()=> {
+        this.clearAllValidators();
+        var membershipType: AbstractControl = this.chooseMembersForm.controls['membershipType'];
+        membershipType.setValidators(Validators.required)
+        membershipType.updateValueAndValidity();
+    }
+
     chooseMembersForm: FormGroup;
 
     getFiltersNext = ()=> {
@@ -87,6 +123,10 @@ export class ChooseMembersComponent implements OnInit {
         loadFilteredMembersThis.memberService.getFilteredMembers(structChooseMembers).subscribe(onLoadFilteredMembersSuccess, logError);
         function onLoadFilteredMembersSuccess(structOrganisationMemberArray: structOrganisationMember[]) {
             loadFilteredMembersThis.gridOptionsMemberList.api.setRowData(structOrganisationMemberArray);
+            loadFilteredMembersThis.gridOptionsMemberList.api.forEachNode(function (node) {
+                node.setSelected(true);
+            });
+
             HelperService.log('loadFilteredMembers success');
         }
 
@@ -121,6 +161,16 @@ export class ChooseMembersComponent implements OnInit {
         }
     }
 
+    memberListBack = ()=> {
+        this.showFilters = true;
+        this.memberGrid = false;
+    }
+
+    memberListNext = ()=> {
+        var selectedRows = this.gridOptionsMemberList.api.getSelectedRows()
+        this.membersChosen.emit(selectedRows);
+    }
+
     /////////////////////////////////////////////////////////////
     //grid
     columnDefsMembers: any[] = [
@@ -129,5 +179,5 @@ export class ChooseMembersComponent implements OnInit {
         {headerName: "First Name", field: "FirstName"}
     ];
 
-    gridOptionsMemberList: GridOptions = HelperService.getGridOptions(this.columnDefsMembers, null, null);
+    gridOptionsMemberList: GridOptions = HelperService.getGridOptions(this.columnDefsMembers, null, null, true);
 }

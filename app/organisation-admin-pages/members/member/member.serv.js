@@ -107,13 +107,13 @@ var MemberService = (function () {
         });
         //convert aray of GroupID to comma separated string
         var s = '', i;
-        if (structChooseMembers.formControlTeamsGroups === null) {
+        if (structChooseMembers.teamsGroups === null) {
             s = '-1';
         }
         else {
-            for (i = 0; i < structChooseMembers.formControlTeamsGroups.length; i++) {
-                s += structChooseMembers.formControlTeamsGroups[i].GroupID.toString();
-                if (i < structChooseMembers.formControlTeamsGroups.length - 1) {
+            for (i = 0; i < structChooseMembers.teamsGroups.length; i++) {
+                s += structChooseMembers.teamsGroups[i].GroupID.toString();
+                if (i < structChooseMembers.teamsGroups.length - 1) {
                     s += ',';
                 }
             }
@@ -122,7 +122,7 @@ var MemberService = (function () {
             name: 'sGroupIDArray',
             value: s
         });
-        if (structChooseMembers.MembershipTypeID === null) {
+        if (structChooseMembers.membershipType === null) {
             parameters.push({
                 name: 'MembershipTypeID',
                 value: '-1'
@@ -131,7 +131,7 @@ var MemberService = (function () {
         else {
             parameters.push({
                 name: 'MembershipTypeID',
-                value: structChooseMembers.MembershipTypeID
+                value: structChooseMembers.membershipType
             });
         }
         // parameters.push({

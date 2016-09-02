@@ -31,7 +31,7 @@ export class EmailMemberComponent implements OnInit {
     }
 
     displayMembers=(structOrganisationMemberArray: structOrganisationMember[])=>{
-        this.gridOptions.api.setRowData(structOrganisationMemberArray);
+        //this.gridOptions.api.setRowData(structOrganisationMemberArray);
         console.log(structOrganisationMemberArray);
     }
 
@@ -81,7 +81,7 @@ export class EmailMemberComponent implements OnInit {
     ];
 
 
-    gridOptions: GridOptions = HelperService.getGridOptions(this.columnDefs, null, null);
+    gridOptions: GridOptions = HelperService.getGridOptions(this.columnDefs, null, null, true);
 
 
 }

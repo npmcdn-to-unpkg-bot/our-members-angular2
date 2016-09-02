@@ -92,5 +92,5 @@ export class ErrorListComponent {
     }
     onRowClicked = () => { }
 
-    gridOptions: any = HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked);
+    gridOptions: any = HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked, false);
 }

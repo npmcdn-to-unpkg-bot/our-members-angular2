@@ -59,7 +59,9 @@
                                        class="radio-button"
                                        name="memberFilter"
                                        formControlName="memberFilter"
-                                       value="Members">
+                                       value="Members"
+                                       (click)="memberFilterMembersClicked()"
+                                >
                                 <label for="inputMemberFilterMembers">Select Members</label>
                             </div>
                             <div class="radio-button-element">
@@ -68,7 +70,9 @@
                                        class="radio-button"
                                        name="memberFilter"
                                        formControlName="memberFilter"
-                                       value="TeamsGroups">
+                                       value="TeamsGroups"
+                                       (click)="memberFilterTeamsGroupsClicked()"
+                                >
                                 <label for="inputMemberFilterTeamsGroups">Select Teams/Groups</label>
                             </div>
                             <div class="radio-button-element">
@@ -77,7 +81,9 @@
                                        class="radio-button"
                                        name="memberFilter"
                                        formControlName="memberFilter"
-                                       value="MembershipType">
+                                       value="MembershipType"
+                                       (click)="memberFilterMembershipTypeClicked()"
+                                >
                                 <label for="inputMemberFilterMembershipType">Select Membership Type</label>
                             </div>
                         </div>
@@ -88,7 +94,7 @@
                         <label>Choose Membership Type</label>
                     </div>
                     <div class="col-sm-8 form-label">
-                        <select class="form-control" formControlName="MembershipTypeID">
+                        <select class="form-control" formControlName="membershipType">
                             <option *ngFor="let Membership of MembershipTypes" [value]="Membership.MembershipTypeID">
                                 {{ Membership.Name }}
                             </option>
@@ -101,9 +107,8 @@
                         <label>Teams / Groups</label>
                     </div>
                     <div class="col-sm-8">
-                        <ag-grid-formcontrol formControlName="formControlTeamsGroups"
+                        <ag-grid-formcontrol formControlName="teamsGroups"
                                              [columnDefs]="columnDefsTeamsGroups"></ag-grid-formcontrol>
-                        <!--<ag-grid-formcontrol formControlName="formControlTeamsGroups" [rowData]="rowDataTeamsGroups"[columnDefs]="columnDefsTeamsGroups"></ag-grid-formcontrol>-->
                     </div>
                 </div>
 
@@ -111,7 +116,7 @@
                     <div class="col-sm-10 ">
                     </div>
                     <div class="col-sm-2">
-                        <button type="submit" class="save-button">Next</button>
+                        <button type="submit" class="save-button" [hidden]="!chooseMembersForm.valid">Next</button>
                     </div>
                 </div>
             </div>
@@ -122,12 +127,12 @@
     <ag-grid-ng2 class="ag-fresh standard-grid" [gridOptions]="gridOptionsMemberList" title="Double-click to drill down"></ag-grid-ng2>
     <div class="row">
         <div class="col-sm-2 ">
-            <button class="save-button" (click)="memberFilterBack()">Back</button>
+            <button type="submit" class="save-button" (click)="memberListBack()" [hidden]="!chooseMembersForm.valid">Back</button>
         </div>
         <div class="col-sm-8 ">
         </div>
         <div class="col-sm-2">
-            <button type="button" class="save-button" (click)="alert('Next')">Next</button>
+            <button type="button" class="save-button" (click)="memberListNext()">Next</button>
         </div>
     </div>
 </div>

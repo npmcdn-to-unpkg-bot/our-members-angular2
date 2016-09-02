@@ -4,8 +4,8 @@ var HelperService = (function () {
         this.Month_Names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     }
     HelperService.getServiceBase = function () {
-        //return 'https://ourmembersapiweb.azurewebsites.net/'
-        return 'http://localhost:26381/';
+        return 'https://ourmembersapiweb.azurewebsites.net/';
+        //return 'http://localhost:26381/';
     };
     HelperService.booleanToString = function (inp) {
         if (inp) {
@@ -177,23 +177,24 @@ var HelperService = (function () {
         gridOptions.columnApi.autoSizeColumns(allColumnIds);
     };
     ;
-    HelperService.getGridOptions = function (columnDefs, onRowClicked, onRowDoubleClicked) {
+    HelperService.getGridOptions = function (columnDefs, onRowClicked, onRowDoubleClicked, multiSelect) {
         var rowData = [];
         var gridOptions = {
             columnDefs: columnDefs,
             rowData: rowData,
             enableSorting: true,
             enableFilter: true,
-            groupUseEntireRow: true,
             enableColResize: true,
-            rowSelection: "single",
             onRowClicked: onRowClicked,
-            onRowDoubleClicked: onRowDoubleClicked,
-            rowGroupPanelShow: 'always',
-            //groupKeys: 'undefined',
-            //groupSelectsChildren: true,
-            groupColumnDef: 'groupColumn'
+            onRowDoubleClicked: onRowDoubleClicked
         };
+        if (multiSelect) {
+            gridOptions.rowSelection = 'multiple';
+            gridOptions.suppressRowClickSelection = true;
+        }
+        else {
+            gridOptions.rowSelection = 'single';
+        }
         return gridOptions;
     };
     HelperService.formatDate = function (d) {

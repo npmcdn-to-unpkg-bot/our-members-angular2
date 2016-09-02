@@ -78,7 +78,7 @@ var ErrorListComponent = (function () {
             _this.errorDisplayComponent.displayError(selectedError);
         };
         this.onRowClicked = function () { };
-        this.gridOptions = helper_serv_1.HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked);
+        this.gridOptions = helper_serv_1.HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked, false);
         helper_serv_1.HelperService.log('constructor ErrorListComponent');
     }
     //load errors when page loaded

@@ -9,11 +9,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 /// <reference path="../../services/helper/helper.serv.ts" />
-var core_1 = require('@angular/core');
-var recent_logins_serv_1 = require('./recent-logins.serv');
-var router_1 = require('@angular/router');
-var main_1 = require('ag-grid-ng2/main');
-var helper_serv_1 = require('../../services/helper/helper.serv');
+var core_1 = require("@angular/core");
+var recent_logins_serv_1 = require("./recent-logins.serv");
+var router_1 = require("@angular/router");
+var main_1 = require("ag-grid-ng2/main");
+var helper_serv_1 = require("../../services/helper/helper.serv");
 var RecentLoginsComponent = (function () {
     function RecentLoginsComponent(router, recentLoginsService) {
         var _this = this;
@@ -56,7 +56,7 @@ var RecentLoginsComponent = (function () {
         this.onRowDoubleClicked = function (params) {
         };
         this.onRowClicked = function () { };
-        this.gridOptions = helper_serv_1.HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked);
+        this.gridOptions = helper_serv_1.HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked, false);
         helper_serv_1.HelperService.log('constructor RecentLoginsComponent');
     }
     //load recentLogins when page loaded

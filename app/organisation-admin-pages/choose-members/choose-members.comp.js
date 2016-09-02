@@ -51,6 +51,29 @@ var ChooseMembersComponent = (function () {
                 helper_serv_1.HelperService.log('error getting MembershipTypes');
             }
         };
+        this.clearAllValidators = function () {
+            var teamsGroups = _this.chooseMembersForm.controls['teamsGroups'];
+            teamsGroups.clearValidators();
+            teamsGroups.updateValueAndValidity();
+            var membershipType = _this.chooseMembersForm.controls['membershipType'];
+            membershipType.clearValidators();
+            membershipType.updateValueAndValidity();
+        };
+        this.memberFilterTeamsGroupsClicked = function () {
+            _this.clearAllValidators();
+            var teamsGroups = _this.chooseMembersForm.controls['teamsGroups'];
+            teamsGroups.setValidators(forms_1.Validators.required);
+            teamsGroups.updateValueAndValidity();
+        };
+        this.memberFilterMembersClicked = function () {
+            _this.clearAllValidators();
+        };
+        this.memberFilterMembershipTypeClicked = function () {
+            _this.clearAllValidators();
+            var membershipType = _this.chooseMembersForm.controls['membershipType'];
+            membershipType.setValidators(forms_1.Validators.required);
+            membershipType.updateValueAndValidity();
+        };
         this.getFiltersNext = function () {
             var structChooseMembers = _this.chooseMembersForm.value;
             _this.showFilters = false;
@@ -62,6 +85,9 @@ var ChooseMembersComponent = (function () {
             loadFilteredMembersThis.memberService.getFilteredMembers(structChooseMembers).subscribe(onLoadFilteredMembersSuccess, logError);
             function onLoadFilteredMembersSuccess(structOrganisationMemberArray) {
                 loadFilteredMembersThis.gridOptionsMemberList.api.setRowData(structOrganisationMemberArray);
+                loadFilteredMembersThis.gridOptionsMemberList.api.forEachNode(function (node) {
+                    node.setSelected(true);
+                });
                 helper_serv_1.HelperService.log('loadFilteredMembers success');
             }
             function logError() {
@@ -74,19 +100,27 @@ var ChooseMembersComponent = (function () {
         this.C_Members = 'Members';
         this.C_TeamsGroups = 'TeamsGroups';
         this.C_MembershipType = 'MembershipType';
+        this.memberListBack = function () {
+            _this.showFilters = true;
+            _this.memberGrid = false;
+        };
+        this.memberListNext = function () {
+            var selectedRows = _this.gridOptionsMemberList.api.getSelectedRows();
+            _this.membersChosen.emit(selectedRows);
+        };
         /////////////////////////////////////////////////////////////
         //grid
         this.columnDefsMembers = [
             { headerName: "Last Name", field: "LastName", checkboxSelection: true },
             { headerName: "First Name", field: "FirstName" }
         ];
-        this.gridOptionsMemberList = helper_serv_1.HelperService.getGridOptions(this.columnDefsMembers, null, null);
+        this.gridOptionsMemberList = helper_serv_1.HelperService.getGridOptions(this.columnDefsMembers, null, null, true);
         helper_serv_1.HelperService.log('constructor ChooseMembersComponent');
         this.chooseMembersForm = builder.group({
             membershipStatus: [this.C_Active],
             memberFilter: [this.C_Members],
-            MembershipTypeID: [],
-            formControlTeamsGroups: []
+            membershipType: [null],
+            teamsGroups: [null]
         });
     }
     ChooseMembersComponent.prototype.ngOnInit = function () {

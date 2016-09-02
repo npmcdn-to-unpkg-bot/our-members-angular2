@@ -1,9 +1,9 @@
 ﻿/// <reference path="../../services/helper/helper.serv.ts" />
-import {Component, ViewChild} from '@angular/core';
-import {RecentLoginsService} from './recent-logins.serv';
-import { Router, RouterLink } from '@angular/router';
-import {AgGridNg2} from 'ag-grid-ng2/main';
-import {HelperService} from '../../services/helper/helper.serv';
+import {Component} from "@angular/core";
+import {RecentLoginsService} from "./recent-logins.serv";
+import {Router} from "@angular/router";
+import {AgGridNg2} from "ag-grid-ng2/main";
+import {HelperService} from "../../services/helper/helper.serv";
 
 
 @Component({
@@ -65,5 +65,5 @@ export class RecentLoginsComponent {
     }
     onRowClicked = () => { }
 
-    gridOptions: any = HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked);
+    gridOptions: any = HelperService.getGridOptions(this.columnDefs, this.onRowClicked, this.onRowDoubleClicked, false);
 }
