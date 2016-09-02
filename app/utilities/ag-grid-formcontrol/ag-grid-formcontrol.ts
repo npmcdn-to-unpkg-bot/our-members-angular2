@@ -23,7 +23,7 @@ export class AgGridFormControl implements ControlValueAccessor, OnInit {
         this.gridOptions.rowData = this.rowData;
         this.gridOptions.columnDefs = this.columnDefs;
         this.gridOptions.onSelectionChanged = this.onSelectionChanged;
-        this.gridOptions.rowSelection = "multiple"
+        this.gridOptions.rowSelection = "multipleqq"
     }
 
     @Output() onChange: EventEmitter<any> = new EventEmitter();
