@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72af1e14-6c78-4b81-8fbc-d75cb2cf064a" name="Default" comment="">
+    <list default="true" id="72af1e14-6c78-4b81-8fbc-d75cb2cf064a" name="Default" comment="choose members 6">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/utilities/ag-grid-formcontrol/ag-grid-formcontrol.js" afterPath="$PROJECT_DIR$/app/utilities/ag-grid-formcontrol/ag-grid-formcontrol.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/utilities/ag-grid-formcontrol/ag-grid-formcontrol.ts" afterPath="$PROJECT_DIR$/app/utilities/ag-grid-formcontrol/ag-grid-formcontrol.ts" />
     </list>
     <ignored path="our-members-angular2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,6 +27,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ag-grid-formcontrol.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/utilities/ag-grid-formcontrol/ag-grid-formcontrol.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+              <folding>
+                <marker date="1472785086233" expanded="false" signature="545:559" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="choose-members.comp.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/organisation-admin-pages/choose-members/choose-members.comp.ts">
           <provider selected="true" editor-type-id="text-editor">
@@ -49,7 +63,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="helper.serv.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="helper.serv.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/services/helper/helper.serv.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
@@ -136,7 +150,6 @@
         <option value="$PROJECT_DIR$/app/organisation-admin-pages/recent-logins/recent-logins.serv.ts" />
         <option value="$PROJECT_DIR$/app/organisation-admin-pages/error-list/error-list.serv.ts" />
         <option value="$PROJECT_DIR$/app/services/http-handler/http-handler.serv.ts" />
-        <option value="$PROJECT_DIR$/app/utilities/ag-grid-formcontrol/ag-grid-formcontrol.ts" />
         <option value="$PROJECT_DIR$/app/organisation-admin-pages/members/member-list/member-list.comp.ts" />
         <option value="$PROJECT_DIR$/app/organisation-admin-pages/members/member-list/member-list.serv.ts" />
         <option value="$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.html" />
@@ -147,6 +160,7 @@
         <option value="$PROJECT_DIR$/app/organisation-admin-pages/choose-members/choose-members.html" />
         <option value="$PROJECT_DIR$/app/organisation-admin-pages/members/member/member.serv.ts" />
         <option value="$PROJECT_DIR$/app/services/helper/helper.serv.ts" />
+        <option value="$PROJECT_DIR$/app/utilities/ag-grid-formcontrol/ag-grid-formcontrol.ts" />
       </list>
     </option>
   </component>
@@ -359,49 +373,27 @@
               <option name="myItemId" value="ag-grid-formcontrol" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helper.serv.ts" />
+              <option name="myItemId" value="ag-grid-formcontrol.ts" />
               <option name="myItemType" value="com.intellij.lang.typescript.compiler.ui.projectView.TypeScriptNestingTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="our-members-angular2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="our-members-angular2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -652,7 +644,7 @@
       <workItem from="1472457584514" duration="5387000" />
       <workItem from="1472630405337" duration="3035000" />
       <workItem from="1472716302245" duration="8295000" />
-      <workItem from="1472763516840" duration="1318000" />
+      <workItem from="1472763516840" duration="2799000" />
     </task>
     <task id="LOCAL-00001" summary="rc5">
       <created>1471466277735</created>
@@ -752,11 +744,25 @@
       <option name="project" value="LOCAL" />
       <updated>1472730152092</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="choose members 6">
+      <created>1472770248661</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1472770248661</updated>
+    </task>
+    <task id="LOCAL-00016" summary="choose members 6">
+      <created>1472785080161</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1472785080161</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121343000" />
+    <option name="totallyTimeSpent" value="122824000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -769,10 +775,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="2" y="6" width="1924" height="1056" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.4936642" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15853658" sideWeight="0.59284735" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15853658" sideWeight="0.59284735" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.49788806" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30985916" sideWeight="0.5211193" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15853658" sideWeight="0.40715268" order="2" side_tool="true" content_ui="tabs" />
@@ -813,7 +819,8 @@
     <MESSAGE value="choose members 3" />
     <MESSAGE value="choose members 4" />
     <MESSAGE value="choose members 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="choose members 5" />
+    <MESSAGE value="choose members 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="choose members 6" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -977,14 +984,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LICENSE.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1093,13 +1092,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/utilities/ag-grid-formcontrol/ag-grid-formcontrol.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="80" selection-start-line="11" selection-start-column="80" selection-end-line="11" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/styles/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
@@ -1198,6 +1190,24 @@
         <state relative-caret-position="68">
           <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/utilities/ag-grid-formcontrol/ag-grid-formcontrol.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+          <folding>
+            <marker date="1472785086233" expanded="false" signature="545:559" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

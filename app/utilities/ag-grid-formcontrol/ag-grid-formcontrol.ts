@@ -14,6 +14,7 @@ const MULTISELECT_VALUE_ACCESSOR: Provider = new Provider(NG_VALUE_ACCESSOR, {us
     providers: [MULTISELECT_VALUE_ACCESSOR],
     directives: [AgGridNg2]
 })
+
 export class AgGridFormControl implements ControlValueAccessor, OnInit {
     gridOptions: GridOptions;
 
