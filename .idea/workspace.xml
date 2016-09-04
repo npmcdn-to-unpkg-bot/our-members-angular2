@@ -3,27 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="72af1e14-6c78-4b81-8fbc-d75cb2cf064a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/organisation-admin-pages/change-organisation/change-organisation.comp.js" afterPath="$PROJECT_DIR$/app/organisation-admin-pages/change-organisation/change-organisation.comp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/organisation-admin-pages/change-organisation/change-organisation.comp.ts" afterPath="$PROJECT_DIR$/app/organisation-admin-pages/change-organisation/change-organisation.comp.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/main.ts" afterPath="$PROJECT_DIR$/app/main.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/organisation-admin-pages/choose-members/choose-members.comp.js" afterPath="$PROJECT_DIR$/app/organisation-admin-pages/choose-members/choose-members.comp.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/organisation-admin-pages/choose-members/choose-members.comp.ts" afterPath="$PROJECT_DIR$/app/organisation-admin-pages/choose-members/choose-members.comp.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/organisation-admin-pages/choose-members/choose-members.html" afterPath="$PROJECT_DIR$/app/organisation-admin-pages/choose-members/choose-members.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.comp.js" afterPath="$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.comp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.comp.ts" afterPath="$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.comp.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.html" afterPath="$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/organisation-admin-pages/error-list/error-list.comp.js" afterPath="$PROJECT_DIR$/app/organisation-admin-pages/error-list/error-list.comp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/organisation-admin-pages/error-list/error-list.comp.ts" afterPath="$PROJECT_DIR$/app/organisation-admin-pages/error-list/error-list.comp.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/organisation-admin-pages/members/member-list/member-list.comp.js" afterPath="$PROJECT_DIR$/app/organisation-admin-pages/members/member-list/member-list.comp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/organisation-admin-pages/members/member-list/member-list.comp.ts" afterPath="$PROJECT_DIR$/app/organisation-admin-pages/members/member-list/member-list.comp.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/organisation-admin-pages/members/member/member.comp.js" afterPath="$PROJECT_DIR$/app/organisation-admin-pages/members/member/member.comp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/organisation-admin-pages/members/member/member.comp.ts" afterPath="$PROJECT_DIR$/app/organisation-admin-pages/members/member/member.comp.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/organisation-admin-pages/members/member/member.serv.js" afterPath="$PROJECT_DIR$/app/organisation-admin-pages/members/member/member.serv.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/organisation-admin-pages/members/member/member.serv.ts" afterPath="$PROJECT_DIR$/app/organisation-admin-pages/members/member/member.serv.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/organisation-admin-pages/recent-logins/recent-logins.comp.js" afterPath="$PROJECT_DIR$/app/organisation-admin-pages/recent-logins/recent-logins.comp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/organisation-admin-pages/recent-logins/recent-logins.comp.ts" afterPath="$PROJECT_DIR$/app/organisation-admin-pages/recent-logins/recent-logins.comp.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/services/helper/helper.serv.js" afterPath="$PROJECT_DIR$/app/services/helper/helper.serv.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/services/helper/helper.serv.ts" afterPath="$PROJECT_DIR$/app/services/helper/helper.serv.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iblong2.d.ts" afterPath="$PROJECT_DIR$/iblong2.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/styles.css" afterPath="$PROJECT_DIR$/styles/styles.css" />
     </list>
     <ignored path="our-members-angular2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,11 +33,9 @@
       <file leaf-file-name="choose-members.comp.ts" pinned="true" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/organisation-admin-pages/choose-members/choose-members.comp.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2890">
-              <caret line="170" column="13" selection-start-line="170" selection-start-column="13" selection-end-line="170" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#81#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="2805">
+              <caret line="180" column="34" selection-start-line="180" selection-start-column="34" selection-end-line="180" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -61,8 +43,8 @@
       <file leaf-file-name="choose-members.html" pinned="true" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/organisation-admin-pages/choose-members/choose-members.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2023">
-              <caret line="123" column="11" selection-start-line="123" selection-start-column="11" selection-end-line="123" selection-end-column="11" />
+            <state relative-caret-position="450">
+              <caret line="126" column="44" selection-start-line="126" selection-start-column="44" selection-end-line="126" selection-end-column="44" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
@@ -71,12 +53,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="email-member.comp.ts" pinned="true" current-in-tab="true">
+      <file leaf-file-name="email-member.comp.ts" pinned="true" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.comp.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
-              <folding />
+            <state relative-caret-position="697">
+              <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,8 +68,30 @@
       <file leaf-file-name="email-member.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="51" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="51" />
+            <state relative-caret-position="119">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/main.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#73#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/styles/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7225">
+              <caret line="425" column="17" selection-start-line="425" selection-start-column="17" selection-end-line="425" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -113,7 +119,6 @@
         <option value="$PROJECT_DIR$/app/utilities/confirm/confirm.comp.ts" />
         <option value="$PROJECT_DIR$/app/organisation-admin-pages/members/member/member.comp.js" />
         <option value="$PROJECT_DIR$/app/home-pages/footer-buttons/footer-buttons.comp.ts" />
-        <option value="$PROJECT_DIR$/app/main.ts" />
         <option value="$PROJECT_DIR$/app/organisation-admin-pages/email/email.comp.ts" />
         <option value="$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.serv.ts" />
         <option value="$PROJECT_DIR$/todo.txt" />
@@ -129,7 +134,6 @@
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/form-builder.txt" />
         <option value="$PROJECT_DIR$/app/organisation-admin-pages/members/member/member.html" />
-        <option value="$PROJECT_DIR$/styles/styles.css" />
         <option value="$PROJECT_DIR$/app/services/membership-type/membership-type.serv.js" />
         <option value="$PROJECT_DIR$/systemjs.config.js" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -155,10 +159,12 @@
         <option value="$PROJECT_DIR$/app/services/helper/helper.serv.ts" />
         <option value="$PROJECT_DIR$/app/organisation-admin-pages/members/member-list/member-list.comp.ts" />
         <option value="$PROJECT_DIR$/app/organisation-admin-pages/members/member/member.comp.ts" />
-        <option value="$PROJECT_DIR$/app/organisation-admin-pages/choose-members/choose-members.html" />
-        <option value="$PROJECT_DIR$/app/organisation-admin-pages/choose-members/choose-members.comp.ts" />
         <option value="$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.html" />
         <option value="$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.comp.ts" />
+        <option value="$PROJECT_DIR$/app/organisation-admin-pages/choose-members/choose-members.comp.ts" />
+        <option value="$PROJECT_DIR$/styles/styles.css" />
+        <option value="$PROJECT_DIR$/app/organisation-admin-pages/choose-members/choose-members.html" />
+        <option value="$PROJECT_DIR$/app/main.ts" />
       </list>
     </option>
   </component>
@@ -174,9 +180,9 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2" />
-    <option name="y" value="6" />
-    <option name="width" value="1924" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -275,9 +281,6 @@
         </subPane>
         <subPane subId="Tests" />
       </pane>
-      <pane id="Scratches">
-        <subPane />
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -310,205 +313,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utilities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utilities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="confirm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utilities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ag-grid-formcontrol" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ag-grid-formcontrol.ts" />
-              <option name="myItemType" value="com.intellij.lang.typescript.compiler.ui.projectView.TypeScriptNestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="organisation-admin-pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="organisation-admin-pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="members" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="organisation-admin-pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="members" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="member-list" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="organisation-admin-pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="members" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="member" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="our-members-angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="organisation-admin-pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="email-member" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
+      </pane>
+      <pane id="Scratches">
+        <subPane />
       </pane>
     </panes>
   </component>
@@ -643,7 +451,10 @@
       <workItem from="1472630405337" duration="3035000" />
       <workItem from="1472716302245" duration="8295000" />
       <workItem from="1472763516840" duration="5098000" />
-      <workItem from="1472802763119" duration="8620000" />
+      <workItem from="1472802763119" duration="9041000" />
+      <workItem from="1472884835024" duration="1990000" />
+      <workItem from="1472944098797" duration="152000" />
+      <workItem from="1472950398178" duration="18000" />
     </task>
     <task id="LOCAL-00001" summary="rc5">
       <created>1471466277735</created>
@@ -785,11 +596,18 @@
       <option name="project" value="LOCAL" />
       <updated>1472785209357</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="choose members 7">
+      <created>1472817137320</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1472817137320</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133743000" />
+    <option name="totallyTimeSpent" value="136324000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -801,29 +619,47 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2" y="6" width="1924" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.4936642" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15853658" sideWeight="0.58596975" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15753424" sideWeight="0.5687974" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.49788806" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30985916" sideWeight="0.5211193" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15853658" sideWeight="0.41403025" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21235102" sideWeight="0.47888067" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.50632244" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15753424" sideWeight="0.4312026" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.49367756" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.4945055" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.49577615" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23548046" sideWeight="0.53634894" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21235102" sideWeight="0.4766702" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -847,7 +683,8 @@
     <MESSAGE value="choose members 4" />
     <MESSAGE value="choose members 5" />
     <MESSAGE value="choose members 6" />
-    <option name="LAST_COMMIT_MESSAGE" value="choose members 6" />
+    <MESSAGE value="choose members 7" />
+    <option name="LAST_COMMIT_MESSAGE" value="choose members 7" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -864,13 +701,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/organisation-admin-pages/members/member-list/member-list.comp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="62" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/home-pages/about-help/about-help.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5712">
@@ -1011,7 +841,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="22" column="95" selection-start-line="22" selection-start-column="95" selection-end-line="22" selection-end-column="95" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1033,7 +862,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="14" column="91" selection-start-line="14" selection-start-column="91" selection-end-line="14" selection-end-column="91" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1069,7 +897,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1077,14 +904,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
           <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="72" column="4" selection-start-line="72" selection-start-column="4" selection-end-line="72" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -1106,7 +925,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
           <caret line="120" column="25" selection-start-line="120" selection-start-column="25" selection-end-line="120" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1132,7 +950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="512">
           <caret line="97" column="14" selection-start-line="97" selection-start-column="14" selection-end-line="97" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1140,7 +957,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
           <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1156,7 +972,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
           <caret line="134" column="29" selection-start-line="134" selection-start-column="29" selection-end-line="134" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1164,7 +979,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="563">
           <caret line="147" column="5" selection-start-line="147" selection-start-column="5" selection-end-line="147" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1172,7 +986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="563">
           <caret line="75" column="118" selection-start-line="75" selection-start-column="111" selection-end-line="75" selection-end-column="118" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1180,7 +993,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="563">
           <caret line="67" column="118" selection-start-line="67" selection-start-column="118" selection-end-line="67" selection-end-column="118" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1188,7 +1000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="563">
           <caret line="94" column="118" selection-start-line="94" selection-start-column="118" selection-end-line="94" selection-end-column="118" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1196,7 +1007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
           <caret line="203" column="39" selection-start-line="203" selection-start-column="39" selection-end-line="203" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1204,7 +1014,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="79" column="45" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1212,14 +1021,47 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="563">
           <caret line="266" column="128" selection-start-line="266" selection-start-column="128" selection-end-line="266" selection-end-column="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.comp.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/organisation-admin-pages/choose-members/choose-members.comp.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2805">
+          <caret line="180" column="34" selection-start-line="180" selection-start-column="34" selection-end-line="180" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7225">
+          <caret line="425" column="17" selection-start-line="425" selection-start-column="17" selection-end-line="425" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/organisation-admin-pages/choose-members/choose-members.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2023">
-          <caret line="123" column="11" selection-start-line="123" selection-start-column="11" selection-end-line="123" selection-end-column="11" />
+        <state relative-caret-position="450">
+          <caret line="126" column="44" selection-start-line="126" selection-start-column="44" selection-end-line="126" selection-end-column="44" />
           <folding>
             <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
@@ -1227,29 +1069,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/organisation-admin-pages/choose-members/choose-members.comp.ts">
+    <entry file="file://$PROJECT_DIR$/app/main.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2890">
-          <caret line="170" column="13" selection-start-line="170" selection-start-column="13" selection-end-line="170" selection-end-column="13" />
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
           <folding>
-            <element signature="e#0#81#0" expanded="true" />
+            <element signature="e#0#73#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="51" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/organisation-admin-pages/email-member/email-member.comp.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>

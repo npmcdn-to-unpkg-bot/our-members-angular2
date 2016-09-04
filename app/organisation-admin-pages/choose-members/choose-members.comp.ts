@@ -171,6 +171,17 @@ export class ChooseMembersComponent implements OnInit {
         this.membersChosen.emit(selectedRows);
     }
 
+    selectAll=()=>{
+        this.gridOptionsMemberList.api.forEachNode(function (node) {
+            node.setSelected(true);
+        });
+    }
+    unSelectAll=()=>{
+        this.gridOptionsMemberList.api.forEachNode(function (node) {
+            node.setSelected(false);
+        });
+    }
+
     /////////////////////////////////////////////////////////////
     //grid
     columnDefsMembers: any[] = [

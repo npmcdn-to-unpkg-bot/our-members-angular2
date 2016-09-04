@@ -37,7 +37,6 @@ button:focus {
     text-align: right;
 }
 
-
 @media only screen and (max-width: 768px) {
     .form-label {
         text-align: left;
@@ -47,7 +46,6 @@ button:focus {
 div.tab-control-button:hover {
     background-color: #d3d3d3;
 }
-
 
 div.tab-control-button, div.tab-control-button-selected {
     background-color: #EDF2D4;
@@ -68,7 +66,6 @@ div.tab-control-button, div.tab-control-button-selected {
 div.tab-control-button-selected {
     background-color: darkgray;
 }
-
 
 div.form-container {
     padding: 10px 2%;
@@ -91,20 +88,15 @@ input[type="checkbox"], select.form-control, textarea.form-control {
 }
 
 .save-button {
-    /*min-width: 100px;*/
     width: 100%;
     background-color: #7da31a;
     font-weight: 800;
-    /*float: left;*/
 }
 
 .cancel-button {
-    /*min-width: 100px;*/
     width: 100%;
     background-color: darkgray;
-    /*float: right;*/
 }
-
 
 .save-and-cancel-buttons-row {
     margin: 20px 0 0 0;
@@ -135,14 +127,14 @@ input[type="checkbox"], select.form-control, textarea.form-control {
     text-align: left;
 }
 
-    .organisation-admin-page-menu-item:hover {
-        background-color: #FDD586;
-        outline: 1px dotted #758D5E;
-    }
+.organisation-admin-page-menu-item:hover {
+    background-color: #FDD586;
+    outline: 1px dotted #758D5E;
+}
 
-    .organisation-admin-page-menu-item:disabled {
-        color: white;
-    }
+.organisation-admin-page-menu-item:disabled {
+    color: white;
+}
 
 .radio-button-container {
     border: 1px solid lightgrey;
@@ -158,10 +150,10 @@ input[type="checkbox"], select.form-control, textarea.form-control {
     padding: 2px 4%;
 }
 
-    .radio-button-element:hover {
-        background-color: #FDD586;
-        outline: 1px dotted #758D5E;
-    }
+.radio-button-element:hover {
+    background-color: #FDD586;
+    outline: 1px dotted #758D5E;
+}
 
 .pdf-help {
     max-height: 75px;
@@ -173,7 +165,6 @@ input[type="checkbox"], select.form-control, textarea.form-control {
     height: 800px;
     width: 100%;
 }
-
 
 .short-grid {
     height: 200px;
@@ -198,7 +189,6 @@ input[type="checkbox"], select.form-control, textarea.form-control {
     background-color: #EBFFC6;
 }
 
-
 .modalSolsof {
     /*opacity: 0;
     transition: visibility 0s, opacity 0.2s linear;*/
@@ -212,8 +202,8 @@ input[type="checkbox"], select.form-control, textarea.form-control {
     height: 100vh;
     /*min-height: 100vh;*/
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
     -webkit-box-shadow: 0 0 40px 0 black inset;
     -moz-box-shadow: 0 0 40px 0 black inset;
     box-shadow: 0 0 40px 0 black inset;
@@ -234,7 +224,6 @@ input[type="checkbox"], select.form-control, textarea.form-control {
 .modalSolsofEnabled {
     display: block;
 }
-
 
 .modal-contentSolsof {
     margin: 20px auto 0 auto;
@@ -282,7 +271,6 @@ input[type="checkbox"], select.form-control, textarea.form-control {
     margin: 10px 0;
 }
 
-
 .home-pages-background {
     background-color: #d4e7b2;
     margin-bottom: 10px;
@@ -300,18 +288,18 @@ input[type="checkbox"], select.form-control, textarea.form-control {
     background-color: #7da31a;
 }
 
-    .trial-button:hover {
-        background-color: #51800C;
-    }
+.trial-button:hover {
+    background-color: #51800C;
+}
 
 .test-drive-button {
     border: #dc9000 outset;
     background-color: #dc9000;
 }
 
-    .test-drive-button:hover {
-        background-color: #B85903;
-    }
+.test-drive-button:hover {
+    background-color: #B85903;
+}
 
 .action-buttons-container {
     background-color: #d4e7b2;
@@ -336,10 +324,9 @@ input[type="checkbox"], select.form-control, textarea.form-control {
     margin: 0 2% 5px 0;
 }
 
-    .info-button:hover {
-        background-color: #4A810B;
-    }
-
+.info-button:hover {
+    background-color: #4A810B;
+}
 
 .spacer {
     height: 50px;
@@ -359,9 +346,9 @@ input[type="checkbox"], select.form-control, textarea.form-control {
     color: white;
 }
 
-    .sms-button:hover {
-        background-color: #1A76D8;
-    }
+.sms-button:hover {
+    background-color: #1A76D8;
+}
 
 .sms-buttons-container {
     margin: 10px 0 0 0;
@@ -427,8 +414,14 @@ input[type="checkbox"], select.form-control, textarea.form-control {
     padding: 5px 0;
 }
 
-.info-text{
+.info-text {
     font-size: large;
     padding: 20px 4%;
     color: black;
+}
+
+.select-button {
+    background-color: #aecf92;
+    border: 1px solid darkgray;
+    color: white;
 }

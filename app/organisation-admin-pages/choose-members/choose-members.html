@@ -124,6 +124,14 @@
     </form>
 </div>
 <div [hidden]="!memberGrid" style="border: 1px gray solid; padding: 10px 2%">
+    <div class="row" style="margin-bottom: 10px;">
+        <div class="col-sm-2 ">
+            <button type="button" class="select-button" (click)="selectAll()" >Select All</button>
+        </div>
+        <div class="col-sm-2">
+            <button type="button" class="select-button" (click)="unSelectAll()" >Un-select All</button>
+        </div>
+    </div>
     <ag-grid-ng2 class="ag-fresh standard-grid" [gridOptions]="gridOptionsMemberList" title="Double-click to drill down"></ag-grid-ng2>
     <div class="row">
         <div class="col-sm-2 ">

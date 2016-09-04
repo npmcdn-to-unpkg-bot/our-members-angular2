@@ -108,6 +108,16 @@ var ChooseMembersComponent = (function () {
             var selectedRows = _this.gridOptionsMemberList.api.getSelectedRows();
             _this.membersChosen.emit(selectedRows);
         };
+        this.selectAll = function () {
+            _this.gridOptionsMemberList.api.forEachNode(function (node) {
+                node.setSelected(true);
+            });
+        };
+        this.unSelectAll = function () {
+            _this.gridOptionsMemberList.api.forEachNode(function (node) {
+                node.setSelected(false);
+            });
+        };
         /////////////////////////////////////////////////////////////
         //grid
         this.columnDefsMembers = [
