@@ -147,3 +147,11 @@ interface  structChooseMembers {
     membershipType: string,
     teamsGroups: structGroup[]
 }
+
+interface structEmailMembers {
+    OrganisationMemberIDArray: number[],
+    EmailAttachmentIDArray: number[];
+    Subject: string;
+    Message: string;
+    sDateSent: string;
+}

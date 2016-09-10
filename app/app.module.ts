@@ -29,12 +29,13 @@ import {RecentLoginsComponent} from "./organisation-admin-pages/recent-logins/re
 import {RegisterComponent} from "./home-pages/register/register.comp";
 import {SubscriptionComponent} from "./home-pages/subscription/subscription.comp";
 import {TermsComponent} from "./home-pages/terms/terms.comp";
+import {CKEditorModule} from "ng2-ckeditor";
 
 
 //HomePageMasterComponent
 
 @NgModule({
-    imports: [BrowserModule, HttpModule, routing, FormsModule, JsonpModule],
+    imports: [BrowserModule, HttpModule, routing, FormsModule, JsonpModule,  CKEditorModule],
     declarations: [AppComponent,
         HomePage,
         HomePageMasterComponent,

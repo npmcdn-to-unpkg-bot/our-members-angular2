@@ -120,6 +120,7 @@ export class ChooseMembersComponent implements OnInit {
 
     loadFilteredMembers = (structChooseMembers: structChooseMembers)=> {
         let loadFilteredMembersThis = this;
+        loadFilteredMembersThis.gridOptionsMemberList.api.setRowData([]);
         loadFilteredMembersThis.memberService.getFilteredMembers(structChooseMembers).subscribe(onLoadFilteredMembersSuccess, logError);
         function onLoadFilteredMembersSuccess(structOrganisationMemberArray: structOrganisationMember[]) {
             loadFilteredMembersThis.gridOptionsMemberList.api.setRowData(structOrganisationMemberArray);
@@ -171,12 +172,12 @@ export class ChooseMembersComponent implements OnInit {
         this.membersChosen.emit(selectedRows);
     }
 
-    selectAll=()=>{
+    selectAll = ()=> {
         this.gridOptionsMemberList.api.forEachNode(function (node) {
             node.setSelected(true);
         });
     }
-    unSelectAll=()=>{
+    unSelectAll = ()=> {
         this.gridOptionsMemberList.api.forEachNode(function (node) {
             node.setSelected(false);
         });

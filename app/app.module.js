@@ -39,13 +39,14 @@ var recent_logins_comp_1 = require("./organisation-admin-pages/recent-logins/rec
 var register_comp_1 = require("./home-pages/register/register.comp");
 var subscription_comp_1 = require("./home-pages/subscription/subscription.comp");
 var terms_comp_1 = require("./home-pages/terms/terms.comp");
+var ng2_ckeditor_1 = require("ng2-ckeditor");
 //HomePageMasterComponent
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, app_routes_1.routing, forms_1.FormsModule, http_1.JsonpModule],
+            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, app_routes_1.routing, forms_1.FormsModule, http_1.JsonpModule, ng2_ckeditor_1.CKEditorModule],
             declarations: [app_master_comp_1.AppComponent,
                 home_page_comp_1.HomePage,
                 home_page_master_comp_1.HomePageMasterComponent,

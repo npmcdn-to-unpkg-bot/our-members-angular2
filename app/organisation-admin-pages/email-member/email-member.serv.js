@@ -11,12 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var router_1 = require("@angular/router");
+var http_handler_serv_1 = require("../../services/http-handler/http-handler.serv");
 //import {HelperService} from '../../services/helper/helper.serv';
 //import {HttpHandlerService} from  '../../services/http-handler/http-handler.serv';
 var EmailMemberService = (function () {
     function EmailMemberService(http, router) {
+        var _this = this;
         this.http = http;
         this.router = router;
+        this.sendEmail = function (email) {
+            console.log(email);
+            var httpHandlerService = new http_handler_serv_1.HttpHandlerService(_this.http, _this.router);
+            return httpHandlerService.postObject(email, 'api/email');
+        };
         console.log('constructor EmailService');
     }
     EmailMemberService = __decorate([

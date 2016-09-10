@@ -1,77 +1,78 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, ViewChild} from "@angular/core";
 import {Router} from "@angular/router";
 import {HelperService} from "../../services/helper/helper.serv";
 import {AgGridNg2} from "ag-grid-ng2/main";
 import {EmailMemberService} from "../email-member/email-member.serv";
 import {ChooseMembersComponent} from "../choose-members/choose-members.comp";
 import {GridOptions} from "ag-grid/main";
+import {REACTIVE_FORM_DIRECTIVES, FormGroup, FormBuilder, Validators} from "@angular/forms";
+import {PopupComponent} from "../../utilities/popup/popup.comp";
 
 @Component({
     moduleId: module.id,
     selector: 'email-member',
     templateUrl: 'email-member.html',
     styleUrls: ['email-member.css'],
-    providers: [EmailMemberService],
-    directives: [AgGridNg2, ChooseMembersComponent]
+    providers: [EmailMemberService, FormBuilder],
+    directives: [REACTIVE_FORM_DIRECTIVES, AgGridNg2, ChooseMembersComponent, PopupComponent]
 })
 
 
-export class EmailMemberComponent implements OnInit {
-    constructor(private router: Router, private emailMemberService: EmailMemberService) {
+export class EmailMemberComponent {
+    constructor(private router: Router, private emailMemberService: EmailMemberService, builder: FormBuilder) {
         HelperService.log('constructor EmailComponent');
-    }
-
-    ngOnInit() {
-        //this.Member = this.getEmptyMember(0);
-    }
-
-    applyFiltersNext = ()=> {
-        this.hideAll();
-        //this.memberFilter = true;
-    }
-
-    displayMembers=(structOrganisationMemberArray: structOrganisationMember[])=>{
-        //this.gridOptions.api.setRowData(structOrganisationMemberArray);
-        console.log(structOrganisationMemberArray);
-    }
-
-    // memberFilterBack = ()=> {
-    //     this.hideAll();
-    //     this.applyFilters = true;
-    // }
-    // memberFilterNext = ()=> {
-    //     this.hideAll();
-    //     this.subjectAndBody = true;
-    // }
-    // subjectAndBodyBack = ()=> {
-    //     this.hideAll();
-    //     this.memberFilter = true;
-    // }
-    // subjectAndBodySend = ()=> {
-    //     this.sendEmail();
-    // }
-    // subjectAndBodyGoToAttachments = ()=> {
-    //     this.hideAll();
-    //     this.attachments = true;
-    // }
-    // attachmentsBack = ()=> {
-    //     this.hideAll();
-    //     this.subjectAndBody = true;
-    // }
-
-    hideAll = ()=> {
-        this.chooseMembers = false;
-        // this.memberFilter = false;
-        // this.subjectAndBody = false;
-        // this.attachments = false;
+        this.emailMembersForm = builder.group(
+            {
+                subject: ['', Validators.required],
+                body: ['', Validators.required]
+            });
 
     }
-    sendEmail=()=>{
+
+    @ViewChild(PopupComponent) popupComponent: PopupComponent;
+
+    emailMembersForm: FormGroup;
+
+    emailMemberBack = ()=> {
+        this.hideEmailAndSubject = true;
+        this.hideChooseMembers = false;
     }
-    chooseMembers: boolean = true;
 
+    sendEmail = ()=> {
+        var sendEmailThis = this;
+        sendEmailThis.emailMemberService.sendEmail(this.email).subscribe(onSendEmailSuccess, logError);
+        function onSendEmailSuccess(){
+            console.log('onSendEmailSuccess');
+            sendEmailThis.popupComponent.showPopup('Email(s) sent successfully');
+        }
+        function logError(e: any){
+            console.log('sendEmail error');
+            console.log(e);
+        }
+    }
 
-    /////////////////////////////////////////////////////////////
+    //structOrganisationMemberArray: structOrganisationMember[] = [];
+    displayMembers = (structOrganisationMemberArray: structOrganisationMember[])=> {
+        let i: number;
+        this.email.OrganisationMemberIDArray = [];
+        for (i = 0; i < structOrganisationMemberArray.length; i++) {
+            this.email.OrganisationMemberIDArray.push(structOrganisationMemberArray[i].OrganisationMemberID);
+        }
+        this.hideEmailAndSubject = false;
+        this.hideChooseMembers = true;
+    }
+
+    hideEmailAndSubject: boolean = true;
+    hideChooseMembers: boolean = false;
+    email: structEmailMembers = {
+        OrganisationMemberIDArray: [],
+        EmailAttachmentIDArray:[],
+        Subject: '',
+        Message: '',
+        sDateSent: HelperService.formatDateForJSon(new Date())
+    };
+
+/////////////////////////////////////////////////////////////
     //grid
     columnDefs: any[] = [
 

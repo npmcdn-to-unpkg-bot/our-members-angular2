@@ -124,13 +124,13 @@ var MemberService = (function () {
         });
         if (structChooseMembers.membershipType === null) {
             parameters.push({
-                name: 'MembershipTypeID',
+                name: 'membershipType',
                 value: '-1'
             });
         }
         else {
             parameters.push({
-                name: 'MembershipTypeID',
+                name: 'membershipType',
                 value: structChooseMembers.membershipType
             });
         }

@@ -2,6 +2,37 @@
     <h1 class="organisation-admin-page-title">Email Members</h1>
 </div>
 <div class="form-container">
-    <choose-members (membersChosen)="displayMembers($event)"></choose-members>
+    <choose-members (membersChosen)="displayMembers($event)" [hidden]="hideChooseMembers"></choose-members>
     <!--<choose-members (membersChosen)="displayMembers($event)" [hidden]="!chooseMembers"></choose-members>-->
+    <form [formGroup]="emailMembersForm" (ngSubmit)="sendEmail()">
+        <div [hidden]="hideEmailAndSubject">
+            <div class="form-group row">
+                <div class="col-sm-2 form-label">
+                    Subject
+                </div>
+                <div class="col-sm-10">
+                    <input [(ngModel)]="email.Subject" type="text" formControlName="subject">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-2 form-label">
+                    Body
+                </div>
+                <div class="col-sm-10">
+                    <ckeditor [(ngModel)]="email.Message" debounce="500" formControlName="body"></ckeditor>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-2 ">
+                    <button type="button" class="save-button" (click)="emailMemberBack()">Back</button>
+                </div>
+                <div class="col-sm-8 ">
+                </div>
+                <div class="col-sm-2">
+                    <button type="submit" class="save-button" [hidden]="!emailMembersForm.valid">Send</button>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
+<popup></popup>

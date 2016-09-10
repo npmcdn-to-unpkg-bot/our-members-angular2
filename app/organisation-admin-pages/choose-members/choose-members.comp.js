@@ -82,6 +82,7 @@ var ChooseMembersComponent = (function () {
         };
         this.loadFilteredMembers = function (structChooseMembers) {
             var loadFilteredMembersThis = _this;
+            loadFilteredMembersThis.gridOptionsMemberList.api.setRowData([]);
             loadFilteredMembersThis.memberService.getFilteredMembers(structChooseMembers).subscribe(onLoadFilteredMembersSuccess, logError);
             function onLoadFilteredMembersSuccess(structOrganisationMemberArray) {
                 loadFilteredMembersThis.gridOptionsMemberList.api.setRowData(structOrganisationMemberArray);

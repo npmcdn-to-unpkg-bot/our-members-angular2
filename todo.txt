@@ -13,6 +13,12 @@ then
 page 1   show filters, next button fills grid
 page 2  grid of members with checkboxes, select all, unselect all, back, next
 page 3 subject, message, add atachment, back, send
+    hide subject, body
+    show when grid next button pressed
+    test link to ts
+
+
+
 page 4 upload file, list of uploads with checkboxes. upload file refreshes list and selects in list. return to message button
 
 
