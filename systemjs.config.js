@@ -12,7 +12,7 @@
         'ag-grid-ng2': 'node_modules/ag-grid-ng2',
         'ag-grid-enterprise': 'node_modules/ag-grid-enterprise',
         'ag-grid': 'node_modules/ag-grid',
-        'ng2-ckeditor': 'https://npmcdn.com/ng2-ckeditor@1.0.7'
+        'ng2-ckeditor': 'https://unpkg.com/ng2-ckeditor@1.0.7'
     };
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
